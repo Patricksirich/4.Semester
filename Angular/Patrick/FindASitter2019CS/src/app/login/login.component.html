@@ -1,0 +1,23 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit">
+<div>
+  <p>Username</p>
+  <input type="text" formControlName="username">
+  <div *ngIf="loginForm.controls.username.errors?.required && loginForm.controls.username.touched">
+    You must fill out the username
+  </div>
+  <div *ngIf="loginForm.controls.username.errors?.minlength && loginForm.controls.username.touched">
+      Username must be at least 3 characters
+    </div>
+</div>
+
+<div>
+  <p>Password</p>
+  <input type="Password" formControlName="password">
+  <div *ngIf="!loginForm.controls.password.valid && loginForm.controls.password.dirty">
+    You must fill out the password
+  </div>
+</div>
+
+<button type="submit" [disabled]="!loginForm.valid">Login</button>
+<!-- Don't use disabled unless there is user feedback-->
+</form>
