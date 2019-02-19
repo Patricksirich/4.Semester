@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -6,10 +7,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+  registerForm: FormGroup;
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { 
 
-  ngOnInit() {
   }
 
+  ngOnInit() {
+    this.registerForm = this.fb.group(
+      {
+        username: ['', [Validators.required, Validators.minLength(3)]], // Multiple validators
+        password: ['', Validators.required], // Single validator
+        salary: ['',[Validators.min(100), Validators.max(1000)]]
+    }
+    )
+  }
+
+  onSubmit() : void {
+    console.log(this.registerForm);
+
+    if(this.registerForm.valid){
+      //Send the data to the server to verify the user register
+    }
+    else{
+      //Show error msg or something else...
+    }
+  }
 }
