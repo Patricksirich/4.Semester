@@ -57,8 +57,28 @@ def not_bad(s):
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
-  # +++your code here+++
-  return
+
+  stra = len(a)
+  strb = len(b)
+
+#If/else statements undersøger om længden af strings er lige
+  if stra % 2 == 0:
+    aindex = stra // 2
+  else:
+    aindex = (stra // 2 ) + 1
+
+  if strb % 2 == 0:
+    bindex = strb // 2
+  else:
+    bindex = (strb // 2)
+
+  a_front = a[0:aindex]
+  a_back = a[aindex]
+
+  b_front = b[0:bindex]
+  b_back = b[bindex]
+
+  return a_front + b_front + a_back + b_back
 
 
 # Simple provided test() function used in main() to print
