@@ -61,7 +61,7 @@ def front_back(a, b):
   stra = len(a)
   strb = len(b)
 
-#If/else statements undersøger om længden af strings er lige
+#If/else statements undersøger om længden af strings er lige. Hvis ikke, lægges der 1 til indekset.
   if stra % 2 == 0:
     aindex = stra // 2
   else:
@@ -70,13 +70,14 @@ def front_back(a, b):
   if strb % 2 == 0:
     bindex = strb // 2
   else:
-    bindex = (strb // 2)
+    bindex = (strb // 2) + 1
 
+#første og sidste del af string a og b er defineret fra 0 op til indeks, og fra indeks til resten af stringen.
   a_front = a[0:aindex]
-  a_back = a[aindex]
+  a_back = a[aindex:]
 
   b_front = b[0:bindex]
-  b_back = b[bindex]
+  b_back = b[bindex:]
 
   return a_front + b_front + a_back + b_back
 
