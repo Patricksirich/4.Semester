@@ -1,0 +1,39 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit">
+  
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Login
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+    <div style="text-align:center">
+    <div>
+    <mat-form-field>
+      <input matInput type="text" formControlName="username" placeholder="Username">
+    </mat-form-field>
+
+    <div *ngIf="loginForm.controls.username.errors?.required && loginForm.controls.username.touched">
+      You must fill out the username
+    </div>
+    <div *ngIf="loginForm.controls.username.errors?.minlength && loginForm.controls.username.touched">
+       Username must be at least 3 characters
+  </div>
+
+  <div>
+  
+    <mat-form-field>
+        <input matInput type="password" formControlName="password" placeholder="Password">
+    </mat-form-field>
+
+    <div *ngIf="!loginForm.controls.password.valid && loginForm.controls.password.dirty">
+      You must fill out the password
+    </div>
+  </div>
+  <button mat-flat-button routerLink="Login" color="primary" type="submit" [disabled]="!loginForm.valid">Login</button>
+  <!-- Don't use disabled unless there is user feedback-->
+  </div>
+</div>
+</mat-expansion-panel>
+</mat-accordion>
+</form>
