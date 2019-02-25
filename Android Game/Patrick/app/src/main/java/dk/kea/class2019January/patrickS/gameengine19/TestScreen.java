@@ -3,6 +3,8 @@ package dk.kea.class2019January.patrickS.gameengine19;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 
+import java.util.Random;
+
 public class TestScreen extends Screen
 {
     int x = 0;
@@ -24,8 +26,9 @@ public class TestScreen extends Screen
             x = gameEngine.getTouchX(0);
             y = gameEngine.getTouchY(0);
         }
-        gameEngine.clearFrameBuffer(Color.BLUE);
-        gameEngine.drawBitmap(bitmap, x, y);
+        gameEngine.clearFrameBuffer(Color.GREEN);
+        gameEngine.drawBitmap(bitmap, 0, 0);
+        gameEngine.drawBitmap(bitmap, 200, 300,  0, 0, 64, 64);
     }
 
     @Override

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,7 +9,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder) { 
+  //DI - Dependency Injection
+  constructor(private fb: FormBuilder, private router: Router) { 
 
   }
 
@@ -26,6 +28,8 @@ export class LoginComponent implements OnInit {
 
     if(this.loginForm.valid){
       //Send the data to the server to verify the user login
+      //navigate after succesful login
+      this.router.navigate(['display-quiz']);
     }
     else{
       //Show error msg or something else...
