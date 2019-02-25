@@ -1,41 +1,143 @@
 package dk.kea.class2019January.patrickS.gameengine19;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Rect;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
 import android.view.Window;
 import android.view.WindowManager;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class GameEngine extends AppCompatActivity implements Runnable
+
+public abstract class GameEngine extends AppCompatActivity implements Runnable, TouchHandler
 {
     private Thread mainLoopThread;
     private State state = State.Paused;
     private List<State> stateChanges = new ArrayList<>();
+    private SurfaceView surfaceView;
+    private SurfaceHolder surfaceHolder;
+    private Canvas canvas = null;
+    private Screen screen= null;
+    private Bitmap offscreenSurface; //Logical screen/non-physical screen
+
+
 
     public abstract Screen createStartScreen();
+    public void setScreen(Screen screen){}
 
-    public void setScreen(Screen screen)
+    @Override
+    protected void onCreate(Bundle savedInstanceState)
     {
+        super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        setContentView(R.layout.activity_main);
+        this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN |
+                WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
+        surfaceView = new SurfaceView(this);
+        setContentView(surfaceView);
+        surfaceHolder = surfaceView.getHolder();
+//        Log.d("GameEngine class", "Finish onCreate");
+        screen = createStartScreen();
+
+        if (surfaceView.getWidth() > surfaceView.getHeight())
+        {
+            setOffscreenSurface(480, 320);
+        }
+        else
+        {
+            setOffscreenSurface(320, 480);
+        }
+
+    }
+
+    public void setOffscreenSurface(int width, int height)
+    {
+        if (offscreenSurface != null) offscreenSurface.recycle();
+        offscreenSurface = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565);
+        canvas= new Canvas(offscreenSurface);
+    }
+    public int getFrameBufferWidth()
+    {
+        return offscreenSurface.getWidth();
+    }
+
+    public int getFrameBufferHeight()
+    {
+        return getFrameBufferHeight();
     }
 
     public Bitmap loadBitmap(String fileName)
     {
-        return null;
+        InputStream in = null;
+        Bitmap bitmap = null;
+        try
+        {
+            in = getAssets().open(fileName);
+            bitmap = BitmapFactory.decodeStream(in);
+            if (bitmap == null)
+            {
+                throw new RuntimeException("Could not load bitmap from file " + fileName + " Crap!");
+            }
+            return bitmap;
+        }
+        catch (IOException ioe)
+        {
+            throw new RuntimeException("Could not .. same" + fileName + " from assets");
+        }
+        finally
+        {
+            if (in != null)
+            {
+                try
+                {
+                    in.close();
+                }
+                catch (IOException ioe)
+                {
+                    throw new RuntimeException("Could not close the file..");
+                }
+            }
+        }
     }
 
     public void clearFrameBuffer(int color)
     {
+        canvas.drawColor(color);
 
     }
 
     public void drawBitmap(Bitmap bitmap, int x, int y)
     {
+        if (canvas != null) canvas.drawBitmap(bitmap, x, y, null);
+    }
 
+    Rect src = new Rect();
+    Rect dst = new Rect();
+    public void drawBitmap(Bitmap bitmap, int x, int y, int srcX, int srcY, int srcWidth, int srcHeight)
+    {
+        if (canvas == null) return;
+
+        src.left = srcX;
+        src.top = srcY;
+        src.right = srcWidth;
+        src.bottom = srcHeight;
+
+        dst.left = x;
+        dst.top = y;
+        dst.right = x + srcWidth;
+        dst.bottom = y + srcHeight;
+
+        canvas.drawBitmap(bitmap, src, dst, null);
     }
 
     public boolean isTouchDown(int pointer)
@@ -53,23 +155,13 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable
         return 0;
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
-        super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN |
-                WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-
-    }
-
     public void run()
     {
         while (true)
         {
             synchronized (stateChanges)
             {
-                for (int i = 0; i < stateChanges.size(); i++)
+                for (int i = 0; i < stateChanges.size() ; i++)
                 {
                     state = stateChanges.get(i);
                     if (state == State.Disposed)
@@ -85,16 +177,53 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable
                     if (state == State.Resumed)
                     {
                         Log.d("GameEngine", "state changed to Resumed");
+                        state = State.Running;
                     }
-                }
+                }// end of for.loop
                 stateChanges.clear();
-            }
+
+                if (state == State.Running)
+                {
+                    Log.d("GameEngine", "State is running");
+                    if (!surfaceHolder.getSurface().isValid())
+                    {
+                        continue;
+                    }
+                    Log.d("GameEngine", "Ok, we are trying to get a canvas object");
+                    Canvas canvas = surfaceHolder.lockCanvas();
+                    // all the drawing code should happen here
+//                    canvas.drawColor(Color.MAGENTA);
+                    if (screen != null) screen.update(0);
+                    src.left = 0;
+                    src.top = 0;
+                    src.right = offscreenSurface.getWidth(); // or maybe w. "-1"
+                    src.bottom = offscreenSurface.getHeight();
+                    dst.left = 0;
+                    dst.top = 0;
+                    dst.right = surfaceView.getWidth();
+                    dst.bottom = surfaceView.getHeight();
+                    canvas.drawBitmap(offscreenSurface, src, dst, null);
+
+                    surfaceHolder.unlockCanvasAndPost(canvas);
+                }
+            } // end of while.loop
         }
     }
 
     public void onPause()
     {
         super.onPause();
+        synchronized (stateChanges)
+        {
+            if (isFinishing())
+            {
+                stateChanges.add(stateChanges.size(), State.Disposed);
+            }
+            else
+            {
+                stateChanges.add(stateChanges.size(), State.Paused);
+            }
+        }
     }
 
     public void onResume()
@@ -104,7 +233,7 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable
         mainLoopThread.start();
         synchronized (stateChanges)
         {
-            
+            stateChanges.add(stateChanges.size(), State.Resumed);
         }
     }
 }
