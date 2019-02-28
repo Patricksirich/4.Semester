@@ -18,6 +18,9 @@ import { DisplayQuizComponent } from './display-quiz/display-quiz.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HomeComponent } from './home/home.component';
+import { IndexComponent } from './index/index.component';
+import { PortalComponent } from './portal/portal.component';
 
 
 
@@ -33,7 +36,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     DisplayQuizComponent,
     AboutComponent,
     ContactComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    HomeComponent,
+    IndexComponent,
+    PortalComponent
   ],
   imports: [
     BrowserModule,
