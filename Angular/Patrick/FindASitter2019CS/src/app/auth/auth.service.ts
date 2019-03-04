@@ -13,6 +13,8 @@ export class AuthService {
   redirectUrl: string;
 
   login(): Observable<boolean> {
+        // Here we want to call a webservice to log in.
+
     return of(true).pipe(
       delay(1000),
       tap(val => {

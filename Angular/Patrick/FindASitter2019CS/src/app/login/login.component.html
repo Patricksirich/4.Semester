@@ -1,5 +1,5 @@
 <mat-card id = card>
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit">
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
   <div>
 
   <mat-form-field class="field-width">
@@ -23,7 +23,7 @@
 </mat-form-field>
 </div>
 
-<button type="submit" style="margin-left:42%" mat-stroked-button  [disabled]="!loginForm.valid"  routerLink='/portal'>Login</button>
+<button type="submit" style="margin-left:42%" mat-stroked-button  [disabled]="!loginForm.valid">Login</button>
 <!-- Don't use disabled unless there is user feedback-->
 </form>
 </mat-card>

@@ -8,6 +8,7 @@ import android.graphics.Rect;
 import android.support.constraint.solver.widgets.Rectangle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.Touch;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -29,7 +30,10 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable
     private Canvas canvas = null;
     private Screen screen = null;
     private Bitmap offscreenSurface;
-
+    private MultiTouchHandler touchHandler;
+    private TouchEventPool touchEventPool = new TouchEventPool();
+    private List<TouchEvent> touchEventBuffer = new ArrayList<>();
+    private List<TouchEvent> touchEventCopied = new ArrayList<>();
     public abstract Screen createStartScreen();
 
     public void setScreen(Screen screen)
@@ -47,7 +51,7 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable
         surfaceView = new SurfaceView(this);
         setContentView(surfaceView);
         surfaceHolder = surfaceView.getHolder();
-        //Log.d("GameEngine class", "We just finished the onCreate() methos");
+        //Log.d("GameEngine class", "We just finished the onCreate() method");
         screen = createStartScreen();
         if (surfaceView.getWidth() > surfaceView.getHeight())
         {
@@ -57,6 +61,7 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable
         {
             setOffscreenSurface(320, 480);
         }
+        touchHandler = new MultiTouchHandler(surfaceView);
 
     }
 
