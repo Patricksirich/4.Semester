@@ -12,8 +12,8 @@ public class MultiTouchHandler implements TouchHandler, View.OnTouchListener {
     private int[] touchX = new int[19];
     private int[] touchY = new int[19];
 
-    private List<TouchEvent> toucheventbuffer; // buffer with touch events
-    private TouchEventPool touchEventPool;
+//    private List<TouchEvent> toucheventbuffer; // buffer with touch events
+//    private TouchEventPool touchEventPool;
 
     @Override
     public boolean isTouchDown(int pointer) {
