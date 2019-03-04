@@ -20,14 +20,19 @@ public class TestScreen extends Screen
     @Override
     public void update(float deltaTime)
     {
-        if (gameEngine.isTouchDown(0))
-        {
-            x = gameEngine.getTouchX(0);
-            y = gameEngine.getTouchY(0);
-        }
+//        if (gameEngine.isTouchDown(0))
+//        {
+//            x = gameEngine.getTouchX(0);
+//            y = gameEngine.getTouchY(0);
+//        }
+
+        float x = gameEngine.getAccelerometer()[0];
+        float y = gameEngine.getAccelerometer()[1];
+        x = gameEngine.getFrameBufferWidth()/2 + (x * gameEngine.getFrameBufferWidth()/2);
+        y = gameEngine.getFrameBufferHeight()/2 + (y * gameEngine.getFrameBufferHeight()/2);
 
         gameEngine.clearFrameBuffer(Color.BLUE);
-        gameEngine.drawBitmap(bitmap, 0, 0);
+        gameEngine.drawBitmap(bitmap, (int) x-64, (int) y-64);
         gameEngine.drawBitmap(bitmap, 200, 300, 0, 0, 64, 64);
     }
 

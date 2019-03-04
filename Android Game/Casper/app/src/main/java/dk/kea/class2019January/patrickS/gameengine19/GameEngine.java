@@ -1,11 +1,17 @@
 package dk.kea.class2019January.patrickS.gameengine19;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Rect;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.Touch;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -18,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public abstract class GameEngine extends AppCompatActivity implements Runnable, TouchHandler
+public abstract class GameEngine extends AppCompatActivity implements Runnable, TouchHandler, SensorEventListener
 {
     private Thread mainLoopThread;
     private State state = State.Paused;
@@ -28,8 +34,11 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable, 
     private Canvas canvas = null;
     private Screen screen= null;
     private Bitmap offscreenSurface; //Logical screen/non-physical screen
-
-
+    private MultiTouchHandler touchHandler;
+    private TouchEventPool touchEventPool = new TouchEventPool();
+    private List<TouchEvent> touchEventBuffer = new ArrayList<>();
+    private List<Touch> touchEventCopied = new ArrayList<>();
+    private float[] accelerometer = new float[2];   //to hold the g-forces in three dimensions, x y and z
 
     public abstract Screen createStartScreen();
     public void setScreen(Screen screen){}
@@ -57,7 +66,13 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable, 
         {
             setOffscreenSurface(320, 480);
         }
-
+        touchHandler = new MultiTouchHandler(surfaceView, touchEventBuffer, touchEventPool);
+        SensorManager manager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        if (manager.getSensorList(Sensor.TYPE_ACCELEROMETER).size()!=0)
+        {
+            Sensor accelerometer = manager.getSensorList(Sensor.TYPE_ACCELEROMETER).get(0);
+            manager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_GAME);
+        }
     }
 
     public void setOffscreenSurface(int width, int height)
@@ -73,7 +88,7 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable, 
 
     public int getFrameBufferHeight()
     {
-        return getFrameBufferHeight();
+        return offscreenSurface.getHeight();
     }
 
     public Bitmap loadBitmap(String fileName)
@@ -142,17 +157,34 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable, 
 
     public boolean isTouchDown(int pointer)
     {
-        return false;
+        return touchHandler.isTouchDown(pointer);
     }
 
     public int getTouchX(int pointer)
     {
-        return 0;
+        int scaledX = (int) (((float) touchHandler.getTouchX(pointer)* (float) offscreenSurface.getWidth())/ (float) surfaceView.getWidth());
+        return scaledX;
     }
 
     public int getTouchY(int pointer)
     {
-        return 0;
+        int scaledY = (int) (((float) touchHandler.getTouchY(pointer)* (float) offscreenSurface.getHeight())/ (float) surfaceView.getHeight());
+        return scaledY;
+    }
+
+    public float[] getAccelerometer()
+    {
+        return accelerometer;
+    }
+
+    public void onAccuracyChanged(Sensor sensor, int accuracy)
+    {
+
+    }
+
+    public void onSensorChanged(SensorEvent event)
+    {
+        System.arraycopy(event.values, 0, accelerometer, 0, 3);
     }
 
     public void run()
@@ -223,6 +255,10 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable, 
             {
                 stateChanges.add(stateChanges.size(), State.Paused);
             }
+        }
+        if (isFinishing())
+        {
+            ((SensorManager) getSystemService(Context.SENSOR_SERVICE)).unregisterListener(this);
         }
     }
 
