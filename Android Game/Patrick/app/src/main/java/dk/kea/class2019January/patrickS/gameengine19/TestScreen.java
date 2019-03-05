@@ -2,6 +2,7 @@ package dk.kea.class2019January.patrickS.gameengine19;
 
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.util.Log;
 
 import java.util.Random;
 
@@ -21,13 +22,17 @@ public class TestScreen extends Screen
     @Override
     public void update(float deltaTime)
     {
-        if (gameEngine.isTouchDown(0))
+        gameEngine.clearFrameBuffer(Color.GREEN);
+        /*if (gameEngine.isTouchDown(0))
         {
             x = gameEngine.getTouchX(0);
             y = gameEngine.getTouchY(0);
-        }
-        gameEngine.clearFrameBuffer(Color.GREEN);
-        gameEngine.drawBitmap(bitmap, 0, 0);
+        }*/
+        float x = gameEngine.getAccelerometer()[0];
+        float y = -1 * gameEngine.getAccelerometer()[1];
+        x = gameEngine.getFramebufferWidth()/2 + ((x/10) * gameEngine.getFramebufferWidth()/2);
+        y = gameEngine.getFrameBufferHeigth()/2 + ((y/10) * gameEngine.getFrameBufferHeigth()/2);
+        gameEngine.drawBitmap(bitmap, (int)x-64, (int)y-64);
         gameEngine.drawBitmap(bitmap, 200, 300,  0, 0, 64, 64);
     }
 
