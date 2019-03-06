@@ -17,12 +17,12 @@ for line in lines:
         currentUrls.append(line[13:-1])
 
 i = 0
-"""
+
 while i < len(currentUrls):
 
     subprocess.run(['git', 'clone', currentUrls[i]])
     i += 1
-"""
+
 
 readmeFiles = []
 for readme in glob.glob('C:/Users/Callo/OneDrive/Skrivebord/GitHub/4.Semester/Python/Casper/Mandatory-1/*/*.md'):
