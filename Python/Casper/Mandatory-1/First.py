@@ -22,7 +22,7 @@ while i < len(currentUrls):
 
     subprocess.run(['git', 'clone', currentUrls[i]])
     i += 1
-"""   
+"""
 
 readmeFiles = []
 for readme in glob.glob('C:/Users/Callo/OneDrive/Skrivebord/GitHub/4.Semester/Python/Casper/Mandatory-1/*/*.md'):
@@ -30,13 +30,18 @@ for readme in glob.glob('C:/Users/Callo/OneDrive/Skrivebord/GitHub/4.Semester/Py
         readmeContend = open(readme).read()
         readmeFiles.append(readmeContend)
 
-requiredList = [i.split('##') for i in readmeFiles]
-
-required = 'Required reading'
-
-if required in requiredList:
-        requiredList.append(required)
-        
-#print(requiredList)
 
 
+
+readmeString = ''.join(readmeFiles)
+
+
+##print required reading ud. Find ud af at lave en delimiter
+points = readmeString.split(' ')
+requiredFiles = []
+for point in points:
+        if 'Required reading' in point:
+                requiredFiles.append(point)
+
+requiredString = ''.join(requiredFiles)
+print(requiredString)
