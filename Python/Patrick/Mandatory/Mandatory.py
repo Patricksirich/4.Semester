@@ -47,7 +47,7 @@ for readmeFile in glob.glob('C:/Users/patri/Desktop/4.Semester/Python/Patrick/Ma
         #print('REQUIRED: ' + str(x) + str(readmeFile) + ' REQUIRED: ' + str(required))                  #Print for at se hvilken readme den arbejder i + indexet for ## Required reading
         #print('SUPPLEMENTARY: ' + str(x) + str(readmeFile) + ' SUPPLEMENTARY: ' + str(supplementary))   #Print for at se hvilken readme den arbejder i + indexet for ### Supplementary reading
         x+= 1
-        requiredReading = content[required+18:supplementary]
+        requiredReading = content[required+18:supplementary-1]
         readme.append(requiredReading) #<-----
         
 os.chdir('..')

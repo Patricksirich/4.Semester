@@ -3,7 +3,6 @@ G
 * [mandatory assignment: required reading exercise](https://github.com/python-elective-2-spring-2019/lesson-07-required-reading-exercise/exercises/readme.md)
 * [the markdown syntax](other_materials/markdown.md)
 
-
 G
 * [3. an informal introduction to python](https://docs.python.org/3.7/tutorial/introduction.html#an-informal-introduction-to-python)
 * [3.1. using python as a calculator](https://docs.python.org/3.7/tutorial/introduction.html#using-python-as-a-calculator)
@@ -13,7 +12,6 @@ G
 * [string methods](https://docs.python.org/3.7/library/stdtypes.html#string-methods)
 * [python string formatting best practices](https://realpython.com/python-string-formatting/)
 * [4.1. if statements](https://docs.python.org/3/tutorial/controlflow.html#if-statements)
-
 
 
 G
@@ -26,7 +24,6 @@ G
 * [5.1. more on lists](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists)
 * [5.3. tuples and sequences](https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences)
 * [sorting how to](https://docs.python.org/3/howto/sorting.html#sorting-how-to)
-
 
 
 
@@ -45,7 +42,6 @@ G
 * [file object](https://docs.python.org/3/glossary.html#term-file-object)
 
 
-
 G
 * [howto fetch internet resources using the urllib package](https://docs.python.org/3/howto/urllib2.html)
 * [subprocess — subprocess management](https://docs.python.org/3.7/library/subprocess.html#module-subprocess)
@@ -57,10 +53,8 @@ G
 * [8.5. the with statement](https://docs.python.org/3/reference/compound_stmts.html#the-with-statement)
 * [os — miscellaneous operating system interfaces](https://docs.python.org/3/library/os.html)
 
-
 G
 * [learning objectives](/other_materials/learning_objectives.md)
 * [installations](/other_materials/installation.md)
 * [unix commands](/other_materials/unix_commands.md)
 * [exercise: unix commands](/exercises/unix_commands.md)
-
