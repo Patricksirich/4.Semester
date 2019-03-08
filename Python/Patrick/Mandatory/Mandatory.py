@@ -55,7 +55,7 @@ if not os.path.exists('curriculum'):
         os.mkdir('curriculum')
 os.chdir('curriculum')
 output_list = []
-for long_string in readmefull:
+for long_string in readme:
         for one_line in long_string.split("/n"):
                         output_list.append(one_line.capitalize())
 
