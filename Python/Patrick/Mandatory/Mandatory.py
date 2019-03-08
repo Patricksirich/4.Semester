@@ -51,7 +51,8 @@ for readmeFile in glob.glob('C:/Users/patri/Desktop/4.Semester/Python/Patrick/Ma
         readme.append(requiredReading) #<-----
         
 os.chdir('..')
-os.mkdir('curriculum')
+if not os.path.exists('curriculum'):
+        os.mkdir('curriculum')
 os.chdir('curriculum')
 output_list = []
 for long_string in readmefull:
@@ -60,7 +61,8 @@ for long_string in readmefull:
 
 file = open('Required_reading', 'w')
 for one_line in sorted(output_list):
-        file.write(one_line)
+        large_string = "\n".join(sorted(output_list))
+file.write(large_string)
 
 
 #print(readmefull)
