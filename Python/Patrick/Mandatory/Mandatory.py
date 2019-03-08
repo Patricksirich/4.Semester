@@ -50,7 +50,20 @@ for readmeFile in glob.glob('C:/Users/patri/Desktop/4.Semester/Python/Patrick/Ma
         requiredReading = content[required+18:supplementary]
         readme.append(requiredReading) #<-----
         
+os.chdir('..')
+os.mkdir('curriculum')
+os.chdir('curriculum')
+output_list = []
+for long_string in readmefull:
+        for one_line in long_string.split("/n"):
+                        output_list.append(one_line.capitalize())
+
+file = open('Required_reading', 'w')
+for one_line in sorted(output_list):
+        file.write(one_line)
+
+subprocess()
+
 
 #print(readmefull)
-
-print(readme)  
+#print(readme)
