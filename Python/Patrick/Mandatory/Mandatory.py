@@ -59,6 +59,9 @@ for long_string in readme:
         for one_line in long_string.split("/n"):
                 one_line = one_line.strip()
                 
+                if one_line in output_list:
+                        print(one_line + '     :Exists!')
+                        continue
                 if len(one_line) < 5:
                         continue
                 if one_line[0].islower():
@@ -66,13 +69,13 @@ for long_string in readme:
 
                 one_line.replace('  ', ' ').replace('   ', ' ').replace('    ', ' ').replace('     ', ' ')
 
+                
                 output_list.append(one_line)
 
 file = open('Required_reading', 'w')
 large_string = "\n".join(sorted(output_list))
 file.write(large_string)
 file.close()
-
 
 #print(readmefull)
 #print(readme)
