@@ -8,7 +8,7 @@ from urllib.request import urlopen
 from urllib.error import HTTPError
 
 
-        # https://python-elective-2-spring-2019.github.io/
+#Opgave 1 og 2
 url = 'https://api.github.com/orgs/python-elective-2-spring-2019/repos?per_page=100'
 response = urlopen(url)
 parse = response.read().decode('utf-8')
@@ -29,18 +29,28 @@ for x in row:
         array.append(x)
         subprocess.run(['git', 'clone', x])
 
+
 readme = []
 readmefull = []
+x = 1   #Testing purpose
 for readmeFile in glob.glob('C:/Users/patri/Desktop/4.Semester/Python/Patrick/Mandatory/clones/*/readme.md'):
         content = open(readmeFile).read()
 
-        required = content.find('## Required reading')
-        supplementary = content.find('### Supplementary reading')
+        readmefull.append(content) #Opgave #3
 
+        required = content.find('## Required reading') #-----> OPGAVE #4
+        supplementary = content.find('### Supplementary reading')       
+
+        if required == -1:
+                continue
+
+        #print('REQUIRED: ' + str(x) + str(readmeFile) + ' REQUIRED: ' + str(required))                  #Print for at se hvilken readme den arbejder i + indexet for ## Required reading
+        #print('SUPPLEMENTARY: ' + str(x) + str(readmeFile) + ' SUPPLEMENTARY: ' + str(supplementary))   #Print for at se hvilken readme den arbejder i + indexet for ### Supplementary reading
+        x+= 1
         requiredReading = content[required+18:supplementary]
-        readme.append(content)
-        readmefull.append(requiredReading)
+        readme.append(requiredReading) #<-----
+        
 
-print(readmefull)
+#print(readmefull)
 
-#print(readme)  
+print(readme)  
