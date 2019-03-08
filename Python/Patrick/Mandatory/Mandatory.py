@@ -57,12 +57,21 @@ os.chdir('curriculum')
 output_list = []
 for long_string in readme:
         for one_line in long_string.split("/n"):
-                        output_list.append(one_line.capitalize())
+                one_line = one_line.strip()
+                
+                if len(one_line) < 5:
+                        continue
+                if one_line[0].islower():
+                        one_line = one_line[0].upper() + one_line[1:]
+
+                one_line.replace('  ', ' ').replace('   ', ' ').replace('    ', ' ').replace('     ', ' ')
+
+                output_list.append(one_line)
 
 file = open('Required_reading', 'w')
-for one_line in sorted(output_list):
-        large_string = "\n".join(sorted(output_list))
+large_string = "\n".join(sorted(output_list))
 file.write(large_string)
+file.close()
 
 
 #print(readmefull)
