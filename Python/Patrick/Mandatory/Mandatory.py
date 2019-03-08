@@ -60,9 +60,7 @@ for long_string in readmefull:
 
 file = open('Required_reading', 'w')
 for one_line in sorted(output_list):
-        file.write(one_line)
-
-subprocess()
+        file.write(str(output_list))
 
 
 #print(readmefull)
