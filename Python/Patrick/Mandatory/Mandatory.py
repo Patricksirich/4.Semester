@@ -46,12 +46,14 @@ for readmeFile in glob.glob('C:/Users/patri/Desktop/4.Semester/Python/Patrick/Ma
                                                                #is 19 characters
         readme.append(requiredReading) #Add the result to the list that we have created 
         #<-----
-        
+
+#Task 5
 os.chdir('..') #Change directory to 1 back
 if not os.path.exists('curriculum'): #Checks if the new directory already exists
         os.mkdir('curriculum') #Creates the new directory
 os.chdir('curriculum') #Change directory to what we just created
 
+#Task 5
 output_list = []
 for long_string in readme:
         for one_line in long_string.split("/n"): #Splits the long_string into single-lines seperated by new line
@@ -76,3 +78,5 @@ file = open('Required_reading', 'w') #Create new file
 large_string = "\n".join(sorted(output_list)) #Sorts the list
 file.write(large_string) #Writes to the file
 file.close() #Close the file for good practice
+
+#Task 6
