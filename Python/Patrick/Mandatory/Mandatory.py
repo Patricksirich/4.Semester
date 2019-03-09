@@ -1,18 +1,14 @@
 import sys
 import os
 import subprocess
-import re
 import glob
 import urllib.request
-from urllib.request import urlopen
-from urllib.error import HTTPError
-import shutil
 
 
 #task 1 && 2
 url = 'https://api.github.com/orgs/python-elective-2-spring-2019/repos?per_page=100' #URL for the API that we want to call
 #url = input('Please enter the desired API: ')  #Dynamic URL selection
-response = urlopen(url) #Calls the API
+response = urllib.request.urlopen(url) #Calls the API
 parse = response.read().decode('utf-8') #Make it readable
 row = parse.split(',') #Splits it after every comma to create individual lines
 
