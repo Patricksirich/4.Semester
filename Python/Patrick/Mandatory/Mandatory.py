@@ -22,7 +22,7 @@ if not os.path.exists('clones'): #Check if directory exists
         os.mkdir('clones') #Creates new directory
 os.chdir('clones') #Changes directory to new
 
-
+#Method to pull repo instead of clone if it already exists in the destination.
 for folder_name in row:
         if 'name' in folder_name:
                 folder_name = folder_name[8:-1]
