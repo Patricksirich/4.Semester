@@ -88,5 +88,10 @@ file = open('Required_reading', 'w') #Create new file
 large_string = "\n".join(sorted(output_list)) #Sorts the list
 file.write(large_string) #Writes to the file
 file.close() #Close the file for good practice
+os.chdir('..')
+subprocess.run(['git', 'commit', '-am', '"Push from the code!"'])
+subprocess.run(['git', 'push', 'origin', 'master'])
+
+print('JOBS DONE!!!!')
 
 #Task 6
