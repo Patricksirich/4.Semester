@@ -22,33 +22,43 @@ if not os.path.exists('clones'): #Check if directory exists
         os.mkdir('clones') #Creates new directory
 os.chdir('clones') #Changes directory to new
 
-for x in row: #goes through all the lines
-    if 'clone_url' in x: #Find all lines that contains the string 'clone_url'
-        x = x[13:-1] #Remove the '"clone_url": ' and the final ", to ensure that only the URL is left
-        url_list.append(x) #Add the URL to the list
-        subprocess.run(['git', 'clone', x]) #Clone the repo in our newly created directory
+
+for folder_name in row:
+        if 'name' in folder_name:
+                folder_name = folder_name[8:-1]
+        if os.path.exists(folder_name):
+                os.chdir(folder_name)
+                subprocess.run(['git', 'pull', 'origin', 'master'])
+                os.chdir('..')
+                        
+if not os.path.exists(folder_name):
+        for clone_url in row: #goes through all the lines
+                if 'clone_url' in clone_url: #Find all lines that contains the string 'clone_url'
+                        clone_url = clone_url[13:-1] #Remove the '"clone_url": ' and the final ", to ensure that only the URL is left
+                        url_list.append(clone_url) #Add the URL to the list
+                        subprocess.run(['git', 'clone', clone_url]) #Clone the repo in our newly created directory
 
 
 readme = []
 readmefull = []
-for readmeFile in glob.glob('C:/Users/patri/Desktop/4.Semester/Python/Patrick/Mandatory/clones/*/readme.md'):
+for readmeFile in glob.glob('C:/Users/patri/Desktop/4.Semester/Python/Patrick/Mandatory/clones/*/readme.md'): #Searches for Readme.md files in every subfolder in the 'clones' folder
         content = open(readmeFile).read()
 
         readmefull.append(content) #Task #3
-                #-----> Task #4
+        #Task #4
         required = content.find('## Required reading') #Find the index of the string '## Required reading'
         supplementary = content.find('### Supplementary reading') #---||--- '### Supplementary reading'
 
         if required == -1: #If the README does not contain a '## Required reading' section it will skip that file. 
                 continue
 
-        requiredReading = content[required+19:supplementary] #Add the string to the list 19 spaces from the start index as '## Required reading ' 
-                                                               #is 19 characters
+        requiredReading = content[required+19:supplementary] #Add the string to the list 20 spaces from the start index as '## Required reading ' 
+                                                               #is 20 characters
         readme.append(requiredReading) #Add the result to the list that we have created 
-        #<-----
+        
 
 #Task 5
-os.chdir('..') #Change directory to 1 back
+os.chdir('..') #Change directory to one back
 if not os.path.exists('curriculum'): #Checks if the new directory already exists
         os.mkdir('curriculum') #Creates the new directory
 os.chdir('curriculum') #Change directory to what we just created
