@@ -63,22 +63,23 @@ os.chdir('curriculum') #Change directory to what we just created
 output_list = []
 for long_string in readme:
         for one_line in long_string.split("/n"): #Splits the long_string into single-lines seperated by new line
-                one_line = one_line.strip() #Removes all unnecessary whitespaces
-                
-                if one_line in output_list: #Checks if the line is a duplicate (does not work)
-                        print(one_line + '     :Exists!')
-                        continue
+                for single_line in one_line.split(")"):
+                        single_line = single_line.strip() #Removes all unnecessary whitespaces
+                        
+                        if single_line in output_list: #Checks if the line is a duplicate (does not work)
+                                print(single_line + '     :Exists!')
+                                continue
 
-                if len(one_line) < 5: #Skips empty lines
-                        continue
+                        if len(single_line) < 5: #Skips empty lines
+                                continue
 
-                if one_line[3].islower(): #changes lower-case to upper case (only checks the 3rd char of the string) and then adds the rest of the string
-                        one_line = one_line[3].upper() + one_line[4:]
+                        if single_line[3].islower(): #changes lower-case to upper case (only checks the 3rd char of the string) and then adds the rest of the string
+                                single_line = single_line[3].upper() + single_line[4:]
 
-                one_line.replace('  ', ' ').replace('   ', ' ').replace('    ', ' ').replace('     ', ' ') #Removes consecutive whitespaces (2, 3, 4 or 5)
-                print('line: ' + one_line)
-                
-                output_list.append(one_line)
+                        single_line.replace('  ', ' ').replace('   ', ' ').replace('    ', ' ').replace('     ', ' ') #Removes consecutive whitespaces (2, 3, 4 or 5)
+                        print('line: ' + single_line)
+                        
+                        output_list.append(single_line)
 
 file = open('Required_reading', 'w') #Create new file 
 large_string = "\n".join(sorted(output_list)) #Sorts the list
