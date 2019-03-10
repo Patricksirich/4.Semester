@@ -73,8 +73,8 @@ for long_string in readme:
                 if len(single_line) < 5: #Skips empty lines
                         continue
 
-                if single_line[2].islower(): #changes lower-case to upper case (only checks the 3rd char of the string) and then adds the rest of the string
-                        single_line = single_line[1] + single_line[2].upper() + single_line[3:]
+                if single_line[3].islower(): #changes lower-case to upper case (only checks the 3rd char of the string) and then adds the rest of the string
+                        single_line = single_line[1:2] + single_line[3].upper() + single_line[4:]
 
                 single_line.replace('  ', ' ').replace('   ', ' ').replace('    ', ' ').replace('     ', ' ') #Removes consecutive whitespaces (2, 3, 4 or 5)
                 print('line: ' + single_line)
