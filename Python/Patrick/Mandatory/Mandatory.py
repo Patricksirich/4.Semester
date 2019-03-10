@@ -63,7 +63,7 @@ os.chdir('curriculum') #Change directory to what we just created
 output_list = []
 for long_string in readme:                
         for single_line in long_string.split("*"): #Splits it into singlelines so we can check for duplicates
-                single_line = '*' + single_line[0:]
+                single_line = '*' + single_line[0:] # Add a '*' to the beginning of the string to make it a bulletpoint
                 single_line = single_line.strip() #Removes all unnecessary whitespaces
                 
                 if single_line in output_list: #Checks if the line is a duplicate (does not work)
