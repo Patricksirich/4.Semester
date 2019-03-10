@@ -62,7 +62,7 @@ os.chdir('curriculum') #Change directory to what we just created
 #Task 5
 output_list = []
 for long_string in readme:                
-        for single_line in long_string.split("*"):
+        for single_line in long_string.split("*"): #Splits it into singlelines so we can check for duplicates
                 single_line = single_line.strip() #Removes all unnecessary whitespaces
                 
                 if single_line in output_list: #Checks if the line is a duplicate (does not work)
@@ -80,7 +80,7 @@ for long_string in readme:
                 
                 output_list.append(single_line)
 
-file = open('Required_reading', 'w') #Create new file 
+file = open('Required_reading.md', 'w') #Create new file 
 large_string = "\n".join(sorted(output_list)) #Sorts the list
 file.write(large_string) #Writes to the file
 file.close() #Close the file for good practice
