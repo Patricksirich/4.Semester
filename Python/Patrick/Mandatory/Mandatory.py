@@ -63,6 +63,7 @@ os.chdir('curriculum') #Change directory to what we just created
 output_list = []
 for long_string in readme:                
         for single_line in long_string.split("*"): #Splits it into singlelines so we can check for duplicates
+                single_line = '*' + single_line[0:]
                 single_line = single_line.strip() #Removes all unnecessary whitespaces
                 
                 if single_line in output_list: #Checks if the line is a duplicate (does not work)
@@ -72,8 +73,8 @@ for long_string in readme:
                 if len(single_line) < 5: #Skips empty lines
                         continue
 
-                if single_line[1].islower(): #changes lower-case to upper case (only checks the 3rd char of the string) and then adds the rest of the string
-                        single_line = '* ' + single_line[0] + single_line[1].upper() + single_line[2:]
+                if single_line[2].islower(): #changes lower-case to upper case (only checks the 3rd char of the string) and then adds the rest of the string
+                        single_line = single_line[1] + single_line[2].upper() + single_line[3:]
 
                 single_line.replace('  ', ' ').replace('   ', ' ').replace('    ', ' ').replace('     ', ' ') #Removes consecutive whitespaces (2, 3, 4 or 5)
                 print('line: ' + single_line)
