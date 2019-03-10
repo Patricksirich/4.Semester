@@ -63,7 +63,8 @@ os.chdir('curriculum') #Change directory to what we just created
 output_list = []
 for long_string in readme:
         for one_line in long_string.split("/n"): #Splits the long_string into single-lines seperated by new line
-                for single_line in one_line.split(")"):
+                
+                for single_line in long_string.split("*"):
                         single_line = single_line.strip() #Removes all unnecessary whitespaces
                         
                         if single_line in output_list: #Checks if the line is a duplicate (does not work)
