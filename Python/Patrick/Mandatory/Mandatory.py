@@ -61,6 +61,7 @@ os.chdir('curriculum') #Change directory to what we just created
 
 #Task 5
 output_list = []
+output_list.append("## Required reading:")
 for long_string in readme:                
         for single_line in long_string.split("*"): #Splits it into singlelines so we can check for duplicates
                 single_line = '*' + single_line[0:] # Add a '*' to the beginning of the string to make it a bulletpoint
@@ -74,7 +75,7 @@ for long_string in readme:
                         continue
 
                 if single_line[3].islower(): #changes lower-case to upper case (only checks the 3rd char of the string) and then adds the rest of the string
-                        single_line = single_line[0:2] + single_line[3].upper() + single_line[4:]
+                        single_line = single_line[0:3] + single_line[3].upper() + single_line[4:]
 
                 single_line.replace('  ', ' ').replace('   ', ' ').replace('    ', ' ').replace('     ', ' ') #Removes consecutive whitespaces (2, 3, 4 or 5)
                 print('line: ' + single_line)
