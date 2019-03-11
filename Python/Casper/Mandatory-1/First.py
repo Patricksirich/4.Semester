@@ -66,8 +66,8 @@ output_list = []
 output_list.append("## Required reading:")
 for long_string in readmeFiles:                
         for single_line in long_string.split("*"):
-                single_line = '*' + single_line[0:].strip()
-                #single_line = single_line.strip()
+                single_line = '*' + single_line[0:]
+                single_line = single_line.strip()
                 
                 if single_line in output_list:
                         print(single_line + '     :Exists!')
@@ -89,8 +89,6 @@ file.write(large_string)
 file.close()
 
 os.chdir('..')
-comment = input('Comment your push, or write quit to exit the program: ')
-if comment == 'quit':
-        quit()
+comment = input('Comment your push: ')
 subprocess.run(['git', 'commit', '-am', comment])
 subprocess.run(['git', 'push', 'origin', 'master'])
