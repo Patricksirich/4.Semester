@@ -89,6 +89,13 @@ file.write(large_string)
 file.close()
 
 os.chdir('..')
-comment = input('Comment your push: ')
-subprocess.run(['git', 'commit', '-am', comment])
-subprocess.run(['git', 'push', 'origin', 'master'])
+pushChoice = input('\nWould you like to push to git? write "Y" to push: ')
+
+if pushChoice == 'Y':
+        comment = input('\nComment your push: ')
+        subprocess.run(['git', 'commit', '-am', comment])
+        subprocess.run(['git', 'push', 'origin', 'master'])
+else:
+        pass
+
+print('\nThank you for downloading or updating the required reading curriculum. See you again next time!')
