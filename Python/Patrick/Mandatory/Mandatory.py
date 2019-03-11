@@ -78,7 +78,6 @@ for long_string in readme:
                         single_line = single_line[0:3] + single_line[3].upper() + single_line[4:]
 
                 single_line.replace('  ', ' ').replace('   ', ' ').replace('    ', ' ').replace('     ', ' ') #Removes consecutive whitespaces (2, 3, 4 or 5)
-                print('line: ' + single_line)
                 
                 output_list.append(single_line)
 
