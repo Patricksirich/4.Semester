@@ -17,15 +17,11 @@ lines = html.split(',')
 #Initializing an empty list to hold the URL's we want to find
 currentUrls = []
 
-#statement to put clone URLs in list
-for line in lines:
-    if 'clone_url' in line:
-        currentUrls.append(line[13:-1])
-
 if not os.path.exists('clones'):
         os.mkdir('clones')
 os.chdir('clones')
-
+"""
+#This method pulls the repo instead of cloning it, if it exists the folder is on the specified path
 for folder_name in lines:
         if 'name' in folder_name:
                 folder_name = folder_name[8:-1]
@@ -33,28 +29,42 @@ for folder_name in lines:
                 os.chdir(folder_name)
                 subprocess.run(['git', 'pull', 'origin', 'master'])
                 os.chdir('..')
-        """else:
-                i = 0
-                while i < len(currentUrls):
-                        subprocess.run(['git', 'clone', currentUrls[i]])
-                        i += 1"""
 
+#if the path does not exist, clone the repository
+if not os.path.exists(folder_name):
+        for clone_url in lines:
+                if 'clone_url' in clone_url:
+                        currentUrls.append(clone_url[13:-1]) #slice the line, so that it only contains the URL we need.
+                        subprocess.run(['git', 'clone', currentUrls])
+"""
 
+#Time to find all the .md files, put them in a list, and find the 'Required reading'
 readmeFiles = []
-for readme in glob.glob('C:/Users/Callo/OneDrive/Skrivebord/GitHub/4.Semester/Python/Casper/Mandatory-1/*/*.md'):
+readmeFull = []
+for readme in glob.glob('C:/Users/Callo/OneDrive/Skrivebord/GitHub/4.Semester/Python/Casper/Mandatory-1/clones/*/readme.md'):
         
-        readmeContend = open(readme).read()
-        readmeFiles.append(readmeContend)
+        readmeContend = open(readme).read()             #open every readme file
+        readmeFiles.append(readmeContend)               #put every readme file in the readmeFiles list
+        start = readmeContend.find('## Required reading')     #the beginning of the text we want from the readme file
+        end = readmeContend.find('### Supplementary reading') #the end of the text we want from the readme file
 
-readmeString = ''.join(readmeFiles)
-print(readmeString)
+        #if a readme file does not contain a required reading section, the method will skip the file
+        if start == -1:
+                continue
+        
+        requiredReading = readmeContend[start+19:end]
 
-requiredList = []
-required = readme.find('##Required reading')
-supplementary = readme.find('###Supplementary reading')
+        readmeFull.append(requiredReading)
 
-requiredReading = readmeContend[required+18:supplementary]
-requiredList.append(requiredReading)
+temp = ''.join(readmeFull)
+print(temp)
 
-temp = ''.join(requiredList)
+
+
+
+
+
+
+
+
 
