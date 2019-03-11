@@ -1,6 +1,7 @@
 package dk.kea.class2019January.patrickS.gameengine19;
 
 import android.content.Context;
+import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -10,6 +11,8 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.support.constraint.solver.widgets.Rectangle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -39,7 +42,8 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable, 
     private TouchEventPool touchEventPool = new TouchEventPool();
     private List<TouchEvent> touchEventBuffer = new ArrayList<>();
     private List<TouchEvent> touchEventCopied = new ArrayList<>();
-    private float[] accelerometer = new float[3]; //to hold the g-forces in three dimension x, y, z
+    private float[] accelerometer = new float[3]; //to hold the g-forces in three dimension x, y, z4
+    private SoundPool soundPool;
 
     public abstract Screen createStartScreen();
 
@@ -74,6 +78,8 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable, 
             Sensor accelerometer = manager.getSensorList(Sensor.TYPE_ACCELEROMETER).get(0);
             manager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_GAME);
         }
+        setVolumeControlStream(AudioManager.STREAM_MUSIC);
+        this.soundPool = new SoundPool(20, AudioManager.STREAM_MUSIC, 0);
     }
 
     public void setOffscreenSurface(int width, int height)
@@ -152,6 +158,20 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable, 
         dst.bottom = y + srcHeight;
 
         canvas.drawBitmap(bitmap, src, dst, null);
+    }
+
+    public Sound loadSound(String fileName)
+    {
+        try
+        {
+            AssetFileDescriptor assetFileDescriptor = getAssets().openFd(fileName);
+            int soundId = soundPool.load(assetFileDescriptor, 0);
+            return new Sound(soundPool, soundId);
+        } catch (IOException e)
+        {
+            throw new RuntimeException("Could not load sound file: " + fileName);
+        }
+
     }
 
     public boolean isTouchDown(int pointer)
@@ -255,9 +275,10 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable, 
                 stateChanges.add(stateChanges.size(), State.Paused);
             }
         }
-        if(isFinishing())
+        if (isFinishing())
         {
             ((SensorManager) getSystemService(Context.SENSOR_SERVICE)).unregisterListener(this);
+            soundPool.release();
         }
     }
 

@@ -87,6 +87,7 @@ large_string = "\n".join(sorted(output_list)) #Sorts the list
 file.write(large_string) #Writes to the file
 file.close() #Close the file for good practice
 
+#Task 6
 #push to my own github repo
 os.chdir('..')
 comment = input('Please enter a comment for the push: ')
@@ -94,5 +95,3 @@ subprocess.run(['git', 'commit', '-am', comment])
 subprocess.run(['git', 'push', 'origin', 'master'])
 
 print('JOBS DONE!!!!')
-
-#Task 6
