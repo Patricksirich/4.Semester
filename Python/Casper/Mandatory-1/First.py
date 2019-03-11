@@ -41,6 +41,7 @@ if not os.path.exists(folder_name):
 #Time to find all the .md files, put them in a list, and find the 'Required reading'
 readmeFiles = []
 readmeFull = []
+
 for readme in glob.glob('C:/Users/Callo/OneDrive/Skrivebord/GitHub/4.Semester/Python/Casper/Mandatory-1/clones/*/readme.md'):
         
         readmeContend = open(readme).read()             #open every readme file
@@ -56,9 +57,38 @@ for readme in glob.glob('C:/Users/Callo/OneDrive/Skrivebord/GitHub/4.Semester/Py
 
         readmeFull.append(requiredReading)
 
-temp = ''.join(readmeFull)
-print(temp)
+#We will now insert the required reading content into a new file.
+#First we will check if our folder, the 'curriculum' folder, exists
 
+os.chdir('..')                          #go 1 level up
+if not os.path.exists('curriculum'):    #check if directory exists
+        os.mkdir('curriculum')          #create directory if not
+os.chdir('curriculum')                  #change directory to the 'curriculum' folder
+
+#Now we will collect the data in a list, that further down will be written to a required_reading file
+output_list = []
+output_list.append('## Required Reading:')
+for long_string in readmeFull:
+        for single_string in long_string.split('*'):
+                single_string = '*' + single_string[0:]
+                single_string = single_string.strip()
+
+                if single_string in output_list :
+                        print(single_string + '     : Already exists.')
+                        continue
+                
+                if len(single_string) < 5:
+                        continue
+                
+                if single_string[3].islower():
+                        single_string = single_string[0:3] + single_string[3].upper() + single_string[4:]
+
+                output_list.append(single_string)
+
+file = open('Required_reading.md', 'w')         #create a new file that are able to write to
+long_string = "\n".join(sorted(output_list))    #sort the list
+file.write(long_string)                         #write to the file
+file.close()                                    #close the file
 
 
 
