@@ -85,12 +85,17 @@ for long_string in readmeFull:
 
                 output_list.append(single_string)
 
+#now we create a file where the required reading should be written to
 file = open('Required_reading.md', 'w')         #create a new file that are able to write to
 long_string = "\n".join(sorted(output_list))    #sort the list
 file.write(long_string)                         #write to the file
 file.close()                                    #close the file
 
-
+#finally i push the required reading to my github
+os.chdir('..')
+comment = input('Insert a comment for the push: ')
+subprocess.run(['git', 'commit','-am', comment])
+subprocess.run(['git', 'push', 'origin', 'master'])
 
 
 
