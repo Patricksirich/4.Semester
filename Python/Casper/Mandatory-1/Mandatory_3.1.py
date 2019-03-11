@@ -6,7 +6,7 @@ import urllib.response
 import glob
 
 #the API we want to read from
-url = ('https://api.github.com/orgs/python-elective-2-spring-2019/repos?per_page=100')
+url = 'https://api.github.com/orgs/python-elective-2-spring-2019/repos?per_page=100'
 #Opening the API
 res = urlopen(url)
 #Decoding the API, making it readable
