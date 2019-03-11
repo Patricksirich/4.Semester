@@ -43,7 +43,8 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable, 
     private List<TouchEvent> touchEventBuffer = new ArrayList<>();
     private List<TouchEvent> touchEventCopied = new ArrayList<>();
     private float[] accelerometer = new float[3]; //to hold the g-forces in three dimension x, y, z4
-    private SoundPool soundPool;
+    private SoundPool soundPool = new SoundPool.Builder().setMaxStreams(20).build();
+    private int framesPerSecond = 0;
 
     public abstract Screen createStartScreen();
 
@@ -79,7 +80,7 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable, 
             manager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_GAME);
         }
         setVolumeControlStream(AudioManager.STREAM_MUSIC);
-        this.soundPool = new SoundPool(20, AudioManager.STREAM_MUSIC, 0);
+        //soundPool = new SoundPool(20, AudioManager.STREAM_MUSIC, 0);
     }
 
     public void setOffscreenSurface(int width, int height)
@@ -165,6 +166,8 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable, 
         try
         {
             AssetFileDescriptor assetFileDescriptor = getAssets().openFd(fileName);
+            if (assetFileDescriptor == null) throw new RuntimeException("Fuck!!!!");
+            if (soundPool == null) throw new RuntimeException("Crap SoundPool object******");
             int soundId = soundPool.load(assetFileDescriptor, 0);
             return new Sound(soundPool, soundId);
         } catch (IOException e)
@@ -172,6 +175,19 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable, 
             throw new RuntimeException("Could not load sound file: " + fileName);
         }
 
+    }
+
+    public Music loadMusic(String fileName)
+    {
+        try
+        {
+            AssetFileDescriptor assetFileDescriptor = getAssets().openFd(fileName);
+            return new Music(assetFileDescriptor);
+        }
+        catch (IOException e)
+        {
+            throw new RuntimeException("GameEngine: Could not load Music file: " + fileName);
+        }
     }
 
     public boolean isTouchDown(int pointer)
@@ -207,8 +223,41 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable, 
         System.arraycopy(event.values, 0, accelerometer, 0, 3);
     }
 
+    public void fillEvents()
+    {
+        synchronized (touchEventBuffer)
+        {
+            int stop = touchEventBuffer.size();
+            for (int i = 0; i<touchEventBuffer.size(); i++)
+            {
+                touchEventCopied.add(touchEventBuffer.get(i));
+            }
+            touchEventBuffer.clear();
+        }
+    }
+
+    private void freeEvents()
+    {
+        synchronized (touchEventCopied)
+        {
+            int stop = touchEventCopied.size();
+            for (int i = 0; i<stop; i++)
+            {
+                touchEventPool.free(touchEventCopied.get(i));
+            }
+
+        }
+    }
+
+    public int getFramesPerSecond()
+    {
+        return framesPerSecond;
+    }
+
     public void run()
     {
+        int frames = 0;
+        long startTime = System.nanoTime();
         while (true)
         {
             synchronized (stateChanges)
@@ -236,16 +285,16 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable, 
 
                 if (state == State.Running)
                 {
-                    Log.d("GameEngine", "State is Running");
                     if (!surfaceHolder.getSurface().isValid())
                     {
                         continue;
                     }
-                    Log.d("GameEngine", "Ok, we are trying to get a Canvas object");
                     Canvas canvas = surfaceHolder.lockCanvas();
                     //All the drawing code should happen here
                     //canvas.drawColor(Color.BLUE);
+                    fillEvents();
                     if (screen != null) screen.update(0);
+                    freeEvents();
                     src.left = 0;
                     src.top = 0;
                     src.right = offscreenSurface.getWidth(); // or maybe with minus 1
@@ -256,7 +305,13 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable, 
                     dst.bottom = surfaceView.getHeight();
                     canvas.drawBitmap(offscreenSurface, src, dst, null);
                     surfaceHolder.unlockCanvasAndPost(canvas);
-
+                }
+                frames ++;
+                if(System.nanoTime() - startTime > 1000000000)
+                {
+                    framesPerSecond = frames;
+                    frames = 0;
+                    startTime = System.nanoTime();
                 }
             }
         } //End of while
