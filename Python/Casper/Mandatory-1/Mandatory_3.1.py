@@ -21,6 +21,7 @@ if not os.path.exists('clones'):
         os.mkdir('clones')
 os.chdir('clones')
 
+
 #This method pulls the repo instead of cloning it, if it exists the folder is on the specified path
 for folder_name in lines:
         if 'name' in folder_name:
