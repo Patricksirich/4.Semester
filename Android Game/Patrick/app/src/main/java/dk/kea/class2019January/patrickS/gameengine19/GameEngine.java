@@ -45,6 +45,8 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable, 
     private float[] accelerometer = new float[3]; //to hold the g-forces in three dimension x, y, z4
     private SoundPool soundPool = new SoundPool.Builder().setMaxStreams(20).build();
     private int framesPerSecond = 0;
+    long currentTime = 0;
+    long lastTime = 0;
 
     public abstract Screen createStartScreen();
 
@@ -257,7 +259,7 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable, 
     public void run()
     {
         int frames = 0;
-        long startTime = System.nanoTime();
+        long startTime = System.nanoTime();     //Remember to delete this after test
         while (true)
         {
             synchronized (stateChanges)
@@ -293,7 +295,9 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable, 
                     //All the drawing code should happen here
                     //canvas.drawColor(Color.BLUE);
                     fillEvents();
-                    if (screen != null) screen.update(0);
+                    currentTime = System.nanoTime();
+                    if (screen != null) screen.update((currentTime - lastTime)/1000000000.0f);
+                    lastTime = currentTime;
                     freeEvents();
                     src.left = 0;
                     src.top = 0;
@@ -313,7 +317,7 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable, 
                     frames = 0;
                     startTime = System.nanoTime();
                 }
-            }
+            } //End of synchronized
         } //End of while
     }
 
