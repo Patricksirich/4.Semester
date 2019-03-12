@@ -21,19 +21,21 @@ os.chdir('clones') #Changes directory to new
 
 #Method to pull repo instead of clone if it already exists in the destination.
 for folder_name in row:
-        if 'name' in folder_name:
+        if '"name"' in folder_name:
                 folder_name = folder_name[8:-1]
         if os.path.exists(folder_name):
                 os.chdir(folder_name)
                 subprocess.run(['git', 'pull', 'origin', 'master'])
-                os.chdir('..')
-                        
-if not os.path.exists(folder_name):
-        for clone_url in row: #goes through all the lines
-                if 'clone_url' in clone_url: #Find all lines that contains the string 'clone_url'
-                        clone_url = clone_url[13:-1] #Remove the '"clone_url": ' and the final ", to ensure that only the URL is left
-                        url_list.append(clone_url) #Add the URL to the list
-                        subprocess.run(['git', 'clone', clone_url]) #Clone the repo in our newly created directory
+                os.chdir('..')   
+
+for folder_name in row:   
+        if '"name"' in folder_name:
+                path_name = folder_name[8:-1]
+                if not os.path.exists(path_name):
+                        if 'clone_url' in folder_name: #Find all lines that contains the string 'clone_url'
+                                clone_url = folder_name[13:-1] #Remove the '"clone_url": ' and the final ", to ensure that only the URL is left
+                                url_list.append(clone_url) #Add the URL to the list
+                                subprocess.run(['git', 'clone', clone_url]) #Clone the repo in our newly created directory
 
 readme = []
 readmefull = []
