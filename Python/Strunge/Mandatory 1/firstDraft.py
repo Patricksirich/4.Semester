@@ -27,24 +27,24 @@ for name in lines:
         os.chdir('..')
 
 #Check evt en else statement--
-
-if not os.path.exists(name):
     print(name)
-    print()
+    if not os.path.exists("./" + name):
+        print(name)
+        print()
 
-    for line in lines:
-        if 'clone_url' in line:
-            urls.append(line[13:-1])
+        for line in lines:
+            if 'clone_url' in line:
+                urls.append(line[13:-1])
 
-            count += 1
-            #print(count)
+                count += 1
+                #print(count)
 
-    i = 0
-    while i < len(urls):
-        print(urls[i])
-        subprocess.run([
-            'git', 'clone', urls[i]])
-        i += 1
+        i = 0
+        while i < len(urls):
+            print(urls[i])
+            subprocess.run([
+                'git', 'clone', urls[i]])
+            i += 1
 
 for rmFile in glob.glob('C:/Users/Bruger/Desktop/4.Semester/Python/Strunge/Mandatory 1/*/readme.md'):
     content = open(rmFile).read()
