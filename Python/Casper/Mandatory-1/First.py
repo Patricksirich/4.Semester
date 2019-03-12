@@ -40,21 +40,23 @@ if not os.path.exists(folder_name):
                         currentUrls.append(clone_url)
                         subprocess.run(['git', 'clone', clone_url])
 
+#This function loops through the path given in the glob module
 readmeFiles = []
 for readme in glob.glob('C:/Users/Callo/OneDrive/Skrivebord/GitHub/4.Semester/Python/Casper/Mandatory-1/clones/*/readme.md'):
         
-        readmeContend = open(readme).read()
-        start = readmeContend.find('## Required reading')
-        end = readmeContend.find('### Supplementary reading')
+        readmeContend = open(readme).read()                     #read the readme file and save it in a variable readmeContent
+        start = readmeContend.find('## Required reading')       #first delimiter, starting at 'required reading'
+        end = readmeContend.find('### Supplementary reading')   #last delimiter, starting at 'supplementary reading
 
+        #an if-statement, saying that if the readme file does not contain the first delimiter, skip the file
         if start == -1:
                 continue
         
-        requiredReading = readmeContend[start+19:end]
 
-        readmeFiles.append(requiredReading)
+        requiredReading = readmeContend[start+19:end]           #save the content of the required reading using delimiters
 
-temp = ' '.join(readmeFiles)
+        readmeFiles.append(requiredReading + '\n')              #place the content of the required reading in the readmeFiles list
+
 
 os.chdir('..')
 
