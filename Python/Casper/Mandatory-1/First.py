@@ -19,7 +19,6 @@ if not os.path.exists('clones'):
 os.chdir('clones')
 
 # If a repository does not exist, clone it from git.
-# DOES NOT WORK
 currentUrls = []
 
 for folder_name in lines:
@@ -44,7 +43,7 @@ for folder_name in lines:
 
 # This function loops through the path given in the glob module
 readmeFiles = []
-for readme in glob.glob('C:/Users/Callo/OneDrive/Skrivebord/GitHub/4.Semester/Python/Casper/Mandatory-1/clones/*/readme.md'):
+for readme in glob.glob('C:/Users/Callo/OneDrive/Skrivebord/4.Semester/Python/Casper/Mandatory-1/clones/*/readme.md'):
 
     # read the readme file and save it in a variable readmeContent
     readmeContend = open(readme).read()
@@ -99,12 +98,11 @@ large_string = "\n".join(sorted(output_list))
 file.write(large_string)
 file.close()
 
-#os.chdir('..')
+os.chdir('..')
 pushChoice = input('\nWould you like to push to git? write "Y" to push: ')
 
 if pushChoice == 'Y':
     comment = input('\nComment your push: ')
-    subprocess.run(['git', 'add', '*'])
     subprocess.run(['git', 'commit', '-am', comment])
     subprocess.run(['git', 'push', 'origin', 'master'])
     
