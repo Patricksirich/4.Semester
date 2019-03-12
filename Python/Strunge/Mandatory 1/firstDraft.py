@@ -65,11 +65,13 @@ if not os.path.exists('curicullum'):
 os.chdir('curicullum')
 
 for string in readmeFinal:
+# Split on bulletpoints
     for smallString in string.split('*'):
         smallString = '*' + smallString[0:].strip()
         if smallString in readmeFinal:
             print(smallString + ' Already exists..')
             continue
+# Ignore "empty" lines
         if len(smallString) < 2:
             continue
         smallString.capitalize()
