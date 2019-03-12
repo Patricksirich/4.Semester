@@ -29,7 +29,8 @@ for name in lines:
 #Check evt en else statement--
 for folderName in lines:
     if 'clone_url' in folderName:
-        if not os.path.exists(folderName):
+        if not os.path.exists(name):
+            print('YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
             cloneUrl = folderName[13:-1]
             urls.append(cloneUrl)
             subprocess.run(['git', 'clone', cloneUrl])
