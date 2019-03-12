@@ -37,6 +37,16 @@ for folder_name in row:
                                 url_list.append(clone_url) #Add the URL to the list
                                 subprocess.run(['git', 'clone', clone_url]) #Clone the repo in our newly created directory
 
+          
+if not os.path.exists(folder_name):
+        print(folder_name)
+        for clone_url in row: #goes through all the lines
+                if 'clone_url' in clone_url: #Find all lines that contains the string 'clone_url'
+                        clone_url = clone_url[13:-1] #Remove the '"clone_url": ' and the final ", to ensure that only the URL is left
+                        url_list.append(clone_url) #Add the URL to the list
+                        subprocess.run(['git', 'clone', clone_url]) #Clone the repo in our newly created directory
+
+
 readme = []
 readmefull = []
 for readmeFile in glob.glob('C:/Users/patri/Desktop/4.Semester/Python/Patrick/Mandatory/clones/*/readme.md'): #Searches for Readme.md files in every subfolder in the 'clones' folder
