@@ -11,7 +11,6 @@ url = 'https://api.github.com/orgs/python-elective-2-spring-2019/repos?per_page=
 res = urlopen(url)
 html = res.read().decode('utf-8')
 
-count = 0
 lines = html.split(',')
 urls = []
 readmeFinal = []
@@ -21,7 +20,7 @@ outputList = []
 for name in lines:
     if '"name"' in name:
         name = name[8:-1]
-        print(name)
+        print(name + 'TEST')
     if os.path.exists(name):
         os.chdir(name)
         subprocess.run(['git', 'pull', 'origin', 'master'])
@@ -32,7 +31,7 @@ for folderName in lines:
     if 'clone_url' in folderName:
         pathName = folderName[62:-5]
         if not os.path.exists(pathName):
-            print(folderName)
+            print(folderName + 'TEST')
             cloneUrl = folderName[13:-1]
             urls.append(cloneUrl)
             subprocess.run(['git', 'clone', cloneUrl])
