@@ -72,8 +72,6 @@ stringFinal = "\n".join(sorted(outputList))
 file.write(stringFinal)
 file.close()
 
-#sys.exit()
-os.chdir('..')
 comment = input('Comment: ')
 subprocess.run(['git', 'commit', '-am', comment])
 subprocess.run(['git', 'push', 'origin', 'master'])
