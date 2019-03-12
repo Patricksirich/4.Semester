@@ -18,37 +18,48 @@ readmefull = []
 outputList = []
 
 for name in lines:
+# Define name from API (slice)
     if '"name"' in name:
         name = name[8:-1]
-        print(name + 'TEST')
+        print(name + ' ****TEST****')
+# Check if path exists, if so do pull 
     if os.path.exists(name):
         os.chdir(name)
         subprocess.run(['git', 'pull', 'origin', 'master'])
         os.chdir('..')
 
-#Check evt en else statement--
 for folderName in lines:
+# Check if "clone_url" is part of string (line)
     if 'clone_url' in folderName:
+# Make pathname for "if not" -remove all but path from API
         pathName = folderName[62:-5]
+# Check if path exists already, if so do not enter clone
         if not os.path.exists(pathName):
-            print(folderName + 'TEST')
+            print(folderName + '****TEST****')
+# Slice foldename so the "clean" url is present
             cloneUrl = folderName[13:-1]
+# Add to list
             urls.append(cloneUrl)
+# Clone process
             subprocess.run(['git', 'clone', cloneUrl])
             
 
 for rmFile in glob.glob('C:/Users/Bruger/Desktop/4.Semester/Python/Strunge/Mandatory 1/*/readme.md'):
+# Make content to the readable version of the file
     content = open(rmFile).read()
-
+# Add to list
     readmefull.append(content)
-
+# Make slicing points for later use (so we can find only what we need)
     requiredReading = content.find('## Required reading') 
     suppReading = content.find('### Supplementary reading')
-
+# Check if readme file is empty (default value = -1)
     if not requiredReading == -1:
+# Use predefined slicepoints
         readme = content[requiredReading + 19:suppReading]
+# Add to list
         readmeFinal.append(readme)
 
+# Check if directory is already created, else create it
 if not os.path.exists('curicullum'):
     os.mkdir('curicullum')
 os.chdir('curicullum')
