@@ -73,6 +73,7 @@ file.write(stringFinal)
 file.close()
 
 comment = input('Comment: ')
+subprocess.run(['git', 'add', '.md'])
 subprocess.run(['git', 'commit', '-am', comment])
 subprocess.run(['git', 'push', 'origin', 'master'])
 
