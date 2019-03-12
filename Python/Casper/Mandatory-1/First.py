@@ -99,7 +99,7 @@ large_string = "\n".join(sorted(output_list))
 file.write(large_string)
 file.close()
 
-os.chdir('..')
+#os.chdir('..')
 pushChoice = input('\nWould you like to push to git? write "Y" to push: ')
 
 if pushChoice == 'Y':
