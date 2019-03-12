@@ -94,5 +94,3 @@ os.chdir('..')
 comment = input('Please enter a comment for the push: ')
 subprocess.run(['git', 'commit', '-am', comment])
 subprocess.run(['git', 'push', 'origin', 'master'])
-
-print('JOBS DONE!!!!')
