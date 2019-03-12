@@ -26,8 +26,8 @@ for folder_name in lines:
         clone_url = folder_name[13:-1]
         folder_name = folder_name[62:-5]
         if not os.path.exists(folder_name):
-                currentUrls.append(clone_url)
-                subprocess.run(['git', 'clone', clone_url])
+            currentUrls.append(clone_url)
+            subprocess.run(['git', 'clone', clone_url])
 
 
 # Pull method that checks, if the folder exists, and pulls instead of clones
@@ -52,7 +52,8 @@ for readme in glob.glob('C:/Users/Callo/OneDrive/Skrivebord/4.Semester/Python/Ca
     # last delimiter, starting at 'supplementary reading
     end = readmeContend.find('### Supplementary reading')
 
-    if start == -1:  # an if-statement, saying that if the readme file does not contain the first delimiter, skip the file
+    # an if-statement, saying that if the readme file does not contain the first delimiter, skip the file
+    if start == -1:
         continue
 
     # save the content of the required reading using delimiters
@@ -68,10 +69,9 @@ os.chdir('..')  # go one dir up
 if not os.path.exists('curriculum'):
     os.mkdir('curriculum')
 os.chdir('curriculum')
-
 # Now we will trim and format the readme outputs, so it looks readable in the required_reading file
 output_list = []
-# Put 'required reading' in the top of the file
+
 output_list.append("## Required reading:")
 for long_string in readmeFiles:
     for single_line in long_string.split("*"):
@@ -105,7 +105,7 @@ if pushChoice == 'Y':
     comment = input('\nComment your push: ')
     subprocess.run(['git', 'commit', '-am', comment])
     subprocess.run(['git', 'push', 'origin', 'master'])
-    
+
 else:
     pass
 
