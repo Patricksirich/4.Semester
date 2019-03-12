@@ -104,8 +104,10 @@ pushChoice = input('\nWould you like to push to git? write "Y" to push: ')
 
 if pushChoice == 'Y':
     comment = input('\nComment your push: ')
+    subprocess.run(['git', 'add', '*'])
     subprocess.run(['git', 'commit', '-am', comment])
     subprocess.run(['git', 'push', 'origin', 'master'])
+    
 else:
     pass
 
