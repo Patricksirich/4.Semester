@@ -73,7 +73,7 @@ os.chdir('curriculum') #Change directory to what we just created
 
 #Task 5
 output_list = []
-output_list.append("## Required reading:")
+output_list.append("## Required reading:\n> By Patrick Sirich - Python Elective 2019")
 for long_string in readme:                
         for single_line in long_string.split("*"): #Splits it into singlelines so we can check for duplicates
                 single_line = '*' + single_line[0:] # Add a '*' to the beginning of the string to make it a bulletpoint
