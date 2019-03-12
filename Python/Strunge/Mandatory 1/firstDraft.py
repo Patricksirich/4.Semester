@@ -19,8 +19,9 @@ readmefull = []
 outputList = []
 
 for name in lines:
-    if 'name' in name:
+    if '"name"' in name:
         name = name[8:-1]
+        print(name)
     if os.path.exists(name):
         os.chdir(name)
         subprocess.run(['git', 'pull', 'origin', 'master'])
@@ -29,8 +30,9 @@ for name in lines:
 #Check evt en else statement--
 for folderName in lines:
     if 'clone_url' in folderName:
-        if not os.path.exists(name):
-            print('YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO')
+        pathName = folderName[62:-5]
+        if not os.path.exists(pathName):
+            print(folderName)
             cloneUrl = folderName[13:-1]
             urls.append(cloneUrl)
             subprocess.run(['git', 'clone', cloneUrl])
@@ -71,6 +73,7 @@ stringFinal = "\n".join(sorted(outputList))
 file.write(stringFinal)
 file.close()
 
+#sys.exit()
 os.chdir('..')
 comment = input('Comment: ')
 subprocess.run(['git', 'commit', '-am', comment])
