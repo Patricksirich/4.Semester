@@ -30,7 +30,7 @@ for folder_name in lines:
                 currentUrls.append(clone_url)
                 subprocess.run(['git', 'clone', clone_url])
 
-
+"""
 # Pull method that checks, if the folder exists, and pulls instead of clones
 for folder_name in lines:
     if 'name' in folder_name:
@@ -40,7 +40,7 @@ for folder_name in lines:
         subprocess.run(['git', 'pull', 'origin', 'master'])
         os.chdir('..')
         # When a loop is completed, go one dir up and repeat
-
+"""
 
 # This function loops through the path given in the glob module
 readmeFiles = []
@@ -99,7 +99,7 @@ large_string = "\n".join(sorted(output_list))
 file.write(large_string)
 file.close()
 
-#os.chdir('curriculum')
+os.chdir('..')
 pushChoice = input('\nWould you like to push to git? write "Y" to push: ')
 
 if pushChoice == 'Y':
