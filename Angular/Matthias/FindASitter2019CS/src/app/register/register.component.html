@@ -1,0 +1,42 @@
+<mat-card id="card">
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit">  
+              <div>
+        <mat-form-field class="field-width">
+        <input matInput placeholder="Username" type="text" formControlName="username">
+        <div *ngIf="registerForm.controls.username.errors?.required && registerForm.controls.username.touched">
+          You must fill out the username
+        
+        </div>
+        <div *ngIf="registerForm.controls.username.errors?.minlength && registerForm.controls.username.touched">
+            Username must be at least 3 characters
+          </div>
+      </mat-form-field>
+      </div>
+      
+      <div>
+        <mat-form-field class="field-width">
+        <input matInput placeholder="Password" type="Password" formControlName="password">
+        <div *ngIf="!registerForm.controls.password.valid && registerForm.controls.password.dirty">
+          You must fill out the password
+        </div>
+      </mat-form-field>
+      </div>
+    
+    <div>
+        <mat-form-field class="field-width">
+          
+        <input matInput placeholder="Salary" type="number" formControlName="salary">
+        <div *ngIf="registerForm.controls.salary.errors?.min && registerForm.controls.salary.touched">
+          Minimum salary is 100 DKK!
+        </div>
+        <div *ngIf="registerForm.controls.salary.errors?.max && registerForm.controls.salary.touched">
+          Maximum salary is 1000 DKK!
+        </div>
+      </mat-form-field>
+      </div>  
+
+    <button style="margin-left:42%" mat-stroked-button type="submit" [disabled]="!registerForm.valid" routerLink='../login'>Register</button>
+    <!-- Don't use disabled unless there is user feedback-->
+ 
+  </form> 
+</mat-card>
