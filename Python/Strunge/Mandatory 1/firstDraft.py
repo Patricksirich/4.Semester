@@ -65,21 +65,26 @@ if not os.path.exists('curicullum'):
 os.chdir('curicullum')
 
 for string in readmeFinal:
+# Split on bulletpoints
     for smallString in string.split('*'):
+# Create new bulletpoints in the beginning & remove whitespace
         smallString = '*' + smallString[0:].strip()
         if smallString in readmeFinal:
             print(smallString + ' Already exists..')
             continue
+# Ignore "empty" lines
         if len(smallString) < 2:
             continue
-        smallString.capitalize()
+        #smallString.capitalize()
         #if smallString[3].islower():
          #   smallString[3].upper()
 
         outputList.append(smallString)
-
+# Create new .md fil with writeability
 file = open('Required_reading.md', 'w')
+# Make a final with a sorted version of outputlist
 stringFinal = "\n".join(sorted(outputList))
+# Write the stringfinal to the file
 file.write(stringFinal)
 file.close()
 
