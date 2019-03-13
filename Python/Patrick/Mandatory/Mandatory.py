@@ -21,31 +21,19 @@ os.chdir('clones') #Changes directory to new
 
 #Method to pull repo instead of clone if it already exists in the destination.
 for folder_name in row:
-        if '"name"' in folder_name:
+        if 'name' in folder_name:
                 folder_name = folder_name[8:-1]
         if os.path.exists(folder_name):
                 os.chdir(folder_name)
                 subprocess.run(['git', 'pull', 'origin', 'master'])
-                os.chdir('..')   
-
-for folder_name in row:   
-        if '"name"' in folder_name:
-                path_name = folder_name[8:-1]
-                if not os.path.exists(path_name):
-                        if 'clone_url' in folder_name: #Find all lines that contains the string 'clone_url'
-                                clone_url = folder_name[13:-1] #Remove the '"clone_url": ' and the final ", to ensure that only the URL is left
-                                url_list.append(clone_url) #Add the URL to the list
-                                subprocess.run(['git', 'clone', clone_url]) #Clone the repo in our newly created directory
-
-          
+                os.chdir('..')
+                        
 if not os.path.exists(folder_name):
-        print(folder_name)
         for clone_url in row: #goes through all the lines
                 if 'clone_url' in clone_url: #Find all lines that contains the string 'clone_url'
                         clone_url = clone_url[13:-1] #Remove the '"clone_url": ' and the final ", to ensure that only the URL is left
                         url_list.append(clone_url) #Add the URL to the list
                         subprocess.run(['git', 'clone', clone_url]) #Clone the repo in our newly created directory
-
 
 readme = []
 readmefull = []
@@ -73,7 +61,7 @@ os.chdir('curriculum') #Change directory to what we just created
 
 #Task 5
 output_list = []
-output_list.append("## Required reading:\n> By Patrick Sirich - Python Elective 2019")
+output_list.append("## Required reading:\n > By Patrick Sirich - Python elective 2019")
 for long_string in readme:                
         for single_line in long_string.split("*"): #Splits it into singlelines so we can check for duplicates
                 single_line = '*' + single_line[0:] # Add a '*' to the beginning of the string to make it a bulletpoint
@@ -104,3 +92,5 @@ os.chdir('..')
 comment = input('Please enter a comment for the push: ')
 subprocess.run(['git', 'commit', '-am', comment])
 subprocess.run(['git', 'push', 'origin', 'master'])
+
+print('JOBS DONE!!!!')

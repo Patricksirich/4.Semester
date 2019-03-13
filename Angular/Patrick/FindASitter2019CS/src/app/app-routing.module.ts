@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
 import { PortalComponent } from './portal/portal.component';
 import { AuthGuard } from './auth/auth.guard';
+import { AdminGuard} from './admin/admin.guard';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home/index', pathMatch: 'full' }, // if baseUrl => go to login
@@ -23,7 +25,9 @@ const routes: Routes = [
   {path: 'portal', component: PortalComponent, canActivate: [AuthGuard], children: [
       {path: 'display-quiz', component: DisplayQuizComponent },  
   ]},
-
+  {path: 'admin', component: HomeComponent, canActivate: [AdminGuard], children: [
+    {path: 'admin-panel', component: AdminPanelComponent}
+  ]},
 
   {path: '**', component: PageNotFoundComponent } //wildcard - if no routes match, display this
  ];

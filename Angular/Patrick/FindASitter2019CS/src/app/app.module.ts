@@ -21,6 +21,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './index/index.component';
 import { PortalComponent } from './portal/portal.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 
 
 
@@ -39,7 +41,9 @@ import { PortalComponent } from './portal/portal.component';
     PageNotFoundComponent,
     HomeComponent,
     IndexComponent,
-    PortalComponent
+    PortalComponent,
+    AdminComponent,
+    AdminPanelComponent
   ],
   imports: [
     BrowserModule,
