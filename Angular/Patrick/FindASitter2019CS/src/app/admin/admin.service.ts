@@ -6,7 +6,7 @@ import { tap, delay } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthService {
+export class AdminService {
   isLoggedIn = false;
 
   // store the URL so we can redirect after logging in

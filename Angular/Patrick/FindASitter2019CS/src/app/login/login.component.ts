@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       console.log('logging in as admin');
       this.adminService.login().subscribe(result => {
         console.log(result);
-        this.router.navigate(['admin/adminpanel']);
+        this.router.navigate(['admin/admin-panel']);
       });
     }
 

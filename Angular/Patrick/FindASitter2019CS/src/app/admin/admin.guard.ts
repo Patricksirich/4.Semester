@@ -1,24 +1,24 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { AuthService } from './auth.service';
+import { AdminService } from './admin.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class AdminGuard implements CanActivate {
 
-constructor(private router: Router, private authService: AuthService){}
+constructor(private router: Router, private AdminService: AdminService){}
 
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      console.log("AuthGuard on duty here");
-      if(this.authService.isLoggedIn){
+      console.log("AdminGuard on duty here");
+      if(this.AdminService.isLoggedIn){
         return true;
       }
 
-      this.authService.redirectUrl = state.url;
+      this.AdminService.redirectUrl = state.url;
  
       this.router.navigate(['home/login']);
     return false; // true => yes, you are allowed access, false means no!
