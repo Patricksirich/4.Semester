@@ -23,11 +23,8 @@ import { IndexComponent } from './index/index.component';
 import { PortalComponent } from './portal/portal.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
-
-
-
-
-
+import { CreateQuizComponent } from './create-quiz/create-quiz.component';
+import { DisplayQuizzesComponent } from './display-quizzes/display-quizzes.component';
 
 
 @NgModule({
@@ -43,7 +40,9 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
     IndexComponent,
     PortalComponent,
     AdminComponent,
-    AdminPanelComponent
+    AdminPanelComponent,
+    CreateQuizComponent,
+    DisplayQuizzesComponent
   ],
   imports: [
     BrowserModule,
