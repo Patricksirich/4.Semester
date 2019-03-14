@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
       })
       this.adminservice.login().subscribe(result => {
         console.log(result);
-        this.router.navigate(['portal/create-quiz']);
+        this.router.navigate(['portal']);
       });
       
       
@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
       
       this.authservice.login().subscribe(result => {
         console.log(result);
-        this.router.navigate(['portal/display-quiz']);
+        this.router.navigate(['portal/display-quizzes']);
       });
 
       
