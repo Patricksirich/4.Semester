@@ -25,6 +25,7 @@ import { PortalComponent } from './portal/portal.component';
 import { CreateQuizComponent } from './create-quiz/create-quiz.component';
 import { AdminComponent } from './admin/admin.component';
 import { LogoutComponent } from './logout/logout.component';
+import { DisplayQuizzesComponent } from './display-quizzes/display-quizzes.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { LogoutComponent } from './logout/logout.component';
     PortalComponent,
     CreateQuizComponent,
     AdminComponent,
-    LogoutComponent
+    LogoutComponent,
+    DisplayQuizzesComponent
   ],
   imports: [
     BrowserModule,
