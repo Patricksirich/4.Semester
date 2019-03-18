@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -23,11 +22,9 @@ import { IndexComponent } from './index/index.component';
 import { PortalComponent } from './portal/portal.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
-
-
-
-
-
+import { CreateQuizComponent } from './create-quiz/create-quiz.component';
+import { DisplayQuizzesComponent } from './display-quizzes/display-quizzes.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -43,7 +40,9 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
     IndexComponent,
     PortalComponent,
     AdminComponent,
-    AdminPanelComponent
+    AdminPanelComponent,
+    CreateQuizComponent,
+    DisplayQuizzesComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +55,8 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
     MatExpansionModule,
     MatButtonModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule
     
   ],
   providers: [],

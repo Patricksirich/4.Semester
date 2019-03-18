@@ -30,6 +30,9 @@ export class LoginComponent implements OnInit {
     
     if(this.loginForm.value.username == 'admin'){
       console.log('logging in as admin');
+      this.authService.login().subscribe(result => {
+        console.log(result);
+      });
       this.adminService.login().subscribe(result => {
         console.log(result);
         this.router.navigate(['admin/admin-panel']);
@@ -41,7 +44,7 @@ export class LoginComponent implements OnInit {
       //navigate after succesful login
       this.authService.login().subscribe( result => {
         console.log(result);
-        this.router.navigate(['portal/display-quiz']);
+        this.router.navigate(['portal/display-quizzes']);
       });
       console.log("navigating to quiz");
       
