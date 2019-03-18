@@ -51,7 +51,8 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable, 
     public abstract Screen createStartScreen();
     public void setScreen(Screen screen)
     {
-
+        if (this.screen != null) this.screen.dispose();
+        this.screen = screen;
     }
 
     @Override
