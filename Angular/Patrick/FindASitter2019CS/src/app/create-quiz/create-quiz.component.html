@@ -1,0 +1,27 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Personal data
+        </mat-panel-title>
+        <mat-panel-description>
+          Type your name and age
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+  
+      <mat-form-field>
+        <input matInput placeholder="Title" ngModel name="title">
+      </mat-form-field>
+  
+      <mat-form-field>
+        <input matInput placeholder="Questions" ngModel name="question">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="answer" ngModel name="answer">
+      </mat-form-field>
+    </mat-expansion-panel>
+  </mat-accordion>
+<button type="submit" mat-stroked-button>submit</button>
+</form>
