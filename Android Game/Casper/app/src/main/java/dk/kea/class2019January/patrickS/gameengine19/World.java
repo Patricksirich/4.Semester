@@ -1,5 +1,8 @@
 package dk.kea.class2019January.patrickS.gameengine19;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class World {
 
     public static float MIN_X = 0;
@@ -9,8 +12,13 @@ public class World {
 
     Ball ball = new Ball();
     Paddle paddle = new Paddle();
+    List<Block> blocks = new ArrayList<>();
 
-    public void update(float deltaTime, float accelX) {
+    public World() {
+        generateBlocks();
+    }
+
+    public void update(float deltaTime, float accelX, boolean isTouch, int touchX) {
 
 
         //Ball movement
@@ -32,15 +40,41 @@ public class World {
             ball.y = MIN_Y;
         }
 
-        if (ball.y > MAX_Y - Ball.HEIGHT) {
-            ball.vy = -ball.vy;
-            ball.y = MAX_Y - Ball.HEIGHT;
-        }
+//        if (ball.y > MAX_Y - Ball.HEIGHT) {
+//            ball.vy = -ball.vy;
+//            ball.y = MAX_Y - Ball.HEIGHT;
+//        }
 
+        // move paddle based on phone tilt
         paddle.x = paddle.x - accelX * 50 * deltaTime;
 
+        // move paddle based on touch, only for testing in emulator
+        if (isTouch) {
+            paddle.x = touchX - paddle.WIDTH / 2;
+        }
+        // make sure paddle does not go off the edge of the screen
         if (paddle.x < MIN_X) paddle.x = MIN_X;
         if (paddle.x + Paddle.WIDTH > MAX_X) paddle.x = MAX_X - Paddle.WIDTH;
+
+        collideBallPaddle();
+
+    }   // end of update() method
+
+    private void collideBallPaddle() {
+        if (ball.y > paddle.y + Paddle.HEIGHT) return;
+        if ((ball.x >= paddle.x) && (ball.x + Ball.WIDTH < paddle.x + Paddle.WIDTH) && (ball.y + Ball.HEIGHT > paddle.y)) {
+
+            ball.vy = -ball.vy;
+        }
     }
 
+    private void generateBlocks() {
+
+        blocks.clear();
+        for (int y = 50, type = 0; y < 50 + 8 * Block.HEIGHT; y = y + (int) Block.HEIGHT, type++) {
+            for (int x = 20; x < 320 - Block.WIDTH; x = x + (int) Block.WIDTH) {
+                blocks.add(new Block(x, y, type));
+            }
+        }
+    }
 }

@@ -30,6 +30,7 @@ public class GameScreen extends Screen {
     @Override
     public void update(float deltaTime) {
 
+
         if (state == State.Paused && gameEngine.isTouchDown(0)) {
             state = State.Running;
         }
@@ -46,8 +47,16 @@ public class GameScreen extends Screen {
 
         gameEngine.drawBitmap(background, 0, 0);
 
-        if (state == State.Running) world.update(deltaTime, gameEngine.getAccelerometer()[0]);
-        renderer.render();
+        if (state == State.Running)
+        {
+            world.update(deltaTime, gameEngine.getAccelerometer()[0], gameEngine.isTouchDown(0), gameEngine.getTouchX(0));
+            renderer.render();
+
+            if (world.ball.y > World.MAX_Y) {
+                state = State.GameOver;
+                return;
+            }
+        }
 
         if (state == State.Paused) {
             gameEngine.drawBitmap(resume, 160 - resume.getWidth() / 2, 240 - resume.getHeight() / 2);
@@ -56,6 +65,7 @@ public class GameScreen extends Screen {
         if (state == State.GameOver) {
             gameEngine.drawBitmap(gameOver, 160 - gameOver.getWidth() / 2, 240 - gameOver.getWidth() / 2);
         }
+
 
 
 

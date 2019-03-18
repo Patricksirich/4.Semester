@@ -7,7 +7,6 @@ public class MainMenuScreen extends Screen {
     Bitmap mainMenu;
     Bitmap insertCoin;
     float passedTime = 0;
-    long startTime = System.nanoTime();
 
     public MainMenuScreen(GameEngine gameEngine) {
 
@@ -19,16 +18,14 @@ public class MainMenuScreen extends Screen {
     @Override
     public void update(float deltaTime) {
 
-        if (gameEngine.isTouchDown(0))
-        {
+        if (gameEngine.isTouchDown(0) && (passedTime) > 0.5f) {
             gameEngine.setScreen(new GameScreen(gameEngine));
             return;
         }
         gameEngine.drawBitmap(mainMenu, 0, 0);
         passedTime = passedTime + deltaTime;
-        if ((passedTime - (int) passedTime) > 0.5f)
-        {
-            gameEngine.drawBitmap(insertCoin,160 - insertCoin.getWidth()/2, 320);
+        if ((passedTime - (int) passedTime) > 0.5f) {
+            gameEngine.drawBitmap(insertCoin, 160 - insertCoin.getWidth() / 2, 320);
         }
     }
 
