@@ -58,7 +58,6 @@ public class TestScreen extends Screen
         y = gameEngine.getFrameBufferHeigth()/2 + ((y/10) * gameEngine.getFrameBufferHeigth()/2);
         */
         gameEngine.drawBitmap(bitmap, (int)x-64, (int)y-64);
-        gameEngine.drawBitmap(bitmap, 200, 300,  0, 0, 64, 64);
     }
 
     @Override

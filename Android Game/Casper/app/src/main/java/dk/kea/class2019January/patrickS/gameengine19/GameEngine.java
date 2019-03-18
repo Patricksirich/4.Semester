@@ -42,7 +42,7 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable, 
     private TouchEventPool touchEventPool = new TouchEventPool();
     private List<TouchEvent> touchEventBuffer = new ArrayList<>();
     private List<TouchEvent> touchEventCopied = new ArrayList<>();
-    private float[] accelerometer = new float[3]; //to hold the g-forces in three dimension x, y, z4
+    private float[] accelerometer = new float[3]; //to hold the g-forces in three dimension x, y, z
     private SoundPool soundPool = new SoundPool.Builder().setMaxStreams(20).build();
     private int framesPerSecond = 0;
     long currentTime = 0;
