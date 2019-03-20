@@ -25,7 +25,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { CreateQuizComponent } from './create-quiz/create-quiz.component';
 import { DisplayQuizzesComponent } from './display-quizzes/display-quizzes.component';
-
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -55,7 +55,8 @@ import { DisplayQuizzesComponent } from './display-quizzes/display-quizzes.compo
     MatExpansionModule,
     MatButtonModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    MatSelectModule
     
   ],
   providers: [],

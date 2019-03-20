@@ -1,20 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Quiz } from '../entities/quiz';
 import { Gender } from '../entities/user';
-
 @Injectable({
   providedIn: 'root'
 })
 export class TempDataService {
+  quizzes: Quiz[] = [];
 
   constructor() { }
+
+  setQuiz(quiz : Quiz){
+    this.quizzes.push(quiz);
+  }
 
   findQuiz(searchForId: string) : Quiz {
     return this.getQuizzes().find(quiz => quiz._id == searchForId);
   }
 
   getQuizzes() : Quiz[] {
-    return [
+    return this.quizzes;
+    /*this.quizzes = [
       { 
         _id: '1', visible: false, user: {_id: '1', username: 'Matthias', email: 'ms@ms.dk', gender: Gender.MALE, 
                                         birthDate: new Date("23/09/1995")}, title: 'Dogs', created: new Date("11/10/2018"), 
@@ -48,7 +53,7 @@ export class TempDataService {
           }
         ]
       }
-    ];
+    ];*/
   }
 
   getQuiz() : Quiz {
