@@ -24,7 +24,7 @@ const routes: Routes = [
     {path: 'login', component: LoginComponent, },
     {path: 'register', component: RegisterComponent },  
   ] },
-  {path: 'portal', component: PortalComponent, canActivate: [AuthGuard], children: [
+  {path: 'portal', component: PortalComponent, /*canActivate: [AuthGuard],*/ children: [
       {path: 'display-quiz/:id', component: DisplayQuizComponent },
       {path: 'display-quizzes', component: DisplayQuizzesComponent },    
       {path: 'create-quiz', component: CreateQuizComponent }, 

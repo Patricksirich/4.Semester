@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
 import { TempDataService } from '../service/temp-data.service';
 import { Quiz } from '../entities/quiz';
 
@@ -10,11 +10,13 @@ import { Quiz } from '../entities/quiz';
 export class DisplayQuizzesComponent implements OnInit {
   quizzes: Quiz[];
 
-  constructor(private tempData: TempDataService) { }
-
-  ngOnInit() {
-    this.quizzes = this.tempData.getQuizzes();
+  constructor(private tempData: TempDataService) { 
   }
 
+  ngOnInit() {
+    if(this.tempData.getQuizzes()){
+    this.quizzes = this.tempData.getQuizzes();
+    }
+  }
 }
 
