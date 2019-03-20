@@ -52,6 +52,8 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable, 
 
     public void setScreen(Screen screen)
     {
+        if (this.screen != null) this.screen.dispose();
+        this.screen = screen;
     }
 
     @Override
@@ -185,8 +187,7 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable, 
         {
             AssetFileDescriptor assetFileDescriptor = getAssets().openFd(fileName);
             return new Music(assetFileDescriptor);
-        }
-        catch (IOException e)
+        } catch (IOException e)
         {
             throw new RuntimeException("GameEngine: Could not load Music file: " + fileName);
         }
@@ -230,7 +231,7 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable, 
         synchronized (touchEventBuffer)
         {
             int stop = touchEventBuffer.size();
-            for (int i = 0; i<touchEventBuffer.size(); i++)
+            for (int i = 0; i < touchEventBuffer.size(); i++)
             {
                 touchEventCopied.add(touchEventBuffer.get(i));
             }
@@ -243,7 +244,7 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable, 
         synchronized (touchEventCopied)
         {
             int stop = touchEventCopied.size();
-            for (int i = 0; i<stop; i++)
+            for (int i = 0; i < stop; i++)
             {
                 touchEventPool.free(touchEventCopied.get(i));
             }
@@ -296,7 +297,7 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable, 
                     //canvas.drawColor(Color.BLUE);
                     fillEvents();
                     currentTime = System.nanoTime();
-                    if (screen != null) screen.update((currentTime - lastTime)/1000000000.0f);
+                    if (screen != null) screen.update((currentTime - lastTime) / 1000000000.0f);
                     lastTime = currentTime;
                     freeEvents();
                     src.left = 0;
@@ -310,8 +311,8 @@ public abstract class GameEngine extends AppCompatActivity implements Runnable, 
                     canvas.drawBitmap(offscreenSurface, src, dst, null);
                     surfaceHolder.unlockCanvasAndPost(canvas);
                 }
-                frames ++;
-                if(System.nanoTime() - startTime > 1000000000)
+                frames++;
+                if (System.nanoTime() - startTime > 1000000000)
                 {
                     framesPerSecond = frames;
                     frames = 0;
