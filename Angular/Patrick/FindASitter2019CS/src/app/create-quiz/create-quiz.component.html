@@ -1,5 +1,4 @@
-<form (ngSubmit)="onSubmit(f)" #f="ngForm">
-
+<form [formGroup]="createQuizForm" (ngSubmit)="saveQuiz(createQuizForm)">
   <mat-accordion>
     <mat-expansion-panel>
       <mat-expansion-panel-header>
@@ -12,16 +11,51 @@
       </mat-expansion-panel-header>
   
       <mat-form-field>
-        <input matInput placeholder="Title" ngModel name="title">
+        <input matInput placeholder="Quiz title" formControlName="quizTitle">
       </mat-form-field>
-  
+      <br>
       <mat-form-field>
-        <input matInput placeholder="Questions" ngModel name="question">
+        <input matInput placeholder="Question title" formControlName="questionTitle">
       </mat-form-field>
+      <br>
       <mat-form-field>
-        <input matInput placeholder="answer" ngModel name="answer">
+        <input matInput placeholder="Option 1 Answer" formControlName="optionAnswer1">
       </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-select name="correct" formControlName="optionCorrect1">
+          <mat-option value="true">Correct</mat-option>
+          <mat-option value="false">False</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput placeholder="Option 2 Answer" formControlName="optionAnswer2">
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-select name="correct" formControlName="optionCorrect2">
+          <mat-option value="true">Correct</mat-option>
+          <mat-option value="false">False</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <br>
+            <mat-form-field>
+<input matInput placeholder="Option 3 Answer" formControlName="optionAnswer3">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+
+<mat-select name="correct" formControlName="optionCorrect3">
+          <mat-option value="true">Correct</mat-option>
+          <mat-option value="false">False</mat-option>
+        </mat-select>
+      </mat-form-field> 
+      <br>
+
     </mat-expansion-panel>
   </mat-accordion>
-<button type="submit" mat-stroked-button>submit</button>
+
+<button type="submit">Save QUIZ</button>
+
 </form>
