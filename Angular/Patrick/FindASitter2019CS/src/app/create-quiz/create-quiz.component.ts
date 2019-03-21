@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormsModule, NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Quiz } from '../entities/quiz';
 import { TempDataService } from '../service/temp-data.service';
@@ -10,53 +10,58 @@ import { Gender } from '../entities/user';
   templateUrl: './create-quiz.component.html',
   styleUrls: ['./create-quiz.component.scss']
 })
+
 export class CreateQuizComponent implements OnInit {
   createQuizForm: FormGroup;
   quizzes: Quiz[];
+  quiz: Quiz;
 
-  constructor(private fb: FormBuilder, private router: Router, private tempData: TempDataService, private fm: FormsModule) { }
+  constructor(private fb: FormBuilder, private router: Router, private tempData: TempDataService) { }
 
-  onSubmit(form: NgForm){
-    console.log(form)
-  }
 
+  
   ngOnInit() {
     this.createQuizForm = this.fb.group(
       {
-        question1: ['', Validators.required],
-        question2: ['', Validators.required],
-        question3: ['', Validators.required],
-        options1_1: [['', ''], Validators.required],
-        options1_2: [['', ''], Validators.required],
-        options1_3: [['', ''], Validators.required],
-        options2_1: [['', ''], Validators.required],
-        options2_2: [['', ''], Validators.required],
-        options2_3: [['', ''], Validators.required],
-        options3_1: [['', ''], Validators.required],
-        options3_2: [['', ''], Validators.required],
-        options3_3: [['', ''], Validators.required]
+        quizTitle: new FormControl(),
+        questionTitle: new FormControl(),
+        optionAnswer1: new FormControl(),
+        optionAnswer2: new FormControl(),
+        optionAnswer3: new FormControl(),
+        optionCorrect1: new FormControl(),
+        optionCorrect2: new FormControl(),
+        optionCorrect3: new FormControl()
       }
     )
   }
 
+  onSubmit(createQuizForm) {
+    console.log(createQuizForm.value)
+  }
+
   saveQuiz(): Quiz {
     const id = this.tempData.getQuizzes().length+1;
-    return {
+    //console.log(createQuizForm.value)
+    this.router.navigate(['portal/display-quizzes']);
+    this.quiz = {  
       _id: id.toString(), visible: false, user: {
         _id: '1', username: 'Matthias', email: 'ms@ms.dk', gender: Gender.MALE,
         birthDate: new Date("23/09/1995")
-      }, title: 'test',
+      }, title: this.createQuizForm.value.quizTitle,
       questions: [
         {
-          title: this.createQuizForm.value.question1,
+          title: this.createQuizForm.value.questionTitle,
           options: [
-            { answer: this.createQuizForm.value.options1_1[0], correct: this.createQuizForm.value.options1_1[1]},
-            { answer: this.createQuizForm.value.options1_2[0], correct: this.createQuizForm.value.options1_2[1]},
-            { answer: this.createQuizForm.value.options1_3[0], correct: this.createQuizForm.value.options1_3[1]},
+            { answer: this.createQuizForm.value.optionAnswer1, correct: this.createQuizForm.value.optionCorrect1},
+            { answer: this.createQuizForm.value.optionAnswer2, correct: this.createQuizForm.value.optionCorrect2},
+            { answer: this.createQuizForm.value.optionAnswer3, correct: this.createQuizForm.value.optionCorrect3},
           ]
         }
       ]
     }
+    console.log(this.quiz)
+    this.tempData.setQuiz(this.quiz);
+    return this.quiz;
   }
 
 }
