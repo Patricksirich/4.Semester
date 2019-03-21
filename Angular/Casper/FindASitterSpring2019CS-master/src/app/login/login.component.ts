@@ -12,8 +12,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
-  // DI - Dependency injection
-  constructor(private fb: FormBuilder, private snackBar: MatSnackBar, 
+  constructor(private fb: FormBuilder, private snackBar: MatSnackBar,
     private router: Router, private authService: AuthService) {
   }
 
@@ -31,7 +30,7 @@ export class LoginComponent implements OnInit {
       duration: 2000,
     });
 
-    
+
     console.log(this.loginForm);
 
     if (this.loginForm.valid) {
@@ -39,18 +38,18 @@ export class LoginComponent implements OnInit {
       // navigate after successful login.
       if (this.loginForm.value.username === 'admin') {
         //log in as admin
-        
+
       }
-  
-    
+
+
       console.log("First");
       this.authService.login().subscribe(result => {
         console.log("Third");
-        this.router.navigate(['portal/display-quizzes']);  
+        this.router.navigate(['portal/display-quizzes']);
       });
 
       console.log("Second");
-      
+
     }
     else {
       // Show error message or something else.

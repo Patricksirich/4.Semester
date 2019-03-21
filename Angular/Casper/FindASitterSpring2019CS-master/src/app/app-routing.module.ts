@@ -15,7 +15,7 @@ import { DisplayQuizzesComponent } from './display-quizzes/display-quizzes.compo
 import { CreateQuizComponent } from './create-quiz/create-quiz.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home/login', pathMatch: 'full' }, // if baseUrl => go to login
+  { path: '', redirectTo: 'home', pathMatch: 'full' }, // if baseUrl => go to login
 
   {path: 'home', component: HomeComponent, children: [
     {path: 'about', component: AboutComponent},
@@ -26,17 +26,17 @@ const routes: Routes = [
     ]},
     {path: 'register', component: RegisterComponent}
   ]},
-  
+
   {path: 'portal', component:PortalComponent, /*canActivate: [AuthGuard],*/ children: [
-    {path: 'display-quiz/:id', component:DisplayQuizComponent},  
-    {path: 'create-quiz', component:CreateQuizComponent},  
-    {path: 'display-quizzes', component:DisplayQuizzesComponent},  
+    {path: 'display-quiz/:id', component:DisplayQuizComponent},
+    {path: 'create-quiz', component:CreateQuizComponent},
+    {path: 'display-quizzes', component:DisplayQuizzesComponent},
   ]},
-  
+
 
   { path: '**', component: PageNotFoundComponent } // wildcard - if no routes matched, display this
  ];
- 
+
 
 // Define available routes
 

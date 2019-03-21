@@ -9,14 +9,13 @@
             <mat-card-title>Login</mat-card-title>
             <mat-card-subtitle>to find a sitter or baby</mat-card-subtitle>
           </mat-card-header>
-          <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
           <mat-card-content>
-            
+
           <div>
             <mat-form-field>
               <!-- <p>Username</p> -->
               <input matInput placeholder="Username" formControlName="username">
-              
+
               <mat-error *ngIf="loginForm.controls.username.errors?.required && loginForm.controls.username.touched">
                 You must fill out the username
               </mat-error>
@@ -26,7 +25,7 @@
             </mat-form-field>
             <!-- <input type="text" formControlName="username"> -->
           </div>
-        
+
           <div>
             <mat-form-field>
               <!-- <p>Password</p> -->
@@ -39,23 +38,19 @@
 
           <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Login</button>
       <!-- Dont do this. Disabling a button is ok but only with user feedback! -->
-                
+
             </mat-card-content>
             <mat-card-actions>
               <mat-divider></mat-divider>
-              
+
               <mat-card-subtitle>I want to register instead</mat-card-subtitle>
               <button type="button" mat-button>Register</button>
             </mat-card-actions>
           </mat-card>
-    
+
       </form>
   </mat-grid-tile>
   <mat-grid-tile [colspan]="1" [rowspan]="1"></mat-grid-tile>
 
 </mat-grid-list>
-
-<button routerLink="josef">Go to Josef (7 points)</button>
-<button routerLink="morten">Go to Morten (0 Morten)</button>
-
 <router-outlet></router-outlet>
