@@ -9,8 +9,9 @@ export class TempDataService {
 
   constructor() { }
 
-  setQuiz(quiz : Quiz){
+  saveQuiz(quiz: Quiz): void {
     this.quizzes.push(quiz);
+    console.log(this.quizzes);
   }
 
   findQuiz(searchForId: string) : Quiz {

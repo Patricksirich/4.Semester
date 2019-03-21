@@ -14,6 +14,10 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatMenuModule} from '@angular/material/menu';
+import { MatSnackBarModule, MatCheckboxModule } from '@angular/material';
+import {MatDividerModule} from '@angular/material/divider';
 import { DisplayQuizComponent } from './display-quiz/display-quiz.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
@@ -25,7 +29,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { CreateQuizComponent } from './create-quiz/create-quiz.component';
 import { DisplayQuizzesComponent } from './display-quizzes/display-quizzes.component';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -56,7 +60,13 @@ import {MatSelectModule} from '@angular/material/select';
     MatButtonModule,
     MatCardModule,
     MatIconModule,
-    MatSelectModule
+    MatSelectModule,
+    MatGridListModule, 
+    MatMenuModule, 
+    MatSnackBarModule, 
+    MatDividerModule, 
+    MatCheckboxModule
+
     
   ],
   providers: [],
