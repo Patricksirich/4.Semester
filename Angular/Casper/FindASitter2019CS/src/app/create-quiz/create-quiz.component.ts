@@ -5,6 +5,7 @@ import { Quiz } from '../entities/quiz';
 import { TempDataService } from '../service/temp-data.service';
 import { Gender } from '../entities/user';
 
+
 @Component({
   selector: 'app-create-quiz',
   templateUrl: './create-quiz.component.html',
@@ -41,7 +42,7 @@ export class CreateQuizComponent implements OnInit {
     const id = this.tempData.getQuizzes().length+1;
     //console.log(createQuizForm.value)
     this.router.navigate(['portal/display-quizzes']);
-    this.quiz = {  
+    this.quiz = {
       _id: id.toString(), visible: false, user: {
         _id: '1', username: 'Matthias', email: 'ms@ms.dk', gender: Gender.MALE,
         birthDate: new Date("23/09/1995")
