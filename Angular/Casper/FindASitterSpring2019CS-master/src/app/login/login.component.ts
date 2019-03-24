@@ -41,15 +41,10 @@ export class LoginComponent implements OnInit {
 
       }
 
-
-      console.log("First");
       this.authService.login().subscribe(result => {
         console.log("Third");
         this.router.navigate(['portal/display-quizzes']);
       });
-
-      console.log("Second");
-
     }
     else {
       // Show error message or something else.

@@ -11,7 +11,7 @@ export class TempDataService {
   quizzes: Quiz[];
 
   constructor() {
-    this.quizzes = this.getQuizzes();  
+    this.quizzes = this.getQuizzes();
   }
 
   saveQuiz(quiz: Quiz): void {
@@ -20,19 +20,19 @@ export class TempDataService {
   }
 
   findQuiz(searchForId: string) : Quiz {
-    return this.getQuizzes().find(quiz => quiz._id === searchForId);
+    return this.quizzes.find(quiz => quiz._id === searchForId);
 
   }
 
   getQuizzes() : Quiz[] {
     return [
-      { 
+      {
         _id: '1', visible: false, user: {
           _id:'1',username: 'mikkel86', email: 'mik@mikkel.dk', gender: Gender.MALE,
           birthDate: new Date(1986,0,1)
         }, title: 'Dogs', created: new Date(2019,2,1),
         questions: [
-          {title: 'How many feet does a puddle have?', 
+          {title: 'How many feet does a puddle have?',
             options: [
               {answer: '1', correct: false},
               {answer: '2', correct: false},
@@ -40,20 +40,20 @@ export class TempDataService {
               {answer: '4', correct: true}
             ]
           },
-          {title: 'How long do you need to walk a dog?', 
+          {title: 'How long do you need to walk a dog?',
             options: [
               {answer: 'For 10 minutes', correct: false},
               {answer: 'For 20 minutes', correct: false},
               {answer: 'For 30 minutes', correct: true},
               {answer: 'For 40 minutes', correct: false},
-            ]}] 
+            ]}]
       },
       {
         _id: '2', visible: true, user: {
           _id:'1',username: 'veronique', email: 'vero@veronique.dk', gender: Gender.FEMALE,
           birthDate: new Date(1994,0,1)
         }, title: 'Veroniques quiz', created: new Date(2019, 3, 19),
-        questions: [ 
+        questions: [
           { title: 'How old are Veronique',
           options: [
             { answer: '132 cm', correct: false },
@@ -68,13 +68,13 @@ export class TempDataService {
   }
 
   getQuiz() : Quiz {
-    return { 
+    return {
       _id: '1', visible: false, user: {
         _id:'1',username: 'veronique', email: 'vero@veronique.dk', gender: Gender.FEMALE,
         birthDate: new Date(1994,0,1)
-      }, title: 'Dogs', 
+      }, title: 'Dogs',
       questions: [
-        {title: 'How many feet does a puddle have?', 
+        {title: 'How many feet does a puddle have?',
           options: [
             {answer: '1', correct: false},
             {answer: '2', correct: false},
@@ -82,13 +82,13 @@ export class TempDataService {
             {answer: '4', correct: true}
           ]
         },
-        {title: 'How long do you need to walk a dog?', 
+        {title: 'How long do you need to walk a dog?',
           options: [
             {answer: 'For 10 minutes', correct: false},
             {answer: 'For 20 minutes', correct: false},
             {answer: 'For 30 minutes', correct: true},
             {answer: 'For 40 minutes', correct: false},
-          ]}] 
+          ]}]
     };
   }
 }
