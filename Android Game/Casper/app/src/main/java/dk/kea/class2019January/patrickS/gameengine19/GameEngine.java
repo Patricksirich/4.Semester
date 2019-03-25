@@ -1,5 +1,6 @@
 package dk.kea.class2019January.patrickS.gameengine19;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;
@@ -28,7 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.io.InputStream;
 
-public abstract class GameEngine extends AppCompatActivity implements Runnable, TouchHandler, SensorEventListener {
+public abstract class GameEngine extends Activity implements Runnable, TouchHandler, SensorEventListener {
     private Thread mainLoopThread;
     private State state = State.Paused;
     private List<State> stateChanges = new ArrayList<>();

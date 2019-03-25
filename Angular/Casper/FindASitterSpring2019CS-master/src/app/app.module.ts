@@ -21,8 +21,6 @@ import { DisplayQuizComponent } from './display-quiz/display-quiz.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { MortenComponent } from './morten/morten.component';
-import { JosefComponent } from './josef/josef.component';
 import { HomeComponent } from './home/home.component';
 import { PortalComponent } from './portal/portal.component';
 import { DisplayQuizzesComponent } from './display-quizzes/display-quizzes.component';
@@ -38,8 +36,6 @@ import {MatExpansionModule} from '@angular/material/expansion';
     AboutComponent,
     ContactComponent,
     PageNotFoundComponent,
-    MortenComponent,
-    JosefComponent,
     HomeComponent,
     PortalComponent,
     DisplayQuizzesComponent,
