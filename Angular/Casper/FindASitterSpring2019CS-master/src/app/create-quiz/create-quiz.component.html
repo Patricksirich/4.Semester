@@ -1,26 +1,26 @@
-<form [formGroup]="createQuiz">
+<form [formGroup]="createQuiz" (ngSubmit)="saveQuiz()">
   <div>
     <mat-form-field >
-      <input matInput placeholder="Quiz Title" formControlName="quiztitle">
+      <input id="quiztitle" matInput placeholder="Quiz Title" formControlName="title">
     </mat-form-field>
   </div>
   <div>
-    <button mat-raised-button color="secondary" (click)="createNewQuestion()">New Question</button>
+    <button id="newQuestion" type="button" mat-raised-button color="secondary" (click)="createNewQuestion()">New Question</button>
   </div>
 
-  <div formArrayName="questions">
+  <div  formArrayName="questions">
     <div *ngFor="let questionControl of createQuiz.controls.questions.controls; let i=index">
       <div [formGroupName]="i">
-          <mat-form-field >
-            <input matInput placeholder="Question" formControlName="title">
+          <mat-form-field>
+            <input matInput placeholder="Question" formControlName="title" class="question">
           </mat-form-field>
-          <button mat-raised-button color="secondary" (click)="createNewOption(i)">New Option</button>
-          
+          <button id='newOption' type="button" mat-raised-button color="secondary" (click)="createNewOption(i)">New Option</button>
+
           <div formArrayName="options">
               <div *ngFor="let optionControl of questionControl.controls.options.controls; let j=index">
                   <div [formGroupName]="j">
                     <mat-form-field>
-                      <input matInput placeholder="Option" formControlName="answer">
+                      <input matInput placeholder="Option" formControlName="answer" class="option">
                     </mat-form-field>
                     <mat-checkbox formControlName="correct">Correct answer</mat-checkbox>
                 </div>
@@ -41,11 +41,11 @@
             Type your name and age
           </mat-panel-description>
         </mat-expansion-panel-header>
-    
+
         <mat-form-field>
           <input matInput placeholder="First name">
         </mat-form-field>
-    
+
         <mat-form-field>
           <input matInput placeholder="Age">
         </mat-form-field>
@@ -65,5 +65,5 @@
     </mat-accordion> -->
 
 
-  <button mat-raised-button color="primary" (click)="saveQuiz()">Save Quiz</button>
+  <button id="saveQuiz" mat-raised-button color="primary" (click)="saveQuiz()">Save Quiz</button>
 </form>
