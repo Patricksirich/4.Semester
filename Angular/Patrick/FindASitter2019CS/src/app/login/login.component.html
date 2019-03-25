@@ -3,7 +3,7 @@
   <div>
 
   <mat-form-field class="field-width">
-  <input matInput placeholder="Username" type="text" formControlName="username">
+  <input matInput placeholder="Username" type="text" formControlName="username" id="username">
   <div *ngIf="loginForm.controls.username.errors?.required && loginForm.controls.username.touched">
     You must fill out the username
   
@@ -16,14 +16,14 @@
 
 <div>
   <mat-form-field class="field-width">
-  <input matInput placeholder="Password" type="Password" formControlName="password">
+  <input matInput placeholder="Password" type="Password" formControlName="password" id="password">
   <div *ngIf="!loginForm.controls.password.valid && loginForm.controls.password.dirty">
     You must fill out the password
   </div>
 </mat-form-field>
 </div>
 
-<button type="submit" style="margin-left:42%" mat-stroked-button  [disabled]="!loginForm.valid">Login</button>
+<button type="submit" style="margin-left:42%" mat-stroked-button  [disabled]="!loginForm.valid" id="loginbtn">Login</button>
 <!-- Don't use disabled unless there is user feedback-->
 </form>
 </mat-card>

@@ -1,5 +1,6 @@
 package dk.kea.class2019January.patrickS.gameengine19;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;
@@ -13,10 +14,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.media.AudioManager;
 import android.media.SoundPool;
-import android.support.constraint.solver.widgets.Rectangle;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.method.Touch;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -28,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.io.InputStream;
 
-public abstract class GameEngine extends AppCompatActivity implements Runnable, TouchHandler, SensorEventListener
+public abstract class GameEngine extends Activity implements Runnable, TouchHandler, SensorEventListener
 {
     private Thread mainLoopThread;
     private State state = State.Paused;
