@@ -3,7 +3,6 @@ package dk.kea.class2019January.patrickS.gameengine19;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.text.method.Touch;
 
 import java.util.List;
 
@@ -22,7 +21,7 @@ public class GameScreen extends Screen {
     Typeface font;
     World world;
     WorldRenderer renderer;
-    String showText = "Dummy";
+    String showText;
 
     public GameScreen(GameEngine gameEngine) {
 
@@ -52,6 +51,7 @@ public class GameScreen extends Screen {
         if (state == State.Paused && gameEngine.isTouchDown(0))
         {
             state = State.Running;
+            resume();
         }
 
         if (state == State.GameOver && gameEngine.isTouchDown((0)))
@@ -63,6 +63,7 @@ public class GameScreen extends Screen {
         if (state == State.Running && gameEngine.getTouchY(0) < 35 && gameEngine.getTouchX(0) > 320 - 33)
         {
             state = State.Paused;
+            pause();
             return;
         }
 
@@ -79,6 +80,7 @@ public class GameScreen extends Screen {
 
         if (state == State.Paused)
         {
+            pause();
             gameEngine.drawBitmap(resume, 160 - resume.getWidth() / 2, 240 - resume.getHeight() / 2);
         }
 
@@ -88,28 +90,32 @@ public class GameScreen extends Screen {
             for (int i = 0; i < events.size(); i++) {
                 if(events.get(i).type == TouchEvent.TouchEventType.Up) {
                     gameEngine.drawBitmap(gameOver, 160 - gameOver.getWidth() / 2, 240 - gameOver.getWidth() / 2);
-                    gameEngine.setScreen(new MainMenuScreen(gameEngine));
+            pause();
+            gameEngine.setScreen(new MainMenuScreen(gameEngine));
                 }
             }
         }
+
     }
 
     @Override
     public void pause() {
 
-        if (state == State.Running) {
-            state = State.Paused;
-        }
-
+        gameEngine.music.pause();
+        if (state == State.Running) state = State.Paused;
     }
 
     @Override
     public void resume() {
 
+        gameEngine.music.play();
     }
 
     @Override
     public void dispose() {
 
+        gameEngine.music.pause();
+        gameEngine.music.stop();
+        gameEngine.music.dispose();
     }
 }

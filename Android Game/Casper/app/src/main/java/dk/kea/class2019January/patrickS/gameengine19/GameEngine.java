@@ -50,6 +50,7 @@ public abstract class GameEngine extends Activity implements Runnable, TouchHand
     long currentTime = 0;
     long lastTime = 0;
     Paint paint = new Paint();
+    public Music music;
 
     public abstract Screen createStartScreen();
 
