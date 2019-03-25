@@ -14,6 +14,10 @@ public class World {
     Paddle paddle = new Paddle();
     List<Block> blocks = new ArrayList<>();
 
+    boolean gameOver = false;
+    boolean lostLife = false;
+    int points = 0;
+    int lives = 3;
     int level = 1;
     int hits = 0;
 
@@ -43,10 +47,16 @@ public class World {
             ball.y = MIN_Y;
         }
 
-//        if (ball.y > MAX_Y - Ball.HEIGHT) {
-//            ball.vy = -ball.vy;
-//            ball.y = MAX_Y - Ball.HEIGHT;
-//        }
+        if (ball.y > MAX_Y - Ball.HEIGHT) {
+            lives = lives - 1;
+            lostLife = true;
+            ball.x = paddle.x - Ball.WIDTH / 2 + Paddle.WIDTH / 2;
+            ball.y = paddle.y - Ball.HEIGHT - 5;
+            ball.vy = -Ball.initialSpeed;
+
+            if (lives == 0) gameOver = true;
+            return;
+        }
 
         // move paddle based on phone tilt
         paddle.x = paddle.x - accelX * 50 * deltaTime;
@@ -104,6 +114,7 @@ public class World {
 
                 ball.x = ball.x - oldvx * deltaTime * 1.01f; //back out the ball with 1% to avoid multiple interactions
                 ball.y = ball.y - oldvy * deltaTime * 1.01f;
+                points = points + 10 - block.type;
                 break; // no need to check collision with other blocks when it hits this block
             }
         }
@@ -144,25 +155,21 @@ public class World {
         }
         //check the top edge of the block
         if (collideRectangles(ball.x, ball.y, Ball.WIDTH, Ball.HEIGHT, block.x, block.y, Block.WIDTH, 1)) {
-
             if (ball.vy > 0) ball.vy = -ball.vy;
             return;
         }
         //check the bottom edge of the block
         if (collideRectangles(ball.x, ball.y, Ball.WIDTH, Ball.HEIGHT, block.x, block.y + Block.HEIGHT, Block.WIDTH, 1)) {
-
             if (ball.vy < 0) ball.vy = -ball.vy;
             return;
         }
         //check the left edge of the block
         if (collideRectangles(ball.x, ball.y, Ball.WIDTH, Ball.HEIGHT, block.x, block.y, 1, Block.HEIGHT)) {
-
             if (ball.vx > 0) ball.vx = -ball.vx;
             return;
         }
         //check the right edge of the block
         if (collideRectangles(ball.x, ball.y, Ball.WIDTH, Ball.HEIGHT, block.x + Block.WIDTH, block.y, 1, Block.HEIGHT)) {
-
             if (ball.vx < 0) ball.vx = -ball.vx;
         }
 
