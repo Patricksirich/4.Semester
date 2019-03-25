@@ -7,7 +7,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -45,6 +47,8 @@ public abstract class GameEngine extends Activity implements Runnable, TouchHand
     private int framesPerSecond = 0;
     long currentTime = 0;
     long lastTime = 0;
+    Paint paint = new Paint();
+    public Music music;
 
     public abstract Screen createStartScreen();
 
@@ -163,6 +167,24 @@ public abstract class GameEngine extends Activity implements Runnable, TouchHand
         canvas.drawBitmap(bitmap, src, dst, null);
     }
 
+    public Typeface loadFont(String fileName)
+    {
+        Typeface font = Typeface.createFromAsset(getAssets(), fileName);
+        if (font == null)
+        {
+            throw new RuntimeException("Oh shit, I could not load font from file: " + fileName);
+        }
+        return font;
+    }
+
+    public void drawText(Typeface font, String text, int x, int y, int color, int size)
+    {
+        paint.setTypeface(font);
+        paint.setTextSize(size);
+        paint.setColor(color);
+        canvas.drawText(text, x, y, paint);
+    }
+
     public Sound loadSound(String fileName)
     {
         try
@@ -194,6 +216,11 @@ public abstract class GameEngine extends Activity implements Runnable, TouchHand
     public boolean isTouchDown(int pointer)
     {
         return touchHandler.isTouchDown(pointer);
+    }
+
+    public List<TouchEvent> getTouchEvents()
+    {
+        return touchEventCopied;
     }
 
     public int getTouchX(int pointer)

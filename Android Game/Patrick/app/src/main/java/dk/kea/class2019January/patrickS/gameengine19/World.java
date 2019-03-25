@@ -14,6 +14,7 @@ public class World
     Paddle paddle = new Paddle();
     List<Block> blocks = new ArrayList<>();
 
+    int points = 0;
     int lives = 3;
     boolean lostLife = false;
     boolean gameOver = false;
@@ -120,6 +121,7 @@ public class World
                 //back out the ball with 1% to avoid multiple interactions
                 ball.x = ball.x - oldvx * deltaTime * 1.01f;
                 ball.y = ball.y - oldvy * deltaTime * 1.01f;
+                points = points + 10 - block.type;
                 break; //no need to check collision with other block when it hit this block
             }
         }
