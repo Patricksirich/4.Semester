@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { TempDataService } from '../service/temp-data.service';
 import { Quiz } from '../entities/quiz';
+import { Router } from '@angular/router';
+import { Gender } from '../entities/user';
 
 @Component({
   selector: 'app-create-quiz',
@@ -11,11 +13,23 @@ import { Quiz } from '../entities/quiz';
 export class CreateQuizComponent implements OnInit {
   createQuiz: FormGroup;
 
-  constructor(private fb: FormBuilder, private data: TempDataService) { }
+  constructor(private fb: FormBuilder, private data: TempDataService, private router: Router) { }
 
   saveQuiz() {
     // console.log(this.createQuiz.value);
+    // save a user who created this quiz.
+    // hardcode a user until we have a proper login.
+    let quiz = this.createQuiz.value as Quiz;
+    
+    quiz.user = { // remove when we have a proper login
+    _id: '1', 
+    username: 'Patrick', 
+    email: 'p@ps.dk', 
+    gender: Gender.UNICORN, 
+    birthDate: undefined
+  };
     this.data.saveQuiz(this.createQuiz.value as Quiz);
+    this.router.navigate(['/portal/display-quizzes']);
   }
 
   createNewQuestion() {
@@ -48,7 +62,7 @@ export class CreateQuizComponent implements OnInit {
 
   ngOnInit() {
     this.createQuiz = this.fb.group({
-      quiztitle: [''],
+      title: [''],
       questions: this.fb.array([]),
       // question1: [''],  // We want a dynamic form and not this!
       // option1_1: [''],

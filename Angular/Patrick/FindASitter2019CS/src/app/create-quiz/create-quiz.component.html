@@ -1,26 +1,26 @@
-<form [formGroup]="createQuiz">
+<form [formGroup]="createQuiz" (ngSubmit)="saveQuiz()">
   <div>
     <mat-form-field >
-      <input matInput placeholder="Quiz Title" formControlName="quiztitle">
+      <input matInput placeholder="Quiz Title" formControlName="title" class="titleInput">
     </mat-form-field>
   </div>
   <div>
-    <button mat-raised-button color="secondary" (click)="createNewQuestion()">New Question</button>
+    <button type="button" color="secondary" (click)="createNewQuestion()" class="newQuestion">New Question</button>
   </div>
 
   <div formArrayName="questions">
     <div *ngFor="let questionControl of createQuiz.controls.questions.controls; let i=index">
       <div [formGroupName]="i">
           <mat-form-field >
-            <input matInput placeholder="Question" formControlName="title">
+            <input matInput placeholder="Question" formControlName="title" class="questionInput">
           </mat-form-field>
-          <button mat-raised-button color="secondary" (click)="createNewOption(i)">New Option</button>
+          <button type="button" mat-raised-button color="secondary" (click)="createNewOption(i)" class="newOption">New Option</button>
           
           <div formArrayName="options">
               <div *ngFor="let optionControl of questionControl.controls.options.controls; let j=index">
                   <div [formGroupName]="j">
                     <mat-form-field>
-                      <input matInput placeholder="Option" formControlName="answer">
+                      <input matInput placeholder="Option" formControlName="answer" class="optionInput">
                     </mat-form-field>
                     <mat-checkbox formControlName="correct">Correct answer</mat-checkbox>
                 </div>
@@ -65,5 +65,6 @@
     </mat-accordion> -->
 
 
-  <button mat-raised-button color="primary" (click)="saveQuiz()">Save Quiz</button>
+  <button mat-raised-button color="primary" type="submit" id="submitQuiz">Save Quiz</button>
 </form>
+<router-outlet></router-outlet>
