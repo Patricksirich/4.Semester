@@ -9,44 +9,35 @@ class Calculator:
         # you should here create two instance variables
         # total and error_msg
         self.total = 0
-        self.error_msg = 'test'
+        self.error_msg = ''
 
     def add(self, num):
-        """ Add takes 1 argument an 'int' or 'float', 
-            the number to add to 'total' """
+        #Add takes 1 argument an 'int' or 'float', 
+        #the number to add to 'total'
 
         # Think of possible errors that could happen, 
-        # and make tests for these errors
-        
-        
+        # and make tests for these errors      
 
         if type(num) not in [int, float]:
             
-            raise TypeError('Invalid type!')
+            raise ValueError('Invalid value! input must be an integer.')
         
         if num > 10000:
 
-            raise OverflowError('Number too large!')
-            
-        try:
-            self.total += num
-            
-        except TypeError as v:
-            print(v)
-        except OverflowError as v:
-            print(v)
-                
+            raise OverflowError('Number too large!')    
+
+        self.total += num         
         
     def subtrack(self, num):
         
         if type(num) not in [int, float]:
 
-            raise TypeError('Invalid type!')
+            raise ValueError('Invalid type!')
 
         try:
             self.total -= num
             
-        except TypeError as v:
+        except ValueError as v:
             print(v)
         
     
@@ -54,24 +45,24 @@ class Calculator:
         
         if type(num) not in [int, float]:
             
-            raise TypeError('Invalid type!')
+            raise ValueError('Invalid type!')
             
         try:
             self.total *= num
             
-        except TypeError as v:
+        except ValueError as v:
             print(v)
 
     def divide(self, num):
 
         if type(num) not in [int, float]:
             
-            raise TypeError('Invalid type!')
+            raise ValueError('Invalid type!')
             
         try:
             self.total /= num
-            
-        except TypeError as v:
+
+        except ValueError as v:
             print(v)
             
     

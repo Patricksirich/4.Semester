@@ -6,8 +6,8 @@ class TestCalculator(unittest.TestCase):
     def test_types(self):
 
         calc = Calculator()
-        self.assertRaises(TypeError, calc.add, 'Hello')
-        self.assertRaises(TypeError, calc.add, [1, 2])
+        self.assertRaises(ValueError, calc.add, 'Hello')
+        self.assertRaises(ValueError, calc.add, [1, 2])
     
     def test_size(self):
 
