@@ -12,4 +12,9 @@ class TestCircle(unittest.TestCase):
         self.assertAlmostEqual(area(2.2), pi*2.2**2)
 
     def test_values(self):
-            self.assertRaises(ValueError, area, -2)
+        self.assertRaises(ValueError, area, -2)
+
+    def test_types(self):
+        self.assertRaises(TypeError, area, 'Hello')
+        self.assertRaises(TypeError, area, True)
+        self.assertRaises(TypeError, area, ['List Hello'])
