@@ -13,6 +13,7 @@ public class World
     Ball ball = new Ball();
     Paddle paddle = new Paddle();
     List<Block> blocks = new ArrayList<>();
+    CollisionListener collisionListener;
 
     int points = 0;
     int lives = 3;
@@ -21,8 +22,9 @@ public class World
     int level = 1;
     int hits = 0;
 
-    public World()
+    public World(CollisionListener collisionListener)
     {
+        this.collisionListener = collisionListener;
         generateBlocks();
     }
 
@@ -34,16 +36,19 @@ public class World
         {
             ball.vx = -ball.vx;
             ball.x = MIN_X;
+            collisionListener.collisionWall();
         }
         if (ball.x > MAX_X - Ball.WIDTH)
         {
             ball.vx = -ball.vx;
             ball.x = MAX_X - Ball.WIDTH;
+            collisionListener.collisionWall();
         }
         if (ball.y < MIN_Y)
         {
             ball.vy = -ball.vy;
             ball.y = MIN_Y;
+            collisionListener.collisionWall();
         }
 
         if (ball.y > MAX_Y)
@@ -53,6 +58,7 @@ public class World
             ball.x = paddle.x + Paddle.WIDTH / 2;
             ball.y = paddle.y - Ball.HEIGHT - 5;
             ball.vy = -Ball.initialSpeed;
+            // add life lost collisionListener sound
             if (lives == 0) gameOver = true;
             return;
         }
@@ -80,7 +86,8 @@ public class World
             level++;
             ball.x = 160;
             ball.y = 320 - 40;
-            ball.vy = -Ball.initialSpeed;
+            ball.vy = -Ball.initialSpeed * 1.3f;
+            ball.vx = Ball.initialSpeed * 1.1f;
 
         }
 
@@ -94,6 +101,7 @@ public class World
             ball.y = ball.y - ball.vy * deltaTime * 1.01f;
             ball.vy = -ball.vy;
             hits++;
+            collisionListener.collisionPaddle();
             if (hits == 5)
             {
                 hits = 0;
@@ -122,6 +130,7 @@ public class World
                 ball.x = ball.x - oldvx * deltaTime * 1.01f;
                 ball.y = ball.y - oldvy * deltaTime * 1.01f;
                 points = points + 10 - block.type;
+                collisionListener.collisionBlock();
                 break; //no need to check collision with other block when it hit this block
             }
         }
@@ -201,7 +210,7 @@ public class World
         {
             for (int x = 30; x < 320 - Block.WIDTH; x = x + (int) Block.WIDTH + 4)
             {
-                blocks.add(new Block(x, y, type));
+                blocks.add(new Block(x, y + level * 40, type));
             }
 
         }
