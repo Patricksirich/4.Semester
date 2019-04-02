@@ -78,6 +78,7 @@ public abstract class GameEngine extends Activity implements Runnable, TouchHand
         {
             setOffscreenSurface(320, 480);
         }
+        setOffscreenSurface(480, 320);
         touchHandler = new MultiTouchHandler(surfaceView, touchEventBuffer, touchEventPool);
         SensorManager manager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         if (manager.getSensorList(Sensor.TYPE_ACCELEROMETER).size() != 0)

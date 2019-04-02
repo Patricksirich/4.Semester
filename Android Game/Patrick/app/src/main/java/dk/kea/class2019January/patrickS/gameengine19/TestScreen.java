@@ -4,8 +4,6 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.util.Log;
 
-import java.util.Random;
-
 public class TestScreen extends Screen
 {
     float x = 0;
@@ -20,8 +18,8 @@ public class TestScreen extends Screen
     {
         super(gameEngine);
         bitmap = gameEngine.loadBitmap("bob.png");
-        sound = gameEngine.loadSound("blocksplosion.wav");
-        backgroundMusic = gameEngine.loadMusic("music.ogg");
+        sound = gameEngine.loadSound("breakout/blocksplosion.wav");
+        backgroundMusic = gameEngine.loadMusic("breakout/music.ogg");
         isPlaying = true;
 
     }
