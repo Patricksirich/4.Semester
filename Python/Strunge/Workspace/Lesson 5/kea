@@ -1,0 +1,2116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="da-dk" lang="da-dk" dir="ltr">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="apple-touch-icon-precomposed" sizes="180x180" href="/images/resources/kea_180.png">
+			<link rel="icon" type="image/png" sizes="16x16" href="/images/resources/kea_16.png">
+			<link rel="icon" type="image/png" sizes="32x32" href="/images/resources/kea_32.png">
+			<link rel="icon" type="image/png" sizes="96x96" href="/images/resources/kea_96.png">
+		<meta charset="utf-8" />
+	<base href="https://kea.dk/" />
+	<meta name="author" content="Simon Munk" />
+	<meta name="generator" content="Joomla! - Open Source Content Management" />
+	<title>KEA - Københavns Erhvervsakademi</title>
+	<link href="https://kea.dk/" rel="alternate" hreflang="da-DK" />
+	<link href="https://kea.dk/en/" rel="alternate" hreflang="en-GB" />
+	<link href="/libraries/quix/assets/css/quixtrap.css" rel="stylesheet" media="" attribs="[]" />
+	<link href="/libraries/quix/assets/css/quix.css" rel="stylesheet" media="" attribs="[]" />
+	<link href="/media/mod_rseventspro_events/css/style.css?e62e24bd133a6ab132377612ab0e2a3f" rel="stylesheet" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="/templates/kea/css/template.css?1.0.7.4" rel="stylesheet" />
+	<link href="/media/com_finder/css/finder.css?e62e24bd133a6ab132377612ab0e2a3f" rel="stylesheet" />
+	<link href="/media/mod_languages/css/template.css?e62e24bd133a6ab132377612ab0e2a3f" rel="stylesheet" />
+	<style>
+#qx-section-2799{
+    
+      }
+  
+
+
+
+
+
+
+#qx-row-39100{
+          }
+ 
+
+
+#qx-column-48103{
+    
+  	
+    }
+
+ 
+
+
+
+
+#qx-section-894{
+    
+      }
+  
+
+
+
+
+
+
+#qx-row-245{
+          }
+ 
+
+
+#qx-column-1847{
+    
+  	
+    }
+
+ 
+
+
+
+
+#qx-row-571616{
+          }
+ 
+
+
+#qx-column-851617{
+    
+  	
+    }
+
+ 
+
+
+
+
+#qx-section-901812{
+    
+      }
+  
+
+
+
+
+
+
+#qx-row-2690{
+          }
+ 
+
+
+#qx-column-8192{
+    
+  	
+    }
+
+ 
+
+
+
+
+
+#qx-column-491321{
+    
+  	
+    }
+
+ 
+
+
+
+
+#qx-section-821831{
+    
+      }
+  
+
+
+
+
+
+
+#qx-row-231832{
+          }
+ 
+
+
+#qx-column-441833{
+    
+  	
+    }
+
+ 
+
+
+
+
+#qx-column-841836{
+    
+  	
+    }
+
+ 
+
+
+
+
+#qx-section-751875{
+    
+      }
+  
+
+
+
+
+
+
+#qx-row-731876{
+          }
+ 
+
+
+#qx-column-641877{
+    
+  	
+    }
+
+ 
+
+
+
+
+
+#qx-column-231879{
+    
+  	
+    }
+
+ 
+
+
+
+
+#qx-section-871288{
+    
+      }
+  
+
+
+
+
+
+
+#qx-row-631289{
+          }
+ 
+
+
+#qx-column-441318{
+    
+  	
+    }
+
+ 
+
+
+
+
+
+
+#qx-column-57112{
+    
+  	
+    }
+
+ 
+
+
+
+
+
+
+#qx-section-861303{
+    
+      }
+  
+
+
+
+
+
+
+#qx-row-761304{
+          }
+ 
+
+
+#qx-column-691306{
+    
+  	
+    }
+
+ 
+
+
+
+
+#qx-section-611612{
+    
+      }
+  
+
+
+
+
+
+
+#qx-row-731619{
+          }
+ 
+
+
+#qx-column-651620{
+    
+  	
+    }
+
+ 
+
+
+
+
+#qx-row-761640{
+          }
+ 
+
+
+#qx-column-891641{
+    
+  	
+    }
+
+ 
+
+
+
+
+
+#qx-column-481644{
+    
+  	
+    }
+
+ 
+
+
+
+
+
+#qx-section-153599{
+    
+      }
+  
+
+
+
+
+
+
+#qx-row-103600{
+          }
+ 
+
+
+#qx-column-983693{
+    
+  	
+    }
+
+ 
+
+
+
+
+#qx-row-492760{
+          }
+ 
+
+
+#qx-column-232762{
+    
+  	
+    }
+
+ 
+
+
+
+
+#qx-column-312764{
+    
+  	
+    }
+
+ 
+
+
+
+
+#qx-section-86138{
+    
+  background-color : #e0e0e0;     }
+  
+
+
+
+
+
+
+#qx-row-35139{
+          }
+ 
+
+
+#qx-column-46141{
+    
+  	
+    }
+
+ 
+
+
+
+
+
+#qx-section-4386{
+    
+  background-color : #e0e0e0;     }
+  
+
+
+
+
+
+
+#qx-row-4487{
+          }
+ 
+
+
+#qx-column-3688{
+    
+  	
+    }
+
+ 
+
+
+
+
+
+#qx-section-553697{
+    
+      }
+  
+
+
+
+
+
+
+#qx-row-761735{
+          }
+ 
+
+
+#qx-column-361737{
+    
+  	
+    }
+
+ 
+
+
+
+
+#qx-row-873027{
+          }
+ 
+
+
+#qx-column-333028{
+    
+  	
+    }
+
+ 
+
+
+
+
+#qx-row-804222{
+          }
+ 
+
+
+#qx-column-34224{
+    
+  	
+    }
+
+ 
+
+
+
+
+#qx-column-504228{
+    
+  	
+    }
+
+ 
+
+
+
+
+#qx-row-848274{
+          }
+ 
+
+
+#qx-column-998276{
+    
+  	
+    }
+
+ 
+
+
+
+
+#qx-column-488278{
+    
+  	
+    }
+
+ 
+
+
+
+
+#qx-column-658280{
+    
+  	
+    }
+
+ 
+
+
+
+
+#qx-row-8873{
+          }
+ 
+
+
+#qx-column-4374{
+    
+  	
+    }
+
+ 
+
+
+
+
+#qx-column-7176{
+    
+  	
+    }
+
+ 
+
+
+
+
+
+#qx-row-57625{
+          }
+ 
+
+
+#qx-column-12626{
+    
+  	
+    }
+
+ 
+
+
+
+
+#qx-column-5628{
+    
+  	
+    }
+
+ 
+
+
+
+
+#qx-column-57112 { padding-left:30px; } @media screen and (min-width: 768px) and (max-width: 992px){  } @media screen and (max-width: 767px) {  } @import url("https://fast.fonts.net/t/1.css?apiType=css&projectid=1c051ed0-4ea3-4ebb-8a33-e7140b1b9184");
+	</style>
+	<script src="/media/jui/js/jquery.min.js?e62e24bd133a6ab132377612ab0e2a3f"></script>
+	<script src="/media/jui/js/jquery-noconflict.js?e62e24bd133a6ab132377612ab0e2a3f"></script>
+	<script src="/media/jui/js/jquery-migrate.min.js?e62e24bd133a6ab132377612ab0e2a3f"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="/templates/kea/js/kea-min.js?1.0.7.4"></script>
+	<script src="/templates/kea/js/jquery.cookie.js"></script>
+	<script>
+
+		jQuery(document).ready(function($) {
+			$('.cookie-notice a.btn.accept').click(function(event){
+				event.preventDefault();
+				$.cookie('cookieaccept', '1', { expires: 365, path: '/' });
+				$('.cookie-notice').fadeOut();
+			});
+		});
+		
+jQuery(document).ready(function() {
+	var value, searchword = jQuery('#mod-finder-searchword134');
+
+		// Get the current value.
+		value = searchword.val();
+
+		// If the current value equals the default value, clear it.
+		searchword.on('focus', function ()
+		{
+			var el = jQuery(this);
+
+			if (el.val() === 'Søg ...')
+			{
+				el.val('');
+			}
+		});
+
+		// If the current value is empty, set the previous value.
+		searchword.on('blur', function ()
+		{
+			var el = jQuery(this);
+
+			if (!el.val())
+			{
+				el.val(value);
+			}
+		});
+
+		jQuery('#mod-finder-searchform134').on('submit', function (e)
+		{
+			e.stopPropagation();
+			var advanced = jQuery('#mod-finder-advanced134');
+
+			// Disable select boxes with no value selected.
+			if (advanced.length)
+			{
+				advanced.find('select').each(function (index, el)
+				{
+					var el = jQuery(el);
+
+					if (!el.val())
+					{
+						el.attr('disabled', 'disabled');
+					}
+				});
+			}
+		});});
+	</script>
+	<script type="application/ld+json">
+{"@context":"http:\/\/schema.org","@type":"Organization","name":"KEA","url":"https:\/\/kea.dk\/"}
+	</script>
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="fb:app:id" content="186662815263390">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://kea.dk/">
+	<meta property="og:title" content="KEA - Københavns Erhvervsakademi">
+	<meta property="og:site_name" content="KEA">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="https://kea.dk/slir/w1200-c1200x630/">
+	<link href="https://kea.dk/" rel="alternate" hreflang="x-default" />
+
+			<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WZ5DVP');</script>
+<!-- End Google Tag Manager -->
+	</head>
+<body class="site com_content view-article no-layout no-task itemid-114">
+
+	
+	<div class="page-wrapper">
+
+						<div class="cookie-notice">
+			<div class="info">
+									
+
+<div class="custom"  >
+	<h3>Vi bruger cookies på kea.dk</h3>
+<p>På kea.dk benytter vi cookies til at give dig en god oplevelse på siden og til at målrette vores annoncering.</p>
+<p>Klikker du videre på siden, accepterer du, at der sættes cookies til disse formål.&nbsp;<a href="/cookies-og-privatliv">Læs vores cookie- og privatlivspolitik</a></p></div>
+
+							</div>
+			<div class="buttons"><a class="btn btn-primary accept">OK</a></div>
+		</div>
+		
+		<div class="default-header">
+
+						<div class="extra-navigation hidden-xs hidden-sm">
+				<div class="sitename">Københavns Erhvervsakademi</div>
+				<nav>
+					<ul class="nav menu mod-list">
+<li class="item-366"><a href="https://fronter.com/kea" target="_blank" rel="noopener noreferrer">For studerende</a></li><li class="item-367"><a href="https://fronter.com/kea" target="_blank" rel="noopener noreferrer">For ansatte</a></li><li class="item-417"><a href="https://bibliotek.kea.dk/da/" >Bibliotek</a></li><li class="item-368"><a href="/om-kea/job-på-kea" >Job</a></li><li class="item-369"><a href="/om-kea/kontakt" >Kontakt</a></li></ul>
+
+				</nav>
+			</div>
+			
+			<div id="hamburger" class="hamburger hamburger--squeeze navbar-toggle" type="button">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</div>
+
+			<div class="brand">
+				<a href="/">
+					<img class="hidden-xs hidden-sm" src="/images/resources/logo-main-black-single.png" alt="">
+					<img class="hidden-md hidden-lg" src="/images/resources/logo-small.png" alt="">
+				</a>
+			</div>
+			<nav class="hidden-xs hidden-sm">
+				<ul class="nav menu dropdown mod-list">
+<li class="item-129 deeper parent"><a href="/uddannelser" >Uddannelser</a><ul class="nav-child unstyled small"><li class="item-130 deeper parent"><a href="/uddannelser/erhvervsakademi" >Erhvervs­akademi­</a><ul class="nav-child unstyled small"><li class="item-207"><a href="/uddannelser/erhvervsakademi/automationsteknolog" >Automationsteknolog</a></li><li class="item-208"><a href="/uddannelser/erhvervsakademi/byggekoordinator" >Byggekoordinator</a></li><li class="item-209"><a href="/uddannelser/erhvervsakademi/byggetekniker" >Byggetekniker</a></li><li class="item-210"><a href="/uddannelser/erhvervsakademi/datamatiker" >Datamatiker DK</a></li><li class="item-328"><a href="https://kea.dk/en/programmes/academy-profession-degree/computer-science" >Datamatiker INT</a></li><li class="item-211"><a href="/uddannelser/erhvervsakademi/designteknolog" >Designteknolog DK</a></li><li class="item-329"><a href="/uddannelser/erhvervsakademi/designteknolog-int" >Designteknolog INT</a></li><li class="item-212"><a href="/uddannelser/erhvervsakademi/e-designer" >E-designer</a></li><li class="item-213"><a href="/uddannelser/erhvervsakademi/elinstallatør" >Elinstallatør</a></li><li class="item-214"><a href="/uddannelser/erhvervsakademi/energiteknolog" >Energiteknolog</a></li><li class="item-215"><a href="/uddannelser/erhvervsakademi/it-teknolog" >IT-teknolog</a></li><li class="item-216"><a href="/uddannelser/erhvervsakademi/kort-og-landmålingstekniker" >Kort- og Landmålingstekniker</a></li><li class="item-217"><a href="/uddannelser/erhvervsakademi/multimediedesigner" >Multimediedesigner DK</a></li><li class="item-330"><a href="https://kea.dk/en/programmes/academy-profession-degree/multimedia-design" >Multimediedesigner INT</a></li><li class="item-206"><a href="/uddannelser/erhvervsakademi/produktionsteknolog" >Produktionsteknolog DK</a></li><li class="item-331"><a href="https://kea.dk/en/programmes/academy-profession-degree/production-technology" >Produktionsteknolog INT</a></li><li class="item-218"><a href="/uddannelser/erhvervsakademi/vvs-installatør" >VVS-installatør</a></li></ul></li><li class="item-131 deeper parent"><a href="/uddannelser/top-up" >Top Up</a><ul class="nav-child unstyled small"><li class="item-219"><a href="/uddannelser/top-up/design-business" >Design og Business DK</a></li><li class="item-332"><a href="https://kea.dk/en/programmes/top-up-bachelor-degree/design-business" >Design og Business INT</a></li><li class="item-222"><a href="/uddannelser/top-up/digital-konceptudvikling" >Digital konceptudvikling</a></li><li class="item-220"><a href="/uddannelser/top-up/it-sikkerhed" >IT-sikkerhed</a></li><li class="item-221"><a href="/uddannelser/top-up/produktudvikling-teknisk-integration" >Produktudvikling og teknisk integration DK</a></li><li class="item-333"><a href="https://kea.dk/en/programmes/top-up-bachelor-degree/product-development-and-integrative-technology" >Produktudvikling og teknisk integration INT</a></li><li class="item-223"><a href="/uddannelser/top-up/softwareudvikling" >Softwareudvikling INT</a></li><li class="item-224"><a href="/uddannelser/top-up/webudvikling" >Webudvikling INT</a></li></ul></li><li class="item-133 deeper parent"><a href="/uddannelser/professionsbachelor" >Professions­bachelor</a><ul class="nav-child unstyled small"><li class="item-225"><a href="/uddannelser/professionsbachelor/bygningskonstruktør" >Bygnings­konstruktør DK</a></li><li class="item-326"><a href="/uddannelser/professionsbachelor/bygningskonstruktør-int" >Bygningskonstruktør INT</a></li><li class="item-226"><a href="/uddannelser/professionsbachelor/optometri" >Optometri</a></li><li class="item-227"><a href="/uddannelser/professionsbachelor/smykker-teknologi-og-business" >Smykker, teknologi og business</a></li><li class="item-336"><a href="https://kea.dk/en/programmes/bachelor-degree/jewellery-technology-and-business" >Smykker, teknologi og business INT</a></li><li class="item-228"><a href="/uddannelser/professionsbachelor/økonomi-it" >Økonomi &amp; it</a></li><li class="item-337"><a href="https://kea.dk/en/programmes/bachelor-degree/business-economics-and-information-technology" >Økonomi &amp; IT INT</a></li></ul></li><li class="item-327"><a href="/uddannelser/internationale-uddannelser" >Internationale uddannelser</a></li><li class="item-135"><a href="/uddannelser/ansøgning-optagelse" >Ansøgning &amp; optagelse</a></li><li class="item-139"><a href="/uddannelser/praktik" >Praktik</a></li><li class="item-141"><a href="/uddannelser/studieliv" >Studieliv</a></li><li class="item-146"><a href="/uddannelser/tag-til-udlandet" >Tag til udlandet</a></li><li class="item-140"><a href="/uddannelser/åbent-hus" >Åbent hus</a></li><li class="item-147"><a href="/uddannelser/faq" >FAQ</a></li><li class="item-148"><a href="/uddannelser/kontakt" >Kontakt</a></li></ul></li><li class="item-242"><a href="http://kompetence.kea.dk" >Efteruddannelse</a></li><li class="item-269 deeper parent"><a href="/forskning-på-kea" >Forskning på KEA</a><ul class="nav-child unstyled small"><li class="item-288"><a href="/forskning-på-kea/værksteder" >Værksteder</a></li><li class="item-289"><a href="/forskning-på-kea/kontakt" >Kontakt</a></li></ul></li><li class="item-150 deeper parent"><a href="/for-virksomheder" >For virksomheder</a><ul class="nav-child unstyled small"><li class="item-151"><a href="/for-virksomheder/få-en-praktikant" >Få en praktikant</a></li><li class="item-152"><a href="/for-virksomheder/projektsamarbejde" >Projektsamarbejde</a></li><li class="item-204"><a href="/om-kea/presse/find-en-ekspert" >Find en ekspert</a></li><li class="item-154"><a href="/for-virksomheder/kontakt" >Kontakt</a></li></ul></li><li class="item-158 deeper parent"><a href="/om-kea" >Om KEA</a><ul class="nav-child unstyled small"><li class="item-174"><a href="/om-kea/organisation" >Organisation</a></li><li class="item-175"><a href="/om-kea/strategi" >Strategi</a></li><li class="item-176"><a href="/om-kea/kea-i-tal" >KEA i tal</a></li><li class="item-318"><a href="https://bibliotek.kea.dk" >Bibliotek</a></li><li class="item-178"><a href="/om-kea/kvalitet" >Kvalitet</a></li><li class="item-101"><a href="/om-kea/nyheder" >Nyheder</a></li><li class="item-420"><a href="/om-kea/kalender" >Kalender</a></li><li class="item-229"><a href="/om-kea/kea-i-medierne" >KEA i medierne</a></li><li class="item-155"><a href="/om-kea/presse" >Presserum</a></li><li class="item-181"><a href="/om-kea/job-på-kea" >Job på KEA</a></li><li class="item-182"><a href="/om-kea/find-vej" >Find vej</a></li><li class="item-183"><a href="/om-kea/kontakt" >Kontakt</a></li></ul></li></ul>
+
+			</nav>
+			<div class="utilities">
+												<div class="language">
+					<div class="mod-languages">
+
+	<ul class="lang-inline">
+									<li>
+			<a href="/en/">
+							EN						</a>
+			</li>
+				</ul>
+
+</div>
+
+				</div>
+								<div class="search-button">
+					<a href="#search"><span class="fa fa-search"></span></a>
+				</div>
+			</div>
+
+			<div class="search">
+						<div class="moduletable">
+
+		
+			
+<form id="mod-finder-searchform134" action="/søg" method="get" class="form-search">
+	<div class="finder">
+		<label for="mod-finder-searchword134" class="element-invisible finder">Søg</label><input type="text" name="q" id="mod-finder-searchword134" class="search-query input-medium" size="20" value="" placeholder="Søg ..."/><button class="btn btn-primary hasTooltip  finder" type="submit" title="Kør"><span class="icon-search icon-white"></span>Søg</button>
+							</div>
+</form>
+
+		</div>
+
+	
+			</div>
+
+		</div>
+
+		<div class="container">
+						<div class="article">
+				
+			<div class="quix-content mg-top-md mg-bottom-md">
+	  <div class="qx quix">
+    <div class="qx-inner ">
+                              
+      
+      <div id="qx-section-2799" class="qx-section  qx-section--stretch"  >
+
+  <!-- Shape -->
+    
+    <div class="qx-container-fluid">
+  
+    <div 
+    id="qx-row-39100" 
+    class="qx-row "    >
+
+    <div id="qx-column-48103" class="qx-column  qx-col-lg-12 qx-col-md-12 qx-col-sm-12 qx-col-xs-12" >
+  <div id="qx-kea-coverslider-47106" class="qx-element qx-element-kea-coverslider cover-slider  negate-top-margin pd-bottom-sm">
+    <div class="slick" data-slick='{ "fade": true, "arrows": true, "dots": true, "autoplay": true, "autoplaySpeed": 8000, "responsive": [ { "breakpoint": 768, "settings": { "arrows": true, "dots": true }} ] }'>
+                                <div class="slick-image">
+
+                                <a href="/uddannelser">
+                                <div id="qx-kea-coverslider-47106" class="cover-image" style="height: 40vw;">
+                    <div class="image">
+                                                <img src="/slir/w1024-c100x72/images/DA/Forside/ambassadoerer-2019.jpg" srcset="/slir/w2200-c100x72/images/DA/Forside/ambassadoerer-2019.jpg 2200w, /slir/w2048-c100x72/images/DA/Forside/ambassadoerer-2019.jpg 2048w, /slir/w1536-c100x72/images/DA/Forside/ambassadoerer-2019.jpg 1536w, /slir/w1024-c100x72/images/DA/Forside/ambassadoerer-2019.jpg 1024w, /slir/w768-c100x72/images/DA/Forside/ambassadoerer-2019.jpg 768w, /slir/w640-c100x72/images/DA/Forside/ambassadoerer-2019.jpg 640w, /slir/w320-c100x72/images/DA/Forside/ambassadoerer-2019.jpg 320w" sizes="105vw" alt="">
+                    </div>
+                                        <div class="text-wrapper">
+                        <div class="container">
+                            <div class="inner size-80 pos-right align-right">
+                                                                    Søg ind på kvote 2 senest 15. marts                                                                                                    <div><span class="cta size-28 btn-base-color-2"><i class="fa fa-fw kea-icon-arrow-right"></i> Se alle vores uddannelser</span></div>
+                                                            </div>
+                        </div>
+                    </div>
+                                    </div>
+                                </a>
+                
+            </div>
+                                <div class="slick-image">
+
+                                <a href="https://kompetence.kea.dk/omstilling">
+                                <div id="qx-kea-coverslider-47106" class="cover-image" style="height: 40vw;">
+                    <div class="image">
+                                                <img src="/slir/w1024-c100x72/images/DA/Forside/bibi-2-kommunikation-2200x1400.jpg" srcset="/slir/w2200-c100x72/images/DA/Forside/bibi-2-kommunikation-2200x1400.jpg 2200w, /slir/w2048-c100x72/images/DA/Forside/bibi-2-kommunikation-2200x1400.jpg 2048w, /slir/w1536-c100x72/images/DA/Forside/bibi-2-kommunikation-2200x1400.jpg 1536w, /slir/w1024-c100x72/images/DA/Forside/bibi-2-kommunikation-2200x1400.jpg 1024w, /slir/w768-c100x72/images/DA/Forside/bibi-2-kommunikation-2200x1400.jpg 768w, /slir/w640-c100x72/images/DA/Forside/bibi-2-kommunikation-2200x1400.jpg 640w, /slir/w320-c100x72/images/DA/Forside/bibi-2-kommunikation-2200x1400.jpg 320w" sizes="105vw" alt="">
+                    </div>
+                                        <div class="text-wrapper">
+                        <div class="container">
+                            <div class="inner size-80">
+                                                                    Vil du have efteruddannelse for 10.000 kr. om året?                                                                                                    <div><span class="cta size-28 btn-white"><i class="fa fa-fw kea-icon-arrow-right"></i> Se hvordan</span></div>
+                                                            </div>
+                        </div>
+                    </div>
+                                    </div>
+                                </a>
+                
+            </div>
+                                <div class="slick-image">
+
+                                <a href="/uddannelser">
+                                <div id="qx-kea-coverslider-47106" class="cover-image" style="height: 40vw;">
+                    <div class="image">
+                                                <img src="/slir/w1024-c100x72/images/DA/Forside/PTI-ansoeg-2200x1400.jpg" srcset="/slir/w2200-c100x72/images/DA/Forside/PTI-ansoeg-2200x1400.jpg 2200w, /slir/w2048-c100x72/images/DA/Forside/PTI-ansoeg-2200x1400.jpg 2048w, /slir/w1536-c100x72/images/DA/Forside/PTI-ansoeg-2200x1400.jpg 1536w, /slir/w1024-c100x72/images/DA/Forside/PTI-ansoeg-2200x1400.jpg 1024w, /slir/w768-c100x72/images/DA/Forside/PTI-ansoeg-2200x1400.jpg 768w, /slir/w640-c100x72/images/DA/Forside/PTI-ansoeg-2200x1400.jpg 640w, /slir/w320-c100x72/images/DA/Forside/PTI-ansoeg-2200x1400.jpg 320w" sizes="105vw" alt="">
+                    </div>
+                                        <div class="text-wrapper">
+                        <div class="container">
+                            <div class="inner size-88 base-color-2 pos-right align-right">
+                                                                    Bliv en del af et innovativt miljø                                                                                                    <div><span class="cta size-28 btn-white"><i class="fa fa-fw kea-icon-arrow-right"></i> Søg ind nu og start til sommer</span></div>
+                                                            </div>
+                        </div>
+                    </div>
+                                    </div>
+                                </a>
+                
+            </div>
+                                <div class="slick-image">
+
+                                <a href="/uddannelser/ansøgning-optagelse/optagelsesprøve">
+                                <div id="qx-kea-coverslider-47106" class="cover-image" style="height: 40vw;">
+                    <div class="image">
+                                                <img src="/slir/w1024-c100x72/images/DA/Uddannelser/Design-og-Business/Design_Business_Pattern_Loreena_13.jpg" srcset="/slir/w2200-c100x72/images/DA/Uddannelser/Design-og-Business/Design_Business_Pattern_Loreena_13.jpg 2200w, /slir/w2048-c100x72/images/DA/Uddannelser/Design-og-Business/Design_Business_Pattern_Loreena_13.jpg 2048w, /slir/w1536-c100x72/images/DA/Uddannelser/Design-og-Business/Design_Business_Pattern_Loreena_13.jpg 1536w, /slir/w1024-c100x72/images/DA/Uddannelser/Design-og-Business/Design_Business_Pattern_Loreena_13.jpg 1024w, /slir/w768-c100x72/images/DA/Uddannelser/Design-og-Business/Design_Business_Pattern_Loreena_13.jpg 768w, /slir/w640-c100x72/images/DA/Uddannelser/Design-og-Business/Design_Business_Pattern_Loreena_13.jpg 640w, /slir/w320-c100x72/images/DA/Uddannelser/Design-og-Business/Design_Business_Pattern_Loreena_13.jpg 320w" sizes="105vw" alt="">
+                    </div>
+                                        <div class="text-wrapper">
+                        <div class="container">
+                            <div class="inner size-88 base-color-1">
+                                                                    Design: Søg inden 15. marts                                                                                                    <div><span class="cta size-28 btn-base-color-3"><i class="fa fa-fw kea-icon-arrow-right"></i> Læs mere om optagelsesprøven</span></div>
+                                                            </div>
+                        </div>
+                    </div>
+                                    </div>
+                                </a>
+                
+            </div>
+            </div>
+</div>
+</div>
+<!-- qx-col -->
+    
+  </div>
+  <!-- qx-row -->
+
+    </div>
+  
+</div>
+<!-- qx-section -->
+
+<div id="qx-section-894" class="qx-section "  >
+
+  <!-- Shape -->
+    
+  
+    <div 
+    id="qx-row-245" 
+    class="qx-row  qx-hidden-sm qx-hidden-xs"    >
+
+    <div id="qx-column-1847" class="qx-column  qx-col-lg-12 qx-col-md-12 qx-col-sm-12 qx-col-xs-12" >
+  <div id="qx-kea-text-3150" class="qx-element qx-element-kea-text  pd-bottom-sm" >
+<div class="articlebody">
+<div class="intro intro-default">
+<p style="margin-bottom: -12px;">KEA - Københavns Erhvervsakademi udbyder videregående uddannelser, der kombinerer teori og praksis. Vores uddannelser bygger på forskning og udvikles sammen med erhvervslivet.</p>
+</div>
+</div></div>
+</div>
+<!-- qx-col -->
+    
+  </div>
+  <!-- qx-row -->
+<div 
+    id="qx-row-571616" 
+    class="qx-row  qx-hidden-lg qx-hidden-md"    >
+
+    <div id="qx-column-851617" class="qx-column  qx-col-lg-12 qx-col-md-12 qx-col-sm-12 qx-col-xs-12" >
+  <div id="qx-kea-text-671618" class="qx-element qx-element-kea-text  pd-bottom-sm" >
+<p style="margin-top: -10px; margin-bottom: 0px;">KEA - Københavns Erhvervsakademi udbyder videregående uddannelser, der kombinerer teori og praksis.</p></div>
+</div>
+<!-- qx-col -->
+    
+  </div>
+  <!-- qx-row -->
+
+  
+</div>
+<!-- qx-section -->
+
+<div id="qx-section-901812" class="qx-section  qx-hidden-sm qx-hidden-xs"  >
+
+  <!-- Shape -->
+    
+  
+    <div 
+    id="qx-row-2690" 
+    class="qx-row "    >
+
+    <div id="qx-column-8192" class="qx-column  qx-col-lg-4 qx-col-md-4 qx-col-sm-6 qx-col-xs-12" >
+  <div id="qx-kea-presentation-box-973689" class="row-flex qx-element qx-element-kea-presentation-box  pd-bottom-sm">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mg-bottom-sm solid">
+			<a class="" href="/uddannelser/kontakt"   >
+				<div class="image" style="padding-bottom: 20%; background-color: #ea5045;"></div>
+				<div class="content-solid h3">
+					<div class="title">
+						Få hjælp til at vælge uddannelse					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+			</a>
+		</div>
+											<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mg-bottom-sm solid">
+			<a class="" href="/uddannelser/ansøgning-optagelse"   >
+				<div class="image" style="padding-bottom: 20%; background-color: #233249;"></div>
+				<div class="content-solid h3">
+					<div class="title">
+						Sådan ansøger du					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+			</a>
+		</div>
+											<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mg-bottom-sm solid">
+			<a class="" href="/uddannelser/faq"   >
+				<div class="image" style="padding-bottom: 20%; background-color: #233249;"></div>
+				<div class="content-solid h3">
+					<div class="title">
+						Find svar i vores FAQ					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+			</a>
+		</div>
+			</div>
+<div id="qx-kea-text-251085" class="qx-element qx-element-kea-text  qx-hidden-lg qx-hidden-md qx-hidden-sm qx-hidden-xs pd-bottom-sm" >
+<div style="background-color: #e0e0e0; padding: 22px 20px 12px 20px;">
+<h2>Ledige pladser</h2>
+<p>Vi har stadig ledige pladser på få af vores uddannelser, så hvis du ønsker at starte på en uddannelse til februar, er det sidste chance nu.</p>
+<p>Du kan læse mere om de enkelte uddannelser samt adgangskravene og hvordan du søger ind på nedenstående links:</p>
+<ul>
+<li><a href="/../uddannelser/erhvervsakademi/elinstallatør">Elinstallatør</a></li>
+<li><a href="/../uddannelser/top-up/it-sikkerhed">IT-sikkerhed</a> (top-up uddannelse)</li>
+</ul>
+</div></div>
+</div>
+<!-- qx-col -->
+<div id="qx-column-491321" class="qx-column  qx-col-lg-8 qx-col-md-8 qx-col-sm-6 qx-col-xs-12" >
+  <div id="qx-kea-presentation-box-351986" class="row-flex qx-element qx-element-kea-presentation-box ">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mg-bottom-sm">
+			<a class="" href="/uddannelser"   >
+				<img src="/slir/w585-c100x35/images/DA/Forside/Jacob-5juli-2200x1081.jpg" srcset="/slir/w1170-c100x35/images/DA/Forside/Jacob-5juli-2200x1081.jpg 1170w, /slir/w586-c100x35/images/DA/Forside/Jacob-5juli-2200x1081.jpg 586w, /slir/w780-c100x35/images/DA/Forside/Jacob-5juli-2200x1081.jpg 780w, /slir/w390-c100x35/images/DA/Forside/Jacob-5juli-2200x1081.jpg 390w, /slir/w293-c100x35/images/DA/Forside/Jacob-5juli-2200x1081.jpg 293w" alt="Vælg din uddannelse på KEA" sizes="(min-width: 1200px) 1140px, (min-width: 992px) 940px, (min-width: 768px) 720px, calc(100vw - 30px)">
+				<div class="content-collapsed h2">
+					<div class="title">
+						Find din uddannelse og søg ind nu					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+				<div class="content-full">
+					<div class="title h2">
+						Find din uddannelse og søg ind nu					</div>
+					<div class="content">
+						Kom tæt på erhvervslivet med en uddannelse fra KEA.					</div>
+				</div>
+								<div class="overlay">
+									</div>
+							</a>
+		</div>
+			</div>
+</div>
+<!-- qx-col -->
+    
+  </div>
+  <!-- qx-row -->
+
+  
+</div>
+<!-- qx-section -->
+
+<div id="qx-section-821831" class="qx-section  qx-hidden-lg qx-hidden-md qx-hidden-xs"  >
+
+  <!-- Shape -->
+    
+  
+    <div 
+    id="qx-row-231832" 
+    class="qx-row "    >
+
+    <div id="qx-column-441833" class="qx-column  qx-col-lg-4 qx-col-md-4 qx-col-sm-6 qx-col-xs-12" >
+  <div id="qx-kea-presentation-box-861834" class="row-flex qx-element qx-element-kea-presentation-box  pd-bottom-sm">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mg-bottom-sm solid">
+			<a class="" href="/uddannelser/kontakt"   >
+				<div class="image" style="padding-bottom: 20%; background-color: #ea5045;"></div>
+				<div class="content-solid h3">
+					<div class="title">
+						Få hjælp til at vælge uddannelse					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+			</a>
+		</div>
+											<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mg-bottom-sm solid">
+			<a class="" href="/uddannelser/ansøgning-optagelse"   >
+				<div class="image" style="padding-bottom: 20%; background-color: #233249;"></div>
+				<div class="content-solid h3">
+					<div class="title">
+						Sådan ansøger du					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+			</a>
+		</div>
+											<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mg-bottom-sm solid">
+			<a class="" href="/uddannelser/faq"   >
+				<div class="image" style="padding-bottom: 20%; background-color: #233249;"></div>
+				<div class="content-solid h3">
+					<div class="title">
+						Find svar i vores FAQ					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+			</a>
+		</div>
+			</div>
+</div>
+<!-- qx-col -->
+<div id="qx-column-841836" class="qx-column  qx-col-lg-8 qx-col-md-8 qx-col-sm-6 qx-col-xs-12" >
+  <div id="qx-kea-presentation-box-581837" class="row-flex qx-element qx-element-kea-presentation-box ">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mg-bottom-sm">
+			<a class="" href="/uddannelser"   >
+				<img src="/slir/w585-c100x70/images/DA/Forside/Jacob-5juli-2200x1081.jpg" srcset="/slir/w1170-c100x70/images/DA/Forside/Jacob-5juli-2200x1081.jpg 1170w, /slir/w586-c100x70/images/DA/Forside/Jacob-5juli-2200x1081.jpg 586w, /slir/w780-c100x70/images/DA/Forside/Jacob-5juli-2200x1081.jpg 780w, /slir/w390-c100x70/images/DA/Forside/Jacob-5juli-2200x1081.jpg 390w, /slir/w293-c100x70/images/DA/Forside/Jacob-5juli-2200x1081.jpg 293w" alt="Vælg din uddannelse på KEA" sizes="(min-width: 1200px) 1140px, (min-width: 992px) 940px, (min-width: 768px) 720px, calc(100vw - 30px)">
+				<div class="content-collapsed h3">
+					<div class="title">
+						Find din uddannelse og søg ind nu					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+				<div class="content-full">
+					<div class="title h3">
+						Find din uddannelse og søg ind nu					</div>
+					<div class="content">
+						Kom tæt på erhvervslivet med en uddannelse fra KEA.					</div>
+				</div>
+								<div class="overlay">
+									</div>
+							</a>
+		</div>
+			</div>
+</div>
+<!-- qx-col -->
+    
+  </div>
+  <!-- qx-row -->
+
+  
+</div>
+<!-- qx-section -->
+
+<div id="qx-section-751875" class="qx-section  qx-hidden-lg qx-hidden-md qx-hidden-sm"  >
+
+  <!-- Shape -->
+    
+  
+    <div 
+    id="qx-row-731876" 
+    class="qx-row "    >
+
+    <div id="qx-column-641877" class="qx-column  qx-col-lg-4 qx-col-md-4 qx-col-sm-6 qx-col-xs-12" >
+  <div id="qx-kea-presentation-box-771880" class="row-flex qx-element qx-element-kea-presentation-box ">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mg-bottom-sm">
+			<a class="" href="/uddannelser"   >
+				<img src="/slir/w585-c100x50/images/DA/Forside/Jacob-5juli-2200x1081.jpg" srcset="/slir/w1170-c100x50/images/DA/Forside/Jacob-5juli-2200x1081.jpg 1170w, /slir/w586-c100x50/images/DA/Forside/Jacob-5juli-2200x1081.jpg 586w, /slir/w780-c100x50/images/DA/Forside/Jacob-5juli-2200x1081.jpg 780w, /slir/w390-c100x50/images/DA/Forside/Jacob-5juli-2200x1081.jpg 390w, /slir/w293-c100x50/images/DA/Forside/Jacob-5juli-2200x1081.jpg 293w" alt="Vælg din uddannelse på KEA" sizes="(min-width: 1200px) 1140px, (min-width: 992px) 940px, (min-width: 768px) 720px, calc(100vw - 30px)">
+				<div class="content-collapsed h2">
+					<div class="title">
+						Find din uddannelse og søg ind nu					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+				<div class="content-full">
+					<div class="title h2">
+						Find din uddannelse og søg ind nu					</div>
+					<div class="content">
+						Kom tæt på erhvervslivet med en uddannelse fra KEA.					</div>
+				</div>
+								<div class="overlay">
+									</div>
+							</a>
+		</div>
+			</div>
+<div id="qx-kea-presentation-box-841878" class="row-flex qx-element qx-element-kea-presentation-box  pd-bottom-sm">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mg-bottom-sm solid">
+			<a class="" href="/uddannelser/kontakt"   >
+				<div class="image" style="padding-bottom: 20%; background-color: #ea5045;"></div>
+				<div class="content-solid h3">
+					<div class="title">
+						Få hjælp til at vælge uddannelse					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+			</a>
+		</div>
+											<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mg-bottom-sm solid">
+			<a class="" href="/uddannelser/ansøgning-optagelse"   >
+				<div class="image" style="padding-bottom: 20%; background-color: #233249;"></div>
+				<div class="content-solid h3">
+					<div class="title">
+						Sådan ansøger du					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+			</a>
+		</div>
+											<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mg-bottom-sm solid">
+			<a class="" href="/uddannelser/faq"   >
+				<div class="image" style="padding-bottom: 20%; background-color: #233249;"></div>
+				<div class="content-solid h3">
+					<div class="title">
+						Find svar i vores FAQ					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+			</a>
+		</div>
+			</div>
+</div>
+<!-- qx-col -->
+<div id="qx-column-231879" class="qx-column  qx-col-lg-8 qx-col-md-8 qx-col-sm-6 qx-col-xs-12" >
+  </div>
+<!-- qx-col -->
+    
+  </div>
+  <!-- qx-row -->
+
+  
+</div>
+<!-- qx-section -->
+
+<div id="qx-section-871288" class="qx-section "  >
+
+  <!-- Shape -->
+    
+  
+    <div 
+    id="qx-row-631289" 
+    class="qx-row "    >
+
+    <div id="qx-column-441318" class="qx-column  qx-col-lg-8 qx-col-md-8 qx-col-sm-6 qx-col-xs-12" >
+  <div id="qx-kea-presentation-box-222239" class="row-flex qx-element qx-element-kea-presentation-box  qx-hidden-sm qx-hidden-xs">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mg-bottom-sm">
+			<a class="" href="https://kompetence.kea.dk"   >
+				<img src="/slir/w585-c100x40/images/DA/Forside/holdstart-efteraar2018-2400x1400.jpg" srcset="/slir/w1170-c100x40/images/DA/Forside/holdstart-efteraar2018-2400x1400.jpg 1170w, /slir/w586-c100x40/images/DA/Forside/holdstart-efteraar2018-2400x1400.jpg 586w, /slir/w780-c100x40/images/DA/Forside/holdstart-efteraar2018-2400x1400.jpg 780w, /slir/w390-c100x40/images/DA/Forside/holdstart-efteraar2018-2400x1400.jpg 390w, /slir/w293-c100x40/images/DA/Forside/holdstart-efteraar2018-2400x1400.jpg 293w" alt="" sizes="(min-width: 1200px) 1140px, (min-width: 992px) 940px, (min-width: 768px) 720px, calc(100vw - 30px)">
+				<div class="content-collapsed h3">
+					<div class="title">
+						Vil du styrke din karriere? Tag en efteruddannelse					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+				<div class="content-full">
+					<div class="title h3">
+						Vil du styrke din karriere? Tag en efteruddannelse					</div>
+					<div class="content">
+						Der starter nye hold i 2019. Søg ind nu.					</div>
+				</div>
+								<div class="overlay">
+									</div>
+							</a>
+		</div>
+			</div>
+<div id="qx-kea-presentation-box-852256" class="row-flex qx-element qx-element-kea-presentation-box  qx-hidden-lg qx-hidden-md">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mg-bottom-sm">
+			<a class="" href="https://kompetence.kea.dk"   >
+				<img src="/slir/w585-c100x60/images/DA/Forside/holdstart-efteraar2018-2400x1400.jpg" srcset="/slir/w1170-c100x60/images/DA/Forside/holdstart-efteraar2018-2400x1400.jpg 1170w, /slir/w586-c100x60/images/DA/Forside/holdstart-efteraar2018-2400x1400.jpg 586w, /slir/w780-c100x60/images/DA/Forside/holdstart-efteraar2018-2400x1400.jpg 780w, /slir/w390-c100x60/images/DA/Forside/holdstart-efteraar2018-2400x1400.jpg 390w, /slir/w293-c100x60/images/DA/Forside/holdstart-efteraar2018-2400x1400.jpg 293w" alt="" sizes="(min-width: 1200px) 1140px, (min-width: 992px) 940px, (min-width: 768px) 720px, calc(100vw - 30px)">
+				<div class="content-collapsed h3">
+					<div class="title">
+						Vil du styrke din karriere? Tag en efteruddannelse					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+				<div class="content-full">
+					<div class="title h3">
+						Vil du styrke din karriere? Tag en efteruddannelse					</div>
+					<div class="content">
+						Der starter nye hold i 2019. Søg ind nu.					</div>
+				</div>
+								<div class="overlay">
+									</div>
+							</a>
+		</div>
+			</div>
+<div id="qx-kea-text-703159" class="qx-element qx-element-kea-text  pd-top-sm pd-bottom-sm" >
+<h4 style="text-align: left;"><a href="/../uddannelser/praktik">Fra uddannelse til job:</a></h4>
+<h1 style="text-align: center;"><a href="/../uddannelser/praktik">Hver tredje KEA-studerende får arbejde gennem studiejob og praktik</a></h1>
+<p style="padding-top: 8px;"><a class="page block" href="/../uddannelser/praktik">Læs mere om praktik</a></p></div>
+</div>
+<!-- qx-col -->
+<div id="qx-column-57112" class="qx-column  qx-col-lg-4 qx-col-md-4 qx-col-sm-6 qx-col-xs-12" >
+  <div id="qx-kea-text-7462" class="qx-element qx-element-kea-text  pd-top-sm" >
+<h2>Arrangementer på KEA</h2></div>
+<div id="qx-kea-joomla-module-56115" class="qx-element qx-element-kea-joomla-module  pd-bottom-sm" >
+          		<div class="moduletable">
+						
+<ul class="events-list-mod ignore-default-styles">
+			
+				<li>
+			<a class="h3"  href="/om-kea/kalender/begivenhed/23-karrieremesse-for-byggeri-og-teknik">Karrieremesse for Byggeri og Teknik</a> 
+			<div><span class="fa kea-icon-calendar"></span> 20. Marts 2019 14:00</div>
+			<div>Kom til karrieremesse på KEA og mød studerende og færdiguddannede indenfor byggeri og teknik.</div>
+		</li>
+			
+				<li>
+			<a class="h3"  href="/om-kea/kalender/begivenhed/24-educators-summit-2019">Educators Summit 2019</a> 
+			<div><span class="fa kea-icon-calendar"></span> 14. maj 2019 9:00</div>
+			<div>Kom til Educators Summit på KEA og bliv klogere på, hvordan uddannelse kan være med til accelerere overgangen til bæredygtig mode.</div>
+		</li>
+			
+				<li>
+			<a class="h3"  href="/om-kea/kalender/begivenhed/16-åbent-hus">Åbent hus</a> 
+			<div><span class="fa kea-icon-calendar"></span> 6. November 2019 12:00</div>
+			<div>Drømmer du om en uddannelse, der forener praksis og teoretisk viden? Og er du interesseret i IT, design, byggeri eller teknologi? Så kom forbi KEA til Åbent hus og få et indblik i KEA-livet samt en snak med KEAs studerende, undervisere og studievejledere.</div>
+		</li>
+	</ul>
+		</div>
+	    </div>
+<div id="qx-kea-text-541255" class="qx-element qx-element-kea-text  pd-bottom-sm" >
+<p><a class="page block" href="/../om-kea/kalender">Se alle vores arrangementer</a></p></div>
+</div>
+<!-- qx-col -->
+    
+  </div>
+  <!-- qx-row -->
+
+  
+</div>
+<!-- qx-section -->
+
+<div id="qx-section-861303" class="qx-section  qx-hidden-lg qx-hidden-md qx-hidden-sm qx-hidden-xs"  >
+
+  <!-- Shape -->
+    
+  
+    <div 
+    id="qx-row-761304" 
+    class="qx-row "    >
+
+    <div id="qx-column-691306" class="qx-column  qx-col-lg-12 qx-col-md-12 qx-col-sm-12 qx-col-xs-12" >
+  <div id="qx-kea-presentation-box-921309" class="row-flex qx-element qx-element-kea-presentation-box  pd-top-md pd-bottom-md">
+									<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mg-bottom-sm">
+			<a class="" href="/uddannelser/top-up/it-sikkerhed"   >
+				<img src="/slir/w585-c100x70/images/DA/Uddannelser/IT-sikkerhed/it-sikkerhed-temp-1000x800.jpg" srcset="/slir/w1170-c100x70/images/DA/Uddannelser/IT-sikkerhed/it-sikkerhed-temp-1000x800.jpg 1170w, /slir/w586-c100x70/images/DA/Uddannelser/IT-sikkerhed/it-sikkerhed-temp-1000x800.jpg 586w, /slir/w780-c100x70/images/DA/Uddannelser/IT-sikkerhed/it-sikkerhed-temp-1000x800.jpg 780w, /slir/w390-c100x70/images/DA/Uddannelser/IT-sikkerhed/it-sikkerhed-temp-1000x800.jpg 390w, /slir/w293-c100x70/images/DA/Uddannelser/IT-sikkerhed/it-sikkerhed-temp-1000x800.jpg 293w" alt="" sizes="(min-width: 1200px) 360px, (min-width: 992px) 293px, (min-width: 768px) 220px, calc(100vw - 30px)">
+				<div class="content-collapsed h3">
+					<div class="title">
+						IT-sikkerhed (top-up)					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+				<div class="content-full">
+					<div class="title h3">
+						IT-sikkerhed (top-up)					</div>
+					<div class="content">
+						Vil du være cybersoldat for danske eller udenlandske virksomheder?					</div>
+				</div>
+								<div class="overlay">
+					<h5>Ledige <br />pladser</h5>				</div>
+							</a>
+		</div>
+											<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mg-bottom-sm">
+			<a class="" href="/en/programmes/top-up-bachelor-degree/software-development"   >
+				<img src="/slir/w585-c100x70/images/EN/Programmes/Software-Development/software-udvikling-1000x800.jpg" srcset="/slir/w1170-c100x70/images/EN/Programmes/Software-Development/software-udvikling-1000x800.jpg 1170w, /slir/w586-c100x70/images/EN/Programmes/Software-Development/software-udvikling-1000x800.jpg 586w, /slir/w780-c100x70/images/EN/Programmes/Software-Development/software-udvikling-1000x800.jpg 780w, /slir/w390-c100x70/images/EN/Programmes/Software-Development/software-udvikling-1000x800.jpg 390w, /slir/w293-c100x70/images/EN/Programmes/Software-Development/software-udvikling-1000x800.jpg 293w" alt="" sizes="(min-width: 1200px) 360px, (min-width: 992px) 293px, (min-width: 768px) 220px, calc(100vw - 30px)">
+				<div class="content-collapsed h3">
+					<div class="title">
+						Software Development (top-up INT)					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+				<div class="content-full">
+					<div class="title h3">
+						Software Development (top-up INT)					</div>
+					<div class="content">
+						Drømmer du om en fremtid indenfor softwarebranchen?					</div>
+				</div>
+								<div class="overlay">
+					<h5>Ledige <br />pladser</h5>				</div>
+							</a>
+		</div>
+											<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 mg-bottom-sm">
+			<a class="" href="/uddannelser/erhvervsakademi/vvs-installatør"   >
+				<img src="/slir/w585-c100x70/images/DA/Uddannelser/VVS-installatoer/VVS_Tim_1000x800.jpg" srcset="/slir/w1170-c100x70/images/DA/Uddannelser/VVS-installatoer/VVS_Tim_1000x800.jpg 1170w, /slir/w586-c100x70/images/DA/Uddannelser/VVS-installatoer/VVS_Tim_1000x800.jpg 586w, /slir/w780-c100x70/images/DA/Uddannelser/VVS-installatoer/VVS_Tim_1000x800.jpg 780w, /slir/w390-c100x70/images/DA/Uddannelser/VVS-installatoer/VVS_Tim_1000x800.jpg 390w, /slir/w293-c100x70/images/DA/Uddannelser/VVS-installatoer/VVS_Tim_1000x800.jpg 293w" alt="" sizes="(min-width: 1200px) 360px, (min-width: 992px) 293px, (min-width: 768px) 220px, calc(100vw - 30px)">
+				<div class="content-collapsed h3">
+					<div class="title">
+						VVS-installatør					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+				<div class="content-full">
+					<div class="title h3">
+						VVS-installatør					</div>
+					<div class="content">
+						Vil du være ekspert i installationer og teknik? Bliv autoriseret!					</div>
+				</div>
+								<div class="overlay">
+					<h5>Ledige <br />pladser</h5>				</div>
+							</a>
+		</div>
+			</div>
+</div>
+<!-- qx-col -->
+    
+  </div>
+  <!-- qx-row -->
+
+  
+</div>
+<!-- qx-section -->
+
+<div id="qx-section-611612" class="qx-section  qx-hidden-lg qx-hidden-md qx-hidden-sm qx-hidden-xs"  >
+
+  <!-- Shape -->
+    
+  
+    <div 
+    id="qx-row-731619" 
+    class="qx-row  qx-hidden-xs"    >
+
+    <div id="qx-column-651620" class="qx-column  qx-col-lg-12 qx-col-md-12 qx-col-sm-12 qx-col-xs-12" >
+  <div id="qx-kea-presentation-box-161621" class="row-flex qx-element qx-element-kea-presentation-box  qx-hidden-sm">
+									<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 mg-bottom-sm">
+			<a class="" href="/uddannelser"   >
+				<img src="/slir/w585-c100x55/images/DA/Forside/uddannelser-forside-juni18-1000x800.jpg" srcset="/slir/w1170-c100x55/images/DA/Forside/uddannelser-forside-juni18-1000x800.jpg 1170w, /slir/w586-c100x55/images/DA/Forside/uddannelser-forside-juni18-1000x800.jpg 586w, /slir/w780-c100x55/images/DA/Forside/uddannelser-forside-juni18-1000x800.jpg 780w, /slir/w390-c100x55/images/DA/Forside/uddannelser-forside-juni18-1000x800.jpg 390w, /slir/w293-c100x55/images/DA/Forside/uddannelser-forside-juni18-1000x800.jpg 293w" alt="Vælg din uddannelse på KEA" sizes="(min-width: 1200px) 555px, (min-width: 992px) 455px, (min-width: 768px) 345px, calc(50vw - 30px)">
+				<div class="content-collapsed h3">
+					<div class="title">
+						Vælg din uddannelse					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+				<div class="content-full">
+					<div class="title h3">
+						Vælg din uddannelse					</div>
+					<div class="content">
+						Kom tæt på erhvervslivet med en uddannelse fra KEA.					</div>
+				</div>
+								<div class="overlay">
+					<h3><span style="color: #ededed;">Hvad skal<br />du efter<br />sommer?</span></h3>				</div>
+							</a>
+		</div>
+											<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 mg-bottom-sm">
+			<a class="" href="https://kompetence.kea.dk/"   >
+				<img src="/slir/w585-c100x55/images/DA/Forside/kompetence-forside-juni18-1000x800.jpg" srcset="/slir/w1170-c100x55/images/DA/Forside/kompetence-forside-juni18-1000x800.jpg 1170w, /slir/w586-c100x55/images/DA/Forside/kompetence-forside-juni18-1000x800.jpg 586w, /slir/w780-c100x55/images/DA/Forside/kompetence-forside-juni18-1000x800.jpg 780w, /slir/w390-c100x55/images/DA/Forside/kompetence-forside-juni18-1000x800.jpg 390w, /slir/w293-c100x55/images/DA/Forside/kompetence-forside-juni18-1000x800.jpg 293w" alt="" sizes="(min-width: 1200px) 555px, (min-width: 992px) 455px, (min-width: 768px) 345px, calc(50vw - 30px)">
+				<div class="content-collapsed h3">
+					<div class="title">
+						Tag en efteruddannelse					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+				<div class="content-full">
+					<div class="title h3">
+						Tag en efteruddannelse					</div>
+					<div class="content">
+						Der starter nye hold til august og september. Søg ind nu.					</div>
+				</div>
+								<div class="overlay">
+					<h3 style="text-align: right;"><span style="color: #ededed;">Vil du<br />styrke din<br />karriere?</span></h3>				</div>
+							</a>
+		</div>
+			</div>
+</div>
+<!-- qx-col -->
+    
+  </div>
+  <!-- qx-row -->
+<div 
+    id="qx-row-761640" 
+    class="qx-row  qx-hidden-sm"    >
+
+    <div id="qx-column-891641" class="qx-column  qx-col-lg-6 qx-col-md-6 qx-col-sm-12 qx-col-xs-12" >
+  <div id="qx-kea-presentation-box-931642" class="row-flex qx-element qx-element-kea-presentation-box  qx-hidden-xs">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mg-bottom-sm">
+			<a class="" href="/uddannelser"   >
+				<img src="/slir/w585-c100x45/images/DA/Forside/uddannelser-forside-juni18-1000x800.jpg" srcset="/slir/w1170-c100x45/images/DA/Forside/uddannelser-forside-juni18-1000x800.jpg 1170w, /slir/w586-c100x45/images/DA/Forside/uddannelser-forside-juni18-1000x800.jpg 586w, /slir/w780-c100x45/images/DA/Forside/uddannelser-forside-juni18-1000x800.jpg 780w, /slir/w390-c100x45/images/DA/Forside/uddannelser-forside-juni18-1000x800.jpg 390w, /slir/w293-c100x45/images/DA/Forside/uddannelser-forside-juni18-1000x800.jpg 293w" alt="Vælg din uddannelse på KEA" sizes="(min-width: 1200px) 1140px, (min-width: 992px) 940px, (min-width: 768px) 720px, calc(100vw - 30px)">
+				<div class="content-collapsed h2">
+					<div class="title">
+						Vælg din uddannelse					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+				<div class="content-full">
+					<div class="title h2">
+						Vælg din uddannelse					</div>
+					<div class="content">
+						Kom tæt på erhvervslivet med en uddannelse fra KEA.					</div>
+				</div>
+								<div class="overlay">
+					<h3><span style="color: #ededed;">Hvad skal<br />du efter<br />sommerferien?</span></h3>				</div>
+							</a>
+		</div>
+			</div>
+<div id="qx-kea-presentation-box-361643" class="row-flex qx-element qx-element-kea-presentation-box  qx-hidden-sm qx-hidden-xs pd-bottom-sm">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mg-bottom-sm">
+			<a class="" href="/uddannelser"   >
+				<img src="/slir/w585-c100x48/images/DA/Forside/find-din-uddannelse.jpg" srcset="/slir/w1170-c100x48/images/DA/Forside/find-din-uddannelse.jpg 1170w, /slir/w586-c100x48/images/DA/Forside/find-din-uddannelse.jpg 586w, /slir/w780-c100x48/images/DA/Forside/find-din-uddannelse.jpg 780w, /slir/w390-c100x48/images/DA/Forside/find-din-uddannelse.jpg 390w, /slir/w293-c100x48/images/DA/Forside/find-din-uddannelse.jpg 293w" alt="Vælg din uddannelse på KEA" sizes="(min-width: 1200px) 1140px, (min-width: 992px) 940px, (min-width: 768px) 720px, calc(100vw - 30px)">
+				<div class="content-collapsed h2">
+					<div class="title">
+						Vælg din uddannelse					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+				<div class="content-full">
+					<div class="title h2">
+						Vælg din uddannelse					</div>
+					<div class="content">
+						Kom tæt på erhvervslivet med en uddannelse fra KEA.					</div>
+				</div>
+								<div class="overlay">
+					<h5><span style="color: #000000;">21 videregående</span><br /><span style="color: #000000;">uddannelser</span></h5>				</div>
+							</a>
+		</div>
+			</div>
+</div>
+<!-- qx-col -->
+<div id="qx-column-481644" class="qx-column  qx-col-lg-6 qx-col-md-6 qx-col-sm-12 qx-col-xs-12" >
+  <div id="qx-kea-presentation-box-901645" class="row-flex qx-element qx-element-kea-presentation-box  qx-hidden-xs pd-bottom-sm">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mg-bottom-sm">
+			<a class="" href="https://kompetence.kea.dk"   >
+				<img src="/slir/w585-c100x45/images/DA/Forside/kompetence-forside-juni18-1000x800.jpg" srcset="/slir/w1170-c100x45/images/DA/Forside/kompetence-forside-juni18-1000x800.jpg 1170w, /slir/w586-c100x45/images/DA/Forside/kompetence-forside-juni18-1000x800.jpg 586w, /slir/w780-c100x45/images/DA/Forside/kompetence-forside-juni18-1000x800.jpg 780w, /slir/w390-c100x45/images/DA/Forside/kompetence-forside-juni18-1000x800.jpg 390w, /slir/w293-c100x45/images/DA/Forside/kompetence-forside-juni18-1000x800.jpg 293w" alt="" sizes="(min-width: 1200px) 1140px, (min-width: 992px) 940px, (min-width: 768px) 720px, calc(100vw - 30px)">
+				<div class="content-collapsed h2">
+					<div class="title">
+						Tag en efteruddannelse					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+				<div class="content-full">
+					<div class="title h2">
+						Tag en efteruddannelse					</div>
+					<div class="content">
+						Vil du styrke din karriere og få mere i løn? Så tag en efteruddannelse.					</div>
+				</div>
+								<div class="overlay">
+					<h3 style="text-align: right;"><span style="color: #ededed;">Vil du styrke din<br />karriere og få<br />mere i løn?</span></h3>				</div>
+							</a>
+		</div>
+			</div>
+<div id="qx-kea-presentation-box-741646" class="row-flex qx-element qx-element-kea-presentation-box  qx-hidden-sm qx-hidden-xs">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mg-bottom-sm">
+			<a class="" href="https://kompetence.kea.dk"   >
+				<img src="/slir/w585-c100x48/images/DA/Forside/efteruddannelse.jpg" srcset="/slir/w1170-c100x48/images/DA/Forside/efteruddannelse.jpg 1170w, /slir/w586-c100x48/images/DA/Forside/efteruddannelse.jpg 586w, /slir/w780-c100x48/images/DA/Forside/efteruddannelse.jpg 780w, /slir/w390-c100x48/images/DA/Forside/efteruddannelse.jpg 390w, /slir/w293-c100x48/images/DA/Forside/efteruddannelse.jpg 293w" alt="" sizes="(min-width: 1200px) 1140px, (min-width: 992px) 940px, (min-width: 768px) 720px, calc(100vw - 30px)">
+				<div class="content-collapsed h2">
+					<div class="title">
+						Styrk dine kompetencer					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+				<div class="content-full">
+					<div class="title h2">
+						Styrk dine kompetencer					</div>
+					<div class="content">
+						Få opdateret din viden og dine færdigheder ved siden af dit arbejde. Tag en efteruddannelse på KEA Kompetence.					</div>
+				</div>
+								<div class="overlay">
+					<h5 style="text-align: right;"><span style="color: #fff;">Efteruddannelse</span></h5>				</div>
+							</a>
+		</div>
+			</div>
+</div>
+<!-- qx-col -->
+    
+  </div>
+  <!-- qx-row -->
+
+  
+</div>
+<!-- qx-section -->
+
+<div id="qx-section-153599" class="qx-section  qx-section--stretch"  >
+
+  <!-- Shape -->
+    
+    <div class="qx-container">
+  
+    <div 
+    id="qx-row-103600" 
+    class="qx-row "    >
+
+    <div id="qx-column-983693" class="qx-column  qx-col-lg-12 qx-col-md-12 qx-col-sm-12 qx-col-xs-12" >
+  </div>
+<!-- qx-col -->
+    
+  </div>
+  <!-- qx-row -->
+<div 
+    id="qx-row-492760" 
+    class="qx-row "    >
+
+    <div id="qx-column-232762" class="qx-column  qx-col-lg-6 qx-col-md-6 qx-col-sm-6 qx-col-xs-12" >
+  <div id="qx-kea-presentation-box-854252" class="row-flex qx-element qx-element-kea-presentation-box  pd-top-sm pd-bottom-sm">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mg-bottom-sm">
+			<a class="" href="/forskning-på-kea"   >
+				<img src="/slir/w585-c100x56/images/DA/forskning-paa-kea/forskning-og-innovation-2.jpg" srcset="/slir/w1170-c100x56/images/DA/forskning-paa-kea/forskning-og-innovation-2.jpg 1170w, /slir/w586-c100x56/images/DA/forskning-paa-kea/forskning-og-innovation-2.jpg 586w, /slir/w780-c100x56/images/DA/forskning-paa-kea/forskning-og-innovation-2.jpg 780w, /slir/w390-c100x56/images/DA/forskning-paa-kea/forskning-og-innovation-2.jpg 390w, /slir/w293-c100x56/images/DA/forskning-paa-kea/forskning-og-innovation-2.jpg 293w" alt="" sizes="(min-width: 1200px) 1140px, (min-width: 992px) 940px, (min-width: 768px) 720px, calc(100vw - 30px)">
+				<div class="content-collapsed h3">
+					<div class="title">
+						Forskning på KEA					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+				<div class="content-full">
+					<div class="title h3">
+						Forskning på KEA					</div>
+					<div class="content">
+						Forskning og innovation er en drivkraft i KEAs videnkredsløb. 					</div>
+				</div>
+							</a>
+		</div>
+			</div>
+</div>
+<!-- qx-col -->
+<div id="qx-column-312764" class="qx-column  qx-col-lg-6 qx-col-md-6 qx-col-sm-6 qx-col-xs-12" >
+  <div id="qx-kea-video-972767" class="row-flex qx-element qx-element-kea-video  pd-top-sm">
+					<div class="youtube-video col-xs-12 col-sm-12 col-md-12 col-lg-12 mg-bottom-sm">
+			<div class="embed-container"><iframe src="//www.youtube.com/embed/iYgbeZFnNmU?showinfo=0&amp;rel=0&amp;controls=0" seamless allowfullscreen></iframe></div>
+								</div>
+	</div>
+</div>
+<!-- qx-col -->
+    
+  </div>
+  <!-- qx-row -->
+
+    </div>
+  
+</div>
+<!-- qx-section -->
+
+<div id="qx-section-86138" class="qx-section  qx-hidden-xs qx-section--stretch"  >
+
+  <!-- Shape -->
+    
+    <div class="qx-container">
+  
+    <div 
+    id="qx-row-35139" 
+    class="qx-row  qx-hidden-xs"    >
+
+    <div id="qx-column-46141" class="qx-column  qx-col-lg-12 qx-col-md-12 qx-col-sm-12 qx-col-xs-12 qx-hidden-xs" >
+  <div id="qx-kea-joomla-module-462924" class="qx-element qx-element-kea-joomla-module  pd-top-md" >
+          		<div class="moduletable">
+							<h3>Nyheder fra KEA</h3>
+						<div class="row-flex newslist">
+			<div class="newslist-item col-xs-12 col-sm-6 col-md-3 col-lg-3">
+<a href="/om-kea/nyheder/kea-kårer-den-bedste-praktik">
+<div class="image-wrapper">
+	<img src="/slir/w315-c5x3/images/news/2019/02/18278175_10155328087745972_1848420504371700300_o.jpg" srcset="/slir/w630-c5x3/images/news/2019/02/18278175_10155328087745972_1848420504371700300_o.jpg 630w, /slir/w496-c5x3/images/news/2019/02/18278175_10155328087745972_1848420504371700300_o.jpg 496w, /slir/w396-c5x3/images/news/2019/02/18278175_10155328087745972_1848420504371700300_o.jpg 396w, /slir/w315-c5x3/images/news/2019/02/18278175_10155328087745972_1848420504371700300_o.jpg 315w, /slir/w248-c5x3/images/news/2019/02/18278175_10155328087745972_1848420504371700300_o.jpg 248w, /slir/w198-c5x3/images/news/2019/02/18278175_10155328087745972_1848420504371700300_o.jpg 198w" sizes="(min-width: 1200px) 263px, (min-width: 992px) 213px, (min-width: 768px) 345px, calc((100vw - 30px) / 2)" alt="">
+</div>
+	<h4 class="news-title">
+		KEA kårer den bedste praktik	</h4>
+
+	<time datetime="2019-03-01T09:52:31+01:00" itemprop="datePublished">1. Marts 2019</time>
+
+
+	
+
+<p>Som studerende på KEA har man et tæt samarbejde med erhvervslivet fra dag 1 - ikke mindst i kraft af praktikken. Nu kan de studerende…</p>
+
+</a>
+
+
+</div>
+			<div class="newslist-item col-xs-12 col-sm-6 col-md-3 col-lg-3">
+<a href="/om-kea/nyheder/fremtiden-for-wearables">
+<div class="image-wrapper">
+	<img src="/slir/w315-c5x3/images/news/2019/02/IMG_1559.JPG" srcset="/slir/w630-c5x3/images/news/2019/02/IMG_1559.JPG 630w, /slir/w496-c5x3/images/news/2019/02/IMG_1559.JPG 496w, /slir/w396-c5x3/images/news/2019/02/IMG_1559.JPG 396w, /slir/w315-c5x3/images/news/2019/02/IMG_1559.JPG 315w, /slir/w248-c5x3/images/news/2019/02/IMG_1559.JPG 248w, /slir/w198-c5x3/images/news/2019/02/IMG_1559.JPG 198w" sizes="(min-width: 1200px) 263px, (min-width: 992px) 213px, (min-width: 768px) 345px, calc((100vw - 30px) / 2)" alt="">
+</div>
+	<h4 class="news-title">
+		Fremtiden for wearables	</h4>
+
+	<time datetime="2019-02-22T22:40:46+01:00" itemprop="datePublished">22. Februar 2019</time>
+
+
+	
+
+<p>Wearables rykker ind i arbejdslivet - Microsoft har for eksempel lanceret en wearable, der arbejder sammen med deres HoloLens målrettet…</p>
+
+</a>
+
+
+</div>
+			<div class="newslist-item col-xs-12 col-sm-6 col-md-3 col-lg-3">
+<a href="/om-kea/nyheder/rektor-og-studerende-til-rundbordssnak-i-ministeriet">
+<div class="image-wrapper">
+	<img src="/slir/w315-c5x3/images/news/2019/02/TommyA-1.jpg" srcset="/slir/w630-c5x3/images/news/2019/02/TommyA-1.jpg 630w, /slir/w496-c5x3/images/news/2019/02/TommyA-1.jpg 496w, /slir/w396-c5x3/images/news/2019/02/TommyA-1.jpg 396w, /slir/w315-c5x3/images/news/2019/02/TommyA-1.jpg 315w, /slir/w248-c5x3/images/news/2019/02/TommyA-1.jpg 248w, /slir/w198-c5x3/images/news/2019/02/TommyA-1.jpg 198w" sizes="(min-width: 1200px) 263px, (min-width: 992px) 213px, (min-width: 768px) 345px, calc((100vw - 30px) / 2)" alt="">
+</div>
+	<h4 class="news-title">
+		Rektor og studerende til rundbordssnak i ministeriet	</h4>
+
+	<time datetime="2019-02-22T14:58:51+01:00" itemprop="datePublished">22. Februar 2019</time>
+
+
+	
+
+<p>Mød Rasmus Danielsen – en af vores engagerede studerende, som ikke bare er en del af De Studerendes Råd, men også sidder i…</p>
+
+</a>
+
+
+</div>
+			<div class="newslist-item col-xs-12 col-sm-6 col-md-3 col-lg-3">
+<a href="/om-kea/nyheder/kea-studerende-er-mere-studieaktive">
+<div class="image-wrapper">
+	<img src="/slir/w315-c5x3/images/news/2019/02/KEA-08_copy.jpg" srcset="/slir/w630-c5x3/images/news/2019/02/KEA-08_copy.jpg 630w, /slir/w496-c5x3/images/news/2019/02/KEA-08_copy.jpg 496w, /slir/w396-c5x3/images/news/2019/02/KEA-08_copy.jpg 396w, /slir/w315-c5x3/images/news/2019/02/KEA-08_copy.jpg 315w, /slir/w248-c5x3/images/news/2019/02/KEA-08_copy.jpg 248w, /slir/w198-c5x3/images/news/2019/02/KEA-08_copy.jpg 198w" sizes="(min-width: 1200px) 263px, (min-width: 992px) 213px, (min-width: 768px) 345px, calc((100vw - 30px) / 2)" alt="">
+</div>
+	<h4 class="news-title">
+		KEA-studerende er mere studieaktive	</h4>
+
+	<time datetime="2019-02-08T18:04:18+01:00" itemprop="datePublished">8. Februar 2019</time>
+
+
+	
+
+<p>En række nye initiativer har ikke bare øget antallet af timer de studerende bruger på studiet, det har også givet de studerende…</p>
+
+</a>
+
+
+</div>
+	</div>
+		</div>
+	    </div>
+<div id="qx-kea-text-9485" class="qx-element qx-element-kea-text  pd-bottom-sm" >
+<p><a class="page block" href="/../om-kea/nyheder">Se alle nyheder</a></p></div>
+</div>
+<!-- qx-col -->
+    
+  </div>
+  <!-- qx-row -->
+
+    </div>
+  
+</div>
+<!-- qx-section -->
+
+<div id="qx-section-4386" class="qx-section  qx-hidden-lg qx-hidden-md qx-hidden-sm qx-section--stretch"  >
+
+  <!-- Shape -->
+    
+    <div class="qx-container">
+  
+    <div 
+    id="qx-row-4487" 
+    class="qx-row "    >
+
+    <div id="qx-column-3688" class="qx-column  qx-col-lg-12 qx-col-md-12 qx-col-sm-12 qx-col-xs-12" >
+  <div id="qx-kea-joomla-module-5689" class="qx-element qx-element-kea-joomla-module  pd-top-md" >
+          		<div class="moduletable">
+							<h3>Nyheder</h3>
+						<div class="row-flex newslist">
+			<div class="newslist-item col-xs-12 col-sm-6 col-md-3 col-lg-3">
+<a href="/om-kea/nyheder/kea-kårer-den-bedste-praktik">
+	<h4 class="news-title">
+		KEA kårer den bedste praktik	</h4>
+
+	<time datetime="2019-03-01T09:52:31+01:00" itemprop="datePublished">1. Marts 2019</time>
+
+
+	
+
+<p>Som studerende på KEA har man et tæt samarbejde med erhvervslivet fra dag 1 - ikke mindst i kraft af praktikken. Nu kan de studerende…</p>
+
+</a>
+
+
+</div>
+			<div class="newslist-item col-xs-12 col-sm-6 col-md-3 col-lg-3">
+<a href="/om-kea/nyheder/fremtiden-for-wearables">
+	<h4 class="news-title">
+		Fremtiden for wearables	</h4>
+
+	<time datetime="2019-02-22T22:40:46+01:00" itemprop="datePublished">22. Februar 2019</time>
+
+
+	
+
+<p>Wearables rykker ind i arbejdslivet - Microsoft har for eksempel lanceret en wearable, der arbejder sammen med deres HoloLens målrettet…</p>
+
+</a>
+
+
+</div>
+	</div>
+		</div>
+	    </div>
+<div id="qx-kea-text-8790" class="qx-element qx-element-kea-text  pd-bottom-sm" >
+<p><a class="page block" href="/../om-kea/nyheder">Se alle nyheder</a></p></div>
+</div>
+<!-- qx-col -->
+    
+  </div>
+  <!-- qx-row -->
+
+    </div>
+  
+</div>
+<!-- qx-section -->
+
+<div id="qx-section-553697" class="qx-section "  >
+
+  <!-- Shape -->
+    
+  
+    <div 
+    id="qx-row-761735" 
+    class="qx-row  qx-hidden-xs"    >
+
+    <div id="qx-column-361737" class="qx-column  qx-col-lg-12 qx-col-md-12 qx-col-sm-12 qx-col-xs-12" >
+  <div id="qx-kea-text-671722" class="qx-element qx-element-kea-text  pd-top-md" >
+<h4 style="text-align: center;">Vidste du at ...</h4>
+<h2 style="text-align: center;">På KEA møder design, teknologi og business hinanden. Ikke mindst fordi verden udenfor efterspørger netop dén kombination.</h2></div>
+</div>
+<!-- qx-col -->
+    
+  </div>
+  <!-- qx-row -->
+<div 
+    id="qx-row-873027" 
+    class="qx-row  qx-hidden-lg qx-hidden-md qx-hidden-sm"    >
+
+    <div id="qx-column-333028" class="qx-column  qx-col-lg-12 qx-col-md-12 qx-col-sm-12 qx-col-xs-12" >
+  <div id="qx-kea-text-853029" class="qx-element qx-element-kea-text  pd-top-md" >
+<h4 style="text-align: center;">Vidste du at ...</h4>
+<h2 style="text-align: center;">På KEA møder design, teknologi og business hinanden. Ikke mindst fordi verden udenfor efterspørger netop dén kombination.</h2></div>
+</div>
+<!-- qx-col -->
+    
+  </div>
+  <!-- qx-row -->
+<div 
+    id="qx-row-804222" 
+    class="qx-row "    >
+
+    <div id="qx-column-34224" class="qx-column  qx-col-lg-6 qx-col-md-6 qx-col-sm-6 qx-col-xs-12" >
+  <div id="qx-kea-presentation-box-554231" class="row-flex qx-element qx-element-kea-presentation-box  pd-top-md">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mg-bottom-sm">
+			<a class="" href="/for-virksomheder/projektsamarbejde"   >
+				<img src="/slir/w585-c100x40/images/DA/For-virksomheder/Samarbejde.jpg" srcset="/slir/w1170-c100x40/images/DA/For-virksomheder/Samarbejde.jpg 1170w, /slir/w586-c100x40/images/DA/For-virksomheder/Samarbejde.jpg 586w, /slir/w780-c100x40/images/DA/For-virksomheder/Samarbejde.jpg 780w, /slir/w390-c100x40/images/DA/For-virksomheder/Samarbejde.jpg 390w, /slir/w293-c100x40/images/DA/For-virksomheder/Samarbejde.jpg 293w" alt="" sizes="(min-width: 1200px) 1140px, (min-width: 992px) 940px, (min-width: 768px) 720px, calc(100vw - 30px)">
+				<div class="content-collapsed h5">
+					<div class="title">
+						Lav projekter med KEAs studerende					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+				<div class="content-full">
+					<div class="title h5">
+						Lav projekter med KEAs studerende					</div>
+					<div class="content">
+						Vil du gerne samarbejde med studerende om et projekt i din virksomhed? Der er flere muligheder, alt efter projektets omfang.					</div>
+				</div>
+							</a>
+		</div>
+			</div>
+</div>
+<!-- qx-col -->
+<div id="qx-column-504228" class="qx-column  qx-col-lg-6 qx-col-md-6 qx-col-sm-6 qx-col-xs-12" >
+  <div id="qx-kea-presentation-box-694249" class="row-flex qx-element qx-element-kea-presentation-box  pd-top-md">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mg-bottom-sm">
+			<a class="" href="/forskning-på-kea/værksteder"   >
+				<img src="/slir/w585-c100x40/images/DA/Om-KEA/kea-material-design-lab.jpg" srcset="/slir/w1170-c100x40/images/DA/Om-KEA/kea-material-design-lab.jpg 1170w, /slir/w586-c100x40/images/DA/Om-KEA/kea-material-design-lab.jpg 586w, /slir/w780-c100x40/images/DA/Om-KEA/kea-material-design-lab.jpg 780w, /slir/w390-c100x40/images/DA/Om-KEA/kea-material-design-lab.jpg 390w, /slir/w293-c100x40/images/DA/Om-KEA/kea-material-design-lab.jpg 293w" alt="" sizes="(min-width: 1200px) 1140px, (min-width: 992px) 940px, (min-width: 768px) 720px, calc(100vw - 30px)">
+				<div class="content-collapsed h5">
+					<div class="title">
+						Værksteder på KEA					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+				<div class="content-full">
+					<div class="title h5">
+						Værksteder på KEA					</div>
+					<div class="content">
+						KEA råder over et antal værksteder, som er tilgængelige for studerende, undervisere og alumner. I værkstederne er det muligt at få adgang til 3D-printere, lasercuttere, robotter, VR-udstyr og meget mere.					</div>
+				</div>
+							</a>
+		</div>
+			</div>
+</div>
+<!-- qx-col -->
+    
+  </div>
+  <!-- qx-row -->
+<div 
+    id="qx-row-848274" 
+    class="qx-row  qx-hidden-sm qx-hidden-xs"    >
+
+    <div id="qx-column-998276" class="qx-column  qx-col-lg-6 qx-col-md-6 qx-col-sm-6 qx-col-xs-12" >
+  <div id="qx-kea-text-811417" class="qx-element qx-element-kea-text  base-color-3 pd-top-sm" >
+<div style="background-color: #1ab2a6; padding: 22px 20px 12px 20px;">
+<h4><a href="https://alumne.kea.dk" target="_blank" rel="noopener noreferrer">Bliv en del af KEA Alumne</a></h4>
+<h2 style="text-align: center;"><a href="https://alumne.kea.dk" target="_blank" rel="noopener noreferrer">styrk dit professionelle <br />netværk og din karriere</a></h2>
+<p><a class="page block" href="https://alumne.kea.dk" target="_blank" rel="noopener noreferrer">Meld dig ind i netværket</a></p>
+</div></div>
+</div>
+<!-- qx-col -->
+<div id="qx-column-488278" class="qx-column  qx-col-lg-3 qx-col-md-3 qx-col-sm-6 qx-col-xs-12" >
+  <div id="qx-kea-presentation-box-688617" class="row-flex qx-element qx-element-kea-presentation-box  pd-top-sm">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mg-bottom-sm">
+			<a class="" href="/uddannelser/tag-til-udlandet"   >
+				<img src="/slir/w585-c100x78/images/DA/Uddannelser/Tag-til-udlandet3.jpg" srcset="/slir/w1170-c100x78/images/DA/Uddannelser/Tag-til-udlandet3.jpg 1170w, /slir/w586-c100x78/images/DA/Uddannelser/Tag-til-udlandet3.jpg 586w, /slir/w780-c100x78/images/DA/Uddannelser/Tag-til-udlandet3.jpg 780w, /slir/w390-c100x78/images/DA/Uddannelser/Tag-til-udlandet3.jpg 390w, /slir/w293-c100x78/images/DA/Uddannelser/Tag-til-udlandet3.jpg 293w" alt="" sizes="(min-width: 1200px) 1140px, (min-width: 992px) 940px, (min-width: 768px) 720px, calc(100vw - 30px)">
+				<div class="content-collapsed h5">
+					<div class="title">
+						Studie i udlandet					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+				<div class="content-full">
+					<div class="title h5">
+						Studie i udlandet					</div>
+					<div class="content">
+						På KEA gør vi meget for at fremme et internationalt studiemiljø og ruste vores studerende med et globalt udsyn.					</div>
+				</div>
+							</a>
+		</div>
+			</div>
+</div>
+<!-- qx-col -->
+<div id="qx-column-658280" class="qx-column  qx-col-lg-3 qx-col-md-3 qx-col-sm-6 qx-col-xs-12" >
+  <div id="qx-kea-presentation-box-238784" class="row-flex qx-element qx-element-kea-presentation-box  pd-top-sm">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mg-bottom-sm">
+			<a class="" href="/om-kea/kontakt"   title="Sådan kommer du i kontakt med KEA">
+				<img src="/slir/w585-c100x78/images/DA/Om-KEA/kontakt1.jpg" srcset="/slir/w1170-c100x78/images/DA/Om-KEA/kontakt1.jpg 1170w, /slir/w586-c100x78/images/DA/Om-KEA/kontakt1.jpg 586w, /slir/w780-c100x78/images/DA/Om-KEA/kontakt1.jpg 780w, /slir/w390-c100x78/images/DA/Om-KEA/kontakt1.jpg 390w, /slir/w293-c100x78/images/DA/Om-KEA/kontakt1.jpg 293w" alt="Sådan kommer du i kontakt med KEA" sizes="(min-width: 1200px) 1140px, (min-width: 992px) 940px, (min-width: 768px) 720px, calc(100vw - 30px)">
+				<div class="content-collapsed h5">
+					<div class="title">
+						Kontakt os					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+				<div class="content-full">
+					<div class="title h5">
+						Kontakt os					</div>
+					<div class="content">
+						Her finder du kontaktinformation til centraladministration, studievejledning og presse.					</div>
+				</div>
+							</a>
+		</div>
+			</div>
+</div>
+<!-- qx-col -->
+    
+  </div>
+  <!-- qx-row -->
+<div 
+    id="qx-row-8873" 
+    class="qx-row  qx-hidden-lg qx-hidden-md qx-hidden-xs"    >
+
+    <div id="qx-column-4374" class="qx-column  qx-col-lg-6 qx-col-md-6 qx-col-sm-6 qx-col-xs-12" >
+  <div id="qx-kea-text-9775" class="qx-element qx-element-kea-text  base-color-3 pd-top-sm" >
+<div style="background-color: #1ab2a6; padding: 32px 20px 15px 22px;">
+<h4 style="padding-bottom: 14px;"><a href="https://alumne.kea.dk" target="_blank" rel="noopener noreferrer">Bliv en del af KEA Alumne</a></h4>
+<h2 style="text-align: center; padding-bottom: 24px;"><a href="https://alumne.kea.dk" target="_blank" rel="noopener noreferrer">styrk dit professionelle <br />netværk og din karriere</a></h2>
+<p><a class="page block" href="https://alumne.kea.dk" target="_blank" rel="noopener noreferrer">Meld dig ind i netværket</a></p>
+</div></div>
+</div>
+<!-- qx-col -->
+<div id="qx-column-7176" class="qx-column  qx-col-lg-6 qx-col-md-6 qx-col-sm-6 qx-col-xs-12" >
+  <div id="qx-kea-presentation-box-2577" class="row-flex qx-element qx-element-kea-presentation-box  pd-top-sm">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mg-bottom-sm">
+			<a class="" href="/uddannelser/tag-til-udlandet"   >
+				<img src="/slir/w585-c100x40/images/DA/Uddannelser/Tag-til-udlandet3.jpg" srcset="/slir/w1170-c100x40/images/DA/Uddannelser/Tag-til-udlandet3.jpg 1170w, /slir/w586-c100x40/images/DA/Uddannelser/Tag-til-udlandet3.jpg 586w, /slir/w780-c100x40/images/DA/Uddannelser/Tag-til-udlandet3.jpg 780w, /slir/w390-c100x40/images/DA/Uddannelser/Tag-til-udlandet3.jpg 390w, /slir/w293-c100x40/images/DA/Uddannelser/Tag-til-udlandet3.jpg 293w" alt="" sizes="(min-width: 1200px) 1140px, (min-width: 992px) 940px, (min-width: 768px) 720px, calc(100vw - 30px)">
+				<div class="content-collapsed h5">
+					<div class="title">
+						Studie i udlandet					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+				<div class="content-full">
+					<div class="title h5">
+						Studie i udlandet					</div>
+					<div class="content">
+						På KEA gør vi meget for at fremme et internationalt studiemiljø og ruste vores studerende med et globalt udsyn.					</div>
+				</div>
+							</a>
+		</div>
+			</div>
+<div id="qx-kea-presentation-box-7779" class="row-flex qx-element qx-element-kea-presentation-box  pd-top-sm">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mg-bottom-sm">
+			<a class="" href="/om-kea/kontakt"   title="Sådan kommer du i kontakt med KEA">
+				<img src="/slir/w585-c100x40/images/DA/Om-KEA/kontakt1.jpg" srcset="/slir/w1170-c100x40/images/DA/Om-KEA/kontakt1.jpg 1170w, /slir/w586-c100x40/images/DA/Om-KEA/kontakt1.jpg 586w, /slir/w780-c100x40/images/DA/Om-KEA/kontakt1.jpg 780w, /slir/w390-c100x40/images/DA/Om-KEA/kontakt1.jpg 390w, /slir/w293-c100x40/images/DA/Om-KEA/kontakt1.jpg 293w" alt="Sådan kommer du i kontakt med KEA" sizes="(min-width: 1200px) 1140px, (min-width: 992px) 940px, (min-width: 768px) 720px, calc(100vw - 30px)">
+				<div class="content-collapsed h5">
+					<div class="title">
+						Kontakt os					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+				<div class="content-full">
+					<div class="title h5">
+						Kontakt os					</div>
+					<div class="content">
+						Her finder du kontaktinformation til centraladministration, studievejledning og presse.					</div>
+				</div>
+							</a>
+		</div>
+			</div>
+</div>
+<!-- qx-col -->
+    
+  </div>
+  <!-- qx-row -->
+<div 
+    id="qx-row-57625" 
+    class="qx-row  qx-hidden-lg qx-hidden-md qx-hidden-sm"    >
+
+    <div id="qx-column-12626" class="qx-column  qx-col-lg-6 qx-col-md-6 qx-col-sm-6 qx-col-xs-12" >
+  <div id="qx-kea-text-1627" class="qx-element qx-element-kea-text  base-color-3 pd-top-md pd-bottom-sm" >
+<div style="background-color: #1ab2a6; padding: 32px 20px 15px 22px;">
+<h4><a href="https://alumne.kea.dk" target="_blank" rel="noopener noreferrer">Bliv en del af KEA Alumne</a></h4>
+<h2 style="text-align: center;"><a href="https://alumne.kea.dk" target="_blank" rel="noopener noreferrer">styrk dit professionelle <br />netværk og din karriere</a></h2>
+<p><a class="page block" href="https://alumne.kea.dk" target="_blank" rel="noopener noreferrer">Meld dig ind i netværket</a></p>
+</div></div>
+</div>
+<!-- qx-col -->
+<div id="qx-column-5628" class="qx-column  qx-col-lg-6 qx-col-md-6 qx-col-sm-6 qx-col-xs-12" >
+  <div id="qx-kea-presentation-box-30629" class="row-flex qx-element qx-element-kea-presentation-box  pd-top-md pd-bottom-sm">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mg-bottom-sm">
+			<a class="" href="/uddannelser/tag-til-udlandet"   >
+				<img src="/slir/w585-c100x40/images/DA/Uddannelser/Tag-til-udlandet3.jpg" srcset="/slir/w1170-c100x40/images/DA/Uddannelser/Tag-til-udlandet3.jpg 1170w, /slir/w586-c100x40/images/DA/Uddannelser/Tag-til-udlandet3.jpg 586w, /slir/w780-c100x40/images/DA/Uddannelser/Tag-til-udlandet3.jpg 780w, /slir/w390-c100x40/images/DA/Uddannelser/Tag-til-udlandet3.jpg 390w, /slir/w293-c100x40/images/DA/Uddannelser/Tag-til-udlandet3.jpg 293w" alt="" sizes="(min-width: 1200px) 1140px, (min-width: 992px) 940px, (min-width: 768px) 720px, calc(100vw - 30px)">
+				<div class="content-collapsed h5">
+					<div class="title">
+						Studie i udlandet					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+				<div class="content-full">
+					<div class="title h5">
+						Studie i udlandet					</div>
+					<div class="content">
+						På KEA gør vi meget for at fremme et internationalt studiemiljø og ruste vores studerende med et globalt udsyn.					</div>
+				</div>
+							</a>
+		</div>
+			</div>
+<div id="qx-kea-presentation-box-54630" class="row-flex qx-element qx-element-kea-presentation-box  pd-top-sm">
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mg-bottom-sm">
+			<a class="" href="/om-kea/kontakt"   title="Sådan kommer du i kontakt med KEA">
+				<img src="/slir/w585-c100x40/images/DA/Om-KEA/kontakt1.jpg" srcset="/slir/w1170-c100x40/images/DA/Om-KEA/kontakt1.jpg 1170w, /slir/w586-c100x40/images/DA/Om-KEA/kontakt1.jpg 586w, /slir/w780-c100x40/images/DA/Om-KEA/kontakt1.jpg 780w, /slir/w390-c100x40/images/DA/Om-KEA/kontakt1.jpg 390w, /slir/w293-c100x40/images/DA/Om-KEA/kontakt1.jpg 293w" alt="Sådan kommer du i kontakt med KEA" sizes="(min-width: 1200px) 1140px, (min-width: 992px) 940px, (min-width: 768px) 720px, calc(100vw - 30px)">
+				<div class="content-collapsed h5">
+					<div class="title">
+						Kontakt os					</div>
+					<div class="title-icon">
+						<i class="fa fa-fw kea-icon-arrow-right"></i>
+					</div>
+				</div>
+				<div class="content-full">
+					<div class="title h5">
+						Kontakt os					</div>
+					<div class="content">
+						Her finder du kontaktinformation til centraladministration, studievejledning og presse.					</div>
+				</div>
+							</a>
+		</div>
+			</div>
+</div>
+<!-- qx-col -->
+    
+  </div>
+  <!-- qx-row -->
+
+  
+</div>
+<!-- qx-section -->
+
+    </div>
+  </div>
+  	</div>
+				</div>
+
+		</div>
+
+		
+		
+		<section class="footer   pd-top-md pd-bottom-md">
+			<div class="container">
+												<div class="row-flex">
+					<div class="col-xs-12 col-sm-6 col-md-3">
+								<div class="moduletable">
+
+					<h3>KEA - Københavns Erhvervsakademi</h3>
+		
+			
+
+<div class="custom"  >
+	<p>Guldbergsgade 29N<br />2200 København N</p>
+<p><a href="mailto:kea@kea.dk">kea@kea.dk</a><br />+45 46 46 00 00</p>
+<p>CVR: 316 562 06<br />EAN: 5798 000 560 291</p>
+<p>Rettelser til hjemmesiden:<br /> <a href="mailto:webmaster@kea.dk">webmaster@kea.dk</a></p>
+<h5>Du skal ikke bare vide.<br />Du skal kunne.</h5></div>
+
+		</div>
+
+	
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-3">
+								<div class="moduletable">
+
+					<h3>Kontakt</h3>
+		
+			<ul class="nav menu mod-list">
+<li class="item-240"><a href="/om-kea/presse" >Presse</a></li><li class="item-241"><a href="/om-kea/presse/find-en-ekspert" >Find ekspert</a></li><li class="item-243"><a href="/uddannelser/kontakt" >Studievejledning</a></li><li class="item-317"><a href="https://kea.dk/uddannelser/ansøgning-optagelse#qx-kea-text-3318" >KEA Optag</a></li></ul>
+
+		</div>
+
+			<div class="moduletable">
+
+					<h3>Om os</h3>
+		
+			<ul class="nav menu mod-list">
+<li class="item-247"><a href="/om-kea/organisation" >Organisation</a></li><li class="item-258"><a href="/årsrapporter" >Årsrapporter</a></li><li class="item-259"><a href="/keas-vedtægter" >KEAs vedtægter</a></li><li class="item-260"><a href="https://kea.dk/om-kea/strategi#qx-kea-text-1369" >Strategisk rammekontrakt</a></li><li class="item-304"><a href="/retningslinjer-for-uddannelser-til-internationale-studerende" >Internationale retningslinjer</a></li><li class="item-248"><a href="https://kea.dk/om-kea/job-på-kea" >Ledige stillinger</a></li></ul>
+
+		</div>
+
+	
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-3">
+								<div class="moduletable">
+
+					<h3>For virksomheder</h3>
+		
+			<ul class="nav menu mod-list">
+<li class="item-250"><a href="/for-virksomheder/få-en-praktikant" >Få en praktikant</a></li><li class="item-251"><a href="/for-virksomheder/projektsamarbejde" >Projektsamarbejde</a></li><li class="item-252"><a href="http://jobportal.kea.dk" >Jobportal</a></li></ul>
+
+		</div>
+
+			<div class="moduletable">
+
+					<h3>For studerende</h3>
+		
+			<ul class="nav menu mod-list">
+<li class="item-310"><a href="http://bibliotek.kea.dk" target="_blank" rel="noopener noreferrer">KEA Bibliotek</a></li><li class="item-312"><a href="https://fronter.com/kea/" >Fronter</a></li><li class="item-467"><a href="http://mail.stud.kea.dk/" target="_blank" rel="noopener noreferrer">KEA webmail</a></li><li class="item-267"><a href="/iværksætteri" >Iværksætteri</a></li><li class="item-265"><a href="/uddannelser/studieaktivitetsmodel" >Studieaktivitetsmodel</a></li><li class="item-302"><a href="/ordensregler" >Ordensregler</a></li></ul>
+
+		</div>
+
+			<div class="moduletable">
+
+					<h3>For ansatte</h3>
+		
+			<ul class="nav menu mod-list">
+<li class="item-313"><a href="https://bibliotek.kea.dk/da/" >KEA Bibliotek</a></li><li class="item-314"><a href="https://fronter.com/kea/" >Fronter</a></li><li class="item-315"><a href="https://webmail.kea.dk" >KEA webmail</a></li></ul>
+
+		</div>
+
+	
+					</div>
+					<div class="col-xs-12 col-sm-6 col-md-3">
+								<div class="moduletable">
+
+					<h3>Praktisk info</h3>
+		
+			<ul class="nav menu mod-list">
+<li class="item-253"><a href="/cookies-og-privatliv" >Cookies og privatliv</a></li><li class="item-340"><a href="/persondatapolitik" >Persondatapolitik</a></li><li class="item-301"><a href="/ordensregler" >Ordensregler</a></li><li class="item-254"><a href="/fakturering" >Fakturering</a></li><li class="item-257"><a href="/indkøbspolitik" >Indkøbspolitik</a></li><li class="item-338"><a href="/udbud" >Udbud på KEA</a></li><li class="item-255"><a href="/om-kea/find-vej" >Find vej</a></li></ul>
+
+		</div>
+
+			<div class="moduletable">
+
+					<h3>Genveje</h3>
+		
+			<ul class="nav menu mod-list">
+<li class="item-249"><a href="http://bibliotek.kea.dk/da/" >KEA Bibliotek</a></li><li class="item-244"><a href="http://alumne.kea.dk" >KEA Alumne</a></li><li class="item-316"><a href="https://global.kea.dk/" >Go Global!</a></li></ul>
+
+		</div>
+
+			<div class="moduletable">
+
+		
+			
+
+<div class="custom"  >
+	<p><a href="https://www.facebook.com/kea.dk/"><i class="fa fa-2x kea-icon-facebook"></i></a>&nbsp;&nbsp;<a href="https://www.linkedin.com/school/kea-k-benhavns-erhvervsakademi/"><i class="fa fa-2x kea-icon-linkedin"></i></a>&nbsp;&nbsp;<a href="https://www.instagram.com/keacph/"><i class="fa fa-2x kea-icon-instagram"></i></a>&nbsp;&nbsp;<a href="https://twitter.com/keacph/"><i class="fa fa-2x kea-icon-twitter"></i></a>&nbsp;&nbsp;<a href="https://www.youtube.com/user/KEAkanal"><i class="fa fa-2x kea-icon-youtube"></i></a></p></div>
+
+		</div>
+
+	
+					</div>
+				</div>
+											</div>
+		</section>
+
+		<nav id="navigation-mobile">
+			<ul class="nav menu mod-list">
+<li class="item-129 deeper parent"><a href="/uddannelser" >Uddannelser</a><ul class="nav-child unstyled small"><li class="item-130 deeper parent"><a href="/uddannelser/erhvervsakademi" >Erhvervs­akademi­</a><ul class="nav-child unstyled small"><li class="item-207"><a href="/uddannelser/erhvervsakademi/automationsteknolog" >Automationsteknolog</a></li><li class="item-208"><a href="/uddannelser/erhvervsakademi/byggekoordinator" >Byggekoordinator</a></li><li class="item-209"><a href="/uddannelser/erhvervsakademi/byggetekniker" >Byggetekniker</a></li><li class="item-210"><a href="/uddannelser/erhvervsakademi/datamatiker" >Datamatiker DK</a></li><li class="item-328"><a href="https://kea.dk/en/programmes/academy-profession-degree/computer-science" >Datamatiker INT</a></li><li class="item-211"><a href="/uddannelser/erhvervsakademi/designteknolog" >Designteknolog DK</a></li><li class="item-329"><a href="/uddannelser/erhvervsakademi/designteknolog-int" >Designteknolog INT</a></li><li class="item-212"><a href="/uddannelser/erhvervsakademi/e-designer" >E-designer</a></li><li class="item-213"><a href="/uddannelser/erhvervsakademi/elinstallatør" >Elinstallatør</a></li><li class="item-214"><a href="/uddannelser/erhvervsakademi/energiteknolog" >Energiteknolog</a></li><li class="item-215"><a href="/uddannelser/erhvervsakademi/it-teknolog" >IT-teknolog</a></li><li class="item-216"><a href="/uddannelser/erhvervsakademi/kort-og-landmålingstekniker" >Kort- og Landmålingstekniker</a></li><li class="item-217"><a href="/uddannelser/erhvervsakademi/multimediedesigner" >Multimediedesigner DK</a></li><li class="item-330"><a href="https://kea.dk/en/programmes/academy-profession-degree/multimedia-design" >Multimediedesigner INT</a></li><li class="item-206"><a href="/uddannelser/erhvervsakademi/produktionsteknolog" >Produktionsteknolog DK</a></li><li class="item-331"><a href="https://kea.dk/en/programmes/academy-profession-degree/production-technology" >Produktionsteknolog INT</a></li><li class="item-218"><a href="/uddannelser/erhvervsakademi/vvs-installatør" >VVS-installatør</a></li></ul></li><li class="item-131 deeper parent"><a href="/uddannelser/top-up" >Top Up</a><ul class="nav-child unstyled small"><li class="item-219"><a href="/uddannelser/top-up/design-business" >Design og Business DK</a></li><li class="item-332"><a href="https://kea.dk/en/programmes/top-up-bachelor-degree/design-business" >Design og Business INT</a></li><li class="item-222"><a href="/uddannelser/top-up/digital-konceptudvikling" >Digital konceptudvikling</a></li><li class="item-220"><a href="/uddannelser/top-up/it-sikkerhed" >IT-sikkerhed</a></li><li class="item-221"><a href="/uddannelser/top-up/produktudvikling-teknisk-integration" >Produktudvikling og teknisk integration DK</a></li><li class="item-333"><a href="https://kea.dk/en/programmes/top-up-bachelor-degree/product-development-and-integrative-technology" >Produktudvikling og teknisk integration INT</a></li><li class="item-223"><a href="/uddannelser/top-up/softwareudvikling" >Softwareudvikling INT</a></li><li class="item-224"><a href="/uddannelser/top-up/webudvikling" >Webudvikling INT</a></li></ul></li><li class="item-133 deeper parent"><a href="/uddannelser/professionsbachelor" >Professions­bachelor</a><ul class="nav-child unstyled small"><li class="item-225"><a href="/uddannelser/professionsbachelor/bygningskonstruktør" >Bygnings­konstruktør DK</a></li><li class="item-326"><a href="/uddannelser/professionsbachelor/bygningskonstruktør-int" >Bygningskonstruktør INT</a></li><li class="item-226"><a href="/uddannelser/professionsbachelor/optometri" >Optometri</a></li><li class="item-227"><a href="/uddannelser/professionsbachelor/smykker-teknologi-og-business" >Smykker, teknologi og business</a></li><li class="item-336"><a href="https://kea.dk/en/programmes/bachelor-degree/jewellery-technology-and-business" >Smykker, teknologi og business INT</a></li><li class="item-228"><a href="/uddannelser/professionsbachelor/økonomi-it" >Økonomi &amp; it</a></li><li class="item-337"><a href="https://kea.dk/en/programmes/bachelor-degree/business-economics-and-information-technology" >Økonomi &amp; IT INT</a></li></ul></li><li class="item-327"><a href="/uddannelser/internationale-uddannelser" >Internationale uddannelser</a></li><li class="item-135"><a href="/uddannelser/ansøgning-optagelse" >Ansøgning &amp; optagelse</a></li><li class="item-139"><a href="/uddannelser/praktik" >Praktik</a></li><li class="item-141"><a href="/uddannelser/studieliv" >Studieliv</a></li><li class="item-146"><a href="/uddannelser/tag-til-udlandet" >Tag til udlandet</a></li><li class="item-140"><a href="/uddannelser/åbent-hus" >Åbent hus</a></li><li class="item-147"><a href="/uddannelser/faq" >FAQ</a></li><li class="item-148"><a href="/uddannelser/kontakt" >Kontakt</a></li></ul></li><li class="item-242"><a href="http://kompetence.kea.dk" >Efteruddannelse</a></li><li class="item-269 deeper parent"><a href="/forskning-på-kea" >Forskning på KEA</a><ul class="nav-child unstyled small"><li class="item-288"><a href="/forskning-på-kea/værksteder" >Værksteder</a></li><li class="item-289"><a href="/forskning-på-kea/kontakt" >Kontakt</a></li></ul></li><li class="item-150 deeper parent"><a href="/for-virksomheder" >For virksomheder</a><ul class="nav-child unstyled small"><li class="item-151"><a href="/for-virksomheder/få-en-praktikant" >Få en praktikant</a></li><li class="item-152"><a href="/for-virksomheder/projektsamarbejde" >Projektsamarbejde</a></li><li class="item-204"><a href="/om-kea/presse/find-en-ekspert" >Find en ekspert</a></li><li class="item-154"><a href="/for-virksomheder/kontakt" >Kontakt</a></li></ul></li><li class="item-158 deeper parent"><a href="/om-kea" >Om KEA</a><ul class="nav-child unstyled small"><li class="item-174"><a href="/om-kea/organisation" >Organisation</a></li><li class="item-175"><a href="/om-kea/strategi" >Strategi</a></li><li class="item-176"><a href="/om-kea/kea-i-tal" >KEA i tal</a></li><li class="item-318"><a href="https://bibliotek.kea.dk" >Bibliotek</a></li><li class="item-178"><a href="/om-kea/kvalitet" >Kvalitet</a></li><li class="item-101"><a href="/om-kea/nyheder" >Nyheder</a></li><li class="item-420"><a href="/om-kea/kalender" >Kalender</a></li><li class="item-229"><a href="/om-kea/kea-i-medierne" >KEA i medierne</a></li><li class="item-155"><a href="/om-kea/presse" >Presserum</a></li><li class="item-181"><a href="/om-kea/job-på-kea" >Job på KEA</a></li><li class="item-182"><a href="/om-kea/find-vej" >Find vej</a></li><li class="item-183"><a href="/om-kea/kontakt" >Kontakt</a></li></ul></li></ul>
+
+		</nav>
+
+		<nav id="anchor-menu" class="anchor-disabled">
+			<ul class="nav menu"></ul>
+			<div id="anchor-hamburger" class="hamburger hamburger--squeeze navbar-toggle" type="button">
+				<span class="hamburger-title">Indhold</span>
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</div>
+		</nav>
+	</div>
+</body>
+</html>

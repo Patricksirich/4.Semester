@@ -1,0 +1,197 @@
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace (master)
+$ ls
+'Python start.code-workspace'   ex1.acc   ex1.dat   mycommands.txt   orphans.sp
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace (master)
+$ cp ex1.acc myfile.acc
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace (master)
+$ ls
+'Python start.code-workspace'   ex1.acc   ex1.dat   mycommands.txt   myfile.acc   orphans.sp
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace (master)
+$ code ex1.acc
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace (master)
+$ code myfile.acc
+
+Filerne stemmer*
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace (master)
+$ cp ex1.dat myfile.acc
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace (master)
+$ code myfile.acc
+
+Filerne er ændret*
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace (master)
+$ rm myfile.acc
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace (master)
+$ ls
+'Python start.code-workspace'   ex1.acc   ex1.dat   mycommands.txt   orphans.sp
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace (master)
+$ mkdir test
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace (master)
+$ ls
+'Python start.code-workspace'   ex1.acc   ex1.dat   mycommands.txt   orphans.sp   test
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace (master)
+$ mv ex1.acc test
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace (master)
+$ mv ex1.dat test
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace (master)
+$ ls
+'Python start.code-workspace'   mycommands.txt   orphans.sp   test
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace (master)
+$ cd test
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace/test (master)
+$ ls
+ex1.acc  ex1.dat
+
+Filer rykket til "test"*
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~ (master)
+$ cd Desktop/Workspace
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace (master)
+$ ls
+'Python start.code-workspace'   mycommands.txt   orphans.sp   test
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace (master)
+$ mkdir data
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace/test (master)
+$ ls
+ex1.acc  ex1.dat
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace/test (master)
+$ mv ex1.acc ../data
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace/test (master)
+$ mv ex1.dat ../data
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace/test (master)
+$ ls
+
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace/test (master)
+$ cd ..
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace (master)
+$ cd data
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace/data (master)
+$ ls
+ex1.acc  ex1.dat
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace/data (master)
+$ cd ..
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace (master)
+$ rmdir test
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace (master)
+$ ls
+'Python start.code-workspace'   data   mycommands.txt   orphans.sp
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace (master)
+$ cd
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~ (master)
+$ pwd
+/c/Users/Bruger
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~ (master)
+$ mkdir newtest
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~ (master)
+$ cd newtest
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/newtest (master)
+$ mkdir newtest
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/newtest (master)
+$ cd newtest
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/newtest/newtest (master)
+$ mkdir newtest
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/newtest/newtest (master)
+$ cd newtest
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/newtest/newtest/newtest (master)
+$ pwd
+/c/Users/Bruger/newtest/newtest/newtest
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace (master)
+$ mv data C:/Users/Bruger/newtest/newtest/newtest
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/Desktop/Workspace (master)
+$ cd
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~ (master)
+$ cd newtest/newtest/newtest/data/
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/newtest/newtest/newtest/data (master)
+$ ls
+ex1.acc  ex1.dat
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/newtest/newtest/newtest/data (master)
+$ cp ex1.acc C:/Users/Bruger
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/newtest/newtest/newtest/data (master)
+$ ls
+ex1.acc  ex1.dat
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/newtest/newtest/newtest/data (master)
+$ cp ex1.dat C:/Users/Bruger
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/newtest/newtest/newtest/data (master)
+$ ls
+ex1.acc  ex1.dat
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~/newtest/newtest/newtest/data (master)
+$ cd
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~ (master)
+$ ls
+
+Filerne er kopieret hertil*
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~ (master)
+$ rm -r newtest
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~ (master)
+$ ls
+
+Filerne og directories er slettet*
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~ (master)
+$ wc -l ex1.acc
+1675 ex1.acc
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~ (master)
+$ wc -l ex1.dat
+1675 ex1.dat
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~ (master)
+$ touch ex1.tot
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~ (master)
+$ touch ex1.tot
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~ (master)
+$ cat ex1.acc ex1.dat > ex1.tot
+
+Bruger@DESKTOP-0BN3CV5 MINGW64 ~ (master)
+$ wc -l ex1.tot
+3350 ex1.tot
+
