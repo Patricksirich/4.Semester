@@ -22,7 +22,7 @@ export class CreateQuizComponent implements OnInit {
 
     quiz.user = { _id: '1',
     username: 'Casper',
-    email: 'lars@lars.dk',
+    email: 'cf@an.dk',
     gender: Gender.MALE,
     birthDate: undefined };
 

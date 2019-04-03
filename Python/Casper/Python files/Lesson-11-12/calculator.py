@@ -11,22 +11,16 @@ class Calculator:
         self.total = 0
         self.error_msg = ''
 
-    def add(self, num):
-        #Add takes 1 argument an 'int' or 'float', 
-        #the number to add to 'total'
-
-        # Think of possible errors that could happen, 
-        # and make tests for these errors      
+    def add(self, num):     
 
         if type(num) not in [int, float]:
-            
             raise ValueError('Invalid value! input must be an integer.')
         
         if num > 10000:
 
-            raise OverflowError('Number too large!')    
+            raise OverflowError('Number too big!')    
 
-        self.total += num         
+        self.total += num
         
     def subtrack(self, num):
         
@@ -34,11 +28,8 @@ class Calculator:
 
             raise ValueError('Invalid type!')
 
-        try:
-            self.total -= num
+        self.total -= num
             
-        except ValueError as v:
-            print(v)
         
     
     def multiply(self, num):
@@ -46,12 +37,8 @@ class Calculator:
         if type(num) not in [int, float]:
             
             raise ValueError('Invalid type!')
-            
-        try:
-            self.total *= num
-            
-        except ValueError as v:
-            print(v)
+
+        self.total *= num
 
     def divide(self, num):
 
@@ -59,11 +46,7 @@ class Calculator:
             
             raise ValueError('Invalid type!')
             
-        try:
-            self.total /= num
-
-        except ValueError as v:
-            print(v)
+        self.total /= num
             
     
     def __str__(self):
