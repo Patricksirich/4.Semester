@@ -30,6 +30,7 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { CreateQuizComponent } from './create-quiz/create-quiz.component';
 import { DisplayQuizzesComponent } from './display-quizzes/display-quizzes.component';
 import { MatSelectModule } from '@angular/material/select';
+import { QuizComponent } from './quiz/quiz.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { MatSelectModule } from '@angular/material/select';
     AdminComponent,
     AdminPanelComponent,
     CreateQuizComponent,
-    DisplayQuizzesComponent
+    DisplayQuizzesComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,

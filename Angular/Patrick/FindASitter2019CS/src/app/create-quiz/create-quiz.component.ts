@@ -4,6 +4,7 @@ import { TempDataService } from '../service/temp-data.service';
 import { Quiz } from '../entities/quiz';
 import { Router } from '@angular/router';
 import { Gender } from '../entities/user';
+import { UUID } from 'angular2-uuid';
 
 @Component({
   selector: 'app-create-quiz',
@@ -62,16 +63,9 @@ export class CreateQuizComponent implements OnInit {
 
   ngOnInit() {
     this.createQuiz = this.fb.group({
+      _id: UUID.UUID(),
       title: [''],
       questions: this.fb.array([]),
-      // question1: [''],  // We want a dynamic form and not this!
-      // option1_1: [''],
-      // option1_2: [''],
-      // option1_3: [''],
-      // question2: [''],
-      // option2_1: [''], 
-      // option2_2: [''], 
-      // option2_3: [''], 
     })
   }
 }

@@ -8,15 +8,17 @@ import { Quiz } from '../entities/quiz';
   styleUrls: ['./display-quizzes.component.scss']
 })
 export class DisplayQuizzesComponent implements OnInit {
-  quizzes: Quiz[];
+  private quizzes: Quiz[];
 
-  constructor(private tempData: TempDataService) { 
-  }
+  constructor(private tempData: TempDataService) {}
 
   ngOnInit() {
-    if(this.tempData.getQuizzes()){
-    this.quizzes = this.tempData.getQuizzes();
+    this.quizzes = this.tempData.quizzes;
+    }
+    
+  handleQuizClicked(quiz){
+    //do whatever I want to handle the event.
+    console.log(quiz)
     }
   }
-}
 
