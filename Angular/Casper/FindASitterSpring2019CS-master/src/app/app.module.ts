@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -17,29 +16,31 @@ import {MatInputModule} from '@angular/material/input';
 import { MatSnackBarModule, MatCheckboxModule } from '@angular/material';
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
-import { DisplayQuizComponent } from './display-quiz/display-quiz.component';
+import { DisplayQuizzesComponent } from './display-quizzes/display-quizzes.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponent } from './home/home.component';
 import { PortalComponent } from './portal/portal.component';
-import { DisplayQuizzesComponent } from './display-quizzes/display-quizzes.component';
 import { CreateQuizComponent } from './create-quiz/create-quiz.component';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { QuizComponent } from './quiz/quiz.component';
+import { DisplayQuizComponent } from './display-quiz/display-quiz.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    DisplayQuizComponent,
+    DisplayQuizzesComponent,
     AboutComponent,
     ContactComponent,
     PageNotFoundComponent,
     HomeComponent,
     PortalComponent,
-    DisplayQuizzesComponent,
     CreateQuizComponent,
+    QuizComponent,
+    DisplayQuizComponent,
   ],
   imports: [
     BrowserModule,
