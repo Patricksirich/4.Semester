@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AppState } from '../store';
+import { QuizActions } from '../quiz.actions';
+import { NgRedux } from '@angular-redux/store';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private usersActions: QuizActions, private ngRedux: NgRedux<AppState> ) { }
 
   ngOnInit() {
+    this.ngRedux.select(state => state.quizzes).subscribe(res => {
+      this.isLoggedIn = res.isLoggedIn;
+    });
   }
 
+
+
+
+  onLogoutClick() {
+    this.quizActions.setLoggedIn(false);
+  }
 }
