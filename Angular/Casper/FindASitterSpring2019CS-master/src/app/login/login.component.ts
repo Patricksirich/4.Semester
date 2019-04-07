@@ -42,7 +42,6 @@ export class LoginComponent implements OnInit {
       }
 
       this.authService.login().subscribe(result => {
-        console.log("Third");
         this.router.navigate(['portal/display-quizzes']);
       });
     }

@@ -11,10 +11,13 @@ constructor (
   static LOG_IN: string = 'LOG_IN';
 
   setLoggedIn(isLoggedIn: boolean): void {
+
+    console.log(isLoggedIn);
+
     this.ngRedux.dispatch({
 
       type: QuizActions.LOG_IN,
-      payload: isLoggedIn,
+      payload: isLoggedIn
 
     })
   }

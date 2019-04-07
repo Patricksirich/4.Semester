@@ -10,11 +10,13 @@ import { NgRedux } from '@angular-redux/store';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private usersActions: QuizActions, private ngRedux: NgRedux<AppState> ) { }
+  loggedIn: boolean;
+
+  constructor(private quizActions: QuizActions, private ngRedux: NgRedux<AppState> ) { }
 
   ngOnInit() {
     this.ngRedux.select(state => state.quizzes).subscribe(res => {
-      this.isLoggedIn = res.isLoggedIn;
+      this.loggedIn = res.isLoggedIn;
     });
   }
 
