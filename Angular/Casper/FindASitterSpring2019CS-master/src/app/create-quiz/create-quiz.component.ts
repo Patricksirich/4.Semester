@@ -40,15 +40,12 @@ export class CreateQuizComponent implements OnInit {
     const options = question.controls.options as FormArray;
     options.push(this.createNewOptionGroup());
     options.push(this.createNewOptionGroup());
-    // console.log(options);
     questions.push(question);
   }
   createNewOption(questionIndex: number){
     const option = this.createNewOptionGroup();
     const questions = this.createQuiz.controls.questions as FormArray;
-    // console.log(questions);
     const options = (<FormArray>questions.controls[questionIndex]).controls['options'] as FormArray;
-    // console.log(options);
     options.push(option);
   }
   private createNewOptionGroup(): FormGroup {

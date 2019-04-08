@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
   constructor(private fb: FormBuilder, private snackBar: MatSnackBar,
-    private router: Router, private authService: AuthService) {
+    private router: Router, private authService: AuthService,) {
   }
 
   ngOnInit() {
@@ -42,7 +42,6 @@ export class LoginComponent implements OnInit {
       }
 
       this.authService.login().subscribe(result => {
-        console.log("Third");
         this.router.navigate(['portal/display-quizzes']);
       });
     }
