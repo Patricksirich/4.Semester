@@ -4,9 +4,12 @@ import android.graphics.Bitmap;
 import android.util.Log;
 
 
+import java.util.List;
+
 import dk.kea.class2019January.patrickS.gameengine19.GameEngine;
 import dk.kea.class2019January.patrickS.gameengine19.Screen;
 import dk.kea.class2019January.patrickS.gameengine19.Sound;
+import dk.kea.class2019January.patrickS.gameengine19.TouchEvent;
 
 public class GameScreen extends Screen
 {
@@ -69,6 +72,39 @@ public class GameScreen extends Screen
     @Override
     public void update(float deltaTime)
     {
+        if (world.gameOver)
+        {
+            state = State.GameOver;
+        }
+
+        if (state == State.Paused && gameEngine.getTouchEvents().size() > 0)
+        {
+            Log.d("GameScreen", "Starting th game again (from paused):");
+            state = State.Running;
+            resume();
+        }
+
+        if (state == State.GameOver)
+        {
+            Log.d("GameScreen", "Game Over.");
+            List<TouchEvent> events = gameEngine.getTouchEvents();
+            for (int i = 0; i < events.size(); i++)
+            {
+                if (events.get(i).type == TouchEvent.TouchEventType.Up)
+                {
+                    gameEngine.setScreen(new MainMenuScreen(gameEngine));
+                    return;
+                }
+            }
+        }
+        if (state == State.Running && gameEngine.getTouchY(0) < 40 && gameEngine.getTouchX(0) > 320 - 40)
+        {
+            Log.d("GameScreen", "Pausing the game");
+            state = State.Paused;
+            pause();
+//            return; // Maybe don't draw anymore
+        }
+
         if (state == State.Running)
         {
             backgroundX = backgroundX + 100 * deltaTime;
@@ -76,12 +112,24 @@ public class GameScreen extends Screen
             {
                 backgroundX = 0;
             }
+//            Update the game objects
+            world.update(deltaTime, gameEngine.getAccelerometer()[1]);
+        }
+//        Draw background no matte what state
+        gameEngine.drawBitmap(background, 0, 0, (int) backgroundX, 0, 480, 320);
+//        Draw game object no matter what state
+        renderer.render();
 
+        if (state == State.Paused)
+        {
+            gameEngine.drawBitmap(resume, 240 - resume.getWidth() / 2, 160 - resume.getHeight() / 2);
         }
 
-        gameEngine.drawBitmap(background, 0, 0, (int) backgroundX, 0, 480, 320);
-        world.update(deltaTime, gameEngine.getAccelerometer()[1]);
-        renderer.render();
+        if (state == State.GameOver)
+        {
+            gameEngine.drawBitmap(gameOver, 240 - gameOver.getWidth() / 2, 160 - gameOver.getHeight() / 2);
+        }
+
 
     }
 
