@@ -2,7 +2,6 @@
 # Create the code for a function that uses the bubble sort algorithm
 
 l = [8, 2, 9, 5, 13, 82, 11, 666, 4]
-swap = int
 def bubble_sorting(l):
 
     swap = False
