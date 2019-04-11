@@ -4,6 +4,7 @@ import { TempDataService } from '../service/temp-data.service';
 import { Quiz } from '../entities/quiz';
 import { Router } from '@angular/router';
 import { Gender } from '../entities/user';
+import { QuizActions } from '../quiz.actions';
 
 @Component({
   selector: 'app-create-quiz',
@@ -13,7 +14,8 @@ import { Gender } from '../entities/user';
 export class CreateQuizComponent implements OnInit {
   createQuiz: FormGroup;
 
-  constructor(private fb: FormBuilder, private data: TempDataService, private router: Router) { }
+  constructor(private fb: FormBuilder, private data: TempDataService, private router: Router,
+    private quizActions: QuizActions) { }
 
   saveQuiz() {
     // save a user who created this quiz.
@@ -24,11 +26,16 @@ export class CreateQuizComponent implements OnInit {
     username: 'Casper',
     email: 'cf@an.dk',
     gender: Gender.MALE,
-    birthDate: undefined };
+    birthDate: undefined
+   };
 
-    this.data.saveQuiz(this.createQuiz.value as Quiz);
-    this.router.navigate(['/portal/display-quizzes'])
+    console.log(quiz)
+    this.quizActions.addNewQuiz(quiz);
+    this.router.navigate(['/portal/display-quizzes']);
+
   }
+
+
 
   createNewQuestion() {
     const question = this.fb.group({
