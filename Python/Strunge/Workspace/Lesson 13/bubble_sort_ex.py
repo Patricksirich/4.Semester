@@ -9,6 +9,7 @@ def bubble_sort(l):
         #swaps = 0 --> return true
         length = len(l)
         swap = True
+        #Also sorts in alphabetical eg. Strings
         for i in range(length-1):
             if l[i] > l[i+1]:
                 swap = False
@@ -21,9 +22,12 @@ def bubble_sort(l):
 
 print(bubble_sort(l))
 
-#swapping:
+#swapping 1:
 #temp = l[0]
 #l[0] = l[1]
 #l[1] = temp
 
 #l[0], l[1] = l[1], l[0]
+
+#swapping 2:
+#l[i], l[i-1] = l[i-1], l[i]
