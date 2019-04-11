@@ -10,5 +10,4 @@
   <button mat-button class="navbar-button" *ngIf="!loggedIn" routerLink="login">Login</button>
   <button mat-button class="navbar-button" *ngIf="loggedIn" (click)="onLogoutClick()" routerLink="/">Logout</button>
 </mat-toolbar>
-
 <router-outlet></router-outlet>

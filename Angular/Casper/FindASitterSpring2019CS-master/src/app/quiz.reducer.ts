@@ -24,5 +24,5 @@ export function quizReducer(state: QuizState = INITIAL_STATE, action:any) {
 
    default:
     return state;
-}
+  }
 }

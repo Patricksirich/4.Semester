@@ -20,9 +20,6 @@ export class HomeComponent implements OnInit {
     });
   }
 
-
-
-
   onLogoutClick() {
     this.quizActions.setLoggedIn(false);
   }

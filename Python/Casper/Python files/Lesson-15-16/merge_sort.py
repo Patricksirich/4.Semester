@@ -4,8 +4,8 @@ def mergeSort(list):
 
     # State that if the length of the list is bigger than 1, split the list in two
     if len(list) > 1:
-        # mid-splitter is the length of the list divided by two
-        mid = len(list)//2
+        
+        mid = len(list)//2                          # mid-splitter is the length of the list divided by two
         left = list[:mid]                           # left half of list from index 0 to mid
         right = list[mid:]                          # right half of list from index mid to end
 
