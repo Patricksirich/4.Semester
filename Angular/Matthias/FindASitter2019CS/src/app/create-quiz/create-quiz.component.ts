@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Quiz } from '../entities/quiz';
 import { TempDataService } from '../service/temp-data.service';
 import { Gender } from '../entities/user';
+import { variable } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-create-quiz',
@@ -38,7 +39,7 @@ export class CreateQuizComponent implements OnInit {
   }
 
   saveQuiz(): Quiz {
-    const id = this.tempData.getQuizzes().length+1;
+    var id = (this.tempData.getQuizzes().length+1).toString();
     //console.log(createQuizForm.value)
     this.router.navigate(['portal/display-quizzes']);
     this.quiz = {  

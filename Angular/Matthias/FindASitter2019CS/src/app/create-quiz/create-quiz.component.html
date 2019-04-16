@@ -1,6 +1,6 @@
 <form [formGroup]="createQuizForm" (ngSubmit)="saveQuiz(createQuizForm)">
   <mat-accordion>
-    <mat-expansion-panel>
+    <mat-expansion-panel id="panelHeader">
       <mat-expansion-panel-header>
         <mat-panel-title>
           Personal data
@@ -11,42 +11,42 @@
       </mat-expansion-panel-header>
   
       <mat-form-field>
-        <input matInput placeholder="Quiz title" formControlName="quizTitle">
+        <input matInput placeholder="Quiz title" formControlName="quizTitle" id="quizTitle">
       </mat-form-field>
       <br>
       <mat-form-field>
-        <input matInput placeholder="Question title" formControlName="questionTitle">
+        <input matInput placeholder="Question title" formControlName="questionTitle" id="questionTitle">
       </mat-form-field>
       <br>
       <mat-form-field>
-        <input matInput placeholder="Option 1 Answer" formControlName="optionAnswer1">
+        <input matInput placeholder="Option 1 Answer" formControlName="optionAnswer1" id="optionAnswer1">
       </mat-form-field>
       <br>
       <mat-form-field>
-        <mat-select name="correct" formControlName="optionCorrect1">
+        <mat-select name="correct" formControlName="optionCorrect1" placeholder="Correct/false" id="optionCorrect1">
           <mat-option value="true">Correct</mat-option>
           <mat-option value="false">False</mat-option>
         </mat-select>
       </mat-form-field>
       <br>
       <mat-form-field>
-        <input matInput placeholder="Option 2 Answer" formControlName="optionAnswer2">
+        <input matInput placeholder="Option 2 Answer" formControlName="optionAnswer2" id="optionAnswer2">
       </mat-form-field>
       <br>
       <mat-form-field>
-        <mat-select name="correct" formControlName="optionCorrect2">
+        <mat-select name="correct" formControlName="optionCorrect2" placeholder="Correct/false" id="optionCorrect2"> 
           <mat-option value="true">Correct</mat-option>
           <mat-option value="false">False</mat-option>
         </mat-select>
       </mat-form-field>
       <br>
             <mat-form-field>
-<input matInput placeholder="Option 3 Answer" formControlName="optionAnswer3">
+<input matInput placeholder="Option 3 Answer" formControlName="optionAnswer3" id="optionAnswer3">
             </mat-form-field>
             <br>
             <mat-form-field>
 
-<mat-select name="correct" formControlName="optionCorrect3">
+<mat-select name="correct" formControlName="optionCorrect3" placeholder="Correct/false" id="optionCorrect3">
           <mat-option value="true">Correct</mat-option>
           <mat-option value="false">False</mat-option>
         </mat-select>
@@ -56,6 +56,6 @@
     </mat-expansion-panel>
   </mat-accordion>
 
-<button type="submit">Save QUIZ</button>
+<button type="submit" id="submitQuiz">Save QUIZ</button>
 
 </form>
