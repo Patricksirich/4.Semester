@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import {AuthService} from '../auth/auth.service';
 import {AdminService} from '../admin/admin.service';
+import { QuizActions } from '../quiz.actions';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,8 +14,8 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
   //DI - Dependency Injection
-  constructor(private fb: FormBuilder, private router: Router, private authService: AuthService, private adminService: AdminService) { 
-
+  constructor(private fb: FormBuilder, private router: Router, private authService: AuthService, 
+    private adminService: AdminService, private quizActions: QuizActions) { 
   }
 
   ngOnInit() {
@@ -27,6 +29,9 @@ export class LoginComponent implements OnInit {
 
   onSubmit() : void {
     console.log(this.loginForm);
+    if(this.loginForm.valid){
+      this.quizActions.setLoggedIn(true);
+    }
     
     if(this.loginForm.value.username == 'admin'){
       console.log('logging in as admin');
