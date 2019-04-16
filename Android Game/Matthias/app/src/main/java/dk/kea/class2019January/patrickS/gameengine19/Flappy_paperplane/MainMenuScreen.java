@@ -2,7 +2,6 @@ package dk.kea.class2019January.patrickS.gameengine19.Flappy_paperplane;
 
 import android.graphics.Bitmap;
 
-import dk.kea.class2019January.patrickS.gameengine19.Carscroller.GameScreen;
 import dk.kea.class2019January.patrickS.gameengine19.GameEngine;
 import dk.kea.class2019January.patrickS.gameengine19.Screen;
 
