@@ -31,6 +31,7 @@ public class GameScreen extends Screen
     World world = null;
     WorldRenderer renderer = null;
     State state = State.Running;
+    int backgroundSpeed = 100;
 
     public GameScreen(GameEngine gameEngine)
     {
@@ -63,7 +64,7 @@ public class GameScreen extends Screen
             {
                 gameOverSound.play(1);
             }
-        });
+        }, backgroundSpeed);
         renderer = new WorldRenderer(gameEngine, world);
     }
 
