@@ -1,15 +1,17 @@
 import { routerReducer } from '@angular-redux/router';
 import { combineReducers } from 'redux';
-import { quizReducer } from './../quiz.reducer';
+import { quizReducer } from './quiz.reducer';
+import { Quiz } from './entities/quiz';
 
 export class QuizState {
-    isLoggedIn: boolean;
+  isLoggedIn: boolean;
+  quizzes: Quiz[];
 }
 export class AppState {
-    quizzes?: QuizState;
+  quizzes?: QuizState;
 }
 export const rootReducer = combineReducers<AppState>({
-    quizzes: quizReducer,
+  quizzes: quizReducer,
 
-router: routerReducer
+// router: routerReducer
 });
