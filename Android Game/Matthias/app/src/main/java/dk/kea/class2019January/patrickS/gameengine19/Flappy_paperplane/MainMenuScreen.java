@@ -16,7 +16,7 @@ public class MainMenuScreen extends Screen
     public MainMenuScreen(GameEngine gameEngine)
     {
         super(gameEngine);
-        background = gameEngine.loadBitmap("carscroller/xcarbackground.png");
+        background = gameEngine.loadBitmap("flappyplane/skyline.png");
         startGame = gameEngine.loadBitmap("carscroller/xstartgame.png");
         startTime = System.nanoTime();
     }
