@@ -1,0 +1,10 @@
+<label>
+  Name:
+  <input type="text" [formControl]="name">
+  <p>
+    Registered input: {{name.value}}
+  </p>
+</label>
+<p>
+  <button (click)="updateName()">Insert Lars</button>
+</p>
