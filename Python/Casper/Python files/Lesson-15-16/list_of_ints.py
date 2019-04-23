@@ -56,8 +56,6 @@ def list_of_tobias(num):
     return list
     
 
-
-
 def main():
     
     try:

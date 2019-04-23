@@ -26,6 +26,10 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { CreateQuizComponent } from './create-quiz/create-quiz.component';
 import { DisplayQuizzesComponent } from './display-quizzes/display-quizzes.component';
 import {MatSelectModule} from '@angular/material/select';
+import { QuizComponent } from './quiz/quiz.component';
+import { NgRedux, DevToolsExtension } from '@angular-redux/store';
+import { AppState, rootReducer } from './store';
+import { NgReduxRouter, NgReduxRouterModule } from '@angular-redux/router';
 
 @NgModule({
   declarations: [
@@ -42,7 +46,8 @@ import {MatSelectModule} from '@angular/material/select';
     AdminComponent,
     AdminPanelComponent,
     CreateQuizComponent,
-    DisplayQuizzesComponent
+    DisplayQuizzesComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,
@@ -62,4 +67,17 @@ import {MatSelectModule} from '@angular/material/select';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+export class AppModule {
+  constructor(private ngRedux: NgRedux<AppState>,
+    //private devTool: DevToolsExtension,
+    private ngReduxRouter: NgReduxRouter,) {
+   
+    this.ngRedux.configureStore(
+      rootReducer, {});
+ 
+      ngReduxRouter.initialize(/* args */);   
+  }
+ }
+ 
+ 

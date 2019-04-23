@@ -8,15 +8,25 @@ import { Quiz } from '../entities/quiz';
   styleUrls: ['./display-quizzes.component.scss']
 })
 export class DisplayQuizzesComponent implements OnInit {
-  quizzes: Quiz[];
+  private quizzes: Quiz[];
 
   constructor(private tempData: TempDataService) { 
   }
 
   ngOnInit() {
-    if(this.tempData.getQuizzes()){
+    if(this.tempData.getQuizzes().length > 0){
     this.quizzes = this.tempData.getQuizzes();
     }
   }
+
+  handleDeleteQuiz(id: String) {
+    console.log(id);
+    this.quizzes.splice(+id-1, 1);
+  }
+
+  handleQuizClicked(quiz){
+    console.log(quiz);
+  }
+
 }
 

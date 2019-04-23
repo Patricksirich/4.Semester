@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import {AuthService} from '../auth/auth.service';
 import {AdminService} from '../admin/admin.service';
+import { QuizActions } from '../quiz.actions';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,7 +13,10 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
   //DI - Dependency Injection
-  constructor(private fb: FormBuilder, private router: Router, private authService: AuthService, private adminService: AdminService) { 
+  constructor(private fb: FormBuilder, private router: Router, 
+              private authService: AuthService, 
+              private adminService: AdminService,
+              private quizActions: QuizActions) { 
 
   }
 

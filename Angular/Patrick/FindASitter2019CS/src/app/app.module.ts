@@ -30,7 +30,10 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { CreateQuizComponent } from './create-quiz/create-quiz.component';
 import { DisplayQuizzesComponent } from './display-quizzes/display-quizzes.component';
 import { MatSelectModule } from '@angular/material/select';
-import { QuizComponent } from './quiz/quiz.component';  
+import { QuizComponent } from './quiz/quiz.component';
+import { NgReduxRouter, NgReduxRouterModule } from '@angular-redux/router';  
+import { rootReducer, AppState } from './store';
+import { NgRedux, NgReduxModule } from '@angular-redux/store';
 
 @NgModule({
   declarations: [
@@ -67,11 +70,23 @@ import { QuizComponent } from './quiz/quiz.component';
     MatMenuModule, 
     MatSnackBarModule, 
     MatDividerModule, 
-    MatCheckboxModule
+    MatCheckboxModule,
+    NgReduxModule,
+    NgReduxRouterModule.forRoot(),
 
     
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private ngRedux: NgRedux<AppState>,
+    // private devTool: DevToolsExtension,
+    private ngReduxRouter: NgReduxRouter,) {
+   
+    this.ngRedux.configureStore(
+      rootReducer, {});
+ 
+      ngReduxRouter.initialize(/* args */);   
+  }
+ }
