@@ -13,10 +13,10 @@ export class ProfileEditorComponent implements OnInit {
 
   //For creating a formgroup without formbuilder
   testForm = new FormGroup({
-    firstNameTest: new FormControl('', Validators.required),
+    firstNameTest: new FormControl(''),
     lastNameTest: new FormControl(''),
     info: new FormGroup({
-      phone: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(8), Validators.pattern('[0-9]+')]),
+      phone: new FormControl(''),
       city: new FormControl(''),
       email: new FormControl(''),
     })
