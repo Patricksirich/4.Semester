@@ -20,19 +20,19 @@
       Phone:
       <input type="text" formControlName="phone">
       <div *ngIf="profileForm.controls.info.controls.phone.touched && profileForm.controls.info.controls.phone.invalid">
-        Need numbers
+        Please enter a phone number
       </div>
       <div
         *ngIf="profileForm.controls.info.controls.phone.errors?.minlength && profileForm.controls.info.controls.phone.dirty">
-        Need more numbers
+        Your phone number must be at least 8 digits
       </div>
       <div
         *ngIf="profileForm.controls.info.controls.phone.errors?.maxlength && profileForm.controls.info.controls.phone.dirty">
-        Need fewer numbers
+        Your phone number can not be more than 8 digits
       </div>
       <div
         *ngIf="profileForm.controls.info.controls.phone.errors?.pattern && profileForm.controls.info.controls.phone.dirty">
-        Need only numbers
+        Your phone number can only consist of numbers
       </div>
     </label>
 
@@ -45,7 +45,7 @@
       E-mail:
       <input type="text" formControlName="email">
       <div *ngIf = "profileForm.controls.info.controls.email.invalid && profileForm.controls.info.controls.email.pristine">
-        Type in thy E-mail above
+        Type in your E-mail above
       </div>
       <div *ngIf = "profileForm.controls.info.controls.email.invalid && profileForm.controls.info.controls.email.touched">
           Please enter a valid e-mail

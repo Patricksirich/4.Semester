@@ -5,13 +5,13 @@ label {
     color: #607D8B;
     font-weight: bold;
   }
-  
+
   input {
     height: 2em;
     font-size: 1em;
     padding-left: .4em;
   }
-  
+
   button {
     font-family: Arial;
     background-color: #eee;
@@ -20,13 +20,17 @@ label {
     border-radius: 4px;
     cursor: pointer;
   }
-  
+
   button:hover {
     background-color: #cfd8dc;
   }
-  
+
   button:disabled {
     background-color: #eee;
     color: #ccc;
     cursor: auto;
+  }
+
+  div {
+    width: 40em;
   }

@@ -11,7 +11,7 @@ import { Validators } from '@angular/forms';
 })
 export class ProfileEditorComponent implements OnInit {
 
-  //For creating a formgroup w/o formbuilder
+  //For creating a formgroup without formbuilder
   testForm = new FormGroup({
     firstNameTest: new FormControl('', Validators.required),
     lastNameTest: new FormControl(''),
@@ -21,10 +21,10 @@ export class ProfileEditorComponent implements OnInit {
       email: new FormControl(''),
     })
   })
-  
-  
+
+  // For creating a form group with form builder
   constructor(private fb: FormBuilder) { }
-  
+
   profileForm = this.fb.group({
     firstName: ['', Validators.required],
     lastName: [''],
