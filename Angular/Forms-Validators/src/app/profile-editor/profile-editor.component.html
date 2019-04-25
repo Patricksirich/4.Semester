@@ -1,0 +1,62 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+  <h2>Profile</h2>
+  <label>
+    First Name:
+    <input type="text" formControlName="firstName">
+    <div *ngIf="!profileForm.controls.firstName.valid && profileForm.controls.firstName.touched">
+      First name is required
+    </div>
+  </label>
+
+  <label>
+    Last Name:
+    <input type="text" formControlName="lastName">
+  </label>
+
+  <div formGroupName="info">
+    <h3>Info</h3>
+    <label>
+      Phone:
+      <input type="text" formControlName="phone">
+      <div *ngIf="profileForm.controls.info.controls.phone.touched && profileForm.controls.info.controls.phone.invalid">
+        Please enter a phone number
+      </div>
+      <div
+        *ngIf="profileForm.controls.info.controls.phone.errors?.minlength && profileForm.controls.info.controls.phone.dirty">
+        Your phone number must be at least 8 digits
+      </div>
+      <div
+        *ngIf="profileForm.controls.info.controls.phone.errors?.maxlength && profileForm.controls.info.controls.phone.dirty">
+        Your phone number can not be more than 8 digits
+      </div>
+      <div
+        *ngIf="profileForm.controls.info.controls.phone.errors?.pattern && profileForm.controls.info.controls.phone.dirty">
+        Your phone number can only consist of numbers
+      </div>
+    </label>
+
+    <label>
+      City:
+      <input type="text" formControlName="city">
+    </label>
+
+    <label>
+      E-mail:
+      <input type="text" formControlName="email">
+      <div *ngIf = "profileForm.controls.info.controls.email.invalid && profileForm.controls.info.controls.email.pristine">
+        Type in your E-mail above
+      </div>
+      <div *ngIf = "profileForm.controls.info.controls.email.invalid && profileForm.controls.info.controls.email.touched">
+          Please enter a valid e-mail
+        </div>
+    </label>
+  </div>
+
+  <p>
+    <button (click)="updateProfile()">Update Profile</button>
+  </p>
+  <p>
+    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+  </p>
+</form>
