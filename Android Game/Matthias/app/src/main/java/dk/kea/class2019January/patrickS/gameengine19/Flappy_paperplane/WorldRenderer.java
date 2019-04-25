@@ -23,7 +23,7 @@ public class WorldRenderer
 
     public void render()
     {
-        gameEngine.drawBitmap(skylineImage, world.paperplane.x, world.paperplane.y);
+        //gameEngine.drawBitmap(skylineImage, 0, 0);
 
         /* INDSÆT SENERE
         for (int i = 0; i < ; i++)

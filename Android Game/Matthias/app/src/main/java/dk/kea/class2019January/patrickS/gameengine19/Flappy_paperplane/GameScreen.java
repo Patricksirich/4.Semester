@@ -106,7 +106,7 @@ public class GameScreen extends Screen
         if (state == State.Running)
         {
             backgroundX = backgroundX + 100 * deltaTime;
-            if (backgroundX > 2700 - 480)
+            if (backgroundX > 2053 - 480)
             {
                 backgroundX = 0;
             }
