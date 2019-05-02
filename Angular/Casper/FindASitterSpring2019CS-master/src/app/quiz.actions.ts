@@ -9,6 +9,8 @@ export class QuizActions {
 
   static LOG_IN: string = "LOG_IN";
   static NEW_QUIZ: string = "NEW_QUIZ";
+  static UPDATE_QUIZ: string = "UPDATE_QUIZ";
+  static DELETE_QUIZ: string = "DELETE_QUIZ";
 
   setLoggedIn(isLoggedIn: boolean): void {
     this.ngRedux.dispatch({
@@ -23,4 +25,20 @@ export class QuizActions {
       payload: quizzes
     });
   }
+
+  updateQuiz(quizzes: Quiz): void {
+    this.ngRedux.dispatch({
+      type: QuizActions.UPDATE_QUIZ,
+      payload: quizzes
+    });
+
+  }
+
+  deleteQuiz(quizzes: Quiz): void {
+    this.ngRedux.dispatch({
+      type: QuizActions.DELETE_QUIZ,
+      payload: quizzes
+    });
+  }
+
 }

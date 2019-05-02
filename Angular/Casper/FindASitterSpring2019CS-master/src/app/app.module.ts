@@ -29,6 +29,8 @@ import { DisplayQuizComponent } from "./display-quiz/display-quiz.component";
 import { AppState, rootReducer } from "./store";
 import { DevToolsExtension, NgRedux, NgReduxModule } from "@angular-redux/store";
 import { NgReduxRouter, NgReduxRouterModule } from "@angular-redux/router";
+import { UpdateQuizComponent } from './update-quiz/update-quiz.component';
+import { DeleteQuizComponent } from './delete-quiz/delete-quiz.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { NgReduxRouter, NgReduxRouterModule } from "@angular-redux/router";
     PortalComponent,
     CreateQuizComponent,
     QuizComponent,
-    DisplayQuizComponent
+    DisplayQuizComponent,
+    UpdateQuizComponent,
+    DeleteQuizComponent
   ],
   imports: [
     BrowserModule,

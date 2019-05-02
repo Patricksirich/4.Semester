@@ -36,7 +36,6 @@ export class CreateQuizComponent implements OnInit {
   }
 
 
-
   createNewQuestion() {
     const question = this.fb.group({
       title: ['', Validators.required],

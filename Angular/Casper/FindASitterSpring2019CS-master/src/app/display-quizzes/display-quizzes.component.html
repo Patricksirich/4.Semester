@@ -1,7 +1,9 @@
+<div class="example-card">
 <div *ngFor="let quiz of quizzes">
   <app-quiz
   [quizInput]="quiz"
   (quizClicked)="onQuizClicked($event)">
   </app-quiz>
+</div>
 </div>
 
