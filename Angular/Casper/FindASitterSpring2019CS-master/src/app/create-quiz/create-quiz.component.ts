@@ -5,6 +5,7 @@ import { Quiz } from '../entities/quiz';
 import { Router } from '@angular/router';
 import { Gender } from '../entities/user';
 import { QuizActions } from '../quiz.actions';
+import { QuizAPIService } from '../quiz-api.service';
 
 @Component({
   selector: 'app-create-quiz',
@@ -15,7 +16,7 @@ export class CreateQuizComponent implements OnInit {
   createQuiz: FormGroup;
 
   constructor(private fb: FormBuilder, private data: TempDataService, private router: Router,
-    private quizActions: QuizActions) { }
+    private quizActions: QuizActions, private quizApi: QuizAPIService) { }
 
   saveQuiz() {
     // save a user who created this quiz.
@@ -29,10 +30,18 @@ export class CreateQuizComponent implements OnInit {
     birthDate: undefined
    };
 
+    console.log("1");
+    this.quizApi.createQuiz(quiz).subscribe(quizFromWebservice => {
+      console.log(quizFromWebservice);
+      console.log("3")
+      this.quizActions.addNewQuiz(quizFromWebservice);
+      this.router.navigate(['/portal/display-quizzes']);
+    }, error => {
+      //write some code for handling errors in the webservice.
+      console.log("Something bad happened")
+    });
+    console.log("2");
     console.log(quiz)
-    this.quizActions.addNewQuiz(quiz);
-    this.router.navigate(['/portal/display-quizzes']);
-
   }
 
 

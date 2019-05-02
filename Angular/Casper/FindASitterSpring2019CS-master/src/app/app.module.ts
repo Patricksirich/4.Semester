@@ -29,8 +29,7 @@ import { DisplayQuizComponent } from "./display-quiz/display-quiz.component";
 import { AppState, rootReducer } from "./store";
 import { DevToolsExtension, NgRedux, NgReduxModule } from "@angular-redux/store";
 import { NgReduxRouter, NgReduxRouterModule } from "@angular-redux/router";
-import { UpdateQuizComponent } from './update-quiz/update-quiz.component';
-import { DeleteQuizComponent } from './delete-quiz/delete-quiz.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -46,8 +45,6 @@ import { DeleteQuizComponent } from './delete-quiz/delete-quiz.component';
     CreateQuizComponent,
     QuizComponent,
     DisplayQuizComponent,
-    UpdateQuizComponent,
-    DeleteQuizComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +64,8 @@ import { DeleteQuizComponent } from './delete-quiz/delete-quiz.component';
     MatExpansionModule,
     MatCheckboxModule,
     NgReduxModule,
-    NgReduxRouterModule.forRoot()
+    NgReduxRouterModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
