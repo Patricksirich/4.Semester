@@ -17,7 +17,7 @@ public class World
 
     Car car = new Car();
     List<Monster> monsterList = new ArrayList<>();
-    public int maxMonsters = 3;
+    public int maxMonsters = 12;
 
     GameEngine gameEngine;
     CollisionListener listener;
