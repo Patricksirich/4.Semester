@@ -1,16 +1,16 @@
-import { Injectable } from "@angular/core";
-import { NgRedux } from "@angular-redux/store";
-import { AppState } from "./store";
-import { Quiz } from "./entities/quiz";
+import { Injectable } from '@angular/core';
+import { NgRedux } from '@angular-redux/store';
+import { AppState } from './store';
+import { Quiz } from './entities/quiz';
 
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 export class QuizActions {
   constructor(private ngRedux: NgRedux<AppState>) {}
 
-  static LOG_IN: string = "LOG_IN";
-  static NEW_QUIZ: string = "NEW_QUIZ";
-  static UPDATE_QUIZ: string = "UPDATE_QUIZ";
-  static DELETE_QUIZ: string = "DELETE_QUIZ";
+  static LOG_IN = 'LOG_IN';
+  static NEW_QUIZ = 'NEW_QUIZ';
+  static UPDATE_QUIZ = 'UPDATE_QUIZ';
+  static DELETE_QUIZ = 'DELETE_QUIZ';
 
   setLoggedIn(isLoggedIn: boolean): void {
     this.ngRedux.dispatch({

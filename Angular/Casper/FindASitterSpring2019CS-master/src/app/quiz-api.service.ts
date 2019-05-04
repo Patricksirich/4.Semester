@@ -8,12 +8,12 @@ import { Observable } from 'rxjs';
 })
 export class QuizAPIService {
 
-  private baseUrl: string = 'angular2api2.azurewebsites.net/api/internships'
+  private baseUrl: 'angular2api2.azurewebsites.net/api/internships';
   constructor(private http: HttpClient) { }
 
-  createQuiz(quiz: Quiz) : Observable<any> {
+  createQuiz(quiz: Quiz): Observable<any> {
 
-    return this.http.post(this.baseUrl, quiz)
+    return this.http.post(this.baseUrl, quiz);
   }
 
   getAllQuizzes(): Observable<Quiz[]> {
