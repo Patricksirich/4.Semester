@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Quiz } from '../entities/quiz';
+import { GeneratedFile } from '@angular/compiler';
+import { getRenderedText } from '@angular/core/src/render3';
 import { Gender } from '../entities/user';
 
 @Injectable({
@@ -23,14 +25,14 @@ export class TempDataService {
   }
 
   getQuizzes() : Quiz[] {
-    return [
+    return[
       {
         _id: '1', visible: false, user: {
           _id:'1',username: 'mikkel86', email: 'mik@mikkel.dk', gender: Gender.MALE,
           birthDate: new Date(1986,0,1)
         }, title: 'Dogs', created: new Date(2019,2,1),
         questions: [
-          {title: 'How many feet does a poodle have?',
+          {title: 'How many feet does a puddle have?',
             options: [
               {answer: '1', correct: false},
               {answer: '2', correct: false},

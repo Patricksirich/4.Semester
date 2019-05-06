@@ -6,28 +6,30 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class QuizAPIService {
+export class QuizApiService {
+  private baseUrl: string = 'http://angular2api2.azurewebsites.net/api/internships/';
 
-  private baseUrl: 'angular2api2.azurewebsites.net/api/internships';
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+  }
 
-  createQuiz(quiz: Quiz): Observable<any> {
-
+  createQuiz(quiz: Quiz) : Observable<any> {
+    // Call web service
+    console.log(this.baseUrl)
     return this.http.post(this.baseUrl, quiz);
   }
 
-  getAllQuizzes(): Observable<Quiz[]> {
-
-    return undefined;
+  getAllQuizzes() : Observable<Quiz[]> {
+    return this.http.get<Quiz[]>(this.baseUrl)
+    
   }
 
-  updateQuiz(quiz: Quiz): Observable<any> {
-
-    return undefined;
+  updateQuiz(quiz: Quiz) : Observable<any> {
+    return this.http.put(this.baseUrl, quiz)
   }
 
-  deleteQuiz(id: string): Observable<any> {
-
-    return undefined;
+  deleteQuiz(id: string) : Observable<any>{
+    //return this.http.delete();
+    return this.http.delete(this.baseUrl + id)
   }
+
 }

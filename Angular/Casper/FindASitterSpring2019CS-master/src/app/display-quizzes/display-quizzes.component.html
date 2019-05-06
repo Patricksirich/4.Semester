@@ -1,9 +1,9 @@
-<div class="example-card">
-<div *ngFor="let quiz of quizzes">
+<div *ngFor="let quiz of quizzes; let i=index">
   <app-quiz
   [quizInput]="quiz"
-  (quizClicked)="onQuizClicked($event)">
+  (quizClicked)="onQuizClicked($event)"
+  (deleteClicked)="handleDeleteQuiz($event)"
+  >
   </app-quiz>
-</div>
 </div>
 
