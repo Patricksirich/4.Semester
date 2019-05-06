@@ -24,8 +24,8 @@ export class CreateQuizComponent implements OnInit {
     let quiz = this.createQuiz.value as Quiz;
 
     quiz.user = { _id: '1',
-    username: 'Casper',
-    email: 'cf@an.dk',
+    username: 'Matt',
+    email: 'ms@ms.dk',
     gender: Gender.MALE,
     birthDate: undefined
    };
@@ -37,7 +37,7 @@ export class CreateQuizComponent implements OnInit {
     this.quizActions.addNewQuiz(quiz);
     this.router.navigate(['/portal/display-quizzes']);
    }, error => {
-     // Write some code for handling errors 
+     // Write some code for handling errors
      console.log("Something bad happened", error)
      // this.quizActions.addNewQuizFailed(error);
    });

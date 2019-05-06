@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class QuizApiService {
-  private baseUrl: string = 'http://angular2api2.azurewebsites.net/api/internships';
+  private baseUrl: string = 'http://angular2api2.azurewebsites.net/api/internships/';
 
   constructor(private http: HttpClient) { 
   }
@@ -19,8 +19,7 @@ export class QuizApiService {
   }
 
   getAllQuizzes() : Observable<Quiz[]> {
-    let quiz, [] = this.http.get(this.baseUrl)
-    return quiz;
+    return this.http.get<Quiz[]>(this.baseUrl);
   }
 
   updateQuiz(quiz: Quiz) : Observable<any> {
@@ -28,8 +27,7 @@ export class QuizApiService {
   }
 
   deleteQuiz(id: string) : Observable<any>{
-    //return this.http.delete();
-    return undefined;
+    return this.http.delete(this.baseUrl + id);
   }
 
 }
