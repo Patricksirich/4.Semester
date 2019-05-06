@@ -4,7 +4,7 @@ import { tassign } from "tassign";
 import { TempDataService } from './service/temp-data.service';
 
 let temp = new TempDataService();
-const INITIAL_STATE: QuizState = { isLoggedIn: false, quizzes: temp.quizzes };
+let INITIAL_STATE: QuizState = { isLoggedIn: false, quizzes: temp.quizzes};
 
 export function quizReducer(state: QuizState = INITIAL_STATE, action: any) {
   switch (action.type) {
@@ -25,8 +25,20 @@ export function quizReducer(state: QuizState = INITIAL_STATE, action: any) {
       // Return a new state object
 
       let result = tassign(state, { quizzes: [... state.quizzes, action.payload] });
-      console.log(result)
-      return result
+      console.log(result);
+      return result;
+
+    case QuizActions.UPDATE_QUIZ:
+
+      let updateQuiz = tassign(state, { quizzes: [... state.quizzes, action.payload]});
+      console.log(updateQuiz);
+      return updateQuiz;
+
+    case QuizActions.DELETE_QUIZ:
+
+      let removeQuiz = tassign(state, { quizzes: [... state.quizzes, action.payload]});
+      console.log(removeQuiz);
+      return removeQuiz;
 
     default:
       return state;

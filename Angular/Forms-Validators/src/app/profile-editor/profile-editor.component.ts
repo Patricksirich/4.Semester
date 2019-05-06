@@ -11,6 +11,9 @@ import { Validators } from '@angular/forms';
 })
 export class ProfileEditorComponent implements OnInit {
 
+  ngOnInit() {
+
+  }
   //For creating a formgroup without formbuilder
   testForm = new FormGroup({
     firstNameTest: new FormControl(''),
@@ -21,6 +24,7 @@ export class ProfileEditorComponent implements OnInit {
       email: new FormControl(''),
     })
   })
+
 
   // For creating a form group with form builder
   constructor(private fb: FormBuilder) { }
@@ -46,8 +50,4 @@ export class ProfileEditorComponent implements OnInit {
       }
     });
   }
-
-  ngOnInit() {
-  }
-
 }

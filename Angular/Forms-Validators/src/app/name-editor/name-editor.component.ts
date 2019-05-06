@@ -19,5 +19,4 @@ export class NameEditorComponent implements OnInit {
     console.log('Name updated');
     this.name.setValue('Generic Name');
   }
-
 }

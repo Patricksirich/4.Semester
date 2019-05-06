@@ -29,6 +29,7 @@ import { DisplayQuizComponent } from "./display-quiz/display-quiz.component";
 import { AppState, rootReducer } from "./store";
 import { DevToolsExtension, NgRedux, NgReduxModule } from "@angular-redux/store";
 import { NgReduxRouter, NgReduxRouterModule } from "@angular-redux/router";
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import { NgReduxRouter, NgReduxRouterModule } from "@angular-redux/router";
     PortalComponent,
     CreateQuizComponent,
     QuizComponent,
-    DisplayQuizComponent
+    DisplayQuizComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +64,8 @@ import { NgReduxRouter, NgReduxRouterModule } from "@angular-redux/router";
     MatExpansionModule,
     MatCheckboxModule,
     NgReduxModule,
-    NgReduxRouterModule.forRoot()
+    NgReduxRouterModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

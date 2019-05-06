@@ -11,7 +11,9 @@
     <p>In this quiz we have {{quizInput.questions.length}} question{{quizInput.questions.length>1 || quizInput.questions.length===0?'s':''}}</p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button routerLink="../display-quiz/{{quizInput._id}}">Start Quiz</button>
+    <button mat-button routerLink="../display-quiz/{{quizInput._id}}" color="primary">Start quiz</button>
+    <button mat-button routerLink="../display-quiz/{{quizInput._id}}" color="primary">Update quiz</button>
+    <button mat-button routerLink="../display-quiz/{{quizInput._id}}" color="primary">Delete quiz</button>
   </mat-card-actions>
 </mat-card>
 </p>
