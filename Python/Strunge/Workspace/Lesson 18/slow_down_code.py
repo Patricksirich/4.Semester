@@ -12,6 +12,7 @@ import time
 
 def slow_down(func):
     """Sleep 1 second before calling the function"""
+    time.sleep(1)
     def wrapper(*args):
         time.sleep(1)
         func(*args)

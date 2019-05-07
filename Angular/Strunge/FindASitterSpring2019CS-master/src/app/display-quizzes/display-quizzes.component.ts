@@ -22,7 +22,7 @@ export class DisplayQuizzesComponent implements OnInit {
       console.log(showAllQuizzes)
       var quizList: Quiz[] = showAllQuizzes;
       for (let i = 0; i < quizList.length; i++){
-        if(quizList[i].hasOwnProperty('user' && 'questions')){
+        if(quizList[i].hasOwnProperty('user' && 'questions') && !this.quizzes.some(quiz => quiz._id == quizList[i]._id)){
           console.log(quizList[i])
           this.quizActions.addNewQuiz(quizList[i])
         }
@@ -40,15 +40,18 @@ export class DisplayQuizzesComponent implements OnInit {
     console.log(quiz);
   }
 
-  handleDeleteQuiz(id: string) {
+  handleDeleteQuiz(quiz: Quiz) {
+    var id = quiz._id
     console.log(id);
     this.quizApi.deleteQuiz(id).subscribe(deleteQuiz => {
       console.log('id: ' + id)
       console.log(deleteQuiz)
     }, error => {
+      //this.quizzes.splice(+id-1, 1);
       console.warn('Failure: ', error)
     })
-    //this.quizzes.splice(+id-1, 1);
+    var localId = this.quizzes.findIndex(quiz => quiz._id == id)
+    this.quizzes.splice(localId, 1)
   }
 
 }
