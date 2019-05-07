@@ -25,7 +25,7 @@ export class TempDataService {
   }
 
   getQuizzes() : Quiz[] {
-    return [
+    return[
       {
         _id: '1', visible: false, user: {
           _id:'1',username: 'mikkel86', email: 'mik@mikkel.dk', gender: Gender.MALE,

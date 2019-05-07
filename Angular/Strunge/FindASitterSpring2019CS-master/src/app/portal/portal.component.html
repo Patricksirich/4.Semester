@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+  <button mat-button class="home-button" routerLink="/">Angular Quiz</button>
+  <!-- <button mat-button *ngIf="!authService.isLoggedIn" routerLink="portal/find-quiz">Find a quiz</button> -->
+  <button mat-button class="navbar-button" routerLink="find-quiz">Find a quiz</button>
+  <button mat-button class="navbar-button" routerLink="create-quiz">New quiz</button>
+  <button mat-button class="navbar-button" routerLink="display-quizzes">All quizzes</button>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+  <button mat-button class="navbar-button" routerLink="/">Logout</button>
+</mat-toolbar>
+<router-outlet></router-outlet>
