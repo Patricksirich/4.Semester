@@ -15,6 +15,7 @@ export class QuizApiService {
   createQuiz(quiz: Quiz) : Observable<any> {
     // Call web service
     console.log(this.baseUrl)
+    quiz.created = new Date()
     return this.http.post(this.baseUrl, quiz);
   }
 
