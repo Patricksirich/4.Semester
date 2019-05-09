@@ -15,6 +15,7 @@ export class QuizApiService {
   createQuiz(quiz: Quiz) : Observable<any> {
     // Call web service
     console.log(this.baseUrl)
+    quiz.created = new Date()
     return this.http.post(this.baseUrl, quiz);
   }
 
@@ -29,6 +30,7 @@ export class QuizApiService {
 
   deleteQuiz(id: string) : Observable<any>{
     //return this.http.delete();
+    console.log(id + ' From deleteAPI')
     return this.http.delete(this.baseUrl + id)
   }
 

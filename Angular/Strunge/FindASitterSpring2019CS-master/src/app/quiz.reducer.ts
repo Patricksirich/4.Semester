@@ -4,10 +4,22 @@ import { tassign } from "tassign";
 import { TempDataService } from './service/temp-data.service';
 
 let temp = new TempDataService();
-const INITIAL_STATE: QuizState = { isLoggedIn: false, quizzes: temp.quizzes };
+const INITIAL_STATE: QuizState = { isLoggedIn: false, quizzes: [], isLoading: false };
 
 export function quizReducer(state: QuizState = INITIAL_STATE, action: any) {
   switch (action.type) {
+    
+    case QuizActions.GET_QUIZZES_LOADING:
+      return tassign(state, {isLoading: true});
+    
+    case QuizActions.GET_QUIZZES_SUCCESS:
+      return tassign(state, {isLoading: false, quizzes: action.payload});
+    
+    case QuizActions.GET_QUIZZES_FAILED:
+      return tassign(state, {isLoading: false});
+
+    
+
     case QuizActions.LOG_IN:
       // state.isLoggedIn = action.payload; !!YOU CANNOT MODIFY STATE IN REDUX!!
 
