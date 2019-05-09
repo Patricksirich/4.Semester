@@ -1,6 +1,5 @@
 import { OnInit, Component } from '@angular/core';
 import { Quiz } from '../entities/quiz';
-import { TempDataService } from '../service/temp-data.service';
 import { AppState } from '../store';
 import { NgRedux } from '@angular-redux/store';
 import { QuizApiService } from '../quiz-api.service';
@@ -37,7 +36,7 @@ export class DisplayQuizzesComponent implements OnInit {
 }
 
   updateQuiz(quiz: Quiz) {
-    
+
   }
   onQuizClicked(quiz: Quiz) {
     console.log(quiz);

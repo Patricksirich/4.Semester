@@ -15,17 +15,15 @@ import time
 def slow_down(func):
     def wrapper(*args):
         time.sleep(1)
-        func(*args)
-        
+        func(*args)       
     return wrapper
 
 
 @slow_down
 def countdown(from_number):
-    
+    # Base case
     if from_number == 0:
         print(0)
-        return
     
     else:
         print(from_number)
