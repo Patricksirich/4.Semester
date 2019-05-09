@@ -3,8 +3,8 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "dk.kea.class2019January.patrickS.gameengine19"
-        minSdkVersion 28
+        applicationId "dk.kea.class2019.Strunge.gameengine19"
+        minSdkVersion 25
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
