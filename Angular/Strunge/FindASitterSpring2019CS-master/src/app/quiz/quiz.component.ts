@@ -24,7 +24,7 @@ export class QuizComponent implements OnInit {
   }
 
   emitDeleteQuiz() {
-    this.deleteClicked.emit(+this.quizInput._id);
+    this.deleteClicked.emit(this.quizInput);
   }
 
 }
