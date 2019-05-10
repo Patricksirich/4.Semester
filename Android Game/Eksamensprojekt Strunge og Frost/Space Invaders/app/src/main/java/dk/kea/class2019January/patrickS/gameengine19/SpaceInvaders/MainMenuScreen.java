@@ -1,6 +1,7 @@
 package dk.kea.class2019January.patrickS.gameengine19.SpaceInvaders;
 
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.Typeface;
 
 
@@ -14,7 +15,6 @@ public class MainMenuScreen extends Screen{
     private Bitmap startGame;
     float passedTime = 0;
     long startTime;
-    String titleText;
     Typeface font;
 
     public MainMenuScreen(GameEngine gameEngine) {
@@ -27,19 +27,17 @@ public class MainMenuScreen extends Screen{
         startTime = System.nanoTime();
     }
 
-    // TODO:
-    //  titleText = "Space Invaders";
-    //  gameEngine.drawText(font, titleText, 50, 70, Color.GREEN, 11);
+
 
     @Override
     public void update(float deltaTime) {
-
 
         if (gameEngine.isTouchDown(0) && (passedTime) > 0.5f) {
             gameEngine.setScreen(new GameScreen(gameEngine));
             return;
         }
         gameEngine.drawBitmap(mainMenu, 0, 0);
+        gameEngine.drawText(font, "SPACE INVADERS", 70, 50, Color.BLUE, 30);
         passedTime = passedTime + deltaTime;
         if ((passedTime - (int)passedTime) > 0.5f) {
             gameEngine.drawBitmap(startGame, 240 - startGame.getWidth()/2, 160);
