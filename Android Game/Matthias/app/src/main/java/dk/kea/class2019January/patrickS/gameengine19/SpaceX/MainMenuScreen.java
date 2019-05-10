@@ -1,4 +1,4 @@
-package dk.kea.class2019January.patrickS.gameengine19.Flappy_paperplane;
+package dk.kea.class2019January.patrickS.gameengine19.SpaceX;
 
 import android.graphics.Bitmap;
 
@@ -7,16 +7,16 @@ import dk.kea.class2019January.patrickS.gameengine19.Screen;
 
 public class MainMenuScreen extends Screen
 {
-    Bitmap background;
-    Bitmap startGame;
+    Bitmap mainMenu;
+    Bitmap startBtn;
     float passedTime = 0;
     long startTime;
 
     public MainMenuScreen(GameEngine gameEngine)
     {
         super(gameEngine);
-        background = gameEngine.loadBitmap("flappyplane/skyline.png");
-        startGame = gameEngine.loadBitmap("flappyplane/xstartgame.png");
+        mainMenu = gameEngine.loadBitmap("spacex/bg.png");
+        startBtn = gameEngine.loadBitmap("spacex/start.png");
         startTime = System.nanoTime();
     }
 
@@ -28,11 +28,11 @@ public class MainMenuScreen extends Screen
             gameEngine.setScreen(new GameScreen(gameEngine));
             return;
         }
-        gameEngine.drawBitmap(background,0,0);
+        gameEngine.drawBitmap(mainMenu,0,0);
         passedTime = passedTime + deltaTime;
         if ((passedTime - (int)passedTime) > 0.5f)
         {
-            gameEngine.drawBitmap(startGame, 240 - startGame.getWidth()/2, 160);
+            gameEngine.drawBitmap(startBtn, 240 - startBtn.getWidth()/2, 160);
         }
 
 

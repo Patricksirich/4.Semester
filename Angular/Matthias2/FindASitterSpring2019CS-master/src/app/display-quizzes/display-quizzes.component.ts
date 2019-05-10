@@ -15,16 +15,26 @@ import { QuizActions } from '../quiz.actions';
 export class DisplayQuizzesComponent implements OnInit {
 
   private quizzes: Quiz[];
+  isLoading: boolean;
+  public userSearch: string;
 
-  constructor(private ngRedux: NgRedux<AppState>, private quizApi: QuizApiService, private quizActions: QuizActions) { }
+  constructor(private ngRedux: NgRedux<AppState>, private quizActions: QuizActions, private quizApi: QuizApiService) { }
   ngOnInit() {
 
-    console.log("1");
+    // Subscribe to the redux store (quizzes).
+    this.ngRedux.select(state => state.quizzes).subscribe(result => {
+      this.isLoading = result.isLoading;
+      this.quizzes = result.quizzes;
+    });
+
+    this.quizActions.getQuizzes();
+
+    /*console.log("1");
     this.quizApi.getAllQuizzes().subscribe(allQuizzes => {
       console.log(allQuizzes);
       var quizList: Quiz[] = allQuizzes;
       for (let i = 0; i < quizList.length; i++) {
-        if(quizList[i].hasOwnProperty('user' && 'questions')){
+        if(quizList[i].hasOwnProperty('user' && 'questions') && !this.quizzes.some(quiz => quiz._id == quizList[i]._id)){
           console.log(quizList[i]);
           this.quizActions.addNewQuiz(quizList[i]);
         }
@@ -34,32 +44,36 @@ export class DisplayQuizzesComponent implements OnInit {
       // Write some code for handling errors 
       console.log("Something bad happened", error)
     });
-    console.log("2");
-
-    // Subscribe to the redux store (quizzes).
-    this.ngRedux.select(state => state.quizzes).subscribe(result => {
-    this.quizzes = result.quizzes;
- });
+    console.log("2");*/
 
 }
   onQuizClicked(quiz: Quiz) {
     console.log(quiz);
+    console.log(this.userSearch);
   }
 
-  handleDeleteQuiz(id: string) {
+  handleDeleteQuiz(quiz: Quiz) {
+    this.quizApi.deleteQuiz(quiz._id).subscribe(deleteQuiz => {
+
+    }, error => {
+
+    });
+    /*
     console.log("1");
-    console.log(id);
+    var id = quiz._id;
+    console.log("id before: " + id);
     this.quizApi.deleteQuiz(id).subscribe(deleteQuiz => {
-      console.log("id: " + id);
+      console.log("id inside: " + id);
       console.log(deleteQuiz);
       console.log("3");
-    }, error => {
+    }, message => {
       // Write some code for handling errors
-      console.log("Something bad happened", error)
+      console.log("Something happened", message)
     });
-    console.log("3");
-
-    //this.quizzes.splice(+id-1, 1);
+    var localId = this.quizzes.findIndex(quiz =>  quiz._id == id);
+    console.log("localId: " + localId);
+    this.quizzes.splice(localId, 1);
+    console.log("2");
+    */
   }
-
 }

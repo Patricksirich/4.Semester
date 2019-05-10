@@ -1,15 +1,14 @@
-package dk.kea.class2019January.patrickS.gameengine19.Flappy_paperplane;
+package dk.kea.class2019January.patrickS.gameengine19.SpaceX;
 
 import dk.kea.class2019January.patrickS.gameengine19.GameEngine;
 import dk.kea.class2019January.patrickS.gameengine19.Screen;
 
-public class FlappyPlane extends GameEngine
+public class SpaceX extends GameEngine
 {
-
     @Override
     public Screen createStartScreen()
     {
-        music = this.loadMusic("carscroller/music.ogg");
+        music = this.loadMusic("breakout/music.ogg");
         return new MainMenuScreen(this);
     }
 
@@ -24,5 +23,4 @@ public class FlappyPlane extends GameEngine
         super.onPause();
         music.pause();
     }
-
 }

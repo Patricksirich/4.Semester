@@ -4,7 +4,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatGridListModule } from "@angular/material/grid-list";
 import { MatMenuModule } from "@angular/material/menu";
@@ -30,6 +30,7 @@ import { AppState, rootReducer } from "./store";
 import { DevToolsExtension, NgRedux, NgReduxModule } from "@angular-redux/store";
 import { NgReduxRouter, NgReduxRouterModule } from "@angular-redux/router";
 import { HttpClientModule } from '@angular/common/http';
+import { QuizPipe } from './quiz.pipe';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { HttpClientModule } from '@angular/common/http';
     PortalComponent,
     CreateQuizComponent,
     QuizComponent,
-    DisplayQuizComponent
+    DisplayQuizComponent,
+    QuizPipe
   ],
   imports: [
     BrowserModule,
@@ -52,6 +54,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatGridListModule,
+    FormsModule,
     MatMenuModule,
     MatIconModule,
     MatToolbarModule,

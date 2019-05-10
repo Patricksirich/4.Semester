@@ -34,7 +34,7 @@ export class CreateQuizComponent implements OnInit {
    this.quizApi.createQuiz(quiz).subscribe(quizFromWs => {
      console.log(quizFromWs);
      console.log("3");
-    this.quizActions.addNewQuiz(quiz);
+    //this.quizActions.addNewQuiz(quiz);
     this.router.navigate(['/portal/display-quizzes']);
    }, error => {
      // Write some code for handling errors
