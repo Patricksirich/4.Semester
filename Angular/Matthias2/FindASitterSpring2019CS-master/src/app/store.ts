@@ -7,6 +7,7 @@ export class QuizState {
   isLoggedIn: boolean;
   quizzes: Quiz[];
   errorMessage?: string;
+  isLoading: boolean;
 }
 
 export class AppState {
