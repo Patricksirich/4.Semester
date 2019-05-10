@@ -46,6 +46,13 @@ export class QuizActions {
     });
   }
 
+  deleteQuiz(quizId: string){
+    this.ngRedux.dispatch({
+      type: QuizActions.DELETE_QUIZ,
+      payload: quizId
+    })
+  }
+
   createRating(rating: Rating, quizId: string) {
     this.ngRedux.dispatch({
       type: QuizActions.CREATE_RATING,
