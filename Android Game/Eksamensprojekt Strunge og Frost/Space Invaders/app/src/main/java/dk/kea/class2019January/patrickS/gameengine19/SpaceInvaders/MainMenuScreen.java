@@ -31,7 +31,7 @@ public class MainMenuScreen extends Screen{
         gameEngine.drawBitmap(mainMenu, 0, 0);
         passedTime = passedTime + deltaTime;
         if ((passedTime - (int)passedTime) > 0.5f) {
-            gameEngine.drawBitmap(startGame, 160 - startGame.getWidth()/2, 320);
+            gameEngine.drawBitmap(startGame, 240 - startGame.getWidth()/2, 160);
         }
 
     }
