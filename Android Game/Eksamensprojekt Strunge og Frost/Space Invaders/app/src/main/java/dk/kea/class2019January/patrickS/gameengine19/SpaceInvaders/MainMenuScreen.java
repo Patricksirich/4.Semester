@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Typeface;
 
-import dk.kea.class2019January.patrickS.gameengine19.Breakout.GameScreen;
+
 import dk.kea.class2019January.patrickS.gameengine19.GameEngine;
 import dk.kea.class2019January.patrickS.gameengine19.Screen;
 
