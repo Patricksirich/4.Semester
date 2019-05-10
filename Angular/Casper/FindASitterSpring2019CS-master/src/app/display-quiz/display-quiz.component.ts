@@ -19,10 +19,6 @@ export class DisplayQuizComponent implements OnInit {
     // Get the id from the url
     const id = this.route.snapshot.paramMap.get('id');
 
-    // Find the quiz object based on id
-    this.quiz = this.tempData.findQuiz(id);
-    // Load the quiz in the html
-
   }
 
 }

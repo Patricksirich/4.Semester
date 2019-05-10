@@ -34,6 +34,7 @@ import { QuizComponent } from './quiz/quiz.component';
 import { NgReduxRouter, NgReduxRouterModule } from '@angular-redux/router';  
 import { rootReducer, AppState } from './store';
 import { NgRedux, NgReduxModule } from '@angular-redux/store';
+import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { NgRedux, NgReduxModule } from '@angular-redux/store';
     MatSnackBarModule, 
     MatDividerModule, 
     MatCheckboxModule,
+    HttpClient,
     NgReduxModule,
     NgReduxRouterModule.forRoot(),
 

@@ -4,10 +4,22 @@ import { tassign } from "tassign";
 import { TempDataService } from './service/temp-data.service';
 
 let temp = new TempDataService();
-const INITIAL_STATE: QuizState = { isLoggedIn: false, quizzes: temp.quizzes };
+const INITIAL_STATE: QuizState = { isLoggedIn: false, quizzes: [], isLoading: false };
 
 export function quizReducer(state: QuizState = INITIAL_STATE, action: any) {
   switch (action.type) {
+    
+    case QuizActions.GET_QUIZZES_LOADING:
+      return tassign(state, {isLoading: true});
+    
+    case QuizActions.GET_QUIZZES_SUCCESS:
+      return tassign(state, {isLoading: false, quizzes: action.payload});
+    
+    case QuizActions.GET_QUIZZES_FAILED:
+      return tassign(state, {isLoading: false});
+
+    
+
     case QuizActions.LOG_IN:
       // state.isLoggedIn = action.payload; !!YOU CANNOT MODIFY STATE IN REDUX!!
 
@@ -37,8 +49,7 @@ export function quizReducer(state: QuizState = INITIAL_STATE, action: any) {
     case QuizActions.DELETE_QUIZ:
       // action payload: id of the quiz
       // How to create a new array with a missing object from another array
-      const newArray = state.quizzes.filter(x => x._id != action.payload);
-      return
+      return tassign(state, {quizzes: state.quizzes.filter(x => x._id != action.payload)});
 
     case QuizActions.NEW_QUIZ:
   
