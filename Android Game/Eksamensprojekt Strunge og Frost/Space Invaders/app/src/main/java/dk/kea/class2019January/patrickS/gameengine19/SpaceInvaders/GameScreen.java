@@ -21,6 +21,7 @@ public class GameScreen extends Screen
 
     State state = State.Running;
     Bitmap background;
+    Bitmap tempImage;
     Bitmap resume;
     Bitmap gameOver;
     Typeface font;
@@ -33,7 +34,8 @@ public class GameScreen extends Screen
     public GameScreen(GameEngine gameEngine){
 
         super(gameEngine);
-        background = gameEngine.loadBitmap("SpaceInvaders/background.png");
+        tempImage = gameEngine.loadBitmap("SpaceInvaders/background.png");
+        background = Bitmap.createScaledBitmap(tempImage, 480, 320, true);
         gameOver = gameEngine.loadBitmap("SpaceInvaders/gameover.png");
         resume = gameEngine.loadBitmap("SpaceInvaders/resume.png");
         font = gameEngine.loadFont("SpaceInvaders/font.ttf");

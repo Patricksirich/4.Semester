@@ -13,6 +13,7 @@ public class WorldRenderer {
     public WorldRenderer(GameEngine gameEngine, World world) {
         this.gameEngine = gameEngine;
         this.world = world;
+
         // We need to rescale our ship, as the original image is too large
         Bitmap spaceShipActual = gameEngine.loadBitmap("SpaceInvaders/spaceship.png");
         spaceShipImg = Bitmap.createScaledBitmap(spaceShipActual, 90, 40, true);

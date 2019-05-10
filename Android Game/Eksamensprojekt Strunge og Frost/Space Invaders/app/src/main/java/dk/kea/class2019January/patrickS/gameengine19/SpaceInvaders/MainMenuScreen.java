@@ -11,6 +11,7 @@ import dk.kea.class2019January.patrickS.gameengine19.Screen;
 public class MainMenuScreen extends Screen{
 
     private Bitmap mainMenu;
+    private Bitmap tempImage;
     private Bitmap startGame;
     float passedTime = 0;
     long startTime;
@@ -21,7 +22,8 @@ public class MainMenuScreen extends Screen{
 
         super(gameEngine);
         startGame = gameEngine.loadBitmap("SpaceInvaders/xstartgame.png");
-        mainMenu = gameEngine.loadBitmap("SpaceInvaders/background.png");
+        tempImage = gameEngine.loadBitmap("SpaceInvaders/background.png");
+        mainMenu = Bitmap.createScaledBitmap(tempImage, 480, 320, true);
         font = gameEngine.loadFont("SpaceInvaders/font.ttf");
         startTime = System.nanoTime();
     }

@@ -16,7 +16,7 @@ public class MainMenuScreen extends Screen
     {
         super(gameEngine);
         mainMenu = gameEngine.loadBitmap("breakout/mainmenu.png");
-        insertCoin = gameEngine.loadBitmap("SpaceInvaders/insertcoin.png");
+        //insertCoin = gameEngine.loadBitmap("breakout/insertcoin.png");
         startTime = System.nanoTime();
     }
 
