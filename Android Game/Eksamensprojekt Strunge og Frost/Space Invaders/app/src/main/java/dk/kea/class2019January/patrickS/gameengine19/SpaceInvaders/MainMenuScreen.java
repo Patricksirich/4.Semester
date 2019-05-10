@@ -1,7 +1,6 @@
 package dk.kea.class2019January.patrickS.gameengine19.SpaceInvaders;
 
 import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.graphics.Typeface;
 
 
@@ -21,7 +20,7 @@ public class MainMenuScreen extends Screen{
     public MainMenuScreen(GameEngine gameEngine) {
 
         super(gameEngine);
-        startGame = gameEngine.loadBitmap("SpaceInvaders/xstartgame.png");
+        startGame = gameEngine.loadBitmap("SpaceInvaders/startgame.png");
         tempImage = gameEngine.loadBitmap("SpaceInvaders/background.png");
         mainMenu = Bitmap.createScaledBitmap(tempImage, 480, 320, true);
         font = gameEngine.loadFont("SpaceInvaders/font.ttf");
