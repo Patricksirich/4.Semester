@@ -35,9 +35,9 @@ public class GameScreen extends Screen
     {
         super(gameEngine);
         background = gameEngine.loadBitmap("breakout/background.png");
-        resume = gameEngine.loadBitmap("breakout/resume.png");
-        gameOver = gameEngine.loadBitmap("breakout/gameover.png");
-        font = gameEngine.loadFont("breakout/font.ttf");
+        resume = gameEngine.loadBitmap("SpaceInvaders/resume.png");
+        gameOver = gameEngine.loadBitmap("SpaceInvaders/gameover.png");
+        font = gameEngine.loadFont("SpaceInvaders/font.ttf");
         bounceSound = gameEngine.loadSound("breakout/bounce.wav");
         blockSound = gameEngine.loadSound("breakout/blocksplosion.wav");
 
