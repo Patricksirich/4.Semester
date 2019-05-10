@@ -39,6 +39,7 @@ public class GameScreen extends Screen
         gameOver = gameEngine.loadBitmap("SpaceInvaders/gameover.png");
         resume = gameEngine.loadBitmap("SpaceInvaders/resume.png");
         font = gameEngine.loadFont("SpaceInvaders/font.ttf");
+
         renderer = new WorldRenderer(gameEngine, world);
         world = new World();
         renderer = new WorldRenderer(gameEngine, world);
@@ -52,16 +53,35 @@ public class GameScreen extends Screen
     public void update(float deltaTime)
     {
         gameEngine.drawBitmap(background, 0, 0);
+        renderer.render();
 
         if (state == State.Running){
             world.update(gameEngine.isTouchDown(0), gameEngine.getTouchX(0));
         }
-        renderer.render();
+
+        if (state == State.Running && gameEngine.getTouchY(0) < 33 && gameEngine.getTouchX(0) > 320 - 33)
+        {
+            state = State.Paused;
+            pause();
+            return;
+        }
+
+        if (state == State.Paused) {
+            pause();
+            gameEngine.drawBitmap(resume, 250-resume.getWidth() / 2, 175-resume.getHeight()/2);
+        }
+
+        if (state == State.Paused && gameEngine.isTouchDown(0)){
+            state = State.Running;
+        }
     }
 
     @Override
     public void pause()
     {
+        //TODO: pause music
+        if (state == State.Running) state = State.Paused;
+
 
     }
 
