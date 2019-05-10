@@ -10,4 +10,15 @@ public class WorldRenderer {
     Bitmap spaceShipImg;
     // TODO: tilføj monstre + projectiler
 
+    public WorldRenderer(GameEngine gameEngine, World world) {
+        this.gameEngine = gameEngine;
+        this.world = world;
+        spaceShipImg = gameEngine.loadBitmap("SpaceInvaders/spaceship.png");
+    }
+
+    public void render() {
+
+        gameEngine.drawBitmap(spaceShipImg, (int)world.spaceship.x, (int)world.spaceship.y);
+    }
+
 }

@@ -13,10 +13,10 @@ public class World
     {
         if(isTouch)
         {
-            spaceship.x = touchX - spaceship.WIDTH / 2;
+            spaceship.x = touchX - Spaceship.WIDTH / 2;
         }
         if(spaceship.x < MIN_X) spaceship.x = MIN_X;
-        if(spaceship.x + spaceship.WIDTH > MAX_X) spaceship.x = MAX_X - spaceship.WIDTH;
+        if(spaceship.x + Spaceship.WIDTH > MAX_X) spaceship.x = MAX_X - Spaceship.WIDTH;
 
     }
 }

@@ -40,15 +40,15 @@ public class GameScreen extends Screen
 
         //TODO: world (til collisionListener) funktionalitet
 
-
-
+        renderer = new WorldRenderer(gameEngine, world);
 
     }
 
     @Override
     public void update(float deltaTime)
     {
-
+        gameEngine.drawBitmap(background, 0, 0);
+        renderer.render();
     }
 
     @Override
