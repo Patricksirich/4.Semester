@@ -6,17 +6,18 @@ import { Quiz } from './entities/quiz';
 })
 export class QuizPipe implements PipeTransform {
 
-  transform(quizzes: Quiz[], search: any): any {
+  transform(quizzes: Quiz[], titleSearch: any): any {
     console.log(quizzes);
-    console.log(search);
+    console.log(titleSearch);
+    
 
-    if (search == undefined) {
+    if (titleSearch == undefined) {
 
       // Write code that returns what is serached for
 
       return quizzes;
     }
-    return quizzes.filter(quiz => quiz.title.indexOf(search) != -1)
+    return quizzes.filter(quiz => quiz.title.indexOf(titleSearch) != -1)
   }
 
 }

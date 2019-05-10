@@ -52,14 +52,13 @@ export class DisplayQuizzesComponent implements OnInit {
     var id = quiz._id
     console.log(id);
     this.quizApi.deleteQuiz(id).subscribe(deleteQuiz => {
+      this.quizActions.deleteQuiz(id)
       console.log('id: ' + id)
       console.log(deleteQuiz)
     }, error => {
       //this.quizzes.splice(+id-1, 1);
+      this.quizActions.deleteQuiz(id)
       console.warn('Failure: ', error)
     })
-    var localId = this.quizzes.findIndex(quiz => quiz._id == id)
-    this.quizzes.splice(localId, 1)
   }
-
 }
