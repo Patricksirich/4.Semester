@@ -40,7 +40,6 @@ public class GameScreen extends Screen
         resume = gameEngine.loadBitmap("SpaceInvaders/resume.png");
         font = gameEngine.loadFont("SpaceInvaders/font.ttf");
 
-        renderer = new WorldRenderer(gameEngine, world);
         world = new World();
         renderer = new WorldRenderer(gameEngine, world);
         //TODO: sound eff./ music
