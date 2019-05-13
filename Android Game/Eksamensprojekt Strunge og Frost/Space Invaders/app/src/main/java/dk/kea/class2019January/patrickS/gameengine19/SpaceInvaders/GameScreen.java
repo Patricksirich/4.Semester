@@ -40,7 +40,27 @@ public class GameScreen extends Screen
         resume = gameEngine.loadBitmap("SpaceInvaders/resume.png");
         font = gameEngine.loadFont("SpaceInvaders/font.ttf");
 
-        world = new World();
+        world = new World(new CollisionListener() {
+            @Override
+            public void collisionWall() {
+
+            }
+
+            @Override
+            public void collisionSpaceship() {
+
+            }
+
+            @Override
+            public void collisionEnemy() {
+
+            }
+
+            @Override
+            public void collisionProjectile() {
+
+            }
+        });
         renderer = new WorldRenderer(gameEngine, world);
         //TODO: sound eff./ music
         //TODO: world (til collisionListener) funktionalitet
@@ -55,7 +75,7 @@ public class GameScreen extends Screen
         renderer.render();
 
         if (state == State.Running){
-            world.update(gameEngine.isTouchDown(0), gameEngine.getTouchX(0));
+            world.update(deltaTime, gameEngine.isTouchDown(0), gameEngine.getTouchX(0));
         }
 
         if (state == State.Running && gameEngine.getTouchY(0) < 33 && gameEngine.getTouchX(0) > 320 - 33)

@@ -1,5 +1,8 @@
 package dk.kea.class2019January.patrickS.gameengine19.SpaceInvaders;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class World
 {
     public static float MIN_X = -20;
@@ -7,9 +10,19 @@ public class World
     public static float MIN_Y = 36;
     public static float MAX_Y = 799;
 
-    Spaceship spaceship = new Spaceship();
 
-    public void update(boolean isTouch, int touchX)
+    List<Enemies> enemies = new ArrayList<>();
+    Spaceship spaceship = new Spaceship();
+    CollisionListener collisionListener;
+    Enemies enemy;
+
+    public World(CollisionListener collisionListener)
+    {
+        this.collisionListener = collisionListener;
+        generateEnemies();
+
+    }
+    public void update(float deltaTime, boolean isTouch, int touchX)
     {
 
         // used for moving the spaceship with touch
@@ -22,5 +35,46 @@ public class World
         if(spaceship.x < MIN_X) spaceship.x = MIN_X;
         if(spaceship.x + Spaceship.WIDTH > MAX_X) spaceship.x = MAX_X - Spaceship.WIDTH;
 
+        //collideEnemiesWall(deltaTime);
+        enemyMovement();
+
     }
+
+    public void generateEnemies()
+    {
+        enemies.clear();
+
+        for(int y = 35; y < 50 + 4 * (Enemies.HEIGHT + 4); y = y + (Enemies.HEIGHT + 4))
+        {
+            for (int x = 30; x < 330 - Enemies.WIDTH; x = x + Enemies.WIDTH +20)
+            {
+                enemies.add(new Enemies(x, y));
+            }
+        }
+
+    }
+
+//    public void collideEnemiesWall(float deltaTime)
+//    {
+//
+//        if ((enemy.x + Enemies.WIDTH >= MIN_X) && (enemy.x + Enemies.WIDTH <= MAX_X)) {
+//            enemy.x = enemy.x - enemy.vx * deltaTime;
+//            enemy.vx = -enemy.vx;
+//            collisionListener.collisionWall();
+//        }
+//
+//    }
+
+    public void enemyMovement() {
+
+        Enemies enemy;
+
+        for (int i = 0; i < enemies.size() ; i++) {
+
+            enemy = enemies.get(i);
+            enemy.x = enemy.x + 10;
+
+        }
+    }
+
 }
