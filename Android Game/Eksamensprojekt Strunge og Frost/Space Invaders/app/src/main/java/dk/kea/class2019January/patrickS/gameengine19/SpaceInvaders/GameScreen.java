@@ -25,9 +25,6 @@ public class GameScreen extends Screen
     Bitmap resume;
     Bitmap gameOver;
     Typeface font;
-    Sound bounceSound;
-    Sound blockSound;
-    String showText;
     World world;
     WorldRenderer renderer;
 
@@ -93,6 +90,29 @@ public class GameScreen extends Screen
             state = State.Paused;
             pause();
             return;
+        }
+
+        if (world.gameOver) {
+            state = State.GameOver;
+        }
+
+        if (state == State.GameOver)
+        {
+            pause();
+            gameEngine.drawBitmap(gameOver, 200 - gameOver.getWidth() / 2, 400 - gameOver.getHeight() / 2);
+
+        }
+
+        if (state == State.GameOver) {
+            List<TouchEvent> events = gameEngine.getTouchEvents();
+            for (int i = 0; i < events.size(); i++) {
+
+                if(events.get(i).type == TouchEvent.TouchEventType.Up){
+                    gameEngine.setScreen(new MainMenuScreen(gameEngine));
+                    return;
+                }
+
+            }
         }
 
     }
