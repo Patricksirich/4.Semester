@@ -7,7 +7,7 @@ public class Enemies {
     public float x = 0;
     public float y = 0;
     public int intialSpeed = 150;
-    public float vx = 20;
+    public float vx = 150;
     public float vy = -50;
 
     public Enemies(float x, float y) {

@@ -6,7 +6,7 @@ import java.util.List;
 public class World
 {
     public static float MIN_X = -20;
-    public static float MAX_X = 499;
+    public static float MAX_X = 479;
     public static float MIN_Y = 36;
     public static float MAX_Y = 799;
 
@@ -63,10 +63,10 @@ public class World
             enemy = enemies.get(i);
             enemy.x = enemy.x + enemy.vx * deltaTime;
 
-            if (enemy.x < MIN_X)
+            if (enemy.x < MIN_X + Enemies.WIDTH)
             {
                 enemy.vx = -enemy.vx;
-                enemy.x = MIN_X;
+                enemy.x = MIN_X + Enemies.WIDTH;
             }
             if (enemy.x > MAX_X - Enemies.WIDTH)
             {
