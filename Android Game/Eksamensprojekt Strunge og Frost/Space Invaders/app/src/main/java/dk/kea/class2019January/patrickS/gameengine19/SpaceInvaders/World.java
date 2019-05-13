@@ -15,7 +15,6 @@ public class World
     List<Enemies> enemies = new ArrayList<>();
     Spaceship spaceship = new Spaceship();
     CollisionListener collisionListener;
-    Enemies enemy = new Enemies(MIN_X, MAX_X);
 
     public World(CollisionListener collisionListener)
     {
@@ -37,7 +36,7 @@ public class World
         if(spaceship.x < MIN_X) spaceship.x = MIN_X;
         if(spaceship.x + Spaceship.WIDTH > MAX_X) spaceship.x = MAX_X - Spaceship.WIDTH;
 
-        enemyMovement();
+        enemyMovement(deltaTime);
 
     }
 
@@ -55,13 +54,14 @@ public class World
 
     }
 
-    public void enemyMovement() {
+    public void enemyMovement(float deltaTime) {
 
         Enemies enemy;
+
         for (int i = 0; i < enemies.size() ; i++) {
 
             enemy = enemies.get(i);
-            enemy.x = enemy.x + 10;
+            enemy.x = enemy.x + enemy.vx * deltaTime;
 
             if (enemy.x < MIN_X)
             {
