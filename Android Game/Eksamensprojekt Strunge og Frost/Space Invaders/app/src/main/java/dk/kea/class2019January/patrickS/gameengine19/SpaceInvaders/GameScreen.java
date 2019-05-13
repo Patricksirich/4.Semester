@@ -68,19 +68,24 @@ public class GameScreen extends Screen
         if (state == State.Paused) {
             pause();
             gameEngine.drawBitmap(resume, 250-resume.getWidth() / 2, 175-resume.getHeight()/2);
+
         }
 
-        if (state == State.Paused && gameEngine.isTouchDown(0)){
+        if (state == State.Paused && gameEngine.isTouchDown(0)) {
             state = State.Running;
         }
     }
 
+
+
+
     @Override
     public void pause()
     {
-        //TODO: pause music
-        if (state == State.Running) state = State.Paused;
+        // TODO: pause music
+        // TODO: funktion der forhindrer spaceship i at rykke sig, når pauseknappen bliver trykket.
 
+        if (state == State.Running) state = State.Paused;
 
     }
 
