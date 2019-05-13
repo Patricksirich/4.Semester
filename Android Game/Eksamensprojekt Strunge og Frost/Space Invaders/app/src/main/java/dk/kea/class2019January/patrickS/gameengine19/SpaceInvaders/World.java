@@ -65,11 +65,13 @@ public class World
 
             if (enemy.x < MIN_X + Enemies.WIDTH)
             {
+                enemy.y = enemy.y + deltaTime*100;
                 enemy.vx = -enemy.vx;
                 enemy.x = MIN_X + Enemies.WIDTH;
             }
             if (enemy.x > MAX_X - Enemies.WIDTH)
             {
+                enemy.y = enemy.y + deltaTime*100;
                 enemy.vx = -enemy.vx;
                 enemy.x = MAX_X - Enemies.WIDTH;
             }

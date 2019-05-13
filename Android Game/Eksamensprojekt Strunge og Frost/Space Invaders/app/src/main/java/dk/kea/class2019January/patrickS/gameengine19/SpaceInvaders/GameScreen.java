@@ -65,7 +65,6 @@ public class GameScreen extends Screen
         //TODO: sound eff./ music
         //TODO: world (til collisionListener) funktionalitet
 
-
     }
 
     @Override
@@ -78,13 +77,6 @@ public class GameScreen extends Screen
             world.update(deltaTime, gameEngine.isTouchDown(0), gameEngine.getTouchX(0));
         }
 
-        if (state == State.Running && gameEngine.getTouchY(0) < 33 && gameEngine.getTouchX(0) > 320 - 33)
-        {
-            state = State.Paused;
-            pause();
-            return;
-        }
-
         if (state == State.Paused) {
             pause();
             gameEngine.drawBitmap(resume, 250-resume.getWidth() / 2, 175-resume.getHeight()/2);
@@ -93,10 +85,17 @@ public class GameScreen extends Screen
 
         if (state == State.Paused && gameEngine.isTouchDown(0)) {
             state = State.Running;
+
         }
+
+        if (state == State.Running && gameEngine.getTouchY(0) < 33 && gameEngine.getTouchX(0) > 320 - 33)
+        {
+            state = State.Paused;
+            pause();
+            return;
+        }
+
     }
-
-
 
 
     @Override
