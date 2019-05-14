@@ -49,6 +49,7 @@ public class World {
         }
     }
 
+    // Enemy movement method, that also checks if the game is over.
     public void enemyMovement(float deltaTime) {
 
         Enemies enemy;
