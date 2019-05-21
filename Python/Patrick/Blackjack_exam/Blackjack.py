@@ -1,6 +1,6 @@
 from random import shuffle
 
-card_ranks = {'A':1, '2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9, '10':10, 'J':11, 'Q':12, 'K':13}
+card_ranks = {'A':1, '2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9, '10':10, 'J':11, 'Q':12, 'K':13}       #Dictionary
 card_suits = ['Hearts', 'Clubs', 'Diamonds', 'Spades']
 deck = []
 
@@ -14,7 +14,7 @@ def create_deck():
     print(deck)
     return deck
 
-#Removes 1 card from the deck and return the value
+#Removes last card from the deck[] and return the value
 def deal():
     single_card = deck.pop()
     print(single_card)
