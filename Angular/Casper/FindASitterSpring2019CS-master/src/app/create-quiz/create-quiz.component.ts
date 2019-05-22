@@ -18,6 +18,13 @@ export class CreateQuizComponent implements OnInit {
   constructor(private fb: FormBuilder, private data: TempDataService, private router: Router,
     private quizActions: QuizActions, private quizApi: QuizApiService) { }
 
+    ngOnInit() {
+      this.createQuiz = this.fb.group({
+        title: [''],
+        questions: this.fb.array([])
+      })
+    }
+
   saveQuiz() {
     // save a user who created this quiz.
     // hardcode a user until we have a proper login.
@@ -68,13 +75,5 @@ export class CreateQuizComponent implements OnInit {
       answer: ['', Validators.required],
       correct: [false, Validators.required]
     });
-  }
-
-
-  ngOnInit() {
-    this.createQuiz = this.fb.group({
-      title: [''],
-      questions: this.fb.array([])
-    })
   }
 }
