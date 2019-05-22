@@ -31,6 +31,7 @@ import { DevToolsExtension, NgRedux, NgReduxModule } from "@angular-redux/store"
 import { NgReduxRouter, NgReduxRouterModule } from "@angular-redux/router";
 import { HttpClientModule } from '@angular/common/http';
 import { QuizPipe } from './quiz.pipe';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { QuizPipe } from './quiz.pipe';
     CreateQuizComponent,
     QuizComponent,
     DisplayQuizComponent,
-    QuizPipe
+    QuizPipe,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
