@@ -1,18 +1,17 @@
 <div *ngIf="isLoading">
-  Please wait, we are loading the quizzes atm
+  Please wait, we are loading the quizzes!
 </div>
-
 <div>
   <mat-form-field>
-    <input matInput placeholder="Search quiz" value="" [(ngModel)]="userSearch">
-  </mat-form-field>
+  <input matInput placeholder="Search a quiz" value="" [(ngModel)] = "userSearch">
+</mat-form-field>
 </div>
-
 <div *ngFor="let quiz of quizzes | quizPipe: userSearch; let i=index">
+
   <app-quiz
   [quizInput]="quiz"
   (quizClicked)="onQuizClicked($event)"
-  (deleteClicked)="handleDeleteQuiz($event)"
+  (deleteClicked)="deleteQuiz($event)"
   >
   </app-quiz>
 </div>

@@ -18,6 +18,13 @@ export class CreateQuizComponent implements OnInit {
   constructor(private fb: FormBuilder, private data: TempDataService, private router: Router,
     private quizActions: QuizActions, private quizApi: QuizApiService) { }
 
+    ngOnInit() {
+      this.createQuiz = this.fb.group({
+        title: [''],
+        questions: this.fb.array([])
+      })
+    }
+
   saveQuiz() {
     // save a user who created this quiz.
     // hardcode a user until we have a proper login.
@@ -33,11 +40,11 @@ export class CreateQuizComponent implements OnInit {
    console.log("1");
    this.quizApi.createQuiz(quiz).subscribe(quizFromWs => {
      console.log(quizFromWs);
-     console.log("3");
+     console.log('3');
     this.quizActions.addNewQuiz(quiz);
     this.router.navigate(['/portal/display-quizzes']);
    }, error => {
-     // Write some code for handling errors 
+     // Write some code for handling errors
      console.log("Something bad happened", error)
      // this.quizActions.addNewQuizFailed(error);
    });
@@ -68,13 +75,5 @@ export class CreateQuizComponent implements OnInit {
       answer: ['', Validators.required],
       correct: [false, Validators.required]
     });
-  }
-
-
-  ngOnInit() {
-    this.createQuiz = this.fb.group({
-      title: [''],
-      questions: this.fb.array([])
-    })
   }
 }

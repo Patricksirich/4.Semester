@@ -4,7 +4,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
-import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule, NgControl } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatGridListModule } from "@angular/material/grid-list";
 import { MatMenuModule } from "@angular/material/menu";
@@ -53,7 +53,6 @@ import { QuizPipe } from './quiz.pipe';
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    FormsModule,
     MatGridListModule,
     MatMenuModule,
     MatIconModule,
@@ -68,6 +67,7 @@ import { QuizPipe } from './quiz.pipe';
     MatCheckboxModule,
     NgReduxModule,
     HttpClientModule,
+    FormsModule,
     NgReduxRouterModule.forRoot()
   ],
   providers: [],
