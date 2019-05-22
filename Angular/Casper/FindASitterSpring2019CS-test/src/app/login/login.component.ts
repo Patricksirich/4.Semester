@@ -60,11 +60,6 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       this.quizActions.setLoggedIn(true);
 
-      if (this.loginForm.value.username === 'admin') {
-        //log in as admin
-
-      }
-
       this.authService.login().subscribe(result => {
         this.router.navigate(['portal/display-quizzes']);
       });
@@ -76,5 +71,10 @@ export class LoginComponent implements OnInit {
 
   }
 
+  logout() : void {
+
+
+
+  }
 
 }
