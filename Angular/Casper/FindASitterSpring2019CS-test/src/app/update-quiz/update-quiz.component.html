@@ -11,7 +11,7 @@
     <div *ngFor="let questionControl of quizForm.controls.questions.controls; let i=index">
       <div [formGroupName]="i">
           <mat-form-field>
-            <input matInput formControlName="title" class="question" value="">
+            <input matInput formControlName="title" class="question" placeholder="Question" id="questiontitle">
           </mat-form-field>
           <button id='newOption' type="button" mat-raised-button color="secondary" (click)="createNewOption(i)">New Option</button>
 
