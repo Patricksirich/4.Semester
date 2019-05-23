@@ -1,10 +1,9 @@
-
 <p (click)="emitQuizClicked()">
 <mat-card class="example-card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>{{quizInput.title | uppercase}}</mat-card-title>
-    <mat-card-subtitle>{{quizInput.created | date: dd/MM/yyyy}}</mat-card-subtitle>
+    <mat-card-title>{{quizInput.title}}</mat-card-title>
+    <mat-card-subtitle>{{quizInput.created | date: 'dd/MM/yy' }}</mat-card-subtitle>
   </mat-card-header>
   <img mat-card-image src="https://christianliebel.com/wp-content/uploads/2016/02/Angular2-825x510.png">
   <mat-card-subtitle>Created by: {{quizInput.user.username}}</mat-card-subtitle>
@@ -13,7 +12,8 @@
   </mat-card-content>
   <mat-card-actions>
     <button mat-button routerLink="../display-quiz/{{quizInput._id}}">Start Quiz</button>
-    <button mat-button id="deleteQuiz" type="button" (click)="emitDeleteQuiz()">DELETE</button> 
+    <button mat-button id="updateQuiz" type="button" routerLink="../update-quiz/{{quizInput._id}}">Update</button>
+    <button mat-button id="deleteQuiz" type="button" (click)="emitDeleteQuiz()">DELETE</button>
   </mat-card-actions>
 </mat-card>
 </p>

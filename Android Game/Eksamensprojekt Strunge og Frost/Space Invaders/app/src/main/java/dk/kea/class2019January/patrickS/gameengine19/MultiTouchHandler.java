@@ -1,7 +1,5 @@
 package dk.kea.class2019January.patrickS.gameengine19;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapRegionDecoder;
 import android.view.MotionEvent;
 import android.view.View;
 
