@@ -14,12 +14,11 @@ import { Gender } from '../entities/user';
 })
 export class UpdateQuizComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private ngRedux: NgRedux<AppState>, private fb: FormBuilder) { }
+  constructor(private route: ActivatedRoute, private ngRedux: NgRedux<AppState>,
+    private fb: FormBuilder) { }
 
   public quizzes: Quiz[];
-  public questions: Question[];
   public quizForm: FormGroup;
-  public options: Option[];
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
@@ -29,13 +28,11 @@ export class UpdateQuizComponent implements OnInit {
 
       this.quizForm = this.fb.group({
         title: [quiz.title],
-        questions: this.fb.array(this.questions),
-        options: this.fb.array(this.options)
+        questions: this.fb.array(quiz.questions),
+        //options: this.fb.array()
 
       })
-
     })
-
   }
 
   updateQuiz() {
@@ -50,4 +47,6 @@ export class UpdateQuizComponent implements OnInit {
     birthDate: undefined
    };
   }
+
+
 }

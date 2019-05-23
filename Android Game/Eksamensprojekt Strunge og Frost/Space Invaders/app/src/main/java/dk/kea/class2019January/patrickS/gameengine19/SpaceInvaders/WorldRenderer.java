@@ -11,6 +11,7 @@ public class WorldRenderer {
     Bitmap pauseButton;
     Bitmap enemyImage;
     Enemies enemy;
+    Bitmap laser;
 
     // TODO: tilføj monstre + projectiler
 
@@ -31,6 +32,10 @@ public class WorldRenderer {
         enemyImage = Bitmap.createScaledBitmap(tempEnemy, Enemies.WIDTH, Enemies.HEIGHT, true);
 
 
+        Bitmap tempLaser = gameEngine.loadBitmap("SpaceInvaders/projectile.png");
+        laser = Bitmap.createScaledBitmap(tempLaser, Projectile.WIDTH, Projectile.HEIGHT, true);
+
+
     }
 
 
@@ -38,6 +43,7 @@ public class WorldRenderer {
 
         gameEngine.drawBitmap(spaceShipImg, (int)world.spaceship.x, (int)world.spaceship.y);
         gameEngine.drawBitmap(pauseButton, 400, 5);
+        gameEngine.drawBitmap(laser, (int)world.spaceship.x+37, (int)world.spaceship.y);
 
         for (int i = 0; i < world.enemies.size(); i++)
         {

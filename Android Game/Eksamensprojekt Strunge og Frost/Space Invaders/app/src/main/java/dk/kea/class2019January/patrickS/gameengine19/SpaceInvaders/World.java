@@ -16,6 +16,7 @@ public class World {
     List<Enemies> enemies = new ArrayList<>();
     Spaceship spaceship = new Spaceship();
     CollisionListener collisionListener;
+    Projectile projectile = new Projectile();
 
     public World(CollisionListener collisionListener) {
         this.collisionListener = collisionListener;
@@ -77,8 +78,12 @@ public class World {
 //            }
         }
 
+    }
+
+    public void shootSpaceship(float deltaTime) {
+
+
 
 
     }
-
 }
