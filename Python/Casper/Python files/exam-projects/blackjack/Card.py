@@ -1,10 +1,9 @@
 class Card:
     
-    # make a function that takes two cards from the deck class and returns it
     def __init__(self, suit, rank):
         self.suit = suit
         self.rank = rank
-
+    
+    # Method that takes a cards rank and suit and returns it
     def showCard(self):
         print("{} of {}".format(self.rank, self.suit))
-    
