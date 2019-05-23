@@ -32,6 +32,7 @@ import { NgReduxRouter, NgReduxRouterModule } from "@angular-redux/router";
 import { HttpClientModule } from '@angular/common/http';
 import { QuizPipe } from './quiz.pipe';
 import { AdminComponent } from './admin/admin.component';
+import { UpdateQuizComponent } from './update-quiz/update-quiz.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { AdminComponent } from './admin/admin.component';
     QuizComponent,
     DisplayQuizComponent,
     QuizPipe,
-    AdminComponent
+    AdminComponent,
+    UpdateQuizComponent
   ],
   imports: [
     BrowserModule,
