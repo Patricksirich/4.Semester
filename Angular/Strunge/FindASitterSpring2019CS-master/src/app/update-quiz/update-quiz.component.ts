@@ -69,11 +69,14 @@ export class UpdateQuizComponent implements OnInit {
     birthDate: undefined
    }
 
+
    console.log("1");
-   this.quizApi.createQuiz(quiz).subscribe(quizFromWs => {
+   console.log(this.route.snapshot.paramMap.get('id'))
+   quiz._id = this.route.snapshot.paramMap.get('id')
+   this.quizApi.updateQuiz(quiz).subscribe(quizFromWs => {
      console.log(quizFromWs);
      console.log('3');
-    this.quizActions.addNewQuiz(quiz);
+    this.quizActions.updateQuiz(quiz._id, quiz);
     this.router.navigate(['/portal/display-quizzes']);
    }, error => {
      // Write some code for handling errors
