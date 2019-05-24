@@ -47,7 +47,6 @@ export class QuizActions {
   createRating(rating: Rating, quizId: string) {
     this.ngRedux.dispatch({
       type: QuizActions.CREATE_RATING,
-      // payload: {rating: rating, quizId: quizId}
       payload: {rating, quizId}
     });
   }
@@ -67,7 +66,7 @@ export class QuizActions {
   }
 
   deleteQuiz(quizId: string) {
-    console.log('Running')
+    console.log('Deleting quiz')
       this.ngRedux.dispatch({
         type: QuizActions.DELETE_QUIZ,
         payload: quizId

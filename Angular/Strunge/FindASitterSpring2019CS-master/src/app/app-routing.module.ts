@@ -28,7 +28,7 @@ const routes: Routes = [
     {path: 'display-quiz/:id', component:DisplayQuizComponent},
     {path: 'create-quiz', component:CreateQuizComponent, canActivate:[AdminGuard]},
     {path: 'display-quizzes', component:DisplayQuizzesComponent},
-    {path: 'update-quiz/:id', component:UpdateQuizComponent}
+    {path: 'update-quiz/:id', component: UpdateQuizComponent},
   ]},
 
 

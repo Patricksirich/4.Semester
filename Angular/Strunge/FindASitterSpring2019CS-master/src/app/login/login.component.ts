@@ -54,16 +54,27 @@ export class LoginComponent implements OnInit {
       duration: 2000,
     });
 
+
     console.log(this.loginForm);
 
     if (this.loginForm.valid) {
       this.quizActions.setLoggedIn(true);
+
       this.authService.login().subscribe(result => {
         this.router.navigate(['portal/display-quizzes']);
       });
     }
     else {
       // Show error message or something else.
+
     }
+
   }
+
+  logout() : void {
+
+
+
+  }
+
 }

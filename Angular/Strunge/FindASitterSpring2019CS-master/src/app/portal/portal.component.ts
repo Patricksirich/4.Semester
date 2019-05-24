@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { QuizActions } from '../quiz.actions';
 import { AdminService } from '../service/admin.service';
 
+
 @Component({
   selector: 'app-portal',
   templateUrl: './portal.component.html',
@@ -10,15 +11,15 @@ import { AdminService } from '../service/admin.service';
 })
 export class PortalComponent implements OnInit {
 
-  constructor(private adminService: AdminService, private authService: AuthService,private quizActions: QuizActions) { }
-
+  constructor(private quizActions: QuizActions, private adminService: AdminService, private authService: AuthService) {}
   ngOnInit() {
   }
-  
-  logOut() : void{
-    this.quizActions.setLoggedIn(false);
+
+  logout(): void {
+    console.log("Logging out..")
     this.adminService.isLoggedIn = false;
+    this.quizActions.setLoggedIn(false);
     this.authService.isLoggedIn = false;
-    console.log("Is logging out!")
   }
+
 }
