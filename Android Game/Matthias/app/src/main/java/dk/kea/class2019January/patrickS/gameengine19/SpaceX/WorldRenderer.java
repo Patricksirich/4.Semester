@@ -3,9 +3,6 @@ package dk.kea.class2019January.patrickS.gameengine19.SpaceX;
 import android.graphics.Bitmap;
 
 
-import java.util.ArrayList;
-import java.util.Random;
-
 import dk.kea.class2019January.patrickS.gameengine19.GameEngine;
 
 public class WorldRenderer
@@ -22,9 +19,15 @@ public class WorldRenderer
     {
         this.gameEngine = gameEngine;
         this.world = world;
-        projectileImage = gameEngine.loadBitmap("spacex/projectile.png");
-        shipImage = gameEngine.loadBitmap("spacex/ship_icon.png");
-        enemyImage = gameEngine.loadBitmap("spacex/meteors/meteor10.png");
+        Bitmap projectileImg = gameEngine.loadBitmap("spacex/projectile.png");
+        projectileImage = Bitmap.createScaledBitmap(projectileImg, 15, 12, true);
+
+        Bitmap shipImg = gameEngine.loadBitmap("spacex/shipicon.png");
+        shipImage = Bitmap.createScaledBitmap(shipImg, 40, 20, true);
+
+        Bitmap enemyImg = gameEngine.loadBitmap("spacex/meteors/meteor10.png");
+        enemyImage = Bitmap.createScaledBitmap(enemyImg, 70, 20, true);
+
        /* Bitmap enemyImage2 = gameEngine.loadBitmap("spacex/meteors/meteor07.png");
         Bitmap enemyImage3 = gameEngine.loadBitmap("spacex/meteors/meteor05.png");
         enemyImage.add(enemyImage1);
@@ -35,16 +38,18 @@ public class WorldRenderer
 
     public void render()
     {
-        Random randInt = new Random();
-        gameEngine.drawBitmap(projectileImage, (int) world.projectile.x, (int) world.projectile.y);
+        //Random randInt = new Random();
         gameEngine.drawBitmap(shipImage, (int) world.ship.x, (int) world.ship.y);
+        gameEngine.drawBitmap(projectileImage, (int) world.projectile.x, (int) world.projectile.y);
+        gameEngine.drawBitmap(projectileImage, (int) world.projectile.x + (int) world.ship.WIDTH/2 + 4, (int) world.projectile.y);
         for (int i = 0; i < world.enemies.size(); i++)
         {
             enemy = world.enemies.get(i);
-            gameEngine.drawBitmap(enemyImage, (int) enemy.x, (int) enemy.y, 0,
-                                                                (int) (enemy.type * Enemy.HEIGHT), (int)Enemy.WIDTH, (int)Enemy.HEIGHT);
+            //     public void drawBitmap(Bitmap bitmap, int x, int y, int srcX, int srcY, int srcWidth, int srcHeight)
+            gameEngine.drawBitmap(enemyImage, (int) enemy.x, (int) enemy.y);
             //randInt.nextInt(enemyImage.size()-1))
         }
+
     }
 
 }
