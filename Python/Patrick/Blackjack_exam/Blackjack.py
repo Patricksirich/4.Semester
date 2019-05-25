@@ -9,9 +9,10 @@ deck = []
 dealer_cards = []
 player_cards = []
 
-
 cards = []
-value = 0
+
+player_value_global = 0
+dealer_value_global = 0
 aces = 0
 
 
@@ -29,25 +30,36 @@ def create_deck():
 def deal():
     single_card = deck.pop()
     return single_card
+
+def card_value(card_name):
+    card_rank = card_name.split(" of ")
+    return card_values[card_rank[0]]
     
+
 #Rules for dealing the cards
-def player_deal():
+def player_deal(player_value_local = player_value_global):
     draw = input("Hit Y/N: ")
 
     if draw == "Y" or draw == "y":
         player_cards.append(deal())
         cards.append(player_cards)
-        #value += card_values[player_cards.card_ranks]
+        for i in player_cards:
+            player_value_local += card_value(i)
+        print("local: ", player_value_local, "global: " , player_value_global)
         print(player_cards)
-        player_deal()
+        player_deal(player_value_local = player_value_global)
         sum(player_cards)
 
-    #if draw == "no":
-        #dealer_deal()
+    if draw == "no":
+        dealer_deal()
+    
+    return player_value_local
+
+def dealer_deal(dealer_value = dealer_value_global):
+    pass
 
 create_deck()
-player_deal()
-
+player_value_global = player_deal(player_value_local = player_value_global)
 
 if __name__ == "__main__":
     pass
