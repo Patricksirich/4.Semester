@@ -11,6 +11,8 @@ public class World {
     public static float MIN_Y = 36;
     public static float MAX_Y = 175;
     public boolean gameOver = false;
+    public boolean collision = false;
+    public int points;
     public int level = 1;
 
 
@@ -34,12 +36,12 @@ public class World {
 
         projectile.y = projectile.y - projectile.vy * deltaTime;
 
-        if (projectile.y < MIN_Y) {
+        if (projectile.y < MIN_Y || collision) {
 
-            Log.d("Enters method", "This works!");
             projectile.x = spaceship.x + 37;
             projectile.y = MAX_Y;
             projectile.y = projectile.y + projectile.vy + deltaTime;
+            collision = false;
         }
 
 
@@ -48,6 +50,7 @@ public class World {
         if (spaceship.x + Spaceship.WIDTH > MAX_X) spaceship.x = MAX_X - Spaceship.WIDTH;
 
         enemyMovement(deltaTime);
+        collideProjectileEnemy();
     }
 
     public void generateEnemies() {
@@ -69,7 +72,7 @@ public class World {
         for (int i = 0; i < enemies.size(); i++) {
 
             enemy = enemies.get(i);
-            enemy.x = enemy.x + enemy.vx * deltaTime * level/2.5f;
+            enemy.x = enemy.x + enemy.vx * deltaTime * 10;  // TODO: Juster efter lvl
 
             if (enemy.x < MIN_X + Enemies.WIDTH) {
                 advance = true;
@@ -82,20 +85,19 @@ public class World {
                 continue;
             }
 
-            // TODO: condition bliver instantly mødt?
-//            if (enemy.y < MAX_Y) {
-//                gameOver = true;
-//                Log.d("World", "Game over");
-//            }
-//
+            if (enemy.y > 300 - Spaceship.HEIGHT) {
+                gameOver = true;
+                Log.d("World", "Game over");
+            }
+
         }
 
         if(advance) {
-            for (int j = 0; j < enemies.size(); j++) {
+            for (int i = 0; i < enemies.size(); i++) {
 
-                enemy = enemies.get(j);
+                enemy = enemies.get(i);
                 enemy.vx = -enemy.vx;
-                enemy.y = enemy.y + 5;
+                enemy.y = enemy.y + 20;
 
             }
             advance = false;
@@ -103,10 +105,29 @@ public class World {
 
     }
 
-    public boolean collideProjectileEnemy(float x, float y, float width, float height,
+    public boolean collision(float x, float y, float width, float height,
                                           float x2, float y2, float width2, float height2)
     {
+        if(x < x2 + width2 && x + width > x2 && y < y2 + height2 && y + height > y2) return true;
 
+        return false;
+
+    }
+
+    public void collideProjectileEnemy() {
+
+        Enemies enemy = null;
+        for (int i = 0; i < enemies.size(); i++) {
+
+            enemy = enemies.get(i);
+
+            if (collision(projectile.x, projectile.y, Projectile.WIDTH, Projectile.HEIGHT, enemy.x, enemy.y, Enemies.WIDTH, Enemies.HEIGHT)) {
+
+                collision = true;
+                enemies.remove(i);
+                points = points + level * 10;
+            }
+        }
 
 
     }

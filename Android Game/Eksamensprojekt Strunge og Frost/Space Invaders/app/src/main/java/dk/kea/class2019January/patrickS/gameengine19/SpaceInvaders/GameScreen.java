@@ -2,6 +2,7 @@ package dk.kea.class2019January.patrickS.gameengine19.SpaceInvaders;
 
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
+import android.util.Log;
 
 import java.util.List;
 
@@ -97,18 +98,14 @@ public class GameScreen extends Screen
             state = State.GameOver;
         }
 
-        if (state == State.GameOver)
-        {
-            pause();
-            gameEngine.drawBitmap(gameOver, 200 - gameOver.getWidth() / 2, 400 - gameOver.getHeight() / 2);
-
-        }
-
         if (state == State.GameOver) {
+
+            gameEngine.drawBitmap(gameOver, 250 - gameOver.getWidth() / 2, 175 - gameOver.getHeight() / 2);
+
             List<TouchEvent> events = gameEngine.getTouchEvents();
             for (int i = 0; i < events.size(); i++) {
 
-                if(events.get(i).type == TouchEvent.TouchEventType.Up){
+                if(events.get(i).type == TouchEvent.TouchEventType.Down){
                     gameEngine.setScreen(new MainMenuScreen(gameEngine));
                     return;
                 }
