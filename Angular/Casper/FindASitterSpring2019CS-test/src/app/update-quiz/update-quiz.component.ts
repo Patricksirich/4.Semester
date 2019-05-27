@@ -70,10 +70,10 @@ export class UpdateQuizComponent implements OnInit {
    }
 
    console.log("1");
-   this.quizApi.createQuiz(quiz).subscribe(quizFromWs => {
+   this.quizApi.updateQuiz(quiz).subscribe(quizFromWs => {
      console.log(quizFromWs);
      console.log('3');
-    this.quizActions.addNewQuiz(quiz);
+    this.quizActions.updateQuiz(quiz);
     this.router.navigate(['/portal/display-quizzes']);
    }, error => {
      // Write some code for handling errors

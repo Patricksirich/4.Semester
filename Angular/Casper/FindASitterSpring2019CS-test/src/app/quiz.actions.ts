@@ -37,10 +37,10 @@ export class QuizActions {
   }
 
 
-  updateQuiz(quizzes: Quiz, quizId: string, quiz: Quiz): void{
+  updateQuiz(quiz: Quiz): void{
     this.ngRedux.dispatch({
       type: QuizActions.UPDATE_QUIZ,
-      payload: {quizzes, quizId, quiz}
+      payload: {quiz}
     });
   }
 

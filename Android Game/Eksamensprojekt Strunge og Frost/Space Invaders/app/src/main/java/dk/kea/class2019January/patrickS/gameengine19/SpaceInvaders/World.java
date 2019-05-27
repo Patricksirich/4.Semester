@@ -22,7 +22,6 @@ public class World {
         this.collisionListener = collisionListener;
         generateEnemies();
 
-
     }
 
     public void update(float deltaTime, boolean isTouch, int touchX) {
@@ -30,6 +29,16 @@ public class World {
         // used for moving the spaceship with touch
         if (isTouch) {
             spaceship.x = touchX - Spaceship.WIDTH / 2;
+        }
+
+        projectile.y = projectile.y + projectile.vy + deltaTime;
+
+        if (projectile.y > MIN_Y) {
+
+            Log.d("Enters method", "This works!");
+            projectile.y = spaceship.y;
+            projectile.x = spaceship.x;
+            projectile.y = projectile.y + projectile.vy + deltaTime;
         }
 
         // statements to make sure the spaceship stays in the screen
@@ -54,6 +63,7 @@ public class World {
     public void enemyMovement(float deltaTime) {
 
         Enemies enemy;
+        boolean advance = false;
 
         for (int i = 0; i < enemies.size(); i++) {
 
@@ -61,29 +71,30 @@ public class World {
             enemy.x = enemy.x + enemy.vx * deltaTime;
 
             if (enemy.x < MIN_X + Enemies.WIDTH) {
-                enemy.y = enemy.y + deltaTime * 1000;
-                enemy.vx = -enemy.vx;
+                advance = true;
                 enemy.x = MIN_X + Enemies.WIDTH;
             }
             if (enemy.x > MAX_X - Enemies.WIDTH) {
-                enemy.y = enemy.y + deltaTime * 1000;
-                enemy.vx = -enemy.vx;
+                advance = true;
                 enemy.x = MAX_X - Enemies.WIDTH;
             }
 
-            // TODO: condition bliver instantly mødt, HVORFOR!?
+            if(advance) {
+                enemy.vx = -enemy.vx;
+                advance = false;
+                //TODO : advance y
+            }
+
+
+
+            // TODO: condition bliver instantly mødt?
 //            if (enemy.y < MAX_Y) {
 //                gameOver = true;
 //                Log.d("World", "Game over");
 //            }
+//
+
         }
-
-    }
-
-    public void shootSpaceship(float deltaTime) {
-
-
-
 
     }
 }

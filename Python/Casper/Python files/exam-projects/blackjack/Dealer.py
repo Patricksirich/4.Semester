@@ -1,4 +1,15 @@
-class Dealer:
+from Deck import *
+from random import shuffle
 
-    pass
+class Dealer: 
+    
+    def __init__(self):
+        self.dealer_hand = []
+        self.player_hand = []
+
+    
+
+    
+
+    
 
