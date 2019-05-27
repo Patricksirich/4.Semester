@@ -1,11 +1,14 @@
 package dk.kea.class2019January.patrickS.gameengine19.SpaceInvaders;
 
 import android.util.Log;
+import android.util.TimeUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
-public class World {
+public class World extends TimerTask {
     public static float MIN_X = -20;
     public static float MAX_X = 479;
     public static float MIN_Y = 36;
@@ -14,6 +17,7 @@ public class World {
     public boolean collision = false;
     public int points;
     public int level = 1;
+    public float startTime = 0;
 
 
     List<Enemies> enemies = new ArrayList<>();
@@ -29,29 +33,21 @@ public class World {
 
     public void update(float deltaTime, boolean isTouch, int touchX) {
 
+        enemyMovement(deltaTime);
+        collideProjectileEnemy();
+        shootProjectile(deltaTime);
+
         // used for moving the spaceship with touch
         if (isTouch) {
             spaceship.x = touchX - Spaceship.WIDTH / 2;
         }
 
-        projectile.y = projectile.y - projectile.vy * deltaTime;
-
-        if (projectile.y < MIN_Y || collision) {
-
-            projectile.x = spaceship.x + 37;
-            projectile.y = MAX_Y;
-            projectile.y = projectile.y + projectile.vy + deltaTime;
-            collision = false;
-        }
-
-
-        // statements to make sure the spaceship stays in the screen
+            // statements to make sure the spaceship stays in the screen
         if (spaceship.x < MIN_X) spaceship.x = MIN_X;
         if (spaceship.x + Spaceship.WIDTH > MAX_X) spaceship.x = MAX_X - Spaceship.WIDTH;
 
-        enemyMovement(deltaTime);
-        collideProjectileEnemy();
-    }
+
+        }
 
     public void generateEnemies() {
         enemies.clear();
@@ -72,7 +68,7 @@ public class World {
         for (int i = 0; i < enemies.size(); i++) {
 
             enemy = enemies.get(i);
-            enemy.x = enemy.x + enemy.vx * deltaTime * 10;  // TODO: Juster efter lvl
+            enemy.x = enemy.x + enemy.vx * deltaTime * (level*0.25f);
 
             if (enemy.x < MIN_X + Enemies.WIDTH) {
                 advance = true;
@@ -97,7 +93,7 @@ public class World {
 
                 enemy = enemies.get(i);
                 enemy.vx = -enemy.vx;
-                enemy.y = enemy.y + 20;
+                enemy.y = enemy.y + 5;
 
             }
             advance = false;
@@ -112,6 +108,21 @@ public class World {
 
         return false;
 
+    }
+
+    public void shootProjectile(float deltaTime) {
+
+        projectile.y = projectile.y - projectile.vy * deltaTime;
+
+        startTime = startTime + deltaTime;
+        if (projectile.y < MIN_Y || collision) {
+
+            projectile.x = spaceship.x + 37;
+            projectile.y = MAX_Y;
+            projectile.y = projectile.y + projectile.vy + deltaTime;
+            collision = false;
+            startTime = 0;
+        }
     }
 
     public void collideProjectileEnemy() {
@@ -129,6 +140,11 @@ public class World {
             }
         }
 
+
+    }
+
+    @Override
+    public void run() {
 
     }
 }

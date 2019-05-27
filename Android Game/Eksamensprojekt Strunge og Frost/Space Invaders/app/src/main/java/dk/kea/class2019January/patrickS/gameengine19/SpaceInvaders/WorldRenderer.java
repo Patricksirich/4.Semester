@@ -1,6 +1,8 @@
 package dk.kea.class2019January.patrickS.gameengine19.SpaceInvaders;
 
 import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.Typeface;
 
 import dk.kea.class2019January.patrickS.gameengine19.GameEngine;
 
@@ -12,6 +14,7 @@ public class WorldRenderer {
     Bitmap enemyImage;
     Enemies enemy;
     Bitmap laser;
+    Typeface font;
 
     // TODO: tilføj monstre + projectiler
 
@@ -35,6 +38,8 @@ public class WorldRenderer {
         Bitmap tempLaser = gameEngine.loadBitmap("SpaceInvaders/projectile.png");
         laser = Bitmap.createScaledBitmap(tempLaser, Projectile.WIDTH, Projectile.HEIGHT, true);
 
+        font = gameEngine.loadFont("SpaceInvaders/font.ttf");
+
 
     }
 
@@ -44,6 +49,7 @@ public class WorldRenderer {
         gameEngine.drawBitmap(spaceShipImg, (int)world.spaceship.x, (int)world.spaceship.y);
         gameEngine.drawBitmap(pauseButton, 400, 5);
         gameEngine.drawBitmap(laser, (int)world.projectile.x, (int)world.projectile.y);
+        gameEngine.drawText(font, "Score: " + world.points + " Level: " + world.level, 5, 20, Color.YELLOW, 15);
 
         for (int i = 0; i < world.enemies.size(); i++)
         {
