@@ -43,7 +43,7 @@ public class WorldRenderer {
 
         gameEngine.drawBitmap(spaceShipImg, (int)world.spaceship.x, (int)world.spaceship.y);
         gameEngine.drawBitmap(pauseButton, 400, 5);
-        gameEngine.drawBitmap(laser, (int)world.spaceship.x+37, (int)world.spaceship.y);
+        gameEngine.drawBitmap(laser, (int)world.projectile.x, (int)world.projectile.y);
 
         for (int i = 0; i < world.enemies.size(); i++)
         {

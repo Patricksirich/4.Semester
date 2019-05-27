@@ -68,11 +68,12 @@ public class GameScreen extends Screen
     public void update(float deltaTime)
     {
         gameEngine.drawBitmap(background, 0, 0);
-        renderer.render();
 
         if (state == State.Running){
             world.update(deltaTime, gameEngine.isTouchDown(0), gameEngine.getTouchX(0));
         }
+
+        renderer.render();
 
         if (state == State.Paused) {
             pause();

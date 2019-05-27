@@ -9,8 +9,9 @@ public class World {
     public static float MIN_X = -20;
     public static float MAX_X = 479;
     public static float MIN_Y = 36;
-    public static float MAX_Y = 600;
+    public static float MAX_Y = 175;
     public boolean gameOver = false;
+    public int level = 1;
 
 
     List<Enemies> enemies = new ArrayList<>();
@@ -31,22 +32,22 @@ public class World {
             spaceship.x = touchX - Spaceship.WIDTH / 2;
         }
 
-        projectile.y = projectile.y + projectile.vy + deltaTime;
+        projectile.y = projectile.y - projectile.vy * deltaTime;
 
-        if (projectile.y > MIN_Y) {
+        if (projectile.y < MIN_Y) {
 
             Log.d("Enters method", "This works!");
-            projectile.y = spaceship.y;
-            projectile.x = spaceship.x;
+            projectile.x = spaceship.x + 37;
+            projectile.y = MAX_Y;
             projectile.y = projectile.y + projectile.vy + deltaTime;
         }
+
 
         // statements to make sure the spaceship stays in the screen
         if (spaceship.x < MIN_X) spaceship.x = MIN_X;
         if (spaceship.x + Spaceship.WIDTH > MAX_X) spaceship.x = MAX_X - Spaceship.WIDTH;
 
         enemyMovement(deltaTime);
-
     }
 
     public void generateEnemies() {
@@ -68,24 +69,18 @@ public class World {
         for (int i = 0; i < enemies.size(); i++) {
 
             enemy = enemies.get(i);
-            enemy.x = enemy.x + enemy.vx * deltaTime;
+            enemy.x = enemy.x + enemy.vx * deltaTime * level/2.5f;
 
             if (enemy.x < MIN_X + Enemies.WIDTH) {
                 advance = true;
                 enemy.x = MIN_X + Enemies.WIDTH;
+                continue;
             }
             if (enemy.x > MAX_X - Enemies.WIDTH) {
                 advance = true;
                 enemy.x = MAX_X - Enemies.WIDTH;
+                continue;
             }
-
-            if(advance) {
-                enemy.vx = -enemy.vx;
-                advance = false;
-                //TODO : advance y
-            }
-
-
 
             // TODO: condition bliver instantly mødt?
 //            if (enemy.y < MAX_Y) {
@@ -93,8 +88,26 @@ public class World {
 //                Log.d("World", "Game over");
 //            }
 //
-
         }
+
+        if(advance) {
+            for (int j = 0; j < enemies.size(); j++) {
+
+                enemy = enemies.get(j);
+                enemy.vx = -enemy.vx;
+                enemy.y = enemy.y + 5;
+
+            }
+            advance = false;
+        }
+
+    }
+
+    public boolean collideProjectileEnemy(float x, float y, float width, float height,
+                                          float x2, float y2, float width2, float height2)
+    {
+
+
 
     }
 }
