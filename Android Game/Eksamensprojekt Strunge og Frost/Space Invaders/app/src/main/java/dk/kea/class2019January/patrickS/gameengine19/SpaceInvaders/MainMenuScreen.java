@@ -37,7 +37,7 @@ public class MainMenuScreen extends Screen{
             return;
         }
         gameEngine.drawBitmap(mainMenu, 0, 0);
-        gameEngine.drawText(font, "SPACE INVADERS", 70, 50, Color.BLUE, 30);
+        gameEngine.drawText(font, "SPACE INVADERS", 70, 50, Color.YELLOW, 30);
         passedTime = passedTime + deltaTime;
         if ((passedTime - (int)passedTime) > 0.5f) {
             gameEngine.drawBitmap(startGame, 240 - startGame.getWidth()/2, 160);

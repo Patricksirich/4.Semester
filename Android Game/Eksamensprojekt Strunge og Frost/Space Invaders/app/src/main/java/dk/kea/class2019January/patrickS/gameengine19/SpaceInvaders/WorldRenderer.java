@@ -14,6 +14,7 @@ public class WorldRenderer {
     Bitmap enemyImage;
     Enemies enemy;
     Bitmap laser;
+    Bitmap goldCoin;
     Typeface font;
 
     // TODO: tilføj monstre + projectiler
@@ -38,6 +39,9 @@ public class WorldRenderer {
         Bitmap tempLaser = gameEngine.loadBitmap("SpaceInvaders/projectile.png");
         laser = Bitmap.createScaledBitmap(tempLaser, Projectile.WIDTH, Projectile.HEIGHT, true);
 
+        Bitmap tempCoin = gameEngine.loadBitmap("SpaceInvaders/goldcoin.png");
+        goldCoin = Bitmap.createScaledBitmap(tempCoin, GoldCoin.WIDTH, GoldCoin.HEIGHT, true);
+
         font = gameEngine.loadFont("SpaceInvaders/font.ttf");
 
 
@@ -50,6 +54,7 @@ public class WorldRenderer {
         gameEngine.drawBitmap(pauseButton, 400, 5);
         gameEngine.drawBitmap(laser, (int)world.projectile.x, (int)world.projectile.y);
         gameEngine.drawText(font, "Score: " + world.points + " Level: " + world.level, 5, 20, Color.YELLOW, 15);
+        gameEngine.drawBitmap(goldCoin, (int)world.goldCoin.x, (int)world.goldCoin.y);
 
         for (int i = 0; i < world.enemies.size(); i++)
         {

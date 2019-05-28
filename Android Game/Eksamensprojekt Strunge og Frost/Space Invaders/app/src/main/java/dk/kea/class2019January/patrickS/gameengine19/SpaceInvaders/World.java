@@ -1,9 +1,12 @@
 package dk.kea.class2019January.patrickS.gameengine19.SpaceInvaders;
 
+
 import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import dk.kea.class2019January.patrickS.gameengine19.GameEngine;
 
 public class World {
     public static float MIN_X = -20;
@@ -16,11 +19,14 @@ public class World {
     public int level = 1;
     public float startTime = 0;
     public boolean advance = false;
+    public double rollForDrop;
+    public boolean isDrop = false;
 
     List<Enemies> enemies = new ArrayList<>();
     Spaceship spaceship = new Spaceship();
     CollisionListener collisionListener;
     Projectile projectile = new Projectile();
+    GoldCoin goldCoin = new GoldCoin(0,0);
 
     public World(CollisionListener collisionListener) {
         this.collisionListener = collisionListener;
@@ -31,7 +37,7 @@ public class World {
     public void update(float deltaTime, boolean isTouch, int touchX) {
 
         enemyMovement(deltaTime);
-        collideProjectileEnemy();
+        collideProjectileEnemy(deltaTime);
         shootProjectile(deltaTime);
 
         // used for moving the spaceship with touch
@@ -84,7 +90,6 @@ public class World {
 
             if (enemy.y > 300 - Spaceship.HEIGHT) {
                 gameOver = true;
-                Log.d("World", "Game over");
             }
 
         }
@@ -125,9 +130,16 @@ public class World {
         }
     }
 
-    public void collideProjectileEnemy() {
+    public void collideProjectileEnemy(float deltaTime) {
 
-        Enemies enemy = null;
+
+        Enemies enemy;
+        // TODO: sæt droprate op
+        int max = 2;
+        int min = 1;
+        int range = max - min;
+        rollForDrop = (int)(Math.random()*range) + 1;
+
         for (int i = 0; i < enemies.size(); i++) {
 
             enemy = enemies.get(i);
@@ -137,9 +149,28 @@ public class World {
                 collision = true;
                 enemies.remove(i);
                 points = points + level * 10;
+                coinDrop(rollForDrop, enemy.x, enemy.y, deltaTime);
+                System.out.println(rollForDrop);
             }
+        }
+
+    }
+
+    // Todo: fix y-drop
+    public void coinDrop(double rollForDrop, float enemyX, float enemyY, float deltaTime) {
+
+        goldCoin.y = goldCoin.y + goldCoin.vy * deltaTime;
+
+        if(rollForDrop == 1) {
+
+            goldCoin.x = enemyX;
+            goldCoin.y = enemyY + goldCoin.vy * deltaTime;
+
+            System.out.println("coinDrop condition entered");
+
         }
 
 
     }
+
 }
