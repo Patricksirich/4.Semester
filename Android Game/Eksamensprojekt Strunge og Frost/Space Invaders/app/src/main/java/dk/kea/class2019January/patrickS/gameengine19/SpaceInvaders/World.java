@@ -20,6 +20,7 @@ public class World extends TimerTask {
     public float startTime = 0;
 
 
+
     List<Enemies> enemies = new ArrayList<>();
     Spaceship spaceship = new Spaceship();
     CollisionListener collisionListener;
@@ -45,6 +46,12 @@ public class World extends TimerTask {
             // statements to make sure the spaceship stays in the screen
         if (spaceship.x < MIN_X) spaceship.x = MIN_X;
         if (spaceship.x + Spaceship.WIDTH > MAX_X) spaceship.x = MAX_X - Spaceship.WIDTH;
+
+        if (enemies.size() == 0)
+        {
+            level++;
+            generateEnemies();
+        }
 
 
         }
