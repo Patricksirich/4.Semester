@@ -17,8 +17,11 @@ player_cards = []
 player_value_global = 0
 dealer_value_global = 0
 
+chips = 0
+
 #Creates the deck with 52 cards
 def create_deck():
+    deck.clear()
     for suits in card_suits:
         for ranks in card_ranks:
             deck.append(ranks + " of " + suits)
@@ -40,11 +43,12 @@ def card_value(card_name):
 #Checks whether the picked card is an Ace and either add 1 or the predefined value
 def check_for_ace(card_name, current_value):
     print(card_name.split(" of ")[0])
-    print("Current value for ACE: ", current_value)
+    
     if card_name.split(" of ")[0] == "A" and current_value + 11 > 21:
         return_value = 1
     else:
         return_value = card_value(card_name)
+    print("You have drawn a: ", card_name, " With the value: ", return_value)
     return return_value
 
 
@@ -58,7 +62,7 @@ def player_deal(player_value_local = player_value_global):
         draw = input("Hit Y/N: ")
 
         #If player chooses yes
-        if draw == "Y" or draw == "y":
+        if str.lower(draw) == "y":
             player_cards.append(deal())
             player_value_local = 0
             #Iterate through the player_cards list so that we can check the sum and add the new card
@@ -69,13 +73,13 @@ def player_deal(player_value_local = player_value_global):
             print(player_cards)
             current_value = player_value_local
 
-        #Check is sum is over 21
-        if player_value_local > 21:
-            print("Player has busted")
-            playing = False
+             #Check is sum is over 21
+            if player_value_local > 21:
+                print("Player has busted")
+                playing = False
 
         #If player wish to stand, break the loop    
-        if draw == "N" or draw == "n":
+        if str.lower(draw) == "n":
             playing = False
 
     #Return the local variable in the function so that we can change the global variable
@@ -103,6 +107,7 @@ def dealer_deal(dealer_value_local = dealer_value_global):
     #Return the local variable in the function so that we can change the global variable
     return dealer_value_local
 
+
 #Function to start the game
 def start_game():
     #Ensures that we can touch the global variables for our function calls
@@ -115,16 +120,28 @@ def start_game():
     dealer_cards.append(deal())
     player_cards.append(deal())
 
+    
     #Iterate through dealer_cards and find the value so that we can check the sum of the cards
-    #TODO: check for aces!
     for i in dealer_cards:
         dealer_value_global += card_value(i)
     print(dealer_cards[0] + "    [HIDDEN CARD]")
 
-    #Iterate through player_cards and find the value so that we can check the sum of the cards
-    #TODO: check for aces!
+    #Iterate through player_cards and find the value so that we can check the sum of the cards   
     for i in player_cards:
         player_value_global += card_value(i)
+
+    if dealer_value_global == 21 and player_value_global == 21:
+        print("It's a tie, you get your money back!")
+        return "Tie"
+
+    elif player_value_global == 21:
+        print("Player got a blackjack!")
+        return "Player blackjack"
+
+    elif dealer_value_global == 21:
+        print("Dealer got a blackjack!")
+        return "Dealer"
+
     print(player_cards[0] + "    " + player_cards[1])
     print("You currently have: ", player_value_global)
 
@@ -132,13 +149,77 @@ def start_game():
     player_value_global = player_deal(player_value_local = player_value_global)
     print("player value (global) 1: ", player_value_global)
 
+    if player_value_global > 21:
+        return "Dealer"
+
     #When the player is done playing, call dealer_deal() function, now the dealer plays
     dealer_value_global = dealer_deal(dealer_value_local = dealer_value_global)
 
-#Call function create_deck() to create the deck as the first thing
-create_deck()
-#Call the start_game() function to start the game
-start_game()
+    if dealer_value_global > player_value_global and dealer_value_global < 22:
+        return "Dealer"
+    elif player_value_global > dealer_value_global and player_value_global < 22:
+        return "Player"
+    elif dealer_value_global == player_value_global:
+        return "Tie"
+    elif dealer_value_global > 21:
+        return "Player"
+    else:
+        print("Error: dealer: ", dealer_value_global, " Player: ", player_value_global)
+
+
+#Function that determines the rules of the game
+def game_rules():
+    global chips
+
+    game_round = 0
+    
+
+    if game_round == 0:
+        chips = int(input("How much would like to start with: "))
+        initial_chips = chips
+
+    game_round += 1
+
+    while game_round > 0:
+        print("Your total amount of chips: ", chips)
+        
+
+        chips_betted = 0
+        chips_betted = int(input("How much would you like to bet:\n"))
+        print("You have betted: ", chips_betted, "\n Your total amount of chips is: ", chips)
+        
+        create_deck()
+        result = start_game()
+        
+        if result == "Player blackjack":
+            print("Blackjack!")
+            chips += (chips_betted * 1.5)
+        if result == "Player":
+            print("You won!")
+            chips += chips_betted
+        if result == "Dealer":
+            print("Dealer has won")
+            chips -= chips_betted
+        if result == "Tie":
+            print("You have tied with the dealer!")
+            chips = chips
+        if chips == 0:
+            retry = input("You ran out of money, want to try again? Y/N\n")
+            if str.lower(retry) == "y":
+                print("Excellent choice!")
+                game_round = 0
+            else:
+                print("Thank you for playing, have a nice day!")
+                exit()
+        continue_playing = input("Would you like to continue playing? Y/N\n")
+        if str.lower(continue_playing) == "y":
+            continue
+        if str.lower(continue_playing) == "n":
+            print("Thank you for playing! \nToday you have walked out with: ", chips - initial_chips, " chips!")
+            exit()  
+
+#Call the game_rules() function to start the game
+game_rules()
 
 if __name__ == "__main__":
     pass
