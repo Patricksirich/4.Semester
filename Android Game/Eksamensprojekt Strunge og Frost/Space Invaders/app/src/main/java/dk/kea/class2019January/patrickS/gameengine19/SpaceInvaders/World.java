@@ -1,14 +1,11 @@
 package dk.kea.class2019January.patrickS.gameengine19.SpaceInvaders;
 
 import android.util.Log;
-import android.util.TimeUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 
-public class World extends TimerTask {
+public class World {
     public static float MIN_X = -20;
     public static float MAX_X = 479;
     public static float MIN_Y = 36;
@@ -18,8 +15,7 @@ public class World extends TimerTask {
     public int points;
     public int level = 1;
     public float startTime = 0;
-
-
+    public boolean advance = false;
 
     List<Enemies> enemies = new ArrayList<>();
     Spaceship spaceship = new Spaceship();
@@ -43,18 +39,17 @@ public class World extends TimerTask {
             spaceship.x = touchX - Spaceship.WIDTH / 2;
         }
 
-            // statements to make sure the spaceship stays in the screen
+        // statements to make sure the spaceship stays in the screen
         if (spaceship.x < MIN_X) spaceship.x = MIN_X;
         if (spaceship.x + Spaceship.WIDTH > MAX_X) spaceship.x = MAX_X - Spaceship.WIDTH;
 
-        if (enemies.size() == 0)
-        {
+        if (enemies.size() == 0) {
             level++;
             generateEnemies();
         }
 
 
-        }
+    }
 
     public void generateEnemies() {
         enemies.clear();
@@ -70,12 +65,11 @@ public class World extends TimerTask {
     public void enemyMovement(float deltaTime) {
 
         Enemies enemy;
-        boolean advance = false;
 
         for (int i = 0; i < enemies.size(); i++) {
 
             enemy = enemies.get(i);
-            enemy.x = enemy.x + enemy.vx * deltaTime * (level*0.25f);
+            enemy.x = enemy.x + enemy.vx * deltaTime * (level * 0.10f);
 
             if (enemy.x < MIN_X + Enemies.WIDTH) {
                 advance = true;
@@ -95,7 +89,7 @@ public class World extends TimerTask {
 
         }
 
-        if(advance) {
+        if (advance) {
             for (int i = 0; i < enemies.size(); i++) {
 
                 enemy = enemies.get(i);
@@ -109,12 +103,11 @@ public class World extends TimerTask {
     }
 
     public boolean collision(float x, float y, float width, float height,
-                                          float x2, float y2, float width2, float height2)
-    {
-        if(x < x2 + width2 && x + width > x2 && y < y2 + height2 && y + height > y2) return true;
+                             float x2, float y2, float width2, float height2) {
+
+        if (x < x2 + width2 && x + width > x2 && y < y2 + height2 && y + height > y2) return true;
 
         return false;
-
     }
 
     public void shootProjectile(float deltaTime) {
@@ -147,11 +140,6 @@ public class World extends TimerTask {
             }
         }
 
-
-    }
-
-    @Override
-    public void run() {
 
     }
 }
