@@ -1,9 +1,10 @@
 from Deck import Deck
 
 class Dealer:
-    hand = []
-    isUser = False
-    isReveal = False
+    def __init__(self, hand, isUser, isreveal):
+        self.hand = hand
+        self.isUser = isUser
+        self.isReveal = isreveal
 
     def dealCards(self):
         return Deck.deck.pop()
