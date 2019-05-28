@@ -87,7 +87,6 @@ def dealer_deal(dealer_value_local):
     current_value = dealer_value_local
     print(dealer_value_local)
     #Forever loop so that we don't have to take any actions
-    #Rules of blackjack states that dealer must hit when sum <= 16
     while True:
         #check if dealer goes above 16, if true then break the loop
         if dealer_value_local > 16:
