@@ -6,7 +6,6 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-import dk.kea.class2019January.patrickS.gameengine19.GameEngine;
 
 public class World {
     public static float MIN_X = -20;
@@ -20,13 +19,12 @@ public class World {
     public float startTime = 0;
     public boolean advance = false;
     public double rollForDrop;
-    public boolean isDrop = false;
 
     List<Enemies> enemies = new ArrayList<>();
     Spaceship spaceship = new Spaceship();
     CollisionListener collisionListener;
     Projectile projectile = new Projectile();
-    GoldCoin goldCoin = new GoldCoin(0,0);
+    GoldCoin goldCoin = new GoldCoin(800, 800);
 
     public World(CollisionListener collisionListener) {
         this.collisionListener = collisionListener;
@@ -39,6 +37,8 @@ public class World {
         enemyMovement(deltaTime);
         collideProjectileEnemy(deltaTime);
         shootProjectile(deltaTime);
+        coinDrop(0, 800, 800, deltaTime);
+        collideCoinSpaceship();
 
         // used for moving the spaceship with touch
         if (isTouch) {
@@ -134,8 +134,7 @@ public class World {
 
 
         Enemies enemy;
-        // TODO: sæt droprate op
-        int max = 2;
+        int max = 10;
         int min = 1;
         int range = max - min;
         rollForDrop = (int)(Math.random()*range) + 1;
@@ -156,21 +155,29 @@ public class World {
 
     }
 
-    // Todo: fix y-drop
     public void coinDrop(double rollForDrop, float enemyX, float enemyY, float deltaTime) {
 
         goldCoin.y = goldCoin.y + goldCoin.vy * deltaTime;
 
-        if(rollForDrop == 1) {
-
+        if(rollForDrop == 5) {
             goldCoin.x = enemyX;
-            goldCoin.y = enemyY + goldCoin.vy * deltaTime;
+            goldCoin.y = enemyY;
 
             System.out.println("coinDrop condition entered");
 
         }
 
 
+    }
+
+    public void collideCoinSpaceship() {
+
+        if (collision(spaceship.x, spaceship.y, Spaceship.WIDTH, Spaceship.HEIGHT, goldCoin.x, goldCoin.y, GoldCoin.WIDTH, GoldCoin.HEIGHT)) {
+
+            points = points + 100;
+            goldCoin.x = 800;
+            goldCoin.y = 800;
+        }
     }
 
 }
