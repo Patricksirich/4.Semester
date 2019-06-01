@@ -9,7 +9,7 @@ class Player:
     def checkSum(self):
         sum = 0
         for i in self.hand:
-            if i.number == 'J' or 'Q' or 'K':
+            if i.number == 'J' or i.number == 'Q' or i.number == 'K':
                 sum += 10
 
             elif i.number == 'A':
@@ -30,7 +30,7 @@ class Player:
                 print("You cannot bet more than your current balance! \n Make a new bet: ")
 
     def checkValue(self):
-        sum = self.checkSum
+        sum = self.checkSum()
         if sum == 21:
             print(f"Player has ({sum}) Dealers turn")
             self.playerTurn = False
@@ -43,11 +43,12 @@ class Player:
             self.playerTurn = True
 
     def printCards(self):
+        print("Player hand:")
         for i in self.hand:
             print(f"{i.number} of {i.suit}")
         print("Total: ", self.checkSum())
     
-    def userTurn(self, dealer):
+    def userTurn(self, dealer, deck):
         sum = self.checkSum()
         self.checkValue()
         hitOrStand = -1
@@ -56,27 +57,32 @@ class Player:
         if hitOrStand == "stand" or not self.isUser and sum > 16:
             print("Dealers turn")
             self.playerTurn = False
-        elif hitOrStand == "hit" or not self.isUser and sum < 15:
-            self.hand.append(dealer.dealCard())
+        elif hitOrStand == "hit" or not self.isUser and sum <= 16:
+            self.hand.append(dealer.dealCards(deck))
             self.printCards()
             self.checkValue()
 
     def gameType(self, dealer):
-        playerOrDealer = input("Play as dealer of player? (type \"p\" for player or \"d\" for dealer")
+        playerOrDealer = input("Play as dealer of player? (type \"p\" for player or \"d\" for dealer: ")
         
         if playerOrDealer == "p":
             dealer.isUser = False
+            self.isUser = True
             print("Player is chosen")
             self.playerTurn = False
 
         elif playerOrDealer == "d":
             self.isUser = False
+            dealer.isUser = True
             print("Dealer is chosen, game will run automaticly")
             self.playerTurn = False
             dealer.isReveal = True
 
         else:
             print(f"Input: {playerOrDealer} is not valid, please type \"p\" or \"d\" to continue")
+
+    def printBalance(self):
+        return print(f"Bet: {self.bet} \n Balance: {self.balance}")
 
 
 
