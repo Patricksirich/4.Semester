@@ -70,10 +70,10 @@ class BlackjackTestCases(unittest.TestCase):
         return_value = Blackjack.dealer_deal(dealer_global_value)
         self.assertEqual(return_value, dealer_global_value, "return_value should be 17")
 
-    #Unit 0.5.2 test if dealer draws after not having a value of 15
+    #Unit 0.5.2 test if dealer draws after not having a value of 16
     def test_check_if_15_draws(self):
         Blackjack.create_deck()
-        dealer_global_value = 15
+        dealer_global_value = 6
         return_value = Blackjack.dealer_deal(dealer_global_value)
         self.assertGreater(return_value, dealer_global_value, "return_value should be greater than than 15")
 

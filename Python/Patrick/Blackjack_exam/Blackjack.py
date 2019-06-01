@@ -1,6 +1,6 @@
 from random import shuffle
 
-#Our sets for the cards
+#Our lists for the cards
 card_ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']       
 card_suits = ['Hearts', 'Clubs', 'Diamonds', 'Spades']
 #A dictionary translating our cards into the correct values
@@ -23,12 +23,9 @@ def create_deck():
     shuffle(deck)
     return deck
 
-
 #Removes last card from the deck[] and return the value
 def deal():
-    single_card = deck.pop()
-    return single_card
-
+    return deck.pop()
 
 #Checks the card's value so that we can do a sum of the cards in the hand
 def card_value(card_name):
@@ -37,7 +34,7 @@ def card_value(card_name):
 
 #Checks whether there is an Ace in the hand and adjusts value
 def check_for_ace(card_name, current_value):    
-    if card_name.split(" of ")[0] == "A" and current_value + 11 > 21:
+    if card_value(card_name) == "A" and current_value + 11 > 21:
         return_value = 1
     else:
         return_value = card_value(card_name)
@@ -155,9 +152,6 @@ def start_current_game():
         return "Tie"
     elif dealer_value_global > 21:
         return "Player"
-    else:
-        print("Error: dealer: ", dealer_value_global, " Player: ", player_value_global)
-
 
 #Function that determines the rules of the game
 def game_rules():
