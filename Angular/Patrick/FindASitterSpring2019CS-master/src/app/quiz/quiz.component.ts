@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { Quiz } from '../entities/quiz';
 import { EventEmitter } from '@angular/core';
+import { NgRedux } from '@angular-redux/store';
+import { AppState } from '../store';
 
 @Component({
   selector: 'app-quiz',
@@ -14,7 +16,7 @@ export class QuizComponent implements OnInit {
 @Output() deleteClicked: EventEmitter<any> = new EventEmitter<any>();
 
 
-  constructor() { }
+  constructor(private ngRedux: NgRedux<AppState>) { }
 
   ngOnInit() {
   }

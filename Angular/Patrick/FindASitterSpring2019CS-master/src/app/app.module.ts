@@ -4,7 +4,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
-import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule, NgControl } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatGridListModule } from "@angular/material/grid-list";
 import { MatMenuModule } from "@angular/material/menu";
@@ -31,6 +31,8 @@ import { DevToolsExtension, NgRedux, NgReduxModule } from "@angular-redux/store"
 import { NgReduxRouter, NgReduxRouterModule } from "@angular-redux/router";
 import { HttpClientModule } from '@angular/common/http';
 import { QuizPipe } from './quiz.pipe';
+import { AdminComponent } from './admin/admin.component';
+import { UpdateQuizComponent } from './update-quiz/update-quiz.component';
 
 @NgModule({
   declarations: [
@@ -46,14 +48,15 @@ import { QuizPipe } from './quiz.pipe';
     CreateQuizComponent,
     QuizComponent,
     DisplayQuizComponent,
-    QuizPipe
+    QuizPipe,
+    AdminComponent,
+    UpdateQuizComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    FormsModule,
     MatGridListModule,
     MatMenuModule,
     MatIconModule,
@@ -68,6 +71,7 @@ import { QuizPipe } from './quiz.pipe';
     MatCheckboxModule,
     NgReduxModule,
     HttpClientModule,
+    FormsModule,
     NgReduxRouterModule.forRoot()
   ],
   providers: [],
