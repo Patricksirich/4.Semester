@@ -1,8 +1,6 @@
 package dk.kea.class2019January.patrickS.gameengine19.SpaceInvaders;
 
 
-import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -137,7 +135,7 @@ public class World {
         int max = 10;
         int min = 1;
         int range = max - min;
-        rollForDrop = (int)(Math.random()*range) + 1;
+        rollForDrop = (int) (Math.random() * range) + 1;
 
         for (int i = 0; i < enemies.size(); i++) {
 
@@ -159,11 +157,9 @@ public class World {
 
         goldCoin.y = goldCoin.y + goldCoin.vy * deltaTime;
 
-        if(rollForDrop == 5) {
+        if (rollForDrop == 5) {
             goldCoin.x = enemyX;
             goldCoin.y = enemyY;
-
-            System.out.println("coinDrop condition entered");
 
         }
 
