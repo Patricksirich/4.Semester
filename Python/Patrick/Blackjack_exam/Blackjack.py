@@ -13,6 +13,7 @@ deck = []
 dealer_cards = []
 player_cards = []
 
+
 #Creates the deck with 52 cards
 def create_deck():
     deck.clear()
@@ -23,18 +24,21 @@ def create_deck():
     shuffle(deck)
     return deck
 
+
 #Removes last card from the deck[] and return the value
 def deal():
     return deck.pop()
+
 
 #Checks the card's value so that we can do a sum of the cards in the hand
 def card_value(card_name):
     card_rank = card_name.split(" of ")
     return card_values[card_rank[0]]
 
+
 #Checks whether there is an Ace in the hand and adjusts value
 def check_for_ace(card_name, current_value):    
-    if card_value(card_name) == "A" and current_value + 11 > 21:
+    if card_name.split(" of ")[0] == "A" and current_value + 11 > 21:
         return_value = 1
     else:
         return_value = card_value(card_name)
@@ -152,6 +156,7 @@ def start_current_game():
         return "Tie"
     elif dealer_value_global > 21:
         return "Player"
+
 
 #Function that determines the rules of the game
 def game_rules():

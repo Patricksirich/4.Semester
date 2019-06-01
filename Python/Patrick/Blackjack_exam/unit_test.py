@@ -46,7 +46,7 @@ class BlackjackTestCases(unittest.TestCase):
     #Unit 0.4.1 test if and ace returns 1 when current_value exceeds 21
     def test_check_for_ace_one(self):
         card_name = 'A of Spades'
-        current_value = 15
+        current_value = 17
         return_value = Blackjack.check_for_ace(card_name, current_value)
         self.assertEqual(return_value, 1, "The returned value should be 1")
     
