@@ -6,9 +6,9 @@ export class Quiz {
   user: User; // This might be old (not updated) data.
   title: string;
   created?: Date; // ? = optional field
-  questions: Question[]; 
+  questions: Question[];
   ratings?: Rating[];
-  //customerId: string
+  customerId: string;
 }
 export class Question {
   title: string;

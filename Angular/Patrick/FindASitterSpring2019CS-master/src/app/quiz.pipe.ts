@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Quiz } from './entities/quiz';
 
 @Pipe({
-  name: 'quizPipe' // used when i apply the pipe
+  name: 'quizPipe' // Used when i apply the pipe
 })
 export class QuizPipe implements PipeTransform {
 
@@ -12,10 +12,11 @@ export class QuizPipe implements PipeTransform {
 
     if (search == undefined) {
 
-      // Write code that returns what is serached for
+       // Write code that only returns the quiz objects that match the search
 
-      return quizzes;
+      return quizzes
     }
+
     return quizzes.filter(quiz => quiz.title.indexOf(search) != -1)
   }
 

@@ -1,8 +1,8 @@
 from random import shuffle
 
 #Our sets for the cards
-card_ranks = ('A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K')       
-card_suits = ('Hearts', 'Clubs', 'Diamonds', 'Spades')
+card_ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']       
+card_suits = ['Hearts', 'Clubs', 'Diamonds', 'Spades']
 #A dictionary translating our cards into the correct values
 card_values = {'A':11, '2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9, '10':10, 'J':10, 'Q':10, 'K':10} #Dictionary
 
@@ -12,10 +12,6 @@ deck = []
 #Dealer and players hands
 dealer_cards = []
 player_cards = []
-
-#Global variables to check the value of dealer and players cards
-#player_value_global = 0
-#dealer_value_global = 0
 
 #Creates the deck with 52 cards
 def create_deck():
@@ -39,8 +35,7 @@ def card_value(card_name):
     card_rank = card_name.split(" of ")
     return card_values[card_rank[0]]
 
-
-#Checks whether the picked card is an Ace and either add 1 or the predefined value
+#Checks whether there is an Ace in the hand and adjusts value
 def check_for_ace(card_name, current_value):    
     if card_name.split(" of ")[0] == "A" and current_value + 11 > 21:
         return_value = 1
@@ -66,7 +61,7 @@ def player_deal(player_value_local):
             for i in player_cards:
                 player_value_local += check_for_ace(i, current_value)
 
-            print(player_cards)
+            print("Player cards:\n" + ' '.join(player_cards))
             current_value = player_value_local
 
              #Check is sum is over 21
@@ -96,7 +91,7 @@ def dealer_deal(dealer_value_local):
         #Iterate through dealer_cards and find the value so that we can check the sum of the cards - also checks for aces
         for i in dealer_cards:
             dealer_value_local += check_for_ace(i, current_value)
-        print(dealer_value_local)
+        print("Dealer cards:\n" + ' '.join(dealer_cards))
         current_value = dealer_value_local
 
     #Return the local variable in the function so that we can change the global variable
@@ -131,11 +126,9 @@ def start_current_game():
     if dealer_value_global == 21 and player_value_global == 21:
         print(dealer_cards[0] + "   " + dealer_cards [1])
         print(player_cards[0] + "   " + player_cards [1])
-        print("It's a tie, you get your money back!")
         return "Tie"
 
     elif player_value_global == 21:
-        print("Player got a blackjack!")
         return "Player blackjack"
 
     print(player_cards[0] + "   " + player_cards[1])
@@ -178,16 +171,16 @@ def game_rules():
 
     while game_round > 0:
         print("Your total amount of chips: ", chips)
-
+        print("===================================")
         chips_betted = 0
         chips_betted = int(input("How much would you like to bet:\n"))
         print("You have betted: ", chips_betted)
-        
+        print("===================================")
         create_deck()
         result = start_current_game()
         
         if result == "Player blackjack":
-            print("Blackjack!")
+            print("Blackjack - you win!")
             chips += (chips_betted * 1.5)
         if result == "Player":
             print("You won!")
@@ -196,10 +189,10 @@ def game_rules():
             print("Dealer has won")
             chips -= chips_betted
         if result == "Tie":
-            print("You have tied with the dealer!")
+            print("It's a tie, you get your money back!")
             chips = chips
         if chips == 0:
-            retry = input("You ran out of money, want to try again? Y/N\n")
+            retry = input("You ran out of money, do you want to try again? Y/N\n")
             if str.lower(retry) == "y":
                 print("Excellent choice!")
                 game_round = 0
