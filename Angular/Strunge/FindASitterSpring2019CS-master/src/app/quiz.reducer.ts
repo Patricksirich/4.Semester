@@ -18,8 +18,6 @@ export function quizReducer(state: QuizState = INITIAL_STATE, action: any) {
       // action.payload.quizId;
       // How to add an object to an array within an object in an array
 
-
-
     case QuizActions.UPDATE_QUIZ:
 
       // action.payload: new quiz object
