@@ -1,4 +1,5 @@
 class Player:
+    hand = []
     def __init__(self, hand, isUser, balance, bet, playerTurn):
         self.hand = hand
         self.isUser = isUser

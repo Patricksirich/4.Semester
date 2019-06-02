@@ -1,6 +1,7 @@
 from Deck import Deck
 
 class Dealer:
+    hand = []
     def __init__(self, hand, isUser, isReveal, dealerTurn, roundEnd):
         self.hand = hand
         self.isUser = isUser
@@ -71,27 +72,27 @@ class Dealer:
         if sum > 21:
             print("Dealer is bust (more than 21)")
             player.balance += player.bet * 2
-            currentBalance = player.printBalance()
+            player.printBalance()
             self.dealerTurn = False
             self.roundEnd = True
         
         elif sum > playerSum and sum > 16:
             print(f"Dealer has: {sum}, and wins. \n Player has: {playerSum}")
             player.balance = player.balance - player.bet
-            currentBalance = player.printBalance()
+            player.printBalance()
             self.dealerTurn = False
             self.roundEnd = True
 
         elif sum == playerSum and sum > 16:
             print(f"Tied game, both has: {sum}")
-            currentBalance = player.printBalance()
+            player.printBalance()
             self.dealerTurn = False
             self.roundEnd = True
 
         elif sum < playerSum and sum > 16:
             print(f"Dealer lost with: {sum}. Player got: {playerSum}")
             player.balance += player.bet * 2
-            currentBalance = player.printBalance()
+            player.printBalance()
             self.dealerTurn = False
             self.roundEnd = True
 
