@@ -28,19 +28,12 @@ public class WorldRenderer
         Bitmap enemyImg = gameEngine.loadBitmap("spacex/meteors/meteor10.png");
         enemyImage = Bitmap.createScaledBitmap(enemyImg, 70, 20, true);
 
-       /* Bitmap enemyImage2 = gameEngine.loadBitmap("spacex/meteors/meteor07.png");
-        Bitmap enemyImage3 = gameEngine.loadBitmap("spacex/meteors/meteor05.png");
-        enemyImage.add(enemyImage1);
-        enemyImage.add(enemyImage2);
-        enemyImage.add(enemyImage3);
-*/
     }
 
     public void render()
     {
         //Random randInt = new Random();
         gameEngine.drawBitmap(shipImage, (int) world.ship.x, (int) world.ship.y);
-        gameEngine.drawBitmap(projectileImage, (int) world.projectile.x, (int) world.projectile.y);
         gameEngine.drawBitmap(projectileImage, (int) world.projectile.x + (int) world.ship.WIDTH/2 + 4, (int) world.projectile.y);
         for (int i = 0; i < world.enemies.size(); i++)
         {
