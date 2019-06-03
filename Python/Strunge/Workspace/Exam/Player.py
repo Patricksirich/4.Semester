@@ -7,19 +7,31 @@ class Player:
         self.bet = bet
         self.playerTurn = playerTurn
 
+# Method for 
     def checkSum(self):
-        sum = 0
+        currentVal = 0
+        aces = 0
         for i in self.hand:
             if i.number == 'J' or i.number == 'Q' or i.number == 'K':
-                sum += 10
+                currentVal += 10
 
             elif i.number == 'A':
-                sum += 1
+                aces += 1
+                for i in self.hand:
+                    if i.number == 'A':
+                        currentVal += self.acesValue(currentVal, aces, i)
+                        aces -= 1
 
             else:
-                sum += int(i.number)
+                currentVal += int(i.number)
 
-        return sum
+        return currentVal
+
+    def acesValue(self, currentVal, aces, i):
+        if i.number == 'A' and currentVal + 11 + aces - 1 > 21:
+            return 1
+        elif i.number == 'A':
+            return 11
 
     def desiredBet(self):
         while(True):
@@ -29,14 +41,16 @@ class Player:
                 break
             elif self.balance - int(playerBet) < 0:
                 print("You cannot bet more than your current balance! \n Make a new bet: ")
+            else:
+                print("Invalid bet please type a number, and it should be less or equal to balance")
 
     def checkValue(self):
-        sum = self.checkSum()
-        if sum == 21:
-            print(f"Player has ({sum}) Dealers turn")
+        currentVal = self.checkSum()
+        if currentVal == 21:
+            print(f"Player has ({currentVal}) Dealers turn")
             self.playerTurn = False
-        elif sum > 21:
-            print(f"Player has lost with ({sum})")
+        elif currentVal > 21:
+            print(f"Player has lost with ({currentVal})")
             self.balance = self.balance - self.bet
             self.playerTurn = False
             print(f"Bet: {self.bet} \n Balance: {self.balance}")
@@ -50,15 +64,15 @@ class Player:
         print("Total: ", self.checkSum())
     
     def userTurn(self, dealer, deck):
-        sum = self.checkSum()
+        currentVal = self.checkSum()
         self.checkValue()
         hitOrStand = -1
         if self.isUser:
-            hitOrStand = input(f"Yor current total: {sum}, would you like to hit or to stad? (type hit / stand)")
-        if hitOrStand == "stand" or not self.isUser and sum > 16:
+            hitOrStand = input(f"Yor current total: {currentVal}, would you like to hit or to stad? (type hit / stand)")
+        if hitOrStand == "stand" or not self.isUser and currentVal > 16:
             print("Dealers turn")
             self.playerTurn = False
-        elif hitOrStand == "hit" or not self.isUser and sum <= 16:
+        elif hitOrStand == "hit" or not self.isUser and currentVal <= 16:
             self.hand.append(dealer.dealCards(deck))
             self.printCards()
             self.checkValue()
