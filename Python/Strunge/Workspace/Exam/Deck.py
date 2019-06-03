@@ -16,6 +16,6 @@ class Deck:
             for number in deckValues:
                 self.deck.append(Cards(suit, number))
 
-        # Shuffle deck for random cards drawn each turn
+        # Shuffle to randomize the deck
         random.shuffle(self.deck)
         return self.deck

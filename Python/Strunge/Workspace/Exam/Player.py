@@ -47,7 +47,7 @@ class Player:
             else:
                 print("Invalid bet please type a number, and it should be less or equal to balance")
 
-    # Ceck the total sum of player cards /w different conditions
+    # Check the total sum of player cards /w different conditions
     def checkValue(self):
         currentVal = self.checkSum()
         if currentVal == 21:
@@ -103,7 +103,8 @@ class Player:
         # Only accept valid input
         else:
             print(f"Input: {playerOrDealer} is not valid, please type \"p\" or \"d\" to continue")
-    
+                
+    # Prints the current balance
     def printBalance(self):
         return print(f"Bet: {self.bet} \n Balance: {self.balance}")
 

@@ -43,7 +43,7 @@ def check_for_ace(card_name, current_value):
     else:
         return_value = card_value(card_name)
     return return_value
-
+ 
 
 #Rules for dealing the cards as a player
 def player_deal(player_value_local):
