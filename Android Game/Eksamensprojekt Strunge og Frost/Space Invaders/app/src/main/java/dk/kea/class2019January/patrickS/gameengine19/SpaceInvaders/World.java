@@ -141,13 +141,13 @@ public class World {
 
             enemy = enemies.get(i);
 
-            if (collision(projectile.x, projectile.y, Projectile.WIDTH, Projectile.HEIGHT, enemy.x, enemy.y, Enemies.WIDTH, Enemies.HEIGHT)) {
+            if (collision(projectile.x, projectile.y, Projectile.WIDTH, Projectile.HEIGHT,
+                    enemy.x, enemy.y, Enemies.WIDTH, Enemies.HEIGHT)) {
 
                 collision = true;
                 enemies.remove(i);
                 points = points + level * 10;
                 coinDrop(rollForDrop, enemy.x, enemy.y, deltaTime);
-                System.out.println(rollForDrop);
             }
         }
 
@@ -168,9 +168,10 @@ public class World {
 
     public void collideCoinSpaceship() {
 
-        if (collision(spaceship.x, spaceship.y, Spaceship.WIDTH, Spaceship.HEIGHT, goldCoin.x, goldCoin.y, GoldCoin.WIDTH, GoldCoin.HEIGHT)) {
+        if (collision(spaceship.x, spaceship.y, Spaceship.WIDTH, Spaceship.HEIGHT,
+                goldCoin.x, goldCoin.y, GoldCoin.WIDTH, GoldCoin.HEIGHT)) {
 
-            points = points + 100;
+            points = points + 100 + (level*10);
             goldCoin.x = 800;
             goldCoin.y = 800;
         }
