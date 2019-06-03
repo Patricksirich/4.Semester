@@ -14,32 +14,29 @@ class Dealer:
     
     def checkSum(self):
         aces = 0
-        sum = 0
+        currentVal = 0
         for i in self.hand:
             if i.number == 'J' or i.number== 'Q' or i.number == 'K':
-                sum += 10
+                currentVal += 10
 
             elif i.number == 'A':
                 aces += 1
-
+                for i in self.hand:
+                    if i.number == 'A':
+                        currentVal += self.acesValue(currentVal, aces, i)
+                        aces -= 1
             else:
-                sum += int(i.number)
+                currentVal += int(i.number)
 
-            for i in self.hand:
-                if i.number == 'A':
-                    if self.acesValue(sum, aces):
-                        sum += 1
-                    else:
-                        sum += 11
-                    aces -= 1
+            
 
-        return sum
+        return currentVal
 
-    def acesValue(self, sum, aces):
-        if sum + 11 + aces - 1 > 21:
-            return True
-        else:
-            return False
+    def acesValue(self, currentVal, aces, i):
+        if i.number == 'A' and currentVal + 11 + aces - 1 > 21:
+            return 1
+        elif i.number == 'A':
+            return 11
 
     def dealerTakeTurn(self, player, deck):
         self.isReveal = True
@@ -47,8 +44,8 @@ class Dealer:
         self.checkWin(player)
         self.dealerTurn = True
         while self.dealerTurn:
-            sum = self.checkSum()
-            if sum <= 16:
+            currentVal = self.checkSum()
+            if currentVal <= 16:
                 print("Dealer has less than 16, so force-hit")
                 self.hand.append(self.dealCards(deck))
                 self.printCards()
@@ -68,29 +65,29 @@ class Dealer:
 
     def checkWin(self, player):
         playerSum = player.checkSum()
-        sum = self.checkSum()
-        if sum > 21:
+        currentVal = self.checkSum()
+        if currentVal > 21:
             print("Dealer is bust (more than 21)")
             player.balance += player.bet * 2
             player.printBalance()
             self.dealerTurn = False
             self.roundEnd = True
         
-        elif sum > playerSum and sum > 16:
-            print(f"Dealer has: {sum}, and wins. \n Player has: {playerSum}")
+        elif currentVal > playerSum and currentVal > 16:
+            print(f"Dealer has: {currentVal}, and wins. \n Player has: {playerSum}")
             player.balance = player.balance - player.bet
             player.printBalance()
             self.dealerTurn = False
             self.roundEnd = True
 
-        elif sum == playerSum and sum > 16:
-            print(f"Tied game, both has: {sum}")
+        elif currentVal == playerSum and currentVal > 16:
+            print(f"Tied game, both has: {currentVal}")
             player.printBalance()
             self.dealerTurn = False
             self.roundEnd = True
 
-        elif sum < playerSum and sum > 16:
-            print(f"Dealer lost with: {sum}. Player got: {playerSum}")
+        elif currentVal < playerSum and currentVal > 16:
+            print(f"Dealer lost with: {currentVal}. Player got: {playerSum}")
             player.balance += player.bet * 2
             player.printBalance()
             self.dealerTurn = False

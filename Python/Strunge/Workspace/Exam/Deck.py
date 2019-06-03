@@ -7,7 +7,7 @@ class Deck:
         self.deck = deck
 
     def createDeck(self):
-        deckValues = ['A', '1', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
+        deckValues = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
         deckSuits = ['♥', '♠', '♦', '♣']
 
         for suit in deckSuits:
