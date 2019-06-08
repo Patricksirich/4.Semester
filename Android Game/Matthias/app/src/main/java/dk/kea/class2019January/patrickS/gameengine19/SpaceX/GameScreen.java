@@ -24,6 +24,7 @@ public class GameScreen extends Screen
     Bitmap background;
     Bitmap resume;
     Bitmap gameOver;
+
     Typeface font;
     Sound bounceSound;
     // Sound blockSound;
@@ -37,6 +38,7 @@ public class GameScreen extends Screen
         background = gameEngine.loadBitmap("spacex/bg.png");
         resume = gameEngine.loadBitmap("breakout/resume.png");
         gameOver = gameEngine.loadBitmap("breakout/gameover.png");
+
         font = gameEngine.loadFont("breakout/font.ttf");
         bounceSound = gameEngine.loadSound("breakout/bounce.wav");
         //blockSound = gameEngine.loadSound("breakout/blocksplosion.wav");
@@ -44,21 +46,9 @@ public class GameScreen extends Screen
         world = new World(new CollisionListener()
         {
             @Override
-            public void collisionWall()
-            {
-                bounceSound.play(1);
-            }
-
-            @Override
             public void collisionEnemy()
             {
                 bounceSound.play(1);
-            }
-
-            @Override
-            public void collisionShip()
-            {
-                //blockSound.play(1);
             }
         });
         renderer = new WorldRenderer(gameEngine, world);
@@ -93,7 +83,7 @@ public class GameScreen extends Screen
                 }
             }
         }
-        if (state == GameScreen.State.Running && gameEngine.getTouchY(0) < 33 && gameEngine.getTouchX(0) > 320 - 33)
+        if (state == GameScreen.State.Running && gameEngine.getTouchY(0) < 22 && gameEngine.getTouchX(0) >  427)
         {
             state = GameScreen.State.Paused;
             pause();
@@ -108,7 +98,7 @@ public class GameScreen extends Screen
         }
         renderer.render();
 
-        showText = "Lives: " + Integer.toString(world.lives) + "    Points: " + Integer.toString(world.points);
+        showText = "Lives: " + Integer.toString(world.lives) + "    Points: " + Integer.toString(world.points) + "    Level: " + world.level;
         gameEngine.drawText(font, showText, 20, 22, Color.GREEN, 11);
 
         if (state == GameScreen.State.Paused)

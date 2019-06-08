@@ -12,6 +12,7 @@ public class WorldRenderer
     Bitmap projectileImage;
     Bitmap shipImage;
     Bitmap enemyImage;
+    Bitmap pauseButton;
     Enemy enemy;
 
 
@@ -20,13 +21,16 @@ public class WorldRenderer
         this.gameEngine = gameEngine;
         this.world = world;
         Bitmap projectileImg = gameEngine.loadBitmap("spacex/projectile.png");
-        projectileImage = Bitmap.createScaledBitmap(projectileImg, 15, 12, true);
+        projectileImage = Bitmap.createScaledBitmap(projectileImg, Projectile.WIDTH, Projectile.HEIGHT, true);
 
         Bitmap shipImg = gameEngine.loadBitmap("spacex/shipicon.png");
         shipImage = Bitmap.createScaledBitmap(shipImg, 40, 20, true);
 
         Bitmap enemyImg = gameEngine.loadBitmap("spacex/meteors/meteor10.png");
-        enemyImage = Bitmap.createScaledBitmap(enemyImg, 70, 20, true);
+        enemyImage = Bitmap.createScaledBitmap(enemyImg, Enemy.WIDTH, Enemy.HEIGHT, true);
+
+        Bitmap pauseBtn = gameEngine.loadBitmap("spacex/pause.png");
+        pauseButton = Bitmap.createScaledBitmap(pauseBtn, 37,20, true);
 
     }
 
@@ -34,7 +38,8 @@ public class WorldRenderer
     {
         //Random randInt = new Random();
         gameEngine.drawBitmap(shipImage, (int) world.ship.x, (int) world.ship.y);
-        gameEngine.drawBitmap(projectileImage, (int) world.projectile.x + (int) world.ship.WIDTH/2 + 4, (int) world.projectile.y);
+        gameEngine.drawBitmap(projectileImage, (int) world.projectile.x + (int) world.ship.WIDTH/2 - 7, (int) world.projectile.y - 8);
+        gameEngine.drawBitmap(pauseButton, 430, 0);
         for (int i = 0; i < world.enemies.size(); i++)
         {
             enemy = world.enemies.get(i);

@@ -17,18 +17,18 @@ public class World
     Projectile projectile = new Projectile();
     List<Enemy> enemies = new ArrayList<>();
 
-    CollisionListener collisionListener;
-
     int points = 0;
     int lives = 3;
     boolean lostLife = false;
     boolean gameOver = false;
     int level = 1;
-    int hits = 0;
+    boolean advance;
+    CollisionListener collisionListener;
 
     public World(CollisionListener collisionListener)
     {
         this.collisionListener = collisionListener;
+
         generateEnemies();
     }
 
@@ -61,9 +61,6 @@ public class World
         collideProjectileEnemies(deltaTime);
         advanceEnemies();
 
-
-
-
         if (enemies.size() == 0)
         {
             generateEnemies();
@@ -78,17 +75,14 @@ public class World
 
     private void collideProjectileEnemies(float deltaTime)
     {
-        Enemy Enemy = null;
+        Enemy enemy = null;
         for (int i = 0; i < enemies.size(); i++)
         {
-            Enemy = enemies.get(i);
-            if (collideRects(projectile.x, projectile.y, projectile.WIDTH, projectile.HEIGHT, Enemy.x, Enemy.y, Enemy.WIDTH, Enemy.HEIGHT))
+            enemy = enemies.get(i);
+            if (collideRects(projectile.x, projectile.y, Projectile.WIDTH, Projectile.HEIGHT, enemy.x, enemy.y, Enemy.WIDTH, Enemy.HEIGHT))
             {
                 enemies.remove(i);
-                float oldvy = projectile.vy;
-                //back out the projectile with 1% to avoid multiple interactions
-                projectile.y = projectile.y - oldvy * deltaTime * 1.01f;
-                points = points + 10;
+                points = points + 10 * level;
                 collisionListener.collisionEnemy();
                 projectile.y = ship.y;
                 projectile.x = ship.x;
@@ -98,10 +92,10 @@ public class World
     }
 
 
-    private boolean collideRects(float x, float y, float width, float height,
-                                 float x2, float y2, float width2, float height2)
+    private boolean collideRects(float x, float y, float width, float height, float x2, float y2, float width2, float height2)
+                                //projectile.x, projectile.y, Projectile.WIDTH, Projectile.HEIGHT, enemy.x, enemy.y, Enemy.WIDTH, Enemy.HEIGHT
     {
-        if (x < x2 + width2 && x + width > x2 && y < y2 + height2 && y + height > y2)
+        if (x < x2 + width2 - 17 && x + width > x2 - 15 && y < y2 + height2 && y + height > y2)
         {
             Log.d("True", "CollideRects");
             return true;
@@ -110,12 +104,13 @@ public class World
         return false;
     }
 
+
     private void generateEnemies()
     {
         enemies.clear();
 
         for (int y = 35; y < 50 + 4 * (Enemy.HEIGHT + 4); y = y + (Enemy.HEIGHT + 4)) {
-            for (int x = 30; x < 400 - Enemy.WIDTH; x = x + Enemy.WIDTH + 40) {
+            for (int x = 30; x < 450 - Enemy.WIDTH; x = x + Enemy.WIDTH + 15) {
                 enemies.add(new Enemy(x, y));
             }
         }
@@ -124,22 +119,49 @@ public class World
     private void advanceEnemies()
     {
         // TODO Højre ned --> Venstre ned
-        Enemy Enemy;
-        int stop = enemies.size();
+        Enemy enemy;
         for (int i = 0; i < enemies.size(); i++)
         {
-            Enemy = enemies.get(i);
-            Enemy.y = Enemy.y + 0.1f;
-
-            if(Enemy.y > 300) // TODO Fix gameover - ryk alle enemies op
+            enemy = enemies.get(i);
+            //Enemy.y = Enemy.y + 0.1f;
+            enemy.x = enemy.x + enemy.vx * level;
+            if (enemy.x > MAX_X - Enemy.WIDTH)
             {
-                lives = lives - 1;
-                Enemy.y = Enemy.y - 564;
+                Enemy.vx = -Enemy.vx;
+                advance = true;
+            }
+            if (enemy.x < MIN_X)
+            {
+                Enemy.vx *= -1;
+                advance = true;
+            }
+
+            if (enemy.y > 300) // TODO Fix gameover - ryk alle enemies op
+            {
+
+                for (int j = 0; j < enemies.size(); j++)
+                {
+                    enemy = enemies.get(j);
+                    enemy.y = enemy.y - 175;
+
+                }
+                lives -= 1;
                 lostLife = true;
                 // add life lost collisionListener sound
                 if (lives == 0) gameOver = true;
                 return;
             }
         }
+
+        if(advance)
+        {
+            for(int i = 0; i < enemies.size(); i++)
+            {
+                enemy = enemies.get(i);
+                enemy.y += 10;
+            }
+            advance = false;
+        }
+
     }
 }
