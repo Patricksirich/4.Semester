@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 
 
 import dk.kea.class2019January.patrickS.gameengine19.GameEngine;
+import dk.kea.class2019January.patrickS.gameengine19.Music;
 import dk.kea.class2019January.patrickS.gameengine19.Screen;
 
 public class MainMenuScreen extends Screen{
@@ -15,6 +16,7 @@ public class MainMenuScreen extends Screen{
     private Bitmap startGame;
     float passedTime = 0;
     long startTime;
+    Music mainMenuMusic;
     Typeface font;
 
     public MainMenuScreen(GameEngine gameEngine) {
@@ -24,6 +26,7 @@ public class MainMenuScreen extends Screen{
         tempImage = gameEngine.loadBitmap("SpaceInvaders/background.png");
         mainMenu = Bitmap.createScaledBitmap(tempImage, 480, 320, true);
         font = gameEngine.loadFont("SpaceInvaders/font.ttf");
+        mainMenuMusic = gameEngine.loadMusic("SpaceInvaders/mainMenuMusic.ogg");
         startTime = System.nanoTime();
     }
 
@@ -32,8 +35,11 @@ public class MainMenuScreen extends Screen{
     @Override
     public void update(float deltaTime) {
 
+        mainMenuMusic.play();
+
         if (gameEngine.isTouchDown(0) && (passedTime) > 0.5f) {
             gameEngine.setScreen(new GameScreen(gameEngine));
+            mainMenuMusic.stop();
             return;
         }
         gameEngine.drawBitmap(mainMenu, 0, 0);
