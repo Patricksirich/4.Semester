@@ -11,7 +11,7 @@ public class World
     public static float MIN_X = 0;
     public static float MAX_X = 479;
     public static float MIN_Y = 36;
-    public static float MAX_Y = 600;
+    //public static float MAX_Y = 600;
 
     Ship ship = new Ship();
     Projectile projectile = new Projectile();
@@ -42,7 +42,6 @@ public class World
             Log.d("Projectile reset", "Set projectile to ship coords");
             projectile.y = ship.y;
             projectile.x = ship.x;
-            projectile.y = projectile.y + projectile.vy * deltaTime;
         }
 
         //move ship based on phone tilt action
@@ -65,8 +64,8 @@ public class World
         {
             generateEnemies();
             level++;
-            projectile.y = 320 - 40;
-            projectile.vy = -projectile.initialSpeed * 1.3f;
+            projectile.y = ship.y;
+            projectile.vy = -projectile.initialSpeed * 1.2f;
 
         }
 
@@ -75,14 +74,14 @@ public class World
 
     private void collideProjectileEnemies(float deltaTime)
     {
-        Enemy enemy = null;
+        Enemy enemy;
         for (int i = 0; i < enemies.size(); i++)
         {
             enemy = enemies.get(i);
             if (collideRects(projectile.x, projectile.y, Projectile.WIDTH, Projectile.HEIGHT, enemy.x, enemy.y, Enemy.WIDTH, Enemy.HEIGHT))
             {
                 enemies.remove(i);
-                points = points + 10 * level;
+                points += 10 * level;
                 collisionListener.collisionEnemy();
                 projectile.y = ship.y;
                 projectile.x = ship.x;
@@ -95,12 +94,7 @@ public class World
     private boolean collideRects(float x, float y, float width, float height, float x2, float y2, float width2, float height2)
                                 //projectile.x, projectile.y, Projectile.WIDTH, Projectile.HEIGHT, enemy.x, enemy.y, Enemy.WIDTH, Enemy.HEIGHT
     {
-        if (x < x2 + width2 - 17 && x + width > x2 - 15 && y < y2 + height2 && y + height > y2)
-        {
-            Log.d("True", "CollideRects");
-            return true;
-        }
-        Log.d("False", "CollideRects");
+        if (x < x2 + width2 - 17 && x + width > x2 - 15 && y < y2 + height2 && y + height > y2) return true;
         return false;
     }
 
@@ -118,13 +112,12 @@ public class World
 
     private void advanceEnemies()
     {
-        // TODO Højre ned --> Venstre ned
         Enemy enemy;
         for (int i = 0; i < enemies.size(); i++)
         {
             enemy = enemies.get(i);
-            //Enemy.y = Enemy.y + 0.1f;
             enemy.x = enemy.x + enemy.vx * level;
+
             if (enemy.x > MAX_X - Enemy.WIDTH)
             {
                 Enemy.vx = -Enemy.vx;
@@ -136,7 +129,7 @@ public class World
                 advance = true;
             }
 
-            if (enemy.y > 300) // TODO Fix gameover - ryk alle enemies op
+            if (enemy.y > 300)
             {
 
                 for (int j = 0; j < enemies.size(); j++)

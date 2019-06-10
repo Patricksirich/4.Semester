@@ -1,6 +1,6 @@
 package dk.kea.class2019January.patrickS.gameengine19.SpaceX;
 
-public interface CollisionListener
+public interface CollisionListener  // interface for collisions
 {
-    public void collisionEnemy();
+    void collisionEnemy();
 }

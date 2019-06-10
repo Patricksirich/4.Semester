@@ -8,7 +8,7 @@ public class SpaceX extends GameEngine
     @Override
     public Screen createStartScreen()
     {
-        music = this.loadMusic("breakout/music.ogg");
+        music = this.loadMusic("breakout/music.ogg"); // start music
         return new MainMenuScreen(this);
     }
 
