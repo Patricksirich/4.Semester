@@ -15,11 +15,11 @@ public class SpaceInvaders extends GameEngine {
 
     public void onResume() {
         super.onResume();
-        // music.play();
+//        music.play();
     }
 
     public void onPause() {
         super.onPause();
-        //music.pause();
+//        music.pause();
     }
 }

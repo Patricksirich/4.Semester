@@ -6,6 +6,7 @@ import android.util.Log;
 
 import java.util.List;
 
+import dk.kea.class2019January.patrickS.gameengine19.Music;
 import dk.kea.class2019January.patrickS.gameengine19.Screen;
 import dk.kea.class2019January.patrickS.gameengine19.Sound;
 import dk.kea.class2019January.patrickS.gameengine19.TouchEvent;
@@ -28,6 +29,9 @@ public class GameScreen extends Screen
     Typeface font;
     World world;
     WorldRenderer renderer;
+    Sound coinSound;
+    Sound enemyDeathSound;
+    Music music;
 
     public GameScreen(GameEngine gameEngine){
 
@@ -37,11 +41,16 @@ public class GameScreen extends Screen
         gameOver = gameEngine.loadBitmap("SpaceInvaders/gameover.png");
         resume = gameEngine.loadBitmap("SpaceInvaders/resume.png");
         font = gameEngine.loadFont("SpaceInvaders/font.ttf");
+        coinSound = gameEngine.loadSound("SpaceInvaders/bounce.wav");
+        enemyDeathSound = gameEngine.loadSound("SpaceInvaders/blocksplosion.wav");
+        music = gameEngine.loadMusic("SpaceInvaders/music.ogg");
 
         world = new World(new CollisionListener() {
-            @Override
-            public void collisionWall() {
 
+            @Override
+            public void collisionCoinSpaceship()
+            {
+                coinSound.play(1);
             }
 
             @Override
@@ -51,6 +60,7 @@ public class GameScreen extends Screen
 
             @Override
             public void collisionEnemy() {
+                enemyDeathSound.play(1);
 
             }
 
@@ -60,8 +70,7 @@ public class GameScreen extends Screen
             }
         });
         renderer = new WorldRenderer(gameEngine, world);
-        //TODO: sound eff./ music
-        //TODO: world (til collisionListener) funktionalitet
+        music.play();
 
     }
 
@@ -84,6 +93,8 @@ public class GameScreen extends Screen
 
         if (state == State.Paused && gameEngine.isTouchDown(0)) {
             state = State.Running;
+            resume();
+            return;
 
         }
 
@@ -121,7 +132,7 @@ public class GameScreen extends Screen
     {
         // TODO: pause music
         // TODO: funktion der forhindrer spaceship i at rykke sig, når pauseknappen bliver trykket.
-
+        music.pause();
         if (state == State.Running) state = State.Paused;
 
     }
@@ -129,12 +140,13 @@ public class GameScreen extends Screen
     @Override
     public void resume()
     {
-
+        if (state == State.Paused) state = State.Running;
+        music.play();
     }
 
     @Override
     public void dispose()
     {
-
+        music.dispose();
     }
 }

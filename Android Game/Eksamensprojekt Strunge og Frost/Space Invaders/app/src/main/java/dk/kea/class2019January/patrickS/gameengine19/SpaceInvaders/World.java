@@ -145,6 +145,7 @@ public class World {
                     enemy.x, enemy.y, Enemies.WIDTH, Enemies.HEIGHT)) {
 
                 collision = true;
+                collisionListener.collisionEnemy();
                 enemies.remove(i);
                 points = points + level * 10;
                 coinDrop(rollForDrop, enemy.x, enemy.y, deltaTime);
@@ -170,6 +171,8 @@ public class World {
 
         if (collision(spaceship.x, spaceship.y, Spaceship.WIDTH, Spaceship.HEIGHT,
                 goldCoin.x, goldCoin.y, GoldCoin.WIDTH, GoldCoin.HEIGHT)) {
+
+            collisionListener.collisionCoinSpaceship();
 
             points = points + 100 + (level*10);
             goldCoin.x = 800;
