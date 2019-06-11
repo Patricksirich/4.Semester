@@ -44,6 +44,7 @@ public class MainMenuScreen extends Screen{
         }
         gameEngine.drawBitmap(mainMenu, 0, 0);
         gameEngine.drawText(font, "SPACE INVADERS", 70, 50, Color.YELLOW, 30);
+        gameEngine.drawText(font, "by Christian Møller Strunge & Casper Frost Andersen", 60 , 80, Color.YELLOW, 10);
         passedTime = passedTime + deltaTime;
         if ((passedTime - (int)passedTime) > 0.5f) {
             gameEngine.drawBitmap(startGame, 240 - startGame.getWidth()/2, 160);
