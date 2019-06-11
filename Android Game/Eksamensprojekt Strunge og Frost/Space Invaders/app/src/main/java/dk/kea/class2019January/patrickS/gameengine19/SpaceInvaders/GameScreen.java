@@ -41,7 +41,7 @@ public class GameScreen extends Screen
         gameOver = gameEngine.loadBitmap("SpaceInvaders/gameover.png");
         resume = gameEngine.loadBitmap("SpaceInvaders/resume.png");
         font = gameEngine.loadFont("SpaceInvaders/font.ttf");
-        coinSound = gameEngine.loadSound("SpaceInvaders/bounce.wav");
+        coinSound = gameEngine.loadSound("SpaceInvaders/coinCollect.wav");
         enemyDeathSound = gameEngine.loadSound("SpaceInvaders/blocksplosion.wav");
         music = gameEngine.loadMusic("SpaceInvaders/music.ogg");
 
