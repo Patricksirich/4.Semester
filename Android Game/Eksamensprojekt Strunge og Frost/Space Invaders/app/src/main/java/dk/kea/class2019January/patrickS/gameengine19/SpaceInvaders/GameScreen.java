@@ -54,20 +54,11 @@ public class GameScreen extends Screen
             }
 
             @Override
-            public void collisionSpaceship() {
-
-            }
-
-            @Override
             public void collisionEnemy() {
                 enemyDeathSound.play(1);
 
             }
 
-            @Override
-            public void collisionProjectile() {
-
-            }
         });
         renderer = new WorldRenderer(gameEngine, world);
         music.play();
