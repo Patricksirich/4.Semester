@@ -73,7 +73,7 @@ public class World {
         for (int i = 0; i < enemies.size(); i++) {
 
             enemy = enemies.get(i);
-            enemy.x = enemy.x + enemy.vx * deltaTime * (level * 0.10f);
+            enemy.x = enemy.x + enemy.vx * deltaTime * (level * 0.20f);
 
             if (enemy.x < MIN_X + Enemies.WIDTH) {
                 advance = true;
