@@ -52,7 +52,6 @@ public class World {
             generateEnemies();
         }
 
-
     }
 
     public void generateEnemies() {
@@ -73,7 +72,7 @@ public class World {
         for (int i = 0; i < enemies.size(); i++) {
 
             enemy = enemies.get(i);
-            enemy.x = enemy.x + enemy.vx * deltaTime * (level * 0.20f);
+            enemy.x = enemy.x + enemy.vx * deltaTime * (level * 0.50f);
 
             if (enemy.x < MIN_X + Enemies.WIDTH) {
                 advance = true;
@@ -97,7 +96,7 @@ public class World {
 
                 enemy = enemies.get(i);
                 enemy.vx = -enemy.vx;
-                enemy.y = enemy.y + 5;
+                enemy.y = enemy.y + 10;
 
             }
             advance = false;
@@ -117,21 +116,19 @@ public class World {
 
         projectile.y = projectile.y - projectile.vy * deltaTime;
 
-        startTime = startTime + deltaTime;
         if (projectile.y < MIN_Y || collision) {
 
             projectile.x = spaceship.x + 37;
             projectile.y = MAX_Y;
             projectile.y = projectile.y + projectile.vy + deltaTime;
             collision = false;
-            startTime = 0;
         }
     }
 
     public void collideProjectileEnemy(float deltaTime) {
 
-
         Enemies enemy;
+
         int max = 10;
         int min = 1;
         int range = max - min;
@@ -161,10 +158,7 @@ public class World {
         if (rollForDrop == 5) {
             goldCoin.x = enemyX;
             goldCoin.y = enemyY;
-
         }
-
-
     }
 
     public void collideCoinSpaceship() {

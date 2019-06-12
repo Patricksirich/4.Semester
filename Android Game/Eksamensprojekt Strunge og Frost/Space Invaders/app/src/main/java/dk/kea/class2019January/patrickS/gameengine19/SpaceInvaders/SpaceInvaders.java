@@ -8,18 +8,7 @@ public class SpaceInvaders extends GameEngine {
     @Override
     public Screen createStartScreen() {
 
-
-        // TODO: music = this.loadMusic(musikresource)
         return new MainMenuScreen(this);
     }
-//
-//    public void onResume() {
-//        super.onResume();
-////        music.play();
-//    }
-//
-//    public void onPause() {
-//        super.onPause();
-////        music.pause();
-//    }
+
 }

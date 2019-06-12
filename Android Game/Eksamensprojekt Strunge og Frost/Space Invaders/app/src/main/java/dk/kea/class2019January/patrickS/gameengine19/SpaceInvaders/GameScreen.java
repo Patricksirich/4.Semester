@@ -2,7 +2,6 @@ package dk.kea.class2019January.patrickS.gameengine19.SpaceInvaders;
 
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
-import android.util.Log;
 
 import java.util.List;
 
@@ -121,8 +120,6 @@ public class GameScreen extends Screen
     @Override
     public void pause()
     {
-        // TODO: pause music
-        // TODO: funktion der forhindrer spaceship i at rykke sig, når pauseknappen bliver trykket.
         music.pause();
         if (state == State.Running) state = State.Paused;
 
