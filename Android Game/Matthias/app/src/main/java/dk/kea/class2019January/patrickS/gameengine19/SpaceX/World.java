@@ -118,20 +118,23 @@ public class World
             enemy = enemies.get(i);
             enemy.x = enemy.x + enemy.vx * level;
 
+            // right side
             if (enemy.x > MAX_X - Enemy.WIDTH)
             {
                 Enemy.vx = -Enemy.vx;
                 advance = true;
             }
+            // left side
             if (enemy.x < MIN_X)
             {
                 Enemy.vx *= -1;
                 advance = true;
             }
 
+            // bottom
             if (enemy.y > 300)
             {
-
+                // inner for - reposition to top
                 for (int j = 0; j < enemies.size(); j++)
                 {
                     enemy = enemies.get(j);
@@ -145,7 +148,7 @@ public class World
                 return;
             }
         }
-
+        // if enemies needs to move down y axis
         if(advance)
         {
             for(int i = 0; i < enemies.size(); i++)

@@ -1,0 +1,47 @@
+<form [formGroup]="createUser" (ngSubmit)="saveUser()">
+  <div>
+    <mat-form-field>
+      <input id="username" matInput placeholder="username" formControlName="username">
+    </mat-form-field>
+  </div>
+  <div>
+      <mat-form-field>
+        <input id="password" matInput placeholder="password" type="password" formControlName="password">
+      </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field >
+          <input id="email" matInput placeholder="email" type="email" formControlName="email">
+        </mat-form-field>
+      </div>
+      <div>
+          <mat-form-field >
+            <input id="gender" matInput placeholder="gender" formControlName="gender">
+          </mat-form-field>
+      </div>
+      <div>
+          <mat-form-field >
+            <input id="birthDate" matInput placeholder="birthDate" formControlName="birthDate">
+          </mat-form-field>
+      </div>
+      <div>
+          <mat-form-field >
+            <input id="country" matInput placeholder="country" formControlName="country">
+          </mat-form-field>
+      </div>
+
+  <div>
+    <button id="addPhoneNumber" type="button" mat-raised-button color="secondary" (click)="addPhoneNumber()">Add a phonenumber</button>
+  </div>
+  <div  formArrayName="phoneNumber">
+    <div *ngFor="let phonenumberControl of createUser.controls.phoneNumber.controls; let i=index">
+      <div [formGroupName]="i">
+          <mat-form-field>
+            <input matInput placeholder="Phonenumber" formControlName="phoneNumber" class="phoneNumber">
+          </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <button id="saveUser" mat-raised-button color="primary">Create User</button>
+</form>

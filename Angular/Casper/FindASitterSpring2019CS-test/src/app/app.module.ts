@@ -3,7 +3,6 @@ import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./login/login.component";
-import { RegisterComponent } from "./register/register.component";
 import { ReactiveFormsModule, FormsModule, NgControl } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatGridListModule } from "@angular/material/grid-list";
@@ -33,12 +32,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { QuizPipe } from './quiz.pipe';
 import { AdminComponent } from './admin/admin.component';
 import { UpdateQuizComponent } from './update-quiz/update-quiz.component';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent,
     DisplayQuizzesComponent,
     AboutComponent,
     ContactComponent,
@@ -50,7 +49,8 @@ import { UpdateQuizComponent } from './update-quiz/update-quiz.component';
     DisplayQuizComponent,
     QuizPipe,
     AdminComponent,
-    UpdateQuizComponent
+    UpdateQuizComponent,
+    CreateUserComponent
   ],
   imports: [
     BrowserModule,

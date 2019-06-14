@@ -2,7 +2,6 @@ import { AuthGuard } from './auth/auth.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -13,6 +12,7 @@ import { DisplayQuizzesComponent } from './display-quizzes/display-quizzes.compo
 import { CreateQuizComponent } from './create-quiz/create-quiz.component';
 import { AdminGuard } from './auth/admin.guard';
 import { UpdateQuizComponent } from './update-quiz/update-quiz.component';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' }, // if baseUrl => go to login
@@ -21,7 +21,7 @@ const routes: Routes = [
     {path: 'about', component: AboutComponent},
     {path: 'contact', component: ContactComponent},
     {path: 'login', component: LoginComponent},
-    {path: 'register', component: RegisterComponent}
+    {path: 'create-user', component: CreateUserComponent}
   ]},
 
   {path: 'portal', component:PortalComponent, canActivate: [AuthGuard], children: [
