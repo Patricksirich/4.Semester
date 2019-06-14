@@ -33,13 +33,13 @@
   <div>
     <button id="addPhoneNumber" type="button" mat-raised-button color="secondary" (click)="addPhoneNumber()">Add a phonenumber</button>
   </div>
-  <div  formArrayName="phoneNumber">
-    <div *ngFor="let phonenumberControl of createUser.controls.phoneNumber.controls; let i=index">
-      <div [formGroupName]="i">
+  <div formArrayName="phoneNumbers">
+    <div *ngFor="let phonenumberControl of createUser.controls.phoneNumbers.controls; let i=index">
+        <div [formGroupName]="i">
           <mat-form-field>
-            <input matInput placeholder="Phonenumber" formControlName="phoneNumber" class="phoneNumber">
+            <input matInput placeholder="Phonenumber" formControlName="number" class="phoneNumber">
           </mat-form-field>
-      </div>
+          </div>
     </div>
   </div>
 

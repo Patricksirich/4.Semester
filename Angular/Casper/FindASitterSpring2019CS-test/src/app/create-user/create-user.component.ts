@@ -28,7 +28,7 @@ export class CreateUserComponent implements OnInit {
       email: [''],
       gender: [''],
       birthDate: [''],
-      phoneNumber: this.fb.array([]),
+      phoneNumbers: this.fb.array([]),
       country: ['']
     })
   }
@@ -39,8 +39,11 @@ export class CreateUserComponent implements OnInit {
   }
 
   addPhoneNumber(){
-    const phoneNumber = this.createUser.controls.phoneNumber as FormArray;
-    phoneNumber.push(phoneNumber);
+    const phoneNumber = this.fb.group({
+      number: ['']
+    });
+    const phoneNumbers = this.createUser.controls.phoneNumbers as FormArray;
+    phoneNumbers.push(phoneNumber);
   }
 
 }
