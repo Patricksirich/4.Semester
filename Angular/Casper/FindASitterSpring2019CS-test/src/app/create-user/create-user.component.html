@@ -10,10 +10,10 @@
   <div>
       <mat-form-field>
         <input id="password" matInput placeholder="password" type="password" formControlName="password">
-        <mat-error *ngIf="!createUser.controls.password.required && createUser.controls.password.touched">
+        <mat-error *ngIf="createUser.controls.password.errors?.required && createUser.controls.password.touched">
             Password required
         </mat-error>
-        <mat-error *ngIf="createUser.controls.password.touched && createUser.controls.password.errors?.minLength">
+        <mat-error *ngIf="!createUser.controls.password.errors?.minLength && createUser.controls.password.dirty">
             Password required to be at least 6 characters
         </mat-error>
       </mat-form-field>
