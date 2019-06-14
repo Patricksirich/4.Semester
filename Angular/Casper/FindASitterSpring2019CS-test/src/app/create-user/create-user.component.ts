@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
+import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from '../entities/user';
+import { User, Gender } from '../entities/user';
 
 @Component({
   selector: 'app-create-user',
@@ -23,11 +23,11 @@ export class CreateUserComponent implements OnInit {
 
   ngOnInit() {
     this.createUser = this.fb.group({
-      username: [''],
-      password: [''],
-      email: [''],
-      gender: [''],
-      birthDate: [''],
+      username: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      email: ['', Validators.required],
+      gender: [Gender.MALE, Validators.required],
+      birthDate: ['', Validators.required],
       phoneNumbers: this.fb.array([]),
       country: ['']
     })
