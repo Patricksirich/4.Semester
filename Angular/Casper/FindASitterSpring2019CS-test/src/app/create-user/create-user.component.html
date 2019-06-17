@@ -20,7 +20,10 @@
     </div>
     <div>
         <mat-form-field >
-          <input id="email" matInput placeholder="email" type="email" formControlName="email">
+          <input id="email" matInput placeholder="email" type="text" formControlName="email">
+          <mat-error *ngIf="createUser.controls.email.invalid && createUser.controls.email.errors?.required && createUser.controls.email.touched">
+            Email test
+        </mat-error>
         </mat-form-field>
       </div>
       <div>
