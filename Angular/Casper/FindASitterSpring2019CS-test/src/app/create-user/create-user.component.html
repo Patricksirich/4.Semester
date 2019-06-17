@@ -60,6 +60,9 @@
         <div [formGroupName]="i">
           <mat-form-field>
             <input matInput placeholder="Phonenumber" formControlName="number" class="phoneNumber">
+            <mat-error *ngIf="createUser.controls.phoneNumbers.controls.invalid && createUser.controls.phoneNumbers.controls.touched">
+              TEST
+            </mat-error>
           </mat-form-field>
           </div>
     </div>
