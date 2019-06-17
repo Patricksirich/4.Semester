@@ -21,6 +21,7 @@ while not gameEnd:
 
     # Player bets
     if player.isUser:
+        print(f"Balance: {player.balance}")
         player.desiredBet()
         print(f"Bet: {player.bet}")
     # Player bet is fixed, if dealer gametype is chosen
