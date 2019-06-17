@@ -1,7 +1,7 @@
 <form [formGroup]="createUser" (ngSubmit)="saveUser()">
   <div>
     <mat-form-field>
-      <input id="username" matInput placeholder="username" formControlName="username">
+      <input id="username" matInput placeholder="username" formControlName="username" required>
       <mat-error *ngIf="!createUser.controls.username.valid && createUser.controls.username.touched">
           Username required
       </mat-error>
@@ -9,7 +9,7 @@
   </div>
   <div>
       <mat-form-field>
-        <input id="password" matInput placeholder="password" type="password" formControlName="password">
+        <input id="password" matInput placeholder="password" type="password" formControlName="password" required>
         <mat-error *ngIf="createUser.controls.password.errors?.required && createUser.controls.password.touched">
             Password can not be empty
         </mat-error>
@@ -20,7 +20,7 @@
     </div>
     <div>
         <mat-form-field >
-          <input id="email" matInput placeholder="email" type="text" formControlName="email">
+          <input id="email" matInput placeholder="email" type="text" formControlName="email" required>
           <mat-error *ngIf="createUser.controls.email.errors?.required && createUser.controls.email.touched">
             Email can't be empty
         </mat-error>
@@ -36,7 +36,7 @@
       </div>
       <div>
           <mat-form-field >
-            <input id="birthDate" matInput placeholder="birthDate" formControlName="birthDate">
+            <input id="birthDate" matInput placeholder="birthDate" formControlName="birthDate" required>
             <mat-error *ngIf="createUser.controls.birthDate.errors?.required && createUser.controls.birthDate.touched">
               Date cant be empty
             </mat-error>
@@ -59,7 +59,7 @@
     <div *ngFor="let phonenumberControl of createUser.controls.phoneNumbers.controls; let i=index">
         <div [formGroupName]="i">
           <mat-form-field>
-            <input matInput placeholder="Phonenumber" formControlName="number" class="phoneNumber">
+            <input matInput placeholder="Phonenumber" formControlName="number" class="phoneNumber" pattern="^\d{8}$" required>
             <mat-error *ngIf="createUser.controls.phoneNumbers.controls.invalid && createUser.controls.phoneNumbers.controls.touched">
               TEST
             </mat-error>
