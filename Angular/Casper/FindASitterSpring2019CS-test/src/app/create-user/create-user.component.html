@@ -21,8 +21,11 @@
     <div>
         <mat-form-field >
           <input id="email" matInput placeholder="email" type="text" formControlName="email">
-          <mat-error *ngIf="createUser.controls.email.invalid && createUser.controls.email.errors?.required && createUser.controls.email.touched">
-            Email test
+          <mat-error *ngIf="createUser.controls.email.errors?.required && createUser.controls.email.touched">
+            Email can't be empty
+        </mat-error>
+          <mat-error *ngIf="createUser.controls.email.invalid && createUser.controls.email.dirty">
+            Email must be valid "xx@xx.xx"
         </mat-error>
         </mat-form-field>
       </div>

@@ -25,7 +25,7 @@ export class CreateUserComponent implements OnInit {
     this.createUser = this.fb.group({
       username: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      email: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       gender: [Gender.MALE, Validators.required],
       birthDate: ['', Validators.required],
       phoneNumbers: this.fb.array([]),
