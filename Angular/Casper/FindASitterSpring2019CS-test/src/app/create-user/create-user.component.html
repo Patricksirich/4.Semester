@@ -37,6 +37,13 @@
       <div>
           <mat-form-field >
             <input id="birthDate" matInput placeholder="birthDate" formControlName="birthDate">
+            <mat-error *ngIf="createUser.controls.birthDate.errors?.required && createUser.controls.birthDate.touched">
+              Date cant be empty
+            </mat-error>
+            
+            <mat-error *ngIf="createUser.controls.birthDate.invalid && createUser.controls.birthDate.dirty">
+              Date must be valid
+            </mat-error>
           </mat-form-field>
       </div>
       <div>
