@@ -11,7 +11,7 @@
       <mat-form-field>
         <input id="password" matInput placeholder="password" type="password" formControlName="password">
         <mat-error *ngIf="createUser.controls.password.errors?.required && createUser.controls.password.touched">
-            Password required
+            Password can not be empty
         </mat-error>
         <mat-error *ngIf="!createUser.controls.password.errors?.minLength && createUser.controls.password.dirty">
             Password required to be at least 6 characters
