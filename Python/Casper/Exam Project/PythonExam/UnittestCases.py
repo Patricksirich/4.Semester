@@ -51,6 +51,11 @@ class uTestHandSum(unittest.TestCase):
         self.assertEqual(player.checkSum(), 20, "Player hand should be = 20"),
         self.assertEqual(dealer.checkSum(), 17, "Dealer hand should be = 17"),
 
+    def test_aces_hand(self):
+        player = Player([Cards("♥", "A"), Cards("♠", "A")], False, 100, 0, True)
+        dealer = Dealer([Cards("♦", "A"), Cards("♣", "A")], False, False, False, False)
+        self.assertEqual(player.checkSum(), 12, "Player hand should be 12")
+        self.assertEqual(dealer.checkSum(), 12, "Dealer hand should be 12")
 
 if __name__ == '__main__':
     unittest.main()

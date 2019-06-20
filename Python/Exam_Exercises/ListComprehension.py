@@ -25,5 +25,16 @@ myList = [i for i in range (1,11) if i % 2 == 0]
 print(myList)
 
 # 1.2
-#
+# Create a list comprehension that swaps two integers place
+# NOT WORKING
+thisList = [i for i in range (0,10)]
+
+for i in thisList:
+    if i == 3:
+        temp = thisList[i]
+        thisList[i] = thisList[i+1]
+        thisList[i+1] = temp
+        
+        
+print(thisList)
 
