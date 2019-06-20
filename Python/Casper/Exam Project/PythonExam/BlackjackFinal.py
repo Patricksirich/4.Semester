@@ -4,10 +4,9 @@ from Dealer import Dealer
 
 player = Player([], False, 100, 0, True)
 dealer = Dealer([], False, False, False, False)
-
-# Used to define when game should end
 gameEnd = False
 
+# When the game starts, player turn is automatically set to true.
 while player.playerTurn:
     player.gameType(dealer)
 
@@ -21,6 +20,7 @@ while not gameEnd:
 
     # Player bets
     if player.isUser:
+        print(f"Your current balance is: {player.balance}")
         player.desiredBet()
         print(f"Bet: {player.bet}")
     # Player bet is fixed, if dealer gametype is chosen
