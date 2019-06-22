@@ -1,4 +1,8 @@
-f = open('newtext.txt', 'a+')
-i = 1
-for i in range(0,2):
-    f.write(f'Appended line: {i+1} \n')
+f = open('bank.txt', 'w')
+
+money = 1000
+
+f.write(f'Your account: {money}')
+
+with open('bank.txt', 'w') as f:
+    f.write('Your new balance')

@@ -22,7 +22,7 @@ testDictionary = {
 # 1.1
 # Creates a list comprehension in the integer range 1 to 11, where the list only consists of even numbers.
 myList = [i for i in range (1,11) if i % 2 == 0]
-print(myList)
+print(testSet)
 
 # 1.2
 # Create a list comprehension that swaps two integers place
