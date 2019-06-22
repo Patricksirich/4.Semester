@@ -4,7 +4,6 @@ import { NgRedux } from '@angular-redux/store';
 import { AppState } from '../store';
 import { Quiz, Option } from '../entities/quiz';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
-import { element } from '@angular/core/src/render3';
 import { QuizApiService } from '../quiz-api.service';
 import { QuizActions } from '../quiz.actions';
 
