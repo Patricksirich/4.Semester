@@ -51,8 +51,6 @@ def print_words(filename):
             dict[word] = 1
     for k, v, in sorted(dict.items()):
         print(k, v)
-    #print(dict)
-    #print(words)
     return words
 
 def print_top(filename): # Sort by greatest number (amount of uses), AND only top 20
@@ -68,8 +66,6 @@ def print_top(filename): # Sort by greatest number (amount of uses), AND only to
     items = sorted(dict.items(), key=lambda word: word[1], reverse=True)
     for item in items[:20]:
         print(item[0], item[1])
-    #print(dict)
-    #print(words)
     return words
 
 

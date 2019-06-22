@@ -20,16 +20,20 @@ describe('workspace-project App', () => {
 
   it('2.0: Login by filling out username and password, and verify we go to the landing page after login.', () => {
     browser.get('home/login');
-    element(by.id('username')).sendKeys('Admin');
-    element(by.id('password')).sendKeys('Admin');
+    element(by.id('username')).sendKeys('Patrick');
+    element(by.id('password')).sendKeys('Patrick69');
     element(by.id('loginButton')).click();
-    expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/portal/display-quizzes');
+    expect(browser.getCurrentUrl()).toEqual('http://localhost:4201/portal/display-quizzes');
   })
 
   it('3.0: Create a new quiz, add an option, and check if the display-quizzes page has updated with the quizz.', () => {
 
     var quizzesBefore = element.all(by.css('.example-card')).count();
-    browser.get('/portal/create-quiz');
+    browser.get('home/login');
+    element(by.id('username')).sendKeys('admin');
+    element(by.id('password')).sendKeys('admin');
+    element(by.id('loginButton')).click();
+    element(by.id('newQuizBtn')).click()
     element(by.id('quiztitle')).sendKeys('TestQuiz 1');
     element(by.id('newQuestion')).click();
     element.all(by.css('.question')).get(0).sendKeys('Test Question 1');
@@ -45,9 +49,26 @@ describe('workspace-project App', () => {
     var quizzesAfter = element.all(by.css('.example-card')).count();
     browser.sleep(1000);
     expect(quizzesBefore < quizzesAfter);
-    browser.sleep(3000);
+    browser.sleep(1000);
 
     });
+
+  it('4.0: Enter form for registering, fill out the form with valid inputs, return to login.', () => {
+    browser.get('home/login');
+    element(by.id('registerBtn')).click();
+    expect(browser.getCurrentUrl()).toEqual('http://localhost:4201/home/create-user');
+    element(by.id('username')).sendKeys('TEST12')
+    element(by.id('password')).sendKeys('TEST12')
+    element(by.id('email')).sendKeys('TEST12@TEST12.dk')
+    element(by.id('birthDate')).sendKeys('12/12/1999')
+    element(by.id('addPhoneNumber')).click()
+    element(by.id('phonenumber')).sendKeys('12345678')
+    
+    element(by.id('saveUser')).click();
+    expect(browser.getCurrentUrl()).toEqual('http://localhost:4201/home/login')
+    
+
+  });
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser

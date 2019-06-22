@@ -1,11 +1,11 @@
 <form [formGroup]="createQuiz" (ngSubmit)="saveQuiz()">
   <div>
     <mat-form-field >
-      <input id="quiztitle" matInput placeholder="Quiz Title" formControlName="title">
+      <input class="quiztitle" id="quiztitle" matInput placeholder="Quiz Title" formControlName="title">
     </mat-form-field>
   </div>
   <div>
-    <button id="newQuestion" type="button" mat-raised-button color="secondary" (click)="createNewQuestion()">New Question</button>
+    <button class="newQuestion" id="newQuestion" type="button" mat-raised-button color="secondary" (click)="createNewQuestion()">New Question</button>
   </div>
   <div  formArrayName="questions">
     <div *ngFor="let questionControl of createQuiz.controls.questions.controls; let i=index">
@@ -13,7 +13,7 @@
           <mat-form-field>
             <input matInput placeholder="Question" formControlName="title" class="question">
           </mat-form-field>
-          <button id='newOption' type="button" mat-raised-button color="secondary" (click)="createNewOption(i)">New Option</button>
+          <button class="newOption" id='newOption' type="button" mat-raised-button color="secondary" (click)="createNewOption(i)">New Option</button>
 
           <div formArrayName="options">
               <div *ngFor="let optionControl of questionControl.controls.options.controls; let j=index">
