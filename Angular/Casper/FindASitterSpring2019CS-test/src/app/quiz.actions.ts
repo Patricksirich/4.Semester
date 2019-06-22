@@ -1,8 +1,9 @@
 import { Injectable } from "@angular/core";
 import { NgRedux } from "@angular-redux/store";
 import { AppState } from "./store";
-import { Quiz, Rating } from "./entities/quiz";
+import { Quiz } from "./entities/quiz";
 import { QuizApiService } from './quiz-api.service';
+import { User } from './entities/user';
 
 @Injectable({ providedIn: "root" })
 export class QuizActions {
@@ -16,8 +17,6 @@ export class QuizActions {
   static GET_QUIZZES_LOADING = "GET_QUIZZES_LOADING";
   static GET_QUIZZES_SUCCESS = "GET_QUIZZES_SUCCESS";
   static GET_QUIZZES_FAILED = "GET_QUIZZES_FAILED";
-
-  static CREATE_USER: string = "CREATE_USER";
 
   getQuizzes() : void {
     this.ngRedux.dispatch({ type: QuizActions.GET_QUIZZES_LOADING }); // start a "spinner"
@@ -43,13 +42,6 @@ export class QuizActions {
       payload: {quiz}
     });
   }
-
-  // createUser(rating: Rating, quizId: string) {
-  //   this.ngRedux.dispatch({
-  //     type: QuizActions.CREATE_RATING,
-  //     payload: {rating, quizId}
-  //   });
-  // }
 
   setLoggedIn(isLoggedIn: boolean): void {
     this.ngRedux.dispatch({

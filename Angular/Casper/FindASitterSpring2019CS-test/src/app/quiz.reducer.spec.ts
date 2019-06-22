@@ -11,14 +11,14 @@ fdescribe('quiz-reducer-tests', () => {
       // Arrange - Act - Assert (principles of creating a unit test)
 
       // Arrange
-      let startState = {isLoggedIn: undefined, quizzes: []};
+      let startState = {isLoggedIn: false, quizzes: [], isLoading: false};
       deepFreeze(startState)
       let actionObj = { type: QuizActions.LOG_IN, payload: true };
 
       // Act
       let newStateObj = quizReducer(startState, actionObj);
       // Assert
-      expect(newStateObj).toEqual({ isLoggedIn: true, quizzes: [] });
+      expect(newStateObj).toEqual({ isLoggedIn: true, quizzes: [], isLoading: false });
     });
 
     it('should create new', () => {

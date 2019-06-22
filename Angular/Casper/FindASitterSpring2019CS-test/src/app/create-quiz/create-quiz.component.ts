@@ -3,7 +3,6 @@ import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { TempDataService } from '../service/temp-data.service';
 import { Quiz } from '../entities/quiz';
 import { Router } from '@angular/router';
-import { Gender } from '../entities/user';
 import { QuizActions } from '../quiz.actions';
 import { QuizApiService } from '../quiz-api.service';
 
@@ -15,7 +14,7 @@ import { QuizApiService } from '../quiz-api.service';
 export class CreateQuizComponent implements OnInit {
   createQuiz: FormGroup;
 
-  constructor(private fb: FormBuilder, private data: TempDataService, private router: Router,
+  constructor(private fb: FormBuilder, private router: Router,
     private quizActions: QuizActions, private quizApi: QuizApiService) { }
 
     ngOnInit() {
@@ -33,7 +32,6 @@ export class CreateQuizComponent implements OnInit {
     quiz.user = { _id: '1',
     username: 'Strunge',
     email: 'Chr@Chr.org',
-    gender: Gender.MALE,
     birthDate: undefined
    };
 
