@@ -5,6 +5,8 @@ export class User {
   email: string;
   gender: Gender; 
   birthDate: Date;
+  phonenumber?: number[];
+  country?: string;
 }
 
 export enum Gender {

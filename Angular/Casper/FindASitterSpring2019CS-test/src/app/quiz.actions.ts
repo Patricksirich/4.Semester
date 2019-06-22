@@ -17,7 +17,7 @@ export class QuizActions {
   static GET_QUIZZES_SUCCESS = "GET_QUIZZES_SUCCESS";
   static GET_QUIZZES_FAILED = "GET_QUIZZES_FAILED";
 
-  static CREATE_RATING: string = "CREATE_RATING";
+  static CREATE_USER: string = "CREATE_USER";
 
   getQuizzes() : void {
     this.ngRedux.dispatch({ type: QuizActions.GET_QUIZZES_LOADING }); // start a "spinner"
@@ -44,12 +44,12 @@ export class QuizActions {
     });
   }
 
-  createRating(rating: Rating, quizId: string) {
-    this.ngRedux.dispatch({
-      type: QuizActions.CREATE_RATING,
-      payload: {rating, quizId}
-    });
-  }
+  // createUser(rating: Rating, quizId: string) {
+  //   this.ngRedux.dispatch({
+  //     type: QuizActions.CREATE_RATING,
+  //     payload: {rating, quizId}
+  //   });
+  // }
 
   setLoggedIn(isLoggedIn: boolean): void {
     this.ngRedux.dispatch({
