@@ -4,7 +4,6 @@ import { NgRedux } from '@angular-redux/store';
 import { AppState } from '../store';
 import { Quiz, Option } from '../entities/quiz';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
-import { Gender } from '../entities/user';
 import { element } from '@angular/core/src/render3';
 import { QuizApiService } from '../quiz-api.service';
 import { QuizActions } from '../quiz.actions';
@@ -65,7 +64,6 @@ export class UpdateQuizComponent implements OnInit {
     quiz.user = { _id: '1',
     username: 'Strunge',
     email: 'Chr@Chr.org',
-    gender: Gender.MALE,
     birthDate: undefined
    }
 
