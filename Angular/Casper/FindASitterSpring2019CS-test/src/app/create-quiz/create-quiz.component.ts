@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
-import { TempDataService } from '../service/temp-data.service';
 import { Quiz } from '../entities/quiz';
 import { Router } from '@angular/router';
 import { QuizActions } from '../quiz.actions';

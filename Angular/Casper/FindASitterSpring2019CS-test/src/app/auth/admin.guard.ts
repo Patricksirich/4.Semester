@@ -26,7 +26,7 @@ export class AdminGuard implements CanActivate {
 
       this.adminService.redirectUrl = state.url;
 
-      this.snackBar.open('You must be logged in as an admin to create a quiz', 'Close', {
+      this.snackBar.open('You must be logged in as an admin to use this service', 'Close', {
         duration: 2000,
       });
       return false; // true = allowed access

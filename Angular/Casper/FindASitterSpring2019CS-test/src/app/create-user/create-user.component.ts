@@ -3,17 +3,18 @@ import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserActions } from '../user.actions';
 import { User } from '../entities/user';
+import { UserApiService } from '../user-api.service';
 
 
 @Component({
   selector: 'app-create-user',
   templateUrl: './create-user.component.html',
-  styleUrls: ['./create-user.component.sass']
+  styleUrls: ['./create-user.component.css']
 })
 export class CreateUserComponent implements OnInit {
   createUser: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router, private userActions: UserActions ) { }
+  constructor(private fb: FormBuilder, private router: Router, private userActions: UserActions, private userApi: UserApiService) { }
 
   ngOnInit() {
     this.createUser = this.fb.group({
@@ -29,9 +30,15 @@ export class CreateUserComponent implements OnInit {
   saveUser(){
 
     let user = this.createUser.value as User;
-    this.userActions.createUser(user);
-    console.log(user);
-    this.router.navigate(['home/login']);
+    user.localId = 'Studene'
+    this.userApi.createUser(user).subscribe(userFromWs => {
+      console.log(user)
+      this.userActions.createUser(user);
+      this.router.navigate(['home/login']);
+    }, error => {
+
+      console.log("User failed to create. Bad user.", error)
+    });
   }
 
   addPhoneNumber(){

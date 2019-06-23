@@ -33,6 +33,10 @@ import { QuizPipe } from './quiz.pipe';
 import { AdminComponent } from './admin/admin.component';
 import { UpdateQuizComponent } from './update-quiz/update-quiz.component';
 import { CreateUserComponent } from './create-user/create-user.component';
+import { DisplayUsersComponent } from './display-users/display-users.component';
+import { UserComponent } from './user/user.component';
+import { DisplayUserComponent } from './display-user/display-user.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +54,11 @@ import { CreateUserComponent } from './create-user/create-user.component';
     QuizPipe,
     AdminComponent,
     UpdateQuizComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    DisplayUsersComponent,
+    UserComponent,
+    DisplayUserComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,

@@ -15,6 +15,7 @@ export class QuizState {
 export class UserState {
   isLoggedIn: boolean;
   users: User[];
+  isLoading: boolean;
 }
 
 export class AppState {

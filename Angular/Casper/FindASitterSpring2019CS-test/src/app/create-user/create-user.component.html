@@ -1,5 +1,5 @@
+<mat-card class="createUser-card">
 <form [formGroup]="createUser" (ngSubmit)="saveUser()">
-  Fields with * must be filled out
   <div>
     <mat-form-field>
       <input id="username" matInput placeholder="username" formControlName="username" required>
@@ -47,10 +47,8 @@
             <input id="country" matInput placeholder="country" formControlName="country">
           </mat-form-field>
       </div>
-
-  <div>
     <button id="addPhoneNumber" type="button" mat-raised-button color="secondary" (click)="addPhoneNumber()">Add a phonenumber</button>
-  </div>
+    <p></p>
   <div formArrayName="phoneNumbers">
     <div *ngFor="let phonenumberControl of createUser.controls.phoneNumbers.controls; let i=index">
         <div [formGroupName]="i">
@@ -60,6 +58,7 @@
           </div>
     </div>
   </div>
-
-  <button [disabled]="!createUser.valid" id="saveUser" mat-raised-button color="primary">Create User</button>
+  <button [disabled]="!createUser.valid" id="saveUser" mat-raised-button color="primary" style="width: 160px">Create User</button>
+  <p style="font-size: 12px; color: gray"> Fields with * must be filled out</p>
 </form>
+</mat-card>

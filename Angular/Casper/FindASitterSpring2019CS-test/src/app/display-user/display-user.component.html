@@ -1,0 +1,11 @@
+<div>
+  Username: {{user.username}}
+  Email: {{user.email}}
+  Birthday: {{user.birthDate}}
+  Country: {{user.country}}
+  <div *ngFor="let phonenumber of user.phonenumber">
+    {{user.phonenumber}}
+  </div>
+</div>
+
+

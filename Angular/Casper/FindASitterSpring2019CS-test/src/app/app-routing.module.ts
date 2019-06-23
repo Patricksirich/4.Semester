@@ -13,6 +13,9 @@ import { CreateQuizComponent } from './create-quiz/create-quiz.component';
 import { AdminGuard } from './auth/admin.guard';
 import { UpdateQuizComponent } from './update-quiz/update-quiz.component';
 import { CreateUserComponent } from './create-user/create-user.component';
+import { DisplayUsersComponent } from './display-users/display-users.component';
+import { DisplayUserComponent } from './display-user/display-user.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' }, // if baseUrl => go to login
@@ -29,6 +32,11 @@ const routes: Routes = [
     {path: 'create-quiz', component:CreateQuizComponent, canActivate:[AdminGuard]},
     {path: 'display-quizzes', component:DisplayQuizzesComponent},
     {path: 'update-quiz/:id', component: UpdateQuizComponent},
+    {path: 'display-users', component: DisplayUsersComponent, canActivate: [AdminGuard]},
+    {path: 'display-user/:id', component:DisplayUserComponent},
+    {path: 'update-user/:id', component: UpdateUserComponent},
+
+
   ]},
 
 

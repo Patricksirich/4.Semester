@@ -74,7 +74,6 @@ export class LoginComponent implements OnInit {
   logout() : void {
 
 
-
   }
 
 }
