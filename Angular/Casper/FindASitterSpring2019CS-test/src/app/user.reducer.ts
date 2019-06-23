@@ -13,6 +13,9 @@ export function userReducer(state: UserState = INITIAL_STATE, action: any) {
       console.log(newUser)
       return newUser
 
+    case UserActions.DELETE_USER:
+      return tassign(state, {users: state.users.filter(user => user._id != action.payload)});
+
     case UserActions.GET_USERS_LOADING:
       return tassign(state, { isLoading: true});
 
@@ -23,9 +26,6 @@ export function userReducer(state: UserState = INITIAL_STATE, action: any) {
       return tassign(state, { isLoading: false});
 
     case UserActions.UPDATE_USER:
-
-      // action.payload: new quiz object
-      // How to replace an object in an array without mutating state.
         let newUserArray = tassign(state, { users: [... state.users, action.payload]});
         newUserArray[action.payload.userId] = action.payload.quiz;
       return newUserArray

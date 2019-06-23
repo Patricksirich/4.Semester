@@ -1,5 +1,5 @@
 <div *ngIf="isLoading">
-  Please wait, we are loading the quizzes!
+  Please wait, we are loading the users
 </div>
 <div>
   <mat-form-field>
@@ -8,7 +8,7 @@
 </div>
 <div *ngFor="let user of users; let i=index">
   <app-user
-  [userInput]="user"  
+  [userInput]="user"
   (userClicked)="onUserClicked($event)"
   (deleteClicked)="deleteUser($event)"
   >

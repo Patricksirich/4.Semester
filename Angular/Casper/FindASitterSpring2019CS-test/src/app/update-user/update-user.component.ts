@@ -49,20 +49,16 @@ export class UpdateUserComponent implements OnInit {
 }
 
   updateUser() {
-    // save a user who created this user.
-    // hardcode a user until we have a proper login.
     let user = this.userForm.value as User;
 
    console.log("1");
    this.userApi.updateUser(user).subscribe(userFromWs => {
      console.log(userFromWs);
      console.log('3');
-    this.userActions.updateUser(user);
-    this.router.navigate(['/portal/display-users']);
    }, error => {
-     // Write some code for handling errors
-     console.log("Something bad happened", error)
-     // this.userActions.addNewuserFailed(error);
+     console.log("User could not be updated", error)
+     this.userActions.updateUser(user);
+     this.router.navigate(['/portal/display-users']);
    });
    console.log("2");
   }
