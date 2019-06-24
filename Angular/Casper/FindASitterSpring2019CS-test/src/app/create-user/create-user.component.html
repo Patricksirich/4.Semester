@@ -53,7 +53,7 @@
     <div *ngFor="let phonenumberControl of createUser.controls.phoneNumbers.controls; let i=index">
         <div [formGroupName]="i">
           <mat-form-field>
-            <input id="phonenumber" matInput placeholder="Phonenumber" formControlName="number" class="phoneNumber" pattern="^\d{8}$">
+            <input id="phonenumber" matInput placeholder="Phonenumber" formControlName="number" class="phoneNumber" pattern="^\d{8}$" required>
           </mat-form-field>
           </div>
     </div>

@@ -1,11 +1,39 @@
-<div>
-  Username: {{user.username}}
-  Email: {{user.email}}
-  Birthday: {{user.birthDate}}
-  Country: {{user.country}}
-  <div *ngFor="let phonenumber of user.phonenumber">
-    {{user.phonenumber}}
-  </div>
-</div>
-
-
+<mat-card class="userForm-card">
+    <form [formGroup]="userForm">
+      <div>
+        <mat-form-field>
+          Username:
+          <input id="username" matInput formControlName="username" readonly>
+        </mat-form-field>
+        <div></div>
+            <mat-form-field>
+              Email:
+              <input id="email" matInput type="text" formControlName="email" readonly>
+            </mat-form-field>
+          </div>
+          <div>
+              <mat-form-field >
+                Birthdate
+                <input id="birthDate" matInput formControlName="birthDate" readonly>
+              </mat-form-field>
+          </div>
+          <div>
+              <mat-form-field>
+                Country:
+                <input id="country" matInput formControlName="country" readonly>
+              </mat-form-field>
+          </div>
+      <div formArrayName="phoneNumbers">
+        <div *ngFor="let phonenumberControl of userForm.controls.phoneNumbers.controls; let i=index">
+            <div [formGroupName]="i">
+              <mat-form-field>
+                Phonenumber:
+                <input id="phonenumber" matInput formControlName="number" class="phoneNumber" pattern="^\d{8}$" readonly>
+              </mat-form-field>
+              </div>
+        </div>
+      </div>
+      <button mat-raised-button color="primary" (click)="back()" style="width: 160px">Back</button>
+    </form>
+    </mat-card>
+  
