@@ -51,16 +51,15 @@ fdescribe('user-reducer-tests', () => {
       password: '',
       email: 'Test@test.com',
       birthDate: undefined,
-
     }
+
       let userId = user._id
 
       let actionObject = {type: UserActions.UPDATE_USER, payload: {user, userId}};
       let newStateObject = userReducer(startState, actionObject);
 
       console.log(newStateObject.users)
-      expect(newStateObject.users[0].username).toBe('TestnameUpdated')
-      expect(newStateObject.users.length).toBe(1)
+      expect(newStateObject[0].username).toBe('TestnameUpdated')
   })
 });
 
