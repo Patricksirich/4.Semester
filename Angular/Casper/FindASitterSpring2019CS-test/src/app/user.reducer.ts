@@ -29,6 +29,7 @@ export function userReducer(state: UserState = INITIAL_STATE, action: any) {
         let newUserArray = tassign(state, { users: [... state.users, action.payload]});
         console.log("Update user is: ", action.payload.userId)
         newUserArray[action.payload.userId] = action.payload.user;
+        console.log("update user object : ", newUserArray[action.payload.userId])
       return newUserArray
 
     default:

@@ -55,7 +55,7 @@ fdescribe('user-reducer-tests', () => {
     }
       let userId = user._id
 
-      let actionObject = {type: UserActions.UPDATE_USER, payload: user, userId};
+      let actionObject = {type: UserActions.UPDATE_USER, payload: {user, userId}};
       let newStateObject = userReducer(startState, actionObject);
 
       console.log(newStateObject.users)
