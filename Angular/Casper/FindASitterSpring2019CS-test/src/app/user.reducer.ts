@@ -27,7 +27,7 @@ export function userReducer(state: UserState = INITIAL_STATE, action: any) {
 
     case UserActions.UPDATE_USER:
         let newUserArray = tassign(state, { users: [... state.users, action.payload]});
-        newUserArray[action.payload.userId] = action.payload.quiz;
+        newUserArray[action.payload.userId] = action.payload.user;
       return newUserArray
 
     default:

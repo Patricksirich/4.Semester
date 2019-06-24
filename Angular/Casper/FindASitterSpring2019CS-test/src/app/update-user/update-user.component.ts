@@ -50,15 +50,20 @@ export class UpdateUserComponent implements OnInit {
 
   updateUser() {
     let user = this.userForm.value as User;
+    user._id = this.route.snapshot.paramMap.get('id');
+    user.localId = "Studene"
 
    console.log("1");
-   this.userApi.updateUser(user).subscribe(userFromWs => {
+   this.userApi.updateUser(user, user._id).subscribe(userFromWs => {
      console.log(userFromWs);
-     console.log('3');
-   }, error => {
-     console.log("User could not be updated", error)
      this.userActions.updateUser(user);
-     this.router.navigate(['/portal/display-users']);
+      this.router.navigate(['/portal/display-users']);
+     console.log('3');
+    }, error => {
+      console.log("User could not be updated", error)
+      this.userActions.updateUser(user);
+      this.router.navigate(['/portal/display-users']);
+      console.log(user)
    });
    console.log("2");
   }

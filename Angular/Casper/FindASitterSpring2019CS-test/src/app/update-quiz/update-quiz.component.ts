@@ -63,18 +63,24 @@ export class UpdateQuizComponent implements OnInit {
     quiz.user = { _id: '1',
     username: 'Strunge',
     email: 'Chr@Chr.org',
-    birthDate: undefined
+    birthDate: undefined,
+    
    }
+   quiz._id = this.route.snapshot.paramMap.get('id')
+   quiz.customerId = "CFA"
 
    console.log("1");
    this.quizApi.updateQuiz(quiz).subscribe(quizFromWs => {
      console.log(quizFromWs);
      console.log('3');
-    this.quizActions.updateQuiz(quiz);
+    this.quizActions.updateQuiz(quiz, quiz._id);
     this.router.navigate(['/portal/display-quizzes']);
    }, error => {
      // Write some code for handling errors
      console.log("Something bad happened", error)
+     console.log('3');
+    this.quizActions.updateQuiz(quiz, quiz._id);
+    this.router.navigate(['/portal/display-quizzes']);
      // this.quizActions.addNewQuizFailed(error);
    });
    console.log("2");

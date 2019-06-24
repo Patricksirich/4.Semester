@@ -23,8 +23,8 @@ export class UserApiService {
     return this.http.get<User[]>(this.baseUrl)
   }
 
-  updateUser(user: User) : Observable<any> {
-    return this.http.put(this.baseUrl, user)
+  updateUser(user: User, userId: string) : Observable<any> {
+    return this.http.put(this.baseUrl + userId, user)
   }
 
   deleteUser(userId: string) : Observable<any>{

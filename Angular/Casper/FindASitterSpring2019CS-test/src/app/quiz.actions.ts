@@ -24,7 +24,7 @@ export class QuizActions {
     this.api.getAllQuizzes().subscribe(quizzes => {
       this.ngRedux.dispatch({
         type: QuizActions.GET_QUIZZES_SUCCESS,
-        payload: quizzes.filter(quiz => quiz.user && quiz.questions)
+        payload: quizzes.filter(quiz => quiz.user && quiz.questions && quiz.customerId == "CFA")
       });
 
     }, error => {
@@ -36,10 +36,10 @@ export class QuizActions {
   }
 
 
-  updateQuiz(quiz: Quiz): void{
+  updateQuiz(quiz: Quiz, quizId: string): void{
     this.ngRedux.dispatch({
       type: QuizActions.UPDATE_QUIZ,
-      payload: {quiz}
+      payload: {quiz, quizId}
     });
   }
 

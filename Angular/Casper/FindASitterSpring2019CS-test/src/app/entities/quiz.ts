@@ -17,11 +17,3 @@ export class Option {
   answer: string;
   correct: boolean;
 }
-
-export class Rating {
-  grade: number;
-  user: User;
-  timestamp: Date;
-  title: string;
-  message: string;
-}

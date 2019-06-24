@@ -27,7 +27,8 @@ export class QuizApiService {
   }
 
   updateQuiz(quiz: Quiz) : Observable<any> {
-    return this.http.put(this.baseUrl, quiz)
+    quiz.created = new Date()
+    return this.http.put(this.baseUrl + quiz._id, quiz)
   }
 
   deleteQuiz(quizId: string) : Observable<any>{
