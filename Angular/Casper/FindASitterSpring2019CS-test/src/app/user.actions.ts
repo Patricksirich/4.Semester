@@ -50,10 +50,10 @@ export class UserActions {
     })
   }
 
-  updateUser(user: User): void{
+  updateUser(user: User, userId: string): void{
     this.ngRedux.dispatch({
       type: UserActions.UPDATE_USER,
-      payload: {user}
+      payload: {user, userId}
     });
   }
 

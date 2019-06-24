@@ -54,14 +54,14 @@ export class UpdateUserComponent implements OnInit {
     user.localId = "Studene"
 
    console.log("1");
-   this.userApi.updateUser(user, user._id).subscribe(userFromWs => {
+   this.userApi.updateUser(user).subscribe(userFromWs => {
      console.log(userFromWs);
-     this.userActions.updateUser(user);
+     this.userActions.updateUser(user, user._id);
       this.router.navigate(['/portal/display-users']);
      console.log('3');
     }, error => {
       console.log("User could not be updated", error)
-      this.userActions.updateUser(user);
+      this.userActions.updateUser(user, user._id);
       this.router.navigate(['/portal/display-users']);
       console.log(user)
    });
