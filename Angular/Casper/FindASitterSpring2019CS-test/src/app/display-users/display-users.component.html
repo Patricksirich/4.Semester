@@ -6,7 +6,10 @@
   <input matInput placeholder="Search for a user" value="" [(ngModel)] = "userSearch">
 </mat-form-field>
 </div>
-<div *ngFor="let user of users; let i=index">
+
+
+<div *ngFor="let user of users | userPipe: userSearch; let i=index">
+
   <app-user
   [userInput]="user"
   (userClicked)="onUserClicked($event)"
@@ -14,4 +17,6 @@
   >
   </app-user>
 </div>
+
+
 

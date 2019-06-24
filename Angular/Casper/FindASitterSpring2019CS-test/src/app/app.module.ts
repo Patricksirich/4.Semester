@@ -37,6 +37,7 @@ import { DisplayUsersComponent } from './display-users/display-users.component';
 import { UserComponent } from './user/user.component';
 import { DisplayUserComponent } from './display-user/display-user.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
+import { UserPipe } from './user.pipe';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { UpdateUserComponent } from './update-user/update-user.component';
     DisplayUsersComponent,
     UserComponent,
     DisplayUserComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    UserPipe
   ],
   imports: [
     BrowserModule,
