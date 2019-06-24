@@ -49,7 +49,7 @@ fdescribe('user-reducer-tests', () => {
       _id: user._id,
       username: 'TestnameUpdated',
       password: '',
-      email: 'Test@test.com',
+      email: 'TestUpdated@test.com',
       birthDate: undefined,
     }
 
@@ -60,6 +60,7 @@ fdescribe('user-reducer-tests', () => {
 
       console.log(newStateObject.users)
       expect(newStateObject[0].username).toBe('TestnameUpdated')
+      expect(newStateObject[0].email).toBe('TestUpdated@test.com')
   })
 });
 
