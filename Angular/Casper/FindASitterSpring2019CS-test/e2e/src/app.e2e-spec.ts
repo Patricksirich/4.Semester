@@ -23,7 +23,7 @@ describe('workspace-project App', () => {
     element(by.id('username')).sendKeys('Patrick');
     element(by.id('password')).sendKeys('Patrick69');
     element(by.id('loginButton')).click();
-    expect(browser.getCurrentUrl()).toEqual('http://localhost:4201/portal/display-quizzes');
+    expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/portal/display-quizzes');
   })
 
   it('3.0: Create a new quiz, add an option, and check if the display-quizzes page has updated with the quizz.', () => {
@@ -56,17 +56,20 @@ describe('workspace-project App', () => {
   it('4.0: Enter form for registering, fill out the form with valid inputs, return to login.', () => {
     browser.get('home/login');
     element(by.id('registerBtn')).click();
-    expect(browser.getCurrentUrl()).toEqual('http://localhost:4201/home/create-user');
+    expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/home/create-user');
+    var usersBefore = element.all(by.css('.example-card')).count();
     element(by.id('username')).sendKeys('TEST12')
     element(by.id('password')).sendKeys('TEST12')
     element(by.id('email')).sendKeys('TEST12@TEST12.dk')
     element(by.id('birthDate')).sendKeys('12/12/1999')
     element(by.id('addPhoneNumber')).click()
     element(by.id('phonenumber')).sendKeys('12345678')
-    
     element(by.id('saveUser')).click();
-    expect(browser.getCurrentUrl()).toEqual('http://localhost:4201/home/login')
-    
+    var usersAfter = element.all(by.css('.example-card')).count();
+    browser.sleep(1000)
+    expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/home/login')
+    expect(usersAfter > usersBefore);
+    browser.sleep(1000)
 
   });
 
