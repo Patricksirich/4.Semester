@@ -10,7 +10,7 @@ import { UserActions } from '../user.actions';
 @Component({
   selector: 'app-update-user',
   templateUrl: './update-user.component.html',
-  styleUrls: ['./update-user.component.sass']
+  styleUrls: ['./update-user.component.scss']
 })
 export class UpdateUserComponent implements OnInit {
 
